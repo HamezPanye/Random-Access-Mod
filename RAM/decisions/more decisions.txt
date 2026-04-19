@@ -3,6 +3,7 @@ political_decisions = {
         picture = create_iberia
         potential = {
             ai = no
+            capital_scope = { continent = europe }
             OR = {
                 any_owned_province = { is_core = SPA }
                 any_owned_province = { is_core = SPC }
@@ -22,6 +23,11 @@ political_decisions = {
             }
         }
         allow = {
+			NOT = {
+				POR = { exists = yes ai = no }
+				SPA = { exists = yes ai = no }
+				SPC = { exists = yes ai = no }
+			}
             war = no
             prestige = 50
             is_greater_power = yes
@@ -290,7 +296,7 @@ political_decisions = {
 					remove_province_modifier = fueros_autonomy_4
 				}
             }
-			random_owned = { limit = { owner = { IBR = { OR = { primary_culture = brazilian primary_culture = portuguese } } } }
+			random_owned = { limit = { owner = { IBR = { accepted_culture = brazilian } } }
 			IBR = { set_country_flag = i_am_upb } }
         }
         ai_will_do = {
@@ -493,6 +499,7 @@ political_decisions = {
     outside_SCA = {
         picture = form_scandinavia
         potential = {
+            capital_scope = { continent = europe }
             OR = {
                 any_owned_province = { is_core = SWE }
                 any_owned_province = { is_core = NOR }
@@ -502,6 +509,9 @@ political_decisions = {
                 is_sphere_leader_of = DEN
             }
             NOT = {
+				SWE = { exists = yes ai = no }
+				NOR = { exists = yes ai = no }
+				DEN = { exists = yes ai = no }
                 exists = SCA
                 is_culture_group = scandinavian
                 primary_culture = finnish
@@ -777,7 +787,7 @@ political_decisions = {
         }
     }
     outside_SCA_FIN = {
-        picture = concede_finland
+        picture = stamp_finland
         potential = {
             OR = {
                 SCA = { vassal_of = THIS }
@@ -900,7 +910,7 @@ political_decisions = {
         }
     }
     outside_SCA_KRL = {
-        picture = concede_finland
+        picture = stamp_karelia
         potential = {
             OR = {
                 SCA = { vassal_of = THIS }
@@ -1151,8 +1161,6 @@ political_decisions = {
             USA_78 = { add_core = THIS }
             USA_81 = { add_core = THIS }
             USA_91 = { add_core = THIS }
-            111 = { add_core = THIS }
-            114 = { add_core = THIS }
             set_country_flag = CAL_tristate
         }
         ai_will_do = {

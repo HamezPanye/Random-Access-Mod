@@ -68,6 +68,49 @@ country_event = {
         }
 		prestige_factor = -0.1
 		country_event = 800052
+		random_owned = {
+			limit = {
+				owner = {
+					tag = BOR
+					exists = yes
+				}
+			}
+			owner = {
+				BOR = { all_core = { add_core = FRA remove_core = BOR } change_tag = FRA }
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					tag = SPC
+					exists = yes
+				}
+			}
+			owner = {
+				SPC = {
+					remove_country_modifier = fueros_unresolved_1
+					remove_country_modifier = fueros_unresolved_2
+					remove_country_modifier = fueros_unresolved_3
+					remove_country_modifier = fueros_unresolved_4
+					remove_country_modifier = fueros_unresolved_5
+					remove_country_modifier = fueros_unresolved_6
+					remove_country_modifier = fueros_unresolved_7
+					remove_country_modifier = carlist_distributism
+					remove_country_modifier = marotist_reforms
+					any_owned = {
+						remove_province_modifier = fueros_autonomy
+						remove_province_modifier = fueros_autonomy_2
+						remove_province_modifier = fueros_autonomy_3
+						remove_province_modifier = fueros_autonomy_4
+					}
+					all_core = {
+						add_core = SPA
+						remove_core = SPC
+					}
+					change_tag = SPA
+				}
+			}
+		}
     }
 }
 
@@ -142,6 +185,49 @@ country_event = {
             duration = 365
         }
         prestige_factor = -0.1
+		random_owned = {
+			limit = {
+				owner = {
+					tag = BOR
+					exists = yes
+				}
+			}
+			owner = {
+				BOR = { all_core = { add_core = FRA remove_core = BOR } change_tag = FRA }
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					tag = SPC
+					exists = yes
+				}
+			}
+			owner = {
+				SPC = {
+					remove_country_modifier = fueros_unresolved_1
+					remove_country_modifier = fueros_unresolved_2
+					remove_country_modifier = fueros_unresolved_3
+					remove_country_modifier = fueros_unresolved_4
+					remove_country_modifier = fueros_unresolved_5
+					remove_country_modifier = fueros_unresolved_6
+					remove_country_modifier = fueros_unresolved_7
+					remove_country_modifier = carlist_distributism
+					remove_country_modifier = marotist_reforms
+					any_owned = {
+						remove_province_modifier = fueros_autonomy
+						remove_province_modifier = fueros_autonomy_2
+						remove_province_modifier = fueros_autonomy_3
+						remove_province_modifier = fueros_autonomy_4
+					}
+					all_core = {
+						add_core = SPA
+						remove_core = SPC
+					}
+					change_tag = SPA
+				}
+			}
+		}
         country_event = 800050
     }
 }
@@ -214,6 +300,49 @@ country_event = {
 		political_reform = censored_press
 		political_reform = no_slavery
         country_event = 800053
+		random_owned = {
+			limit = {
+				owner = {
+					tag = BOR
+					exists = yes
+				}
+			}
+			owner = {
+				BOR = { all_core = { add_core = FRA remove_core = BOR } change_tag = FRA }
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					tag = SPC
+					exists = yes
+				}
+			}
+			owner = {
+				SPC = {
+					remove_country_modifier = fueros_unresolved_1
+					remove_country_modifier = fueros_unresolved_2
+					remove_country_modifier = fueros_unresolved_3
+					remove_country_modifier = fueros_unresolved_4
+					remove_country_modifier = fueros_unresolved_5
+					remove_country_modifier = fueros_unresolved_6
+					remove_country_modifier = fueros_unresolved_7
+					remove_country_modifier = carlist_distributism
+					remove_country_modifier = marotist_reforms
+					any_owned = {
+						remove_province_modifier = fueros_autonomy
+						remove_province_modifier = fueros_autonomy_2
+						remove_province_modifier = fueros_autonomy_3
+						remove_province_modifier = fueros_autonomy_4
+					}
+					all_core = {
+						add_core = SPA
+						remove_core = SPC
+					}
+					change_tag = SPA
+				}
+			}
+		}
     }
 }
 
@@ -273,6 +402,49 @@ country_event = {
         political_reform = culture_voting_only
         prestige_factor = -0.05
         country_event = 800051
+		random_owned = {
+			limit = {
+				owner = {
+					tag = BOR
+					exists = yes
+				}
+			}
+			owner = {
+				BOR = { all_core = { add_core = FRA remove_core = BOR } change_tag = FRA }
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					tag = SPC
+					exists = yes
+				}
+			}
+			owner = {
+				SPC = {
+					remove_country_modifier = fueros_unresolved_1
+					remove_country_modifier = fueros_unresolved_2
+					remove_country_modifier = fueros_unresolved_3
+					remove_country_modifier = fueros_unresolved_4
+					remove_country_modifier = fueros_unresolved_5
+					remove_country_modifier = fueros_unresolved_6
+					remove_country_modifier = fueros_unresolved_7
+					remove_country_modifier = carlist_distributism
+					remove_country_modifier = marotist_reforms
+					any_owned = {
+						remove_province_modifier = fueros_autonomy
+						remove_province_modifier = fueros_autonomy_2
+						remove_province_modifier = fueros_autonomy_3
+						remove_province_modifier = fueros_autonomy_4
+					}
+					all_core = {
+						add_core = SPA
+						remove_core = SPC
+					}
+					change_tag = SPA
+				}
+			}
+		}
     }
 }
 
@@ -311,6 +483,49 @@ country_event = {
         election = yes
         random_owned = { limit = { owner = { border_policy = closed_borders } } owner = { political_reform = open_borders } }
 		remove_country_modifier = totalitarian_system
+		random_owned = {
+			limit = {
+				owner = {
+					tag = BOR
+					exists = yes
+				}
+			}
+			owner = {
+				BOR = { all_core = { add_core = FRA remove_core = BOR } change_tag = FRA }
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					tag = SPC
+					exists = yes
+				}
+			}
+			owner = {
+				SPC = {
+					remove_country_modifier = fueros_unresolved_1
+					remove_country_modifier = fueros_unresolved_2
+					remove_country_modifier = fueros_unresolved_3
+					remove_country_modifier = fueros_unresolved_4
+					remove_country_modifier = fueros_unresolved_5
+					remove_country_modifier = fueros_unresolved_6
+					remove_country_modifier = fueros_unresolved_7
+					remove_country_modifier = carlist_distributism
+					remove_country_modifier = marotist_reforms
+					any_owned = {
+						remove_province_modifier = fueros_autonomy
+						remove_province_modifier = fueros_autonomy_2
+						remove_province_modifier = fueros_autonomy_3
+						remove_province_modifier = fueros_autonomy_4
+					}
+					all_core = {
+						add_core = SPA
+						remove_core = SPC
+					}
+					change_tag = SPA
+				}
+			}
+		}
     }
 }
 
@@ -928,11 +1143,13 @@ country_event = {
             has_country_modifier = political_education
             has_country_modifier = cult_of_personality
             has_country_modifier = the_terror
+			has_country_modifier = paternalistic_totalitarism
         }
 		OR = {
 			AND = {
 				NOT = { government = fascist_dictatorship }
 				NOT = { government = proletarian_dictatorship }
+				NOT = { AND = { OR = { government = absolute_empire government = presidential_dictatorship } has_country_flag = totally_totalitarian } }
 			}
 			NOT = { vote_franschise = none_voting }
 		}
@@ -946,6 +1163,8 @@ country_event = {
 		remove_country_modifier = political_education
 		remove_country_modifier = cult_of_personality
 		remove_country_modifier = the_terror
+		remove_country_modifier = paternalistic_totalitarism
+		clr_country_flag = totally_totalitarian
     }
 }
 
@@ -3590,7 +3809,6 @@ country_event = {
         name = "Oregon will fall into British hands."
 		country_event = 60168169
 		set_global_flag = railroaded_uk_oregon
-
     }
 
     option = {
@@ -3627,18 +3845,39 @@ country_event = {
 	option = {
 		name = "The Emperor shall prevail!"
 		set_global_flag = railroaded_japan_empire
-		country_event = 60168170
+		random_owned = {
+			limit = { owner = { year = 1830 NOT = { year = 1836 } } }
+			owner = { country_event = 60168170 }
+		}
+		random_owned = {
+			limit = { owner = { year = 1836 } }
+			owner = { country_event = 4207008 }
+		}
 	}
 
 	option = {
 		name = "Let the Shogunate survive!"
 		set_global_flag = railroaded_japan_shogunate
-		country_event = 60168170
+		random_owned = {
+			limit = { owner = { year = 1830 NOT = { year = 1836 } } }
+			owner = { country_event = 60168170 }
+		}
+		random_owned = {
+			limit = { owner = { year = 1836 } }
+			owner = { country_event = 4207008 }
+		}
 	}
 
 	option = {
 		name = "I don't get it, is Shogun his first name or his surname?"
-		country_event = 4207008
+		random_owned = {
+			limit = { owner = { year = 1830 NOT = { year = 1836 } } }
+			owner = { country_event = 60168170 }
+		}
+		random_owned = {
+			limit = { owner = { year = 1836 } }
+			owner = { country_event = 4207008 }
+		}
 	}
 }
 
@@ -3646,20 +3885,65 @@ country_event = {
 country_event = {
     id = 60168170
     title = "Railroading the Gran Colombia Collapse"
-    desc = "Gran Colombia usually refuses to fight for it's survival. Would you like Gran Colombia to fight for the restoration of the union or you prefer them to die out altogether?"
+    desc = "EVTDESC60168170"
     picture = "gran_colombia"
 	is_triggered_only = yes
 
     option = {
         name = "Gran Colombia is destined to collapse."
-		country_event = 4207008
+		country_event = 60168171
 		set_global_flag = railroaded_yes_gran_colombia_collapse
     }
 
     option = {
         name = "Urdaneta will bring order to the union."
-		country_event = 4207008
+		country_event = 60168171
 		set_global_flag = railroaded_no_gran_colombia_collapse
+    }
+
+    option = {
+        name = "Gran Colombia? If it was a gran country, how come I have never heard of it?"
+		country_event = 60168171
+    }
+}
+
+#Railroading the July Revolution of 1830
+country_event = {
+    id = 60168171
+    title = "Railroading the 1830 French Revolution"
+    desc = "EVTDESC60168171"
+    picture = "bourbonfrance"
+	is_triggered_only = yes
+
+    option = {
+        name = "The Orleans will rule France as a constituional monarchy."
+		country_event = 60168172
+    }
+
+    option = {
+        name = "The Bourbons shall squash any revolutionary sentiment."
+		country_event = 60168172
+		set_global_flag = railroaded_yes_bourbons
+    }
+}
+
+#Railroading the fate of Belgium
+country_event = {
+    id = 60168172
+    title = "Railroading the fate of Belgium"
+    desc = "EVTDESC60168172"
+    picture = "flahaut_event"
+	is_triggered_only = yes
+
+    option = {
+        name = "The Flauhaut plan is an abomination!"
+		country_event = 4207008
+    }
+
+    option = {
+        name = "Belgium shall not exists as a nation!"
+		country_event = 4207008
+		set_global_flag = railroaded_yes_flauhaut
     }
 }
 
@@ -4061,6 +4345,7 @@ country_event = {
 						OR = {
 							has_pop_culture = turkish
 							has_pop_culture = persian
+							has_pop_culture = hazara
 							has_pop_culture = azerbaijani
 							has_pop_culture = circassian
 							has_pop_culture = chechen
@@ -4464,7 +4749,7 @@ country_event = {
                     RGS = { OR = { exists = no vassal_of = BRZ } NOT = { has_country_flag = monarchy_government } }
                     BAH = { OR = { exists = no vassal_of = BRZ } NOT = { has_country_flag = monarchy_government } }
                     PAA = { OR = { exists = no vassal_of = BRZ } NOT = { has_country_flag = monarchy_government } }
-                    MGO = { OR = { exists = no vassal_of = BRZ } NOT = { has_country_flag = monarchy_government } }
+                    MGO = { OR = { exists = no vassal_of = BRZ } NOT = { has_country_flag = ladario_independent_state } NOT = { has_country_flag = monarchy_government } }
                     MAR = { OR = { exists = no vassal_of = BRZ } NOT = { has_country_flag = monarchy_government } }
                     PNB = { OR = { exists = no vassal_of = BRZ } NOT = { has_country_flag = monarchy_government } }
                     MGR = { OR = { exists = no vassal_of = BRZ } NOT = { has_country_flag = monarchy_government } }
@@ -4478,7 +4763,7 @@ country_event = {
                     RGS = { OR = { exists = no vassal_of = BRZ } NOT = { government = democracy government = presidential_dictatorship government = radical_republic } }
                     BAH = { OR = { exists = no vassal_of = BRZ } NOT = { government = democracy government = presidential_dictatorship government = radical_republic } }
                     PAA = { OR = { exists = no vassal_of = BRZ } NOT = { government = democracy government = presidential_dictatorship government = radical_republic } }
-                    MGO = { OR = { exists = no vassal_of = BRZ } NOT = { government = democracy government = presidential_dictatorship government = radical_republic } }
+                    MGO = { OR = { exists = no vassal_of = BRZ } NOT = { has_country_flag = ladario_independent_state } NOT = { government = democracy government = presidential_dictatorship government = radical_republic } }
                     MAR = { OR = { exists = no vassal_of = BRZ } NOT = { government = democracy government = presidential_dictatorship government = radical_republic } }
                     PNB = { OR = { exists = no vassal_of = BRZ } NOT = { government = democracy government = presidential_dictatorship government = radical_republic } }
                     MGR = { OR = { exists = no vassal_of = BRZ } NOT = { government = democracy government = presidential_dictatorship government = radical_republic } }
@@ -4492,7 +4777,7 @@ country_event = {
                     RGS = { OR = { exists = no vassal_of = BRZ } NOT = { government = proletarian_dictatorship } }
                     BAH = { OR = { exists = no vassal_of = BRZ } NOT = { government = proletarian_dictatorship } }
                     PAA = { OR = { exists = no vassal_of = BRZ } NOT = { government = proletarian_dictatorship } }
-                    MGO = { OR = { exists = no vassal_of = BRZ } NOT = { government = proletarian_dictatorship } }
+                    MGO = { OR = { exists = no vassal_of = BRZ } NOT = { has_country_flag = ladario_independent_state } NOT = { government = proletarian_dictatorship } }
                     MAR = { OR = { exists = no vassal_of = BRZ } NOT = { government = proletarian_dictatorship } }
                     PNB = { OR = { exists = no vassal_of = BRZ } NOT = { government = proletarian_dictatorship } }
                     MGR = { OR = { exists = no vassal_of = BRZ } NOT = { government = proletarian_dictatorship } }
@@ -4525,7 +4810,7 @@ country_event = {
             owner = { any_country = { limit = { tag = RGS OR = { exists = no vassal_of = BRZ } } government = hms_government } }
             owner = { any_country = { limit = { tag = BAH OR = { exists = no vassal_of = BRZ } } government = hms_government } }
             owner = { any_country = { limit = { tag = PAA OR = { exists = no vassal_of = BRZ } } government = hms_government } }
-            owner = { any_country = { limit = { tag = MGO OR = { exists = no vassal_of = BRZ } } government = hms_government } }
+            owner = { any_country = { limit = { tag = MGO OR = { exists = no vassal_of = BRZ } NOT = { has_country_flag = ladario_independent_state } } government = hms_government } }
             owner = { any_country = { limit = { tag = MAR OR = { exists = no vassal_of = BRZ } } government = hms_government } }
             owner = { any_country = { limit = { tag = PNB OR = { exists = no vassal_of = BRZ } } government = hms_government } }
             owner = { any_country = { limit = { tag = MGR OR = { exists = no vassal_of = BRZ } } government = hms_government } }
@@ -4537,7 +4822,7 @@ country_event = {
             owner = { any_country = { limit = { tag = RGS OR = { exists = no vassal_of = BRZ } } government = presidential_dictatorship } }
             owner = { any_country = { limit = { tag = BAH OR = { exists = no vassal_of = BRZ } } government = presidential_dictatorship } }
             owner = { any_country = { limit = { tag = PAA OR = { exists = no vassal_of = BRZ } } government = presidential_dictatorship } }
-            owner = { any_country = { limit = { tag = MGO OR = { exists = no vassal_of = BRZ } } government = presidential_dictatorship } }
+            owner = { any_country = { limit = { tag = MGO OR = { exists = no vassal_of = BRZ } NOT = { has_country_flag = ladario_independent_state } } government = presidential_dictatorship } }
             owner = { any_country = { limit = { tag = MAR OR = { exists = no vassal_of = BRZ } } government = presidential_dictatorship } }
             owner = { any_country = { limit = { tag = PNB OR = { exists = no vassal_of = BRZ } } government = presidential_dictatorship } }
             owner = { any_country = { limit = { tag = MGR OR = { exists = no vassal_of = BRZ } } government = presidential_dictatorship } }
@@ -4549,7 +4834,7 @@ country_event = {
             owner = { any_country = { limit = { tag = RGS OR = { exists = no vassal_of = BRZ } } government = proletarian_dictatorship } }
             owner = { any_country = { limit = { tag = BAH OR = { exists = no vassal_of = BRZ } } government = proletarian_dictatorship } }
             owner = { any_country = { limit = { tag = PAA OR = { exists = no vassal_of = BRZ } } government = proletarian_dictatorship } }
-            owner = { any_country = { limit = { tag = MGO OR = { exists = no vassal_of = BRZ } } government = proletarian_dictatorship } }
+            owner = { any_country = { limit = { tag = MGO OR = { exists = no vassal_of = BRZ } NOT = { has_country_flag = ladario_independent_state } } government = proletarian_dictatorship } }
             owner = { any_country = { limit = { tag = MAR OR = { exists = no vassal_of = BRZ } } government = proletarian_dictatorship } }
             owner = { any_country = { limit = { tag = PNB OR = { exists = no vassal_of = BRZ } } government = proletarian_dictatorship } }
             owner = { any_country = { limit = { tag = MGR OR = { exists = no vassal_of = BRZ } } government = proletarian_dictatorship } }
@@ -4561,7 +4846,7 @@ country_event = {
             owner = { any_country = { limit = { tag = RGS OR = { exists = no vassal_of = BRZ } } government = fascist_dictatorship } }
             owner = { any_country = { limit = { tag = BAH OR = { exists = no vassal_of = BRZ } } government = fascist_dictatorship } }
             owner = { any_country = { limit = { tag = PAA OR = { exists = no vassal_of = BRZ } } government = fascist_dictatorship } }
-            owner = { any_country = { limit = { tag = MGO OR = { exists = no vassal_of = BRZ } } government = fascist_dictatorship } }
+            owner = { any_country = { limit = { tag = MGO OR = { exists = no vassal_of = BRZ } NOT = { has_country_flag = ladario_independent_state } } government = fascist_dictatorship } }
             owner = { any_country = { limit = { tag = MAR OR = { exists = no vassal_of = BRZ } } government = fascist_dictatorship } }
             owner = { any_country = { limit = { tag = PNB OR = { exists = no vassal_of = BRZ } } government = fascist_dictatorship } }
             owner = { any_country = { limit = { tag = MGR OR = { exists = no vassal_of = BRZ } } government = fascist_dictatorship } }

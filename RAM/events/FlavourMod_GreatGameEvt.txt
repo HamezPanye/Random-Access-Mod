@@ -80,7 +80,7 @@ country_event = {
     trigger = {
         tag = ENG
 		year = 1842
-        AFG = {
+        KND = {
 			OR = {
 				government = absolute_empire
 				government = semi_constitutional_empire
@@ -100,9 +100,12 @@ country_event = {
         set_global_flag = graveyard_of_empires
         relation = { who = AFG value = -200 }
         diplomatic_influence = { who = AFG value = -200 }
-        release_vassal = AFG
+		relation = { who = KND value = -200 }
+        diplomatic_influence = { who = KND value = -200 }
+        release_vassal = KND
 		AFG = { clr_country_flag = colony_exemption }
-        release = AFG
+		KND = { clr_country_flag = colony_exemption }
+        release = KND
         any_pop = {
             limit = {
                 location = { is_core = THIS }
@@ -114,69 +117,63 @@ country_event = {
             militancy = 0.5
             consciousness = 2.5
         }
-        AFG = { government = absolute_monarchy }
-        AFG = { create_vassal = MYN create_vassal = KND create_vassal = HNZ create_vassal = KSN create_vassal = CRL create_vassal = HAZ }
-		random_owned = {
+		AFG = { all_core = { remove_core = KND } }
+		any_land_province = {
 			limit = {
+				province_id = 1213
 				owner = {
-					HAZ = { vassal_of = THIS exists = yes }
-					owns = 1213
-				}
-			}
-			owner = {
-				1213 = { secede_province = HAZ }
-			}
-		}
-		HAZ = { government = colonial_company }
-		random_owned = {
-			limit = {
-				owner = {
-					HRT = { exists = yes is_vassal = no }
-				}
-			}
-			owner = {
-				AFG = {
-					create_vassal = HRT
-					any_owned = {
-						limit = {
-							OR = {
-								province_id = 1212
-								province_id = 1214
-								province_id = 3528
-								province_id = 3356
-							}
-						}
-						secede_province = THIS
-					}
-				}
-			}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					HRT = { exists = yes vassal_of = AFG }
 					OR = {
-						owns = 1212
-						owns = 1214
-						owns = 3528
-						owns = 3356
+						tag = KND
+						tag = HRT
+						tag = AFG
+						tag = HND
+						tag = ENG
+						tag = EIC
 					}
 				}
 			}
-			owner = {
-				any_owned = {
-					limit = {
-						OR = {
-							province_id = 1212
-							province_id = 1214
-							province_id = 3528
-							province_id = 3356
-						}
-					}
-					secede_province = HRT
-				}
-			}
+			secede_province = THIS
+			secede_province = HAZ
 		}
+		any_land_province = {
+			limit = {
+				OR = {
+					province_id = 3529
+					is_core = HAZ
+				}
+				owner = {
+					OR = {
+						tag = KND
+						tag = AFG
+						tag = HND
+						tag = ENG
+						tag = EIC
+					}
+				}
+			}
+			secede_province = THIS
+			secede_province = HAZ
+		}
+		any_land_province = {
+			limit = {
+				is_core = AFG
+				owner = {
+					OR = {
+						tag = KND
+						tag = HRT
+						tag = AFG
+						tag = HND
+						tag = ENG
+						tag = EIC
+					}
+				}
+			}
+			secede_province = THIS
+			secede_province = AFG
+		}
+		KND = { capital = 1215 government = absolute_monarchy }
+		AFG = { capital = 1209 government = absolute_monarchy }
+        AFG = { create_vassal = MYN create_vassal = HNZ create_vassal = KSN create_vassal = CRL }
         ai_chance = { factor = 100 }
     }
 	#anglo-afghan bookmark elfinstone
@@ -205,6 +202,7 @@ country_event = {
             secede_province = AFG
         }
         1210 = { secede_province = AFG }
+        4134 = { secede_province = AFG }
         FROM = {
             badboy = -3
             prestige = 15
@@ -325,6 +323,7 @@ province_event = {
 				owner = {
 					KUN = { exists = no }
 					1211 = { NOT = { is_core = KUN } }
+					4193 = { NOT = { is_core = KUN } }
 				}
 			}
 			owner = { KUN = { all_core = { remove_core = KUN } } }
@@ -412,15 +411,16 @@ country_event = {
         year = 1837
         owns = 1147
         war = no
+		has_country_flag = mohammadshah
         1212 = {
             owner = {
                 war = no
                 tag = HRT
-				vassal_of = PER
             }
         }
         NOT = {
             truce_with = AFG
+			truce_with = HRT
             truce_with = ENG
             has_global_flag = herat_expedition
         }
@@ -560,6 +560,8 @@ country_event = {
         HRT = { all_core = { remove_core = PER } }
 		3355 = { add_core = KHT }
 		3356 = { add_core = PER }
+		3528 = { remove_core = PER secede_province = HAZ }
+		4194 = { remove_core = PER secede_province = MYN }
 		any_owned = { limit = { is_core = HRT } secede_province = HRT }
 
 		random_owned = {
@@ -617,11 +619,7 @@ country_event = {
 			}
 		}
         ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 0
-				has_global_flag = railroaded_yes_anglo_persian_war
-			}
+			factor = 0.9
 		}
     }
 
@@ -632,16 +630,7 @@ country_event = {
         ENG = { country_event = 99202 }
         RUS = { country_event = 992021 }
         ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 0
-				has_global_flag = railroaded_no_anglo_persian_war
-			}
-			modifier = {
-				factor = 0
-				NOT = { has_global_flag = railroaded_no_anglo_persian_war }
-				NOT = { has_global_flag = railroaded_yes_anglo_persian_war }
-			}
+			factor = 0.1
 		}
     }
 }
@@ -664,6 +653,7 @@ country_event = {
 			attacker_goal = { casus_belli = anglo_persian_cb }
             defender_goal = { casus_belli = status_quo }
         }
+		1136 = { change_controller = ENG }
 		set_global_flag = uk_herat_intervention
         ai_chance = { factor = 1 }
     }
@@ -842,6 +832,8 @@ country_event = {
 			secede_province = HRT
 		}
         HRT = { all_core = { remove_core = PER } }
+		4194 = { remove_core = PER secede_province = MYN }
+		3528 = { remove_core = PER secede_province = HAZ }
 		random_owned = {
 			limit = {
 				owner = {
@@ -962,6 +954,8 @@ country_event = {
 			}
 			secede_province = HRT
 		}
+		4194 = { remove_core = PER }
+		3528 = { remove_core = PER }
 		HRT = { all_core = { add_core = AFG remove_core = PER } }
 		HAZ = { all_core = { add_core = AFG remove_core = PER } }
 		2638 = { remove_core = AFG }
@@ -1154,18 +1148,25 @@ province_event = {
         is_core = PER
         owned_by = PER
         OR = {
-			is_core = HRT #Herat
-			is_core = KND #Kandahar
             is_core = ZFN #Za'farnlu
-            is_core = MKN #Mukriyan
 			is_core = MKU #Jelali
 			is_core = SHD #Shadlu
 			is_core = BSR #Bushehr
 			is_core = KGN #Kagan
             is_core = URM #Urmia
-            is_core = KHZ #Arabistan
             is_core = OMA #Omani Coast
             is_core = RDL #Ardalan
+            is_core = MKR #Ardalan
+			is_core = BNB #Baban
+			is_core = SRN #Soran
+			is_core = MKN #Bahdinan
+			is_core = BDN #Hakkari
+			is_core = BZD #Bayezid
+			is_core = KHL #Zirqan
+			is_core = BTL #Bitlis
+			is_core = BHT #Bhotan
+			is_core = MLN #Milli
+			is_core = TSI #Tasini
             AND = {
                 province_id = 1136 #Bushire
                 is_core = BHR #Bahrain
@@ -1188,20 +1189,60 @@ province_event = {
         name = "EVTOPT99928"
         state_scope = {
             any_owned = {
-				remove_core = KND
-				remove_core = HRT
                 remove_core = ZFN
-                remove_core = MKN
                 remove_core = URM
-                remove_core = KHZ
                 remove_core = OMA
                 remove_core = BHR
                 remove_core = RDL
+                remove_core = MKR
 				remove_core = MAK
 				remove_core = SHD
 				remove_core = MKU
 				remove_core = BSR
 				remove_core = KGN
+				remove_core = BNB
+				remove_core = SRN
+				remove_core = MKN
+				remove_core = BDN
+				remove_core = BZD
+				remove_core = KHL
+				remove_core = BTL
+				remove_core = BHT
+				remove_core = MLN
+				remove_core = TSI
+            }
+        }
+        PER = { plurality = 0.4 }
+        ai_chance = { factor = 1 }
+    }
+}
+
+province_event = {
+    id = 99303
+    title = "EVTNAME99301"
+    desc = "EVTDESC99301"
+
+    trigger = {
+        is_core = PER
+        owned_by = PER
+		year = 1845
+        OR = {
+			is_core = HRT #Herat
+			is_core = KND #Kandahar
+			is_core = MYN #Chahar Vilayets
+        }
+		owner = { war = no }
+    }
+
+    mean_time_to_happen = { months = 1 }
+
+    option = {
+        name = "EVTOPT99928"
+        state_scope = {
+            any_owned = {
+				remove_core = KND
+				remove_core = HRT
+				remove_core = MYN
             }
         }
         PER = { plurality = 0.4 }
@@ -1271,10 +1312,8 @@ country_event = {
 			limit = {
 				province_id = 3512
 			}
-			# Audax Validator "." Ignore_NEXT
 			secede_province = ---
 			life_rating = -15
-			add_core = PER
 			remove_core = KAL
 		}
 		any_owned = {
@@ -2221,7 +2260,6 @@ country_event = {
 			owns = 1150
 		}
 		KHR = { exists = no }
-		civilized = no
     }
 
     mean_time_to_happen = { months = 3 }
@@ -2262,7 +2300,7 @@ country_event = {
 }
 country_event = {
     id = 123704
-    title = "Hasan Khan Salar returns"
+    title = "Hasan Khan Salar Returns"
     desc = "EVTDESC123704"
     picture = "salar"
 	
@@ -2289,7 +2327,7 @@ country_event = {
 			SHD = { exists = no }
 			SHD = { vassal_of = THIS }
 		}
-		civilized = no
+		NOT = { has_country_flag = transcaspia_claim }
     }
 
     mean_time_to_happen = { months = 3 }
@@ -2503,19 +2541,17 @@ country_event = {
 		leave_alliance = AFG
 		RUS = { diplomatic_influence = { who = AFG value = 400 } }
 		RUS = { create_alliance = AFG }
-		AFG = { create_vassal = HNZ create_vassal = KSN create_vassal = CRL create_vassal = HAZ }
+		AFG = { create_vassal = HNZ create_vassal = KSN create_vassal = CRL }
 		random_owned = {
 			limit = {
 				owner = {
-					HAZ = { vassal_of = THIS exists = yes }
-					owns = 1213
+					has_global_flag = afghan_hazara
 				}
 			}
 			owner = {
-				1213 = { secede_province = HAZ }
+				AFG = { create_vassal = HAZ }
 			}
 		}
-		HAZ = { government = colonial_company }
 		ai_chance = { factor = 0 }
     }
 	option = {
@@ -2525,19 +2561,17 @@ country_event = {
         relation = { who = AFG value = -200 }
         diplomatic_influence = { who = AFG value = -200 }
 		AFG = { add_casus_belli = { target = ENG type = cut_down_to_size_no_infamy months = 12 } }
-		AFG = { create_vassal = HNZ create_vassal = KSN create_vassal = CRL create_vassal = HAZ }
+		AFG = { create_vassal = HNZ create_vassal = KSN create_vassal = CRL }
 		random_owned = {
 			limit = {
 				owner = {
-					HAZ = { vassal_of = THIS exists = yes }
-					owns = 1213
+					has_global_flag = afghan_hazara
 				}
 			}
 			owner = {
-				1213 = { secede_province = HAZ }
+				AFG = { create_vassal = HAZ }
 			}
 		}
-		HAZ = { government = colonial_company }
         war = {
             target = AFG
             attacker_goal = { casus_belli = scripted_war_big }
@@ -2551,7 +2585,7 @@ country_event = {
     id = 123713
     title = "The Hazara Uprising"
     desc = "EVTDESC123713"
-	picture = "hazara"
+	picture = "hazara_genocide"
 	
 	fire_only_once = yes
 
@@ -2567,6 +2601,7 @@ country_event = {
 		name = "Crush them!"
 		release_vassal = HAZ
 		1213 = { add_core = AFG }
+		4100 = { add_core = AFG }
 		3529 = { add_core = AFG }
 		3528 = { add_core = AFG }
 		any_pop = {
@@ -2837,9 +2872,9 @@ country_event = {
 		name = "It took them long enough."
 		3518 = { remove_core = BDK }
 		1208 = { remove_core = BDK }
+		1208 = { remove_core = DRV }
 		3519 = { remove_core = KUN }
-		3518 = { remove_core = KUN }
-		4134 = { remove_core = KUN remove_core = BDK }
+		3518 = { remove_core = KUN remove_core = BDK }
 		KUN = { annex_to = AFG }
 		BDK = { annex_to = AFG }
 		WKH = { annex_to = AFG }
@@ -2849,7 +2884,9 @@ country_event = {
 					province_id = 2519
 					province_id = 3516
 					province_id = 1211
+					province_id = 4193
 					province_id = 1210
+					province_id = 4134
 					province_id = 1212
 					province_id = 3517
 					province_id = 3523
@@ -2857,6 +2894,7 @@ country_event = {
 					province_id = 1209
 					province_id = 3529
 					province_id = 1213
+					province_id = 4056
 					province_id = 1217
 					province_id = 3528
 					province_id = 3526
@@ -2883,7 +2921,9 @@ country_event = {
     option = {
 		name = "It has been demarcated, for better or worse."
 		1211 = { add_core = AFG }
+		4193 = { add_core = AFG }
 		1210 = { add_core = AFG }
+		4134 = { add_core = AFG }
 		4133 = { add_core = AFG }
 		3517 = { add_core = AFG }
 		2519 = { add_core = AFG }
@@ -2901,6 +2941,7 @@ country_event = {
 					province_id = 1202
 					province_id = 1201
 					province_id = 1200
+					province_id = 4207
 					province_id = 1206
 					province_id = 3442
 					province_id = 3785
@@ -3020,6 +3061,8 @@ country_event = {
 
     option = {
 		name = "Splendid! Seize Herat! §RGain 2.5 infamy§W"
+		clr_country_flag = blocking_ca
+		set_country_flag = treaty_of_panjdeh
 		AFG = { country_event = 123734 }
 		badboy = 2.5
 		relation = { who = AFG value = -400 }
@@ -3028,6 +3071,7 @@ country_event = {
 	}
 	option = {
 		name = "Leave Herat to the Afghans. §GLose 1 infamy§W"
+		clr_country_flag = blocking_ca
 		AFG = { country_event = 123735 }
 		relation = { who = AFG value = 150 }
 		diplomatic_influence = { who = AFG value = 150 }
@@ -3046,11 +3090,29 @@ country_event = {
 
     option = {
 		name = "We won't forget this."
-		1212 = { secede_province = RUS }
-		3514 = { secede_province = RUS remove_core = THIS }
-		3356 = { secede_province = RUS }
-		3516 = { secede_province = RUS }
-		2519 = { secede_province = RUS }
+		any_owned = {
+			limit = {
+				OR = {
+					region = AFG_1214 #Kunduz
+					province_id = 3356 #Ghoryan
+					province_id = 1212 #Herat
+					province_id = 3529 #Sar-e Pol
+					province_id = 2519 #Mayamana
+					province_id = 3516 #Mazar e-Sharif
+					province_id = 3514 #Panjdeh
+					province_id = 1211 #Konduz
+					province_id = 4193 #Tashqurghan
+					province_id = 1210 #Faizabad
+					province_id = 4134 #Kham
+					province_id = 3517 #Qal'eh-ye Panjeh
+					province_id = 4194 #Qal'eh-ye Naw
+					province_id = 4133 #Taleqan
+					province_id = 3355 #Lash wa Juwayn
+				}
+			}
+			secede_province = RUS
+		}
+		3514 = { remove_core = AFG }
 	}
 }
 country_event = {
@@ -3078,6 +3140,7 @@ country_event = {
 
     option = {
 		name = "Perfidious Albion! Seize Herat! §RGain 2.5 infamy§W"
+		clr_country_flag = blocking_ca
 		leave_alliance = AFG
 		leave_alliance = ENG
 		relation = { who = ENG value = -400 }
@@ -3097,6 +3160,7 @@ country_event = {
 	}
 	option = {
 		name = "Leave Herat to the Afghans. §GLose 1 infamy§W"
+		clr_country_flag = blocking_ca
 		AFG = { country_event = 123736 }
 		relation = { who = AFG value = 150 }
 		diplomatic_influence = { who = AFG value = 150 }
@@ -3129,6 +3193,7 @@ country_event = {
 
     option = {
 		name = "We will make no step back! §RGain 2.5 infamy§W"
+		clr_country_flag = blocking_ca
 		leave_alliance = AFG
 		leave_alliance = ENG
 		relation = { who = ENG value = -400 }
@@ -3148,6 +3213,7 @@ country_event = {
 	}
 	option = {
 		name = "This isn't worth a war. §GLose 1 infamy§W"
+		clr_country_flag = blocking_ca
 		relation = { who = AFG value = 150 }
 		relation = { who = ENG value = 150 }
 		diplomatic_influence = { who = AFG value = 150 }
@@ -3169,15 +3235,21 @@ country_event = {
 		any_owned = {
 			limit = {
 				OR = {
-					province_id = 3356
-					province_id = 1212
-					province_id = 3529
-					province_id = 2519
-					province_id = 3516
-					province_id = 3514
-					province_id = 1211
-					province_id = 1210
-					province_id = 3517
+					region = AFG_1214 #Kunduz
+					province_id = 3356 #Ghoryan
+					province_id = 1212 #Herat
+					province_id = 3529 #Sar-e Pol
+					province_id = 2519 #Mayamana
+					province_id = 3516 #Mazar e-Sharif
+					province_id = 3514 #Panjdeh
+					province_id = 1211 #Konduz
+					province_id = 4193 #Tashqurghan
+					province_id = 1210 #Faizabad
+					province_id = 4134 #Kham
+					province_id = 3517 #Qal'eh-ye Panjeh
+					province_id = 4194 #Qal'eh-ye Naw
+					province_id = 4133 #Taleqan
+					province_id = 3355 #Lash wa Juwayn
 				}
 			}
 			secede_province = RUS
@@ -3488,7 +3560,7 @@ country_event = {
 	
 	fire_only_once = yes
 
-    trigger = { has_country_flag = is_new_ca_empire accepted_culture = persian PER = { exists = no } OR = { owns = 1121 owns = 1127 owns = 1108 owns = 1135 owns = 1130 owns = 1212 } }
+    trigger = { has_country_flag = is_new_ca_empire primary_culture = persian PER = { exists = no } OR = { owns = 1121 owns = 1127 owns = 1108 owns = 1135 owns = 1130 owns = 1212 } }
 	
 	mean_time_to_happen = { days = 1 }
 	

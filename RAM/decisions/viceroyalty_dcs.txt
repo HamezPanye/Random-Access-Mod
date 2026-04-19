@@ -197,6 +197,7 @@ political_decisions = {
                     all_core = {
                         OR = {
                             owned_by = THIS
+							owned_by = RUS
                             owner = {
                                 in_sphere = THIS
                                 vassal_of = THIS
@@ -508,6 +509,12 @@ political_decisions = {
 			MEE = { government = colonial_company_4 primary_culture = spanish add_accepted_culture = mexican }
 			country_event = 123937
 			country_event = 123934
+			random_owned = {
+				limit = {
+					owner = { MEE = { owns = 139 } }
+				}
+				owner = { country_event = 1239371 }
+			}
 			diplomatic_influence = { who = MEE value = 400 }
         }
 
@@ -538,8 +545,9 @@ political_decisions = {
                     all_core = {
                         OR = {
 							province_id = 3567
-							province_id = 3998 
+							province_id = 4204 
                             owned_by = THIS
+							owned_by = BRZ
                             owner = {
                                 in_sphere = THIS
                                 vassal_of = THIS
@@ -560,9 +568,12 @@ political_decisions = {
                     all_core = {
                         OR = {
 							province_id = 3567
-							province_id = 3998 
+							province_id = 4204 
+							province_id = 2404 
 							province_id = 2532
                             owned_by = THIS
+							owned_by = BRZ
+							owned_by = ENG
                             owner = {
                                 in_sphere = THIS
                                 vassal_of = THIS
@@ -584,8 +595,9 @@ political_decisions = {
                     all_core = {
                         OR = {
 							province_id = 3567
-							province_id = 3998 
+							province_id = 4204 
                             owned_by = THIS
+							owned_by = BRZ
                             owner = {
                                 in_sphere = THIS
                                 vassal_of = THIS
@@ -598,6 +610,7 @@ political_decisions = {
                             }
                         }
                     }
+					NOT = { any_land_province = { is_core = ECU } }
                 }
             }
             ECM = {
@@ -607,6 +620,7 @@ political_decisions = {
                         OR = {
 							province_id = 3567
                             owned_by = THIS
+							owned_by = BRZ
                             owner = {
                                 in_sphere = THIS
                                 vassal_of = THIS
@@ -616,6 +630,7 @@ political_decisions = {
 							empty = yes
                         }
                     }
+					NOT = { any_land_province = { is_core = ECM } }
                 }
             }
         }
@@ -790,6 +805,7 @@ political_decisions = {
 					all_core = {
 						OR = {
 							owned_by = THIS
+							owned_by = BRZ
 							owner = {
 								in_sphere = THIS
 								vassal_of = THIS
@@ -799,9 +815,10 @@ political_decisions = {
 							empty = yes
 							province_id = 3651
 							province_id = 4186
-							province_id = 3995
+							province_id = 4201
+							province_id = 4212
 							province_id = 3652
-							province_id = 3996
+							province_id = 4202
 							province_id = 2404
                             owner = {
                                 is_culture_group = native_american
@@ -816,6 +833,7 @@ political_decisions = {
 					all_core = {
 						OR = {
 							owned_by = THIS
+							owned_by = BRZ
 							owner = {
 								in_sphere = THIS
 								vassal_of = THIS
@@ -1022,6 +1040,7 @@ political_decisions = {
 								all_core = {
 									OR = {
 										owned_by = THIS
+										owned_by = BRZ
 										owner = {
 											in_sphere = THIS
 											vassal_of = THIS
@@ -1043,6 +1062,7 @@ political_decisions = {
 								all_core = {
 									OR = {
 										owned_by = THIS
+										owned_by = BRZ
 										owner = {
 											in_sphere = THIS
 											vassal_of = THIS
@@ -1064,8 +1084,8 @@ political_decisions = {
 							vassal_of = THIS
 							all_core = {
 								OR = {
-									province_id = 2346
 									owned_by = THIS
+									owned_by = BRZ
 									owner = {
 										in_sphere = THIS
 										vassal_of = THIS
@@ -1086,6 +1106,7 @@ political_decisions = {
 							all_core = {
 								OR = {
 									owned_by = THIS
+									owned_by = BRZ
 									owner = {
 										in_sphere = THIS
 										vassal_of = THIS
@@ -1107,6 +1128,7 @@ political_decisions = {
 						all_core = {
 							OR = {
 								owned_by = THIS
+								owned_by = BRZ
 								owner = {
 									in_sphere = THIS
 									vassal_of = THIS
@@ -1114,6 +1136,7 @@ political_decisions = {
 									is_greater_power = no
 								}
 								empty = yes
+								province_id = 2131
 								owner = {
 									is_culture_group = native_american
 								}
@@ -1310,6 +1333,17 @@ political_decisions = {
 				owner = {
 					3559 = { secede_province = THIS }
 					3559 = { secede_province = LPL }
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						LPL = { owns = 3950 }
+					}
+				}
+				owner = {
+					4208 = { secede_province = THIS }
+					4208 = { secede_province = LPL }
 				}
 			}
 			diplomatic_influence = { who = LPL value = 400 }

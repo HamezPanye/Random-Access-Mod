@@ -570,7 +570,9 @@ country_event = {
 	
     option = {
         name = "Great!"
-		TUR = { relation = { who = KLS value = -150 } diplomatic_influence = { who = KLS value = -400 } }
+		TUR = { relation = { who = BHT value = -150 } diplomatic_influence = { who = BHT value = -400 } }
+        random_owned = { limit = { owner = { BHT = { vassal_of = TUR } } } owner = { TUR = { release_vassal = BHT } } }
+		random_owned = { limit = { owner = { BHT = { alliance_with = TUR } } } owner = { TUR = { leave_alliance = BHT } } }
     }
 }
 #If the Taiping Rebellion is Defeated

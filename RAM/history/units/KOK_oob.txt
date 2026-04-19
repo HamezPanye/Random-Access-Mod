@@ -1,25 +1,49 @@
 KAZ = {
     value = -200
 }
+BUK = { truce_until = 1837.1.1 value = 10 }
 
 army = {
-    name = "Kokand Army"
+    name = "1st Kuhna Army"
     location = 1189
     regiment = {
         name = "1st Brigade"
-        type = cavalry
+        type = irregular
         home = 1195
     }
 
     regiment = {
-        name = "1st Cavalry"
+        name = "1st Cavalry Brigade"
         type = cavalry
         home = 1195
     }
 }
 
 army = {
-	name = "Ghalchah Army"
+    name = "Kushbeg's Army"
+    location = 1195
+	leader = {
+		name = "Lashkar Kushbegi"
+		type = land
+		date = 1828.8.20
+		background = attack_1.1
+		personality = defence_2.1
+		}
+    regiment = {
+        name = "1st Brigade"
+        type = irregular
+        home = 1202
+    }
+
+    regiment = {
+        name = "2nd Brigade"
+        type = irregular
+        home = 1202
+    }
+}
+
+army = {
+	name = "Ghalchah Jadid Army"
     location = 1203
     regiment = {
         name = "1st Tajik Brigade"
@@ -61,10 +85,22 @@ army = {
         type = irregular
         home = 1201
     }
+	
+	regiment = {
+        name = "4th Holy Brigade"
+        type = irregular
+        home = 4135
+    }
+	
+	regiment = {
+        name = "5th Holy Brigade"
+        type = irregular
+        home = 4136
+    }
 }
 
 army = {
-    name = "2nd Army of The Khanate of Kokand"
+    name = "2nd Kuhna Army"
     location = 1202 
     regiment = {
         name = "1st Brigade"
@@ -73,8 +109,8 @@ army = {
     }
 
     regiment = {
-        name = "2nd Brigade"
-        type = cavalry
+        name = "1st Tupchi Brigade"
+        type = artillery
         home = 1195
     }
 }

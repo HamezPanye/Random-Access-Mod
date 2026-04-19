@@ -24,6 +24,7 @@ country_event = {
 			CHL = { truce_with = THIS }
 			year = 1842
 		}
+		NOT = { year = 1850 }
     }
 
 	option = {
@@ -257,6 +258,7 @@ country_event = {
 		OR = {
 			has_country_flag = GCO_freedom
 			has_country_flag = GCO_tainted
+			has_global_flag = mosquera_colombia_full
 		}
 	}
     
@@ -294,13 +296,17 @@ country_event = {
     mean_time_to_happen = { months = 4 }
     
     trigger = {
-		year = 1840
-		is_vassal = no
+		invention = secularization
         tag = GCO
+		is_vassal = no
         owns = 2264
 		owns = 2247
 		owns = 2279
-		OR = { has_country_flag = GCO_freedom has_country_flag = GCO_tainted }
+		OR = {
+			has_country_flag = GCO_freedom
+			has_country_flag = GCO_tainted
+			has_global_flag = mosquera_colombia_full
+		}
 		war = no
     }
 
@@ -430,7 +436,61 @@ country_event = {
 			consciousness = 2
 		}
         add_country_modifier = { name = Colombian_Caribbean_Ambitions duration = 5475 }
+		tech_school = naval_tech_school 
 		ai_chance = { factor = 1 }
+    }
+}
+country_event = {
+    id = 6432011
+    title = "Modernizing the Industry?"
+    desc = "6432011_desc"
+    fire_only_once = yes
+    picture = "clm_civil_war_1854"
+    
+    mean_time_to_happen = { months = 2 }
+    
+    trigger = {
+		year = 1880
+        is_vassal = no
+        OR = { tag = GCO tag = FGC }
+        war = no
+		has_country_flag = GCO_survived
+		has_global_flag = GCO_DESTROYED_BRZ
+		2209 = { owned_by = THIS }
+		2222 = { owned_by = THIS }
+	}
+    
+    option = {
+        name = "Colombia will now focus on their industry!"
+		tech_school = industrial_tech_school
+		any_pop = {
+			limit = { has_pop_culture = north_andean }
+			militancy = -2
+			consciousness = 3
+		}
+		ai_chance = { factor = 1 }
+    }
+    
+    option = {
+        name = "Colombia will stay a military power!"
+		any_pop = {
+			limit = { has_pop_culture = north_andean }
+			militancy = 1
+			consciousness = 3
+		}
+		tech_school = army_tech_school
+		ai_chance = { factor = 0 }
+    }
+    
+    option = {
+        name = "Colombia will stay a naval power!"
+		any_pop = {
+			limit = { has_pop_culture = north_andean }
+			militancy = 1
+			consciousness = 2
+		}
+		tech_school = naval_tech_school
+		ai_chance = { factor = 0 }
     }
 }
 
@@ -474,5 +534,68 @@ country_event = {
 	option = {
         name = "An invasion from Colombia? Highly unlikely."
 		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = {
+	id = 600122
+	title = "Reformist Victory!"
+	desc = "EVTDESC600122"
+	picture = "Reformist_Revolution"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = VNR
+		government = prov_gov_liberal
+		VNZ = { exists = no }
+		GCO = { exists = no }
+		owns = 2264
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "Glory to Colombia!"
+		change_tag = VNZ
+		capital = 2264
+		prestige = 15
+		badboy = 5
+		political_reform = federalism
+		CLM = { all_core = { add_core = VNZ } }
+		ECM = { all_core = { add_core = VNZ } }
+		ECU = { all_core = { add_core = VNZ } }
+		relation = { who = CLM value = -400 }
+		relation = { who = ECU value = -400 }
+		relation = { who = ECM value = -400 }
+		add_country_modifier = { name = national_confusion time = 3650 }
+	}
+}
+
+country_event = {
+	id = 600123
+	title = "Reformism dies down"
+	desc = "EVTDESC600123"
+	picture = "Reformist_Revolution"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = VNZ
+		government = prov_gov_liberal
+		NOT = { has_country_modifier = national_confusion }
+	}
+	
+	mean_time_to_happen = { days = 1 }
+	
+	option = {
+		name = "What a shame..."
+		random_owned = { limit = { owner = { CLM = { exists = no } owns = 2247 } } release_vassal = CLM create_alliance = CLM }
+		random_owned = { limit = { owner = { ECU = { exists = no } owns = 2279 } } release_vassal = ECU create_alliance = ECU }
+		CLM = { all_core = { limit = { OR = { province_id = 2401 province_id = 3567 province_id = 2261 } } remove_core = VNZ } }
+		ECM = { all_core = { remove_core = VNZ } }
+		ECU = { all_core = { remove_core = VNZ } }
+		prestige = -10
+		government = democracy
 	}
 }

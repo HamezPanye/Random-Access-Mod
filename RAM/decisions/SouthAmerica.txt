@@ -321,13 +321,15 @@ political_decisions = {
             year = 1880
             owns = 2550
             owns = 2419
-            owns = 3988
-            owns = 3987
+            owns = 4191
+            owns = 4190
             owns = 4117
             owns = 2532
             owns = 2410
+            owns = 3979
             owns = 2402
-            owns = 3994
+            owns = 4200
+            owns = 110
             owns = 2407
             owns = 4076
             OR = {
@@ -339,12 +341,14 @@ political_decisions = {
 
         allow = {
             owns = 2550
-            owns = 3987
+            owns = 4190
             owns = 4117
             owns = 2532
             owns = 2410
+            owns = 3979
             owns = 2402
-            owns = 3994
+            owns = 4200
+            owns = 110
             owns = 2407
             owns = 4076
 			owns = 3435
@@ -358,10 +362,12 @@ political_decisions = {
         effect = {
             set_country_flag = brazilian_rubber_boom
             2410 = { add_province_modifier = { name = colonial_recruitment duration = 365 } }
+            3979 = { add_province_modifier = { name = colonial_recruitment duration = 365 } }
             2407 = { add_province_modifier = { name = colonial_recruitment duration = 365 } }
             4076 = { add_province_modifier = { name = colonial_recruitment duration = 365 } }
             2402 = { add_province_modifier = { name = colonial_recruitment duration = 365 } }
-            3994 = { add_province_modifier = { name = colonial_recruitment duration = 365 } }
+            4200 = { add_province_modifier = { name = colonial_recruitment duration = 365 } }
+            110 = { add_province_modifier = { name = colonial_recruitment duration = 365 } }
             2419 = { change_province_name = "Campo Grande" trade_goods = cattle }
             3435 = { change_province_name = "Boca do Acre" trade_goods = dye }
 			3381 = { change_province_name = "Eirunepé" }
@@ -588,7 +594,7 @@ political_decisions = {
 				trade_goods = coffee
 			}
 			random_owned = {
-				limit = { owner = { year = 1917 } }
+				limit = { owner = { NOT = { year = 1917 } } }
 				owner = {
 					any_owned = {
 						limit = {
@@ -652,13 +658,6 @@ political_decisions = {
 			any_owned = {
 				limit = {
 					province_id = 2255
-					NOT = { trade_goods = tobacco }
-				}
-				trade_goods = tobacco
-			}
-			any_owned = {
-				limit = {
-					province_id = 3926
 					NOT = { trade_goods = tobacco }
 				}
 				trade_goods = tobacco
@@ -841,11 +840,12 @@ political_decisions = {
         picture = map_colombia
         potential = {
             owns = 3652
-            owns = 3996
+            owns = 4202
 			owns = 1977
             OR = {
                 tag = BRZ
                 tag = UPB
+                tag = PAA
             }
             OR = {
                 is_vassal = no
@@ -854,7 +854,7 @@ political_decisions = {
 						owns = 2401
 						owns = 3359
 						owns = 3567
-                        owns = 3998 
+                        owns = 4204 
 					}
 				}
             }
@@ -867,7 +867,7 @@ political_decisions = {
             2401 = { owner = { NOT = { truce_with = THIS } } }
 			3359 = { owner = { NOT = { truce_with = THIS } } }
 			3567 = { owner = { NOT = { truce_with = THIS } } }
-            3998 = { owner = { NOT = { truce_with = THIS } } } 
+            4204 = { owner = { NOT = { truce_with = THIS } } } 
             OR = {
                 year = 1908
                 mass_politics = 1
@@ -910,10 +910,11 @@ political_decisions = {
 			owns = 3435
 			owns = 4187
 			owns = 3380
-            owns = 3990
+            owns = 4196
             OR = {
                 tag = BRZ
                 tag = UPB
+                tag = PAA
             }
 			NOT = { owns = 2549 }
 			NOT = { owns = 3326 }
@@ -939,12 +940,15 @@ political_decisions = {
             set_country_flag = treaty_of_petropolis
             random_owned = { limit = { owner = { ai = no } } owner = { treasury = -2000000 } }
             any_country = { limit = { OR = { is_core = 2549 is_core = 3326 is_core = 3382 is_core = 3381 is_core = 3435 is_core = 4187 is_core = 2321 } NOT = { tag = PAA tag = THIS } exists = yes } country_event = 46610101 }
-			2549 = { add_core = BRZ }
-			3326 = { add_core = BRZ }
+            random_owned = {
+                limit = { owner = { tag = BRZ } }
+                2549 = { add_core = BRZ }
+                3326 = { add_core = BRZ }
+            }
             random_owned = {
                 limit = { owner = { tag = UPB } }
-                2549 = { add_core = UPB }
-                3326 = { add_core = UPB }
+                2549 = { add_core = UPB add_core = BRZ }
+                3326 = { add_core = UPB add_core = BRZ }
             }
 			2549 = { add_core = PAA }
             3326 = { add_core = PAA }
@@ -1199,79 +1203,6 @@ political_decisions = {
         ai_will_do = { factor = 1 }
     }
 
-    claim_south_atlantic = {
-		picture = sthelena
-        potential = {
-			OR = {
-				owns = 2131
-				owns = 2133
-				owns = 3666
-			}
-            OR = {
-				primary_culture = platinean
-				primary_culture = brazilian
-				primary_culture = patagonian
-			}
-            NOT = {
-                has_country_flag = south_atlantic_claimed
-            }
-			NOT = {
-				2132 = { is_core = THIS }
-				2130 = { is_core = THIS }
-				2129 = { is_core = THIS }
-			}
-		}
-
-        allow = {
-            is_greater_power = yes
-            romanticism = 1
-        }
-
-        effect = {
-            badboy = 2
-			prestige = 3
-            ENG = { prestige = -5 }
-            set_country_flag = south_atlantic_claimed
-            2132 = {
-                add_core = THIS
-            }
-            2130 = {
-                add_core = THIS
-            }
-            2129 = {
-                add_core = THIS
-            }
-            693 = {
-                add_core = THIS
-			}
-			random_owned = {
-				limit = {
-                    2131 = { owned_by = THIS }
-				}
-				owner = {
-					2131 = { add_core = THIS }
-				}
-			}
-			random_owned = {
-				limit = {
-                    2133 = { owned_by = THIS }
-				}
-				owner = {
-					2133 = { add_core = THIS }
-				}
-			}
-			random_owned = {
-				limit = {
-                    3666 = { owned_by = THIS }
-				}
-				owner = {
-					3666 = { add_core = THIS }
-				}
-			}
-		}
-        ai_will_do = { factor = 0 }
-    }
-
     parana_development = {
         picture = parana_river
         potential = {
@@ -1285,11 +1216,11 @@ political_decisions = {
 			owns = 2348
 			OR = {
 				tag = ARG
+				AND = { 
+					nationalvalue = nv_liberty 
+					tag = LPL
+				}
 				has_country_flag = i_am_hsa
-			}
-			OR = {
-                has_global_flag = corrientes_led_argentina
-				capital = 2356
 			}
 			NOT = { has_country_flag = parana_developed }
         }
@@ -1384,7 +1315,6 @@ political_decisions = {
 
         allow = {
             OR = {
-                AND = { is_greater_power = yes military_score = 50 }
                 nationalism_n_imperialism = 1
                 year = 1865
             }
@@ -1412,6 +1342,60 @@ political_decisions = {
 					4023 = { add_core = THIS }
 				}
 			}
+			random_owned = {
+				limit = {
+					owner = {
+						AND = {
+                            2317 = { is_core = THIS owned_by = THIS }
+                            2318 = { is_core = THIS empty = yes }
+                            4024 = { is_core = THIS empty = yes }
+                        }
+					}
+				}
+				owner = {
+					2318 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 20 }
+					4024 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 20 }
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						AND = {
+                            2317 = { is_core = THIS owned_by = THIS }
+                            4191 = { is_core = THIS owned_by = THIS }
+                            4092 = { is_core = THIS empty = yes }
+                        }
+					}
+				}
+				owner = {
+					4092 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 20 }
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						AND = {
+                            4066 = { is_core = THIS owned_by = THIS }
+                            1714 = { is_core = THIS empty = yes }
+                        }
+					}
+				}
+				owner = {
+					1714 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 20 }
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						AND = {
+                            4209 = { is_core = THIS empty = yes }
+                        }
+					}
+				}
+				owner = {
+					4209 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 20 }
+				}
+			}
             2366 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 20 any_pop = { limit = { has_pop_culture = platinean } literacy = 0.05 } }
             2338 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 20 }
             2337 = { secede_province = THIS any_pop = { literacy = -0.99 } life_rating = 20 }
@@ -1425,10 +1409,9 @@ political_decisions = {
     puerto_suarez = {
         picture = puerto_suarez
         potential = {
-			owns = 2318
-			owns = 4066
-			1714 = { empty = yes }
-			4092 = { empty = yes }
+			owns = 2317
+			owns = 4022
+			4209 = { empty = yes }
 			NOT = { has_country_flag = puerto_suarez_foundation }
         }
 
@@ -1445,42 +1428,36 @@ political_decisions = {
         effect = {
             set_country_flag = puerto_suarez_foundation
 			prestige = 1
-			random_owned = {
-				limit = {
-					owner = {
-						OR = {
-							4091 = { is_core = THIS }
-							3570 = { is_core = THIS }
-							4023 = { is_core = THIS }
-						}
-					}
-				}
-				owner = {
-					2318 = { add_core = THIS }
-					4024 = { add_core = THIS }
-					2317 = { add_core = THIS }
-				}
-			}
             2317 = {
                 life_rating = 2
 				change_province_name = "Puerto Suárez"
 				set_global_flag = spanish_rename_robore
 				add_province_modifier = { name = recently_built_city duration = 730 }
             }
-            1714 = {
-				secede_province = THIS
-                any_pop = { limit = { is_primary_culture = no } literacy = -0.99 }
-                any_pop = { limit = { is_primary_culture = yes } literacy = 0.05 }
-                life_rating = 20
-				add_province_modifier = { name = recently_built_city duration = 730 }
-            }
-            4092 = {
-				secede_province = THIS
-                any_pop = { limit = { is_primary_culture = no } literacy = -0.99 }
-                any_pop = { limit = { is_primary_culture = yes } literacy = 0.05 }
-                life_rating = 30
-				add_province_modifier = { name = recently_built_city duration = 730 }
-            }
+            random_owned = {
+				limit = { owner = { 1714 = { empty = yes } } }
+				owner = {
+					1714 = {
+						secede_province = THIS
+						any_pop = { limit = { is_primary_culture = no } literacy = -0.99 }
+						any_pop = { limit = { is_primary_culture = yes } literacy = 0.05 }
+						life_rating = 20
+						add_province_modifier = { name = recently_built_city duration = 730 }
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { 4209 = { empty = yes } } }
+				owner = {
+					4209 = {
+						secede_province = THIS
+						any_pop = { limit = { is_primary_culture = no } literacy = -0.99 }
+						any_pop = { limit = { is_primary_culture = yes } literacy = 0.05 }
+						life_rating = 20
+						add_province_modifier = { name = recently_built_city duration = 730 }
+					}
+				}
+			}
         }
         ai_will_do = { factor = 1 }
     }
@@ -1506,7 +1483,7 @@ political_decisions = {
 					4023 = { is_core = LPL }
 				}
 			}
-			NOT = { has_country_flag = decoud_quijarro owns = 4023 }
+			NOT = { has_country_flag = decoud_quijarro }
         }
 
         allow = {

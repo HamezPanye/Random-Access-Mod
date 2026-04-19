@@ -1156,9 +1156,6 @@
         religion = protestant
         size = 3146
     }
-}
-#Tobago 2238 replace
-3236 = {
     aristocrats = {
         culture = british
         religion = anglican
@@ -3026,6 +3023,40 @@
 		size = 20000
 	}
 }
+3086 = { #Artisans to 2013
+	artisans = { 
+		culture = luvale
+		religion = animist 
+		size = 130
+	}
+	artisans = { 
+		culture = botatwe 
+		religion = animist 
+		size = 70
+	}
+	clergymen = { 
+		culture = botatwe 
+		religion = animist 
+		size = 40
+	}
+}
+3087 = { #Artisans to 3722
+	artisans = { 
+		culture = luvale
+		religion = animist 
+		size = 70
+	}
+	artisans = { 
+		culture = botatwe 
+		religion = animist 
+		size = 80
+	}
+	clergymen = { 
+		culture = botatwe 
+		religion = animist 
+		size = 40
+	}
+}
 3081 = { #Nguni to 2018
 	soldiers = { 
 		culture = nguni
@@ -3299,4 +3330,92 @@
 		religion = sunni 
 		size = 50
 	}
+}
+3750 = { #110
+    soldiers = {
+        culture = brazilian
+        religion = catholic
+        size = 20
+    }
+}
+4203 = { #4076
+    soldiers = {
+        culture = brazilian
+        religion = catholic
+        size = 100
+    }
+}
+2981 = { #2411
+    soldiers = {
+        culture = brazilian
+        religion = catholic
+        size = 100
+    }
+}
+2980 = { #3979
+    soldiers = {
+        culture = brazilian
+        religion = catholic
+        size = 50
+    }
+}
+2982 = { #2410
+    soldiers = {
+        culture = brazilian
+        religion = catholic
+        size = 150
+    }
+}
+3643 = { #2463
+    soldiers = {
+        culture = brazilian
+        religion = catholic
+        size = 1050
+    }
+}
+3642 = { #2464
+    soldiers = {
+        culture = brazilian
+        religion = catholic
+        size = 1200
+    }
+}
+2989 = { #2463
+    soldiers = {
+        culture = afro_brazilian
+        religion = catholic
+        size = 1100
+    }
+}
+#KYRGYZ SETTLEMENT OF ILI
+3233 = {
+    aristocrats = {
+        culture = kirgiz
+        religion = sunni
+        size = 100
+    }
+
+    clergymen = {
+        culture = kirgiz
+        religion = sunni
+        size = 20
+    }
+
+    artisans = {
+        culture = kirgiz
+        religion = sunni
+        size = 300
+    }
+
+    soldiers = {
+        culture = kirgiz
+        religion = sunni
+        size = 80
+    }
+
+    farmers = {
+        culture = kirgiz
+        religion = sunni
+        size = 1000
+    }
 }

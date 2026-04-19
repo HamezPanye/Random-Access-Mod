@@ -199,8 +199,9 @@ political_decisions = {
         }
 
         allow = {
-            nationalism_n_imperialism = 1
             war = no
+			is_vassal = no
+            nationalism_n_imperialism = 1
         }
 
         effect = {
@@ -378,27 +379,34 @@ political_decisions = {
                     2404 = { OR = { is_core = PEU is_core = PBC } }
                     3651 = { OR = { is_core = PEU is_core = PBC } }
                     4186 = { OR = { is_core = PEU is_core = PBC } }
-                    3995 = { OR = { is_core = PEU is_core = PBC } }
+                    4201 = { OR = { is_core = PEU is_core = PBC } }
+                    4212 = { OR = { is_core = PEU is_core = PBC } }
                     3652 = { OR = { is_core = PEU is_core = PBC } }
-                    3996 = { OR = { is_core = PEU is_core = PBC } }
+                    4202 = { OR = { is_core = PEU is_core = PBC } }
                 }
             }
+            NOT = { has_global_flag = claim_madeira }
         }
 
         allow = {
             war = no
-            rank = 12
+            OR = {
+				rank = 12
+				neighbour = PAA
+			}
 			is_vassal = no
 			is_disarmed = no
         }
 
         effect = {
+			set_global_flag = claim_madeira
             2404 = { owner = { relation = { who = THIS value = -100 } } }
             3651 = { add_core = THIS add_core = PEU }
             4186 = { add_core = THIS add_core = PEU }
-            3995 = { add_core = THIS add_core = PEU }
+            4201 = { add_core = THIS add_core = PEU }
+            4212 = { add_core = THIS add_core = PEU }
             3652 = { add_core = THIS add_core = PEU }
-            3996 = { add_core = THIS add_core = PEU }
+            4202 = { add_core = THIS add_core = PEU }
             badboy = 2
         }
 		ai_will_do = {
@@ -406,6 +414,7 @@ political_decisions = {
 			modifier = {
 				factor = 0
 				tag = PEU
+				NOT = { neighbour = PAA }
 			}
 		}
     }
@@ -415,11 +424,8 @@ political_decisions = {
         potential = {
             owns = 2346
             owns = 2464
-            OR = { tag = BRZ tag = UPB }
-            OR = {
-                capital = 3584
-                capital = 2422
-            }
+            OR = { tag = BRZ tag = UPB tag = RGS }
+            capital_scope = { continent = south_america }
             is_vassal = no
 			OR = {
 				URU = {
@@ -465,6 +471,7 @@ political_decisions = {
                     2344 = { owner = { relation = { who = THIS value = 150 } } }
                     state_n_government = 1
                 }
+				URU = { owns = 2344 has_country_flag = rivera_won }
                 year = 1851
             }
         }
@@ -478,8 +485,8 @@ political_decisions = {
     tratado_lleras_lisboa = {
         picture = map_colombia
         potential = {
-            owns = 3998
-			OR = { tag = BRZ tag = UPB }
+            owns = 4204
+			OR = { tag = BRZ tag = UPB tag = PAA }
             is_vassal = no
 			OR = {
 				AND = {
@@ -515,17 +522,19 @@ political_decisions = {
 						OR = {
 							tag = BRZ
 							tag = UPB
+							tag = PAA
 						}
 						OR = {
 							owns = 3651
 							owns = 4186
-							owns = 3995
+							owns = 4201
+                            owns = 4212
 							owns = 3652
-							owns = 3996
+							owns = 4202
 						}
 						OR = {
 							PEU = { owns = 4015 }
-							AND = { PBC = { owns = 4015 } 3995 = { is_core = PBC } }
+							AND = { PBC = { owns = 4015 owns = 4212 } 4201 = { is_core = PBC } }
 						}
 					}
 				}

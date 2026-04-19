@@ -331,7 +331,7 @@ country_event = {
 	allow_multiple_instances = yes
 
     option = {
-        name = "I feel a great disturbance in the Force, as if millions of voices suddenly cried out in terror."
+        name = "I feel a great disturbance in the Force, as if millions of voices suddenly cried out in terror." #you tell me abe you tell me
 		any_owned = {
 			limit = {
 				OR = {
@@ -2336,7 +2336,7 @@ country_event = {
 						owns = 1714
 						owns = 2372
 						owns = 3380
-						owns = 3990
+						owns = 4196
 						owns = 2317
 					}
 				}
@@ -2358,7 +2358,7 @@ country_event = {
 						owns = 1714
 						owns = 2372
 						owns = 3380
-						owns = 3990
+						owns = 4196
 						owns = 2317
 					}
 				}
@@ -2379,7 +2379,7 @@ country_event = {
 						owns = 1714
 						owns = 2372
 						owns = 3380
-						owns = 3990
+						owns = 4196
 						owns = 2317
 						owns = 2337
 						owns = 2338
@@ -2403,7 +2403,7 @@ country_event = {
 						owns = 1714
 						owns = 2372
 						owns = 3380
-						owns = 3990
+						owns = 4196
 						owns = 2317
 						owns = 2337
 						owns = 2338
@@ -2430,7 +2430,7 @@ country_event = {
 						owns = 1714
 						owns = 2372
 						owns = 3380
-						owns = 3990
+						owns = 4196
 						owns = 2317
 						owns = 2337
 						owns = 2343
@@ -2475,7 +2475,7 @@ country_event = {
 						owns = 2372
 						owns = 3380
 						owns = 2317
-						owns = 3990
+						owns = 4196
 						owns = 2343
 						owns = 4114
 						owns = 2339
@@ -2925,9 +2925,10 @@ country_event = {
 					province_id = 2404
 					province_id = 3651
 					province_id = 4186
-					province_id = 3995
+					province_id = 4201
+					province_id = 4212
 					province_id = 3652
-					province_id = 3996
+					province_id = 4202
 					province_id = 2289
 					province_id = 2287
 					province_id = 4011
@@ -2975,7 +2976,6 @@ country_event = {
 			political_reform = no_trade_unions
 			political_reform = first_past_the_post
 			political_reform = underground_parties
-			add_country_modifier = { name = relutanct_figher duration = 3650 }
 		}
 		# Audax Validator "." Ignore_NEXT
 		any_land_province = {
@@ -3113,9 +3113,10 @@ country_event = {
 					province_id = 2404
 					province_id = 3651
 					province_id = 4186
-					province_id = 3995
+					province_id = 4201
+					province_id = 4212
 					province_id = 3652
-					province_id = 3996
+					province_id = 4202
 					province_id = 2289
 					province_id = 2286
 					province_id = 4013
@@ -3146,6 +3147,9 @@ country_event = {
 			}
 			secede_province = PEU
 		}
+		create_alliance = PEU
+		create_alliance = SPU
+		create_alliance = IQC
 	}
 }
 country_event = {
@@ -3232,7 +3236,6 @@ country_event = {
 	is_triggered_only = yes
     option = {
         name = "To battle!"
-		define_general = { name = "Agustín Gamarra Messía" personality = defence_3.1 background = attack_1.1 }
     }
 }
 country_event = {
@@ -3477,60 +3480,6 @@ country_event = {
     }
 }
 country_event = {
-	id = 20041214
-	title = "Ecuador breaks the Pando-Noboa Treaty"
-	desc = "EVTDESC20041214"
-	picture = "peru_ecuador_border"
-	fire_only_once = yes
-	is_triggered_only = yes
-
-	option = {
-	    name = "If they are cancelling the treaty, so are we!"
-		2283 = { add_core = PEU }
-		2284 = { add_core = PEU }
-		4016 = { add_core = PEU }
-		4070 = { add_core = PEU }
-		2288 = { add_core = PEU }
-		4071 = { add_core = PEU }
-		4012 = { add_core = PEU }
-		2289 = { add_core = PEU }
-		random_owned = {
-			limit = {
-				owner = {
-					2263 = { OR = { is_core = ECU is_core = ECM } }
-				}
-			}
-			owner = {
-				2263 = { add_core = PEU }
-			}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					2263 = { OR = { is_core = ECU is_core = ECM } }
-					4016 = { OR = { is_core = ECU is_core = ECM } }
-				}
-			}
-			owner = {
-				4188 = { add_core = PEU }
-			}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					3359 = { OR = { is_core = ECU is_core = ECM } }
-				}
-			}
-			owner = {
-				3359 = { add_core = PEU }
-			}
-		}
-		FROM = {
-			country_event = 184822662
-		}
-	}
-}
-country_event = {
 	id = 1239511
 	title = "The Rise of Gombo Namgye"
 	desc = "GOMBONAMGYE"
@@ -3706,97 +3655,6 @@ country_event = {
 
 }
 
-country_event = {
-	id = 1239506
-	title = "The Rebellion of Isatay Taimanov"
-	desc = "ISATAYTAIMANOV"
-	picture = "isatay_taimanov"
-	fire_only_once = yes
-
-	trigger = {
-		year = 1836
-		tag = RUS
-		BKY = { vassal_of = THIS exists = yes neighbour = THIS }
-		month = 6
-	}
-
-    option = {
-        name = "Bring them back in line!"
-		release_vassal = BKY
-		war = {
-			target = BKY
-			attacker_goal = { casus_belli = make_puppet_no_add_wargoal }
-			defender_goal = { casus_belli = humiliate_no_infamy }
-		}
-		BKY = { define_general = { name = "Isatay Taimanov" personality = defence_1.1 background = attack_2.1 } }
-		ai_chance = { factor = 1 }
-    }
-
-    option = {
-        name = "They aren't worth the bother."
-		release_vassal = BKY
-		any_owned = {
-			limit = { is_core = BKY }
-			secede_province = BKY
-		}
-		BKY = { country_event = 3546765 }
-		prestige = -5
-		ai_chance = { factor = 0 }
-    }
-
-    option = {
-        name = "The Bukey shall be free! §BPlay the revolt§W"
-		release_vassal = BKY
-		war = {
-			target = BKY
-			attacker_goal = { casus_belli = make_puppet_no_add_wargoal }
-			defender_goal = { casus_belli = humiliate_no_infamy }
-			call_ally = yes
-		}
-		BKY = { define_general = { name = "Isatay Taimanov" personality = defence_1.1 background = attack_2.1 } }
-		change_tag_no_core_switch = BKY
-		ai_chance = { factor = 0 }
-    }
-
-	mean_time_to_happen = { days = 1 }
-
-}
-country_event = {
-	id = 3546765
-	title = "Our Liberation"
-	desc = "EVTDESC3546765"
-	picture = "isatay_taimanov"
-	fire_only_once = yes
-	is_triggered_only = yes
-	
-    option = {
-        name = "Yes, unite with the Middle Jüz Kazakhs."
-		prestige = -2
-		2610 = { secede_province = BKY }
-		change_tag_no_core_switch = KAZ
-		inherit = BKY
-		ai_chance = { factor = 0.75 }
-    }
-	option = {
-        name = "We shall declare ourselves Khan of the Junior Jüz."
-		prestige = 10
-		government = absolute_monarchy
-		1183 = { secede_province = BKY }
-		1194 = { secede_province = BKY }
-		2610 = { secede_province = BKY }
-		2656 = { secede_province = BKY }
-		2702 = { secede_province = BKY }
-		4140 = { secede_province = BKY }
-		4174 = { secede_province = BKY }
-		ai_chance = { factor = 0.25 }
-    }
-    option = {
-        name = "No, we shall remain as we are."
-		prestige = 5
-		2610 = { secede_province = BKY }
-		ai_chance = { factor = 0 }
-    }
-}
 country_event = {
 	id = 1239505
 	title = "The Khivan Disaster"
@@ -4172,6 +4030,7 @@ country_event = {
 		OR = {
 			tag = PEU
 			tag = PBC
+			AND = { tag = GCO owns = 2295 }
 			AND = { has_country_flag = i_am_hsa owns = 2295 }
 		}
 	}
@@ -4399,6 +4258,88 @@ country_event = {
 		YUC = { government = colonial_company_4 primary_culture = spanish add_accepted_culture = mexican }
 		FROM = { diplomatic_influence = { who = YUC value = 400 } }
 		YUC = { capital = 2183 }
+	}
+}
+country_event = {
+	id = 1239441
+	title = "The Province of Luisiana"
+	desc = "EVTDESC1239441"
+	picture = "ula_event"
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "Darn."
+		139 = { add_core = ULA } #Louisiana 
+		142 = { add_core = ULA } #Louisiana
+        USA_144 = { add_core = ULA } #Arkansas
+        USA_148 = { add_core = ULA } #Missouri
+        117 = { add_core = ULA } #North Dakota
+        USA_124 = { add_core = ULA } #Nebraska
+        USA_151 = { add_core = ULA } #Iowa
+		USA_126 = { add_core = ULA } #Kansas
+		156 = { add_core = ULA } #Minnesota
+		36 = { add_core = ULA } #Minnesota
+		3321 = { add_core = ULA } #Minnesota
+        3467 = { add_core = ULA } #Montana
+		115 = { add_core = ULA } #Montana
+		113 = { add_core = ULA } #Montana
+		116 = { add_core = ULA } #Montana
+		4103 = { add_core = ULA } #Montana
+        USA_129 = { add_core = ULA } #Oklahoma
+		117 = { add_core = ULA } #Dakota
+		120 = { add_core = ULA } #Dakota
+		121 = { add_core = ULA } #Dakota
+		122 = { add_core = ULA } #Dakota
+        106 = { add_core = ULA } #Colorado
+		3317 = { add_core = ULA } #Wyoming
+        112 = { add_core = ULA } #Wyoming
+        22 = { add_core = ULA } #Wyoming
+		107 = { add_core = ULA } #Wyoming
+		3468 = { add_core = ULA } #Wyoming
+		4099 = { add_core = ULA } #Wyoming
+		4145 = { add_core = ULA } #Wyoming
+		106 = { add_core = ULA } #Colorado
+		103 = { add_core = ULA } #Colorado
+		106 = { add_core = ULA } #Colorado
+		4120 = { add_core = ULA } #Colorado
+		4063 = { add_core = ULA } #Texas
+		4035 = { add_core = ULA } #Texas
+		135 = { add_core = ULA } #Texas
+        24 = { add_core = ULA } #bits of Lousianna territory in Canada
+        30 = { add_core = ULA } #bits of Lousianna territory in Canada
+		any_owned = { limit = { is_core = ULA NOT = { province_id = 141 } } secede_province = ULA }
+		FROM = {
+			create_vassal = ULA
+			create_alliance = ULA
+			diplomatic_influence = { who = ULA value = 400 }
+			relation = { who = ULA value = 400 }
+		}
+		ULA = { government = colonial_company_4 primary_culture = spanish add_accepted_culture = acadian }
+		FROM = { diplomatic_influence = { who = ULA value = 400 } }
+		ULA = { capital = 139 }
+		random_owned = {
+			limit = {
+				owner = { MEE = { owns = 4085 } }
+			}
+			owner = { 
+				140 = { secede_province = SPC remove_core = MEE }
+				194 = { secede_province = SPC remove_core = MEE }
+				197 = { secede_province = SPC remove_core = MEE }
+				198 = { secede_province = SPC remove_core = MEE }
+				199 = { secede_province = SPC remove_core = MEE }
+				4042 = { secede_province = SPC remove_core = MEE }
+				4085 = { secede_province = SPC remove_core = MEE }
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = { MEE = { owns = 200 } }
+			}
+			owner = { 
+				200 = { secede_province = SPC remove_core = MEE }
+			}
+		}
 	}
 }
 country_event = {
@@ -4965,6 +4906,26 @@ country_event = {
 	}
 }
 country_event = {
+	id = 1239371
+	title = "The Province of Luisiana"
+	desc = "EVTDESC1239371"
+	picture = "ula_event"
+	fire_only_once = yes
+	is_triggered_only = yes
+
+	option = {
+		name = "Re-establish it."
+		141 = { add_core = MEE }
+		ULA = { government = colonial_company_4 }
+		MEE = { country_event = 1239441 }
+		create_vassal = ULA
+		ULA = { government = colonial_company_4 }
+	}
+	option = {
+		name = "Keep the Viceroyalty centralized."
+	}
+}
+country_event = {
 	id = 123936
 	title = "The Captaincy General of Chile"
 	desc = "EVTDESC123936"
@@ -5327,7 +5288,7 @@ country_event = {
 					province_id = 3360
 					province_id = 2401
 					province_id = 3567
-					province_id = 3998 
+					province_id = 2404 
 					province_id = 3926
 					province_id = 3748
 					province_id = 2262
@@ -5350,7 +5311,8 @@ country_event = {
 		3360 = { remove_core = VNZ add_core = CLM }
 		2401 = { remove_core = VNZ }
 		3567 = { remove_core = VNZ }
-		3998 = { remove_core = VNZ } 
+		4204 = { remove_core = VNZ } 
+		2404 = { remove_core = VNZ } 
 		3926 = { remove_core = VNZ add_core = CLM }
 		3748 = { remove_core = VNZ add_core = CLM }
 		2262 = { remove_core = VNZ add_core = CLM }
@@ -5376,7 +5338,7 @@ country_event = {
 					province_id = 3360
 					province_id = 2401
 					province_id = 3567
-					province_id = 3998 
+					province_id = 2404 
 					province_id = 3926
 					province_id = 3748
 					province_id = 2262
@@ -5399,7 +5361,8 @@ country_event = {
 		3360 = { remove_core = VNZ add_core = CLM }
 		2401 = { remove_core = VNZ }
 		3567 = { remove_core = VNZ }
-		3998 = { remove_core = VNZ } 
+		4204 = { remove_core = VNZ } 
+		2404 = { remove_core = VNZ } 
 		3926 = { remove_core = VNZ add_core = CLM }
 		3748 = { remove_core = VNZ add_core = CLM }
 		2262 = { remove_core = VNZ add_core = CLM }
@@ -5427,7 +5390,8 @@ country_event = {
 					province_id = 3360
 					province_id = 2401
 					province_id = 3567
-					province_id = 3998 
+					province_id = 4204 
+					province_id = 2404 
 					province_id = 3926
 					province_id = 1944
 				}
@@ -5460,7 +5424,8 @@ country_event = {
 					province_id = 3360
 					province_id = 2401
 					province_id = 3567
-					province_id = 3998 
+					province_id = 4204 
+					province_id = 2404 
 					province_id = 3926
 					province_id = 1944
 				}
@@ -5492,11 +5457,11 @@ country_event = {
 					province_id = 904
 					province_id = 3360
 					province_id = 3567
-					province_id = 3998 
+					province_id = 2404
 					province_id = 696
 					province_id = 2532
 					province_id = 1977
-					province_id = 3999
+					province_id = 4205
 					province_id = 2401
 					province_id = 2261
 					province_id = 3376
@@ -5529,9 +5494,10 @@ country_event = {
 					province_id = 696
 					province_id = 2532
 					province_id = 1977
-					province_id = 3999
+					province_id = 4205
 					province_id = 3567
-					province_id = 3998 
+					province_id = 4204 
+					province_id = 2404 
 					province_id = 2401
 					province_id = 2261
 					province_id = 3376
@@ -5549,7 +5515,8 @@ country_event = {
 		3360 = { remove_core = CLM add_core = VNZ }
 		2401 = { remove_core = CLM }
 		3567 = { remove_core = CLM }
-		3998 = { remove_core = CLM } 
+		4204 = { remove_core = CLM } 
+		2404 = { remove_core = CLM } 
 		3926 = { remove_core = CLM add_core = VNZ }
 		3748 = { remove_core = CLM add_core = VNZ }
 		2262 = { remove_core = CLM add_core = VNZ }
@@ -5577,7 +5544,8 @@ country_event = {
 					province_id = 3360
 					province_id = 2401
 					province_id = 3567
-					province_id = 3998 
+					province_id = 4204 
+					province_id = 2404 
 					province_id = 3926
 					province_id = 1944
 				}
@@ -5597,7 +5565,8 @@ country_event = {
 		3360 = { remove_core = CLM add_core = VNZ }
 		2401 = { remove_core = VNZ }
 		3567 = { remove_core = VNZ }
-		3998 = { remove_core = VNZ } 
+		4204 = { remove_core = VNZ } 
+		2404 = { remove_core = VNZ } 
 		3926 = { remove_core = CLM add_core = VNZ }
 		3748 = { remove_core = VNZ }
 		2262 = { remove_core = VNZ }
@@ -6026,6 +5995,7 @@ country_event = {
             limit = { owner = { slavery = no_slavery } }
             TPT = { political_reform = no_slavery }
         }
+		CLN = { country_event = { id = 398493288 days = 1 } }
 		ai_chance = { factor = 1 }
     }
 
@@ -6216,7 +6186,26 @@ country_event = {
             TPT = { political_reform = no_slavery }
         }
 		change_tag_no_core_switch = TPT
+		CLN = { country_event = { id = 398493288 days = 1 } }
 		ai_chance = { factor = 0 }
+    }
+}
+country_event = {
+    id = 398493288
+    title = "Relation Cleanup"
+    desc = "."
+    picture = "Administration"
+    fire_only_once = yes
+	is_triggered_only = yes
+	
+    option = {
+        name = "Great!"
+		TUR = { relation = { who = TPT value = -150 } diplomatic_influence = { who = TPT value = -400 } }
+		random_owned = { limit = { owner = { TPT = { vassal_of = TUR } } } owner = { TUR = { release_vassal = TPT } } }
+		random_owned = { limit = { owner = { TPT = { alliance_with = TUR } } } owner = { TUR = { leave_alliance = TPT } } }
+		BHT = { relation = { who = TPT value = -150 } diplomatic_influence = { who = TPT value = -400 } }
+		random_owned = { limit = { owner = { TPT = { vassal_of = BHT } } } owner = { BHT = { release_vassal = TPT } } }
+		random_owned = { limit = { owner = { TPT = { alliance_with = BHT } } } owner = { BHT = { leave_alliance = TPT } } }
     }
 }
 country_event = {
@@ -6833,6 +6822,7 @@ country_event = {
 				location = {
 					OR = {
 						region = MEX_85
+						region = MEX_85_2
 						region = USA_81
 						region = USA_78
 					}
@@ -7656,7 +7646,7 @@ country_event = {
 			secede_province = SLV
 		}
 		AUS = { create_alliance = SLV diplomatic_influence = { who = SLV value = 400 } }
-		SLV = { government = prov_gov_liberal ruling_party_ideology = liberal capital = 636 define_general = { name = "Ján Francisci-Rimavský" personality = defence_1.1 background = attack_1.1 } define_general = { name = "Štefan Marko Daxner" personality = defence_1.1 background = attack_1.1 } }
+		SLV = { set_country_flag = colony_exemption government = prov_gov_liberal ruling_party_ideology = liberal capital = 636 define_general = { name = "Ján Francisci-Rimavský" personality = defence_1.1 background = attack_1.1 } define_general = { name = "Štefan Marko Daxner" personality = defence_1.1 background = attack_1.1 } }
 		ai_chance = { factor = 1 }
 	}
 
@@ -8082,6 +8072,36 @@ province_event = {
 		SAC = {
 			government = democracy
 			capital = 2459
+		}
+		owner = {
+			random_owned = {
+				limit = {
+					owner = {
+						SAC = { owns = 2459 owns = 2461 }
+					}
+				}
+				owner = {
+					SAC = { 
+						iron = 10
+						wool = 10
+						timber = 25
+						small_arms = 10
+						leadership = 20
+						add_country_modifier = {
+							name = small_country_draft_big
+							duration = 365
+						}
+						add_country_modifier = {
+							name = army_power_boost_big
+							duration = 1460
+						}
+						2459 = {
+							sub_unit = { type = infantry value = current }
+							sub_unit = { type = infantry value = current }
+						}
+					}
+				}
+			}
 		}
     }
 }
@@ -9632,7 +9652,7 @@ country_event = {
 		owns = 1157
 	   }
 	   NOT = {
-		owns = 3690
+		owns = 3997
 	   }
 	   NOT = {
 		owns = 3406
@@ -11173,7 +11193,7 @@ country_event = {
 		owns = 933
 	   }
 	   NOT = {
-		owns = 934
+		owns = 3989
 	   }
 	   NOT = {
 		owns = 3406
@@ -11545,7 +11565,7 @@ country_event = {
 		owns = 3532
 	   }
 	   NOT = {
-		owns = 928
+		owns = 3325
 	   }
 	   NOT = {
 		owns = 3294
@@ -11874,7 +11894,7 @@ country_event = {
 		owns = 1158
 	   }
 	   NOT = {
-		owns = 3278
+		owns = 3997
 	   }
 	   NOT = {
 		owns = 1157
@@ -11917,11 +11937,9 @@ country_event = {
 		owns = 1155
 	   }
 	   NOT = {
-		owns = 3855
-	   }
-	   NOT = {
 		owns = 1179
 	   }
+	   NOT = { num_of_cities = 1 }
     }
     option = {
         name = "Tragic!"
@@ -12014,6 +12032,9 @@ country_event = {
        owns = 922
 	   NOT = {
 		owns = 1757
+	   }
+	   NOT = {
+		owns = 3855
 	   }
 	   NOT = {
 		owns = 1756
@@ -12282,38 +12303,6 @@ country_event = {
     option = {
         name = "Tragic!"
         3914 = { owner = { country_event = 1679030 } }
-    }
-}
-country_event = {
-    id = 54679030
-    title = "Duba"
-    desc = "EVTDESC54679030"
-	is_triggered_only = yes
-    option = {
-        name = "Huzzah!"
-        1154 = { secede_province = THIS }
-    }
-}
-country_event = {
-    id = 54679031
-    title = "The loss of Duba"
-    desc = "EVTDESC54679031"
-    trigger = {
-       owns = 1154
-	   NOT = {
-		owns = 1152
-	   }
-	   NOT = {
-		owns = 908
-	   }
-	   NOT = {
-		owns = 1757
-	   }
-	   ai = yes
-    }
-    option = {
-        name = "Tragic!"
-        1152 = { owner = { country_event = 54679030 } }
     }
 }
 country_event = {
@@ -12765,10 +12754,7 @@ country_event = {
 		owns = 1850
 	   }
 	   NOT = {
-		owns = 3696
-	   }
-	   NOT = {
-		owns = 3952
+		owns = 114
 	   }
 	   NOT = { num_of_cities = 1 }
     }
@@ -12778,8 +12764,7 @@ country_event = {
 			limit = {
 				owner = {
 					1850 = { empty = yes }
-					3696 = { empty = yes }
-					3952 = { empty = yes }
+					114 = { empty = yes }
 				}
 			}
 			owner = {
@@ -12789,21 +12774,8 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					1850 = { empty = yes }
-					3696 = { empty = yes }
-					3952 = { empty = no }
-				}
-			}
-			owner = {
-				3952 = { owner = { country_event = 54679056 } }
-			}
-		}
-		random_owned = {
-			limit = {
-				owner = {
 					1850 = { empty = no }
-					3696 = { empty = yes }
-					3952 = { empty = yes }
+					114 = { empty = yes }
 				}
 			}
 			owner = {
@@ -12814,60 +12786,22 @@ country_event = {
 			limit = {
 				owner = {
 					1850 = { empty = yes }
-					3696 = { empty = no }
-					3952 = { empty = yes }
+					114 = { empty = no }
 				}
 			}
 			owner = {
-				3696 = { owner = { country_event = 54679056 } }
+				114 = { owner = { country_event = 54679056 } }
 			}
 		}
 		random_owned = {
 			limit = {
 				owner = {
 					1850 = { empty = no }
-					3696 = { empty = no }
-					3952 = { empty = yes }
+					114 = { empty = no }
 				}
 			}
 			owner = {
 				1850 = { owner = { country_event = 54679056 } }
-			}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					1850 = { empty = yes }
-					3696 = { empty = no }
-					3952 = { empty = no }
-				}
-			}
-			owner = {
-				3952 = { owner = { country_event = 54679056 } }
-			}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					1850 = { empty = no }
-					3696 = { empty = yes }
-					3952 = { empty = no }
-				}
-			}
-			owner = {
-				3952 = { owner = { country_event = 54679056 } }
-			}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					1850 = { empty = no }
-					3696 = { empty = no }
-					3952 = { empty = no }
-				}
-			}
-			owner = {
-				3952 = { owner = { country_event = 54679056 } }
 			}
 		}
     }
@@ -12910,6 +12844,44 @@ country_event = {
     option = {
         name = "Tragic!"
         1951 = { owner = { country_event = 54679058 } }
+    }
+}
+country_event = {
+    id = 86422333
+    title = "Alasonya"
+    desc = "Without a land connection to Alasonya, its owners can no longer defend it. We will therefore take it over."
+	is_triggered_only = yes
+    option = {
+        name = "Huzzah!"
+        831 = { secede_province = THIS }
+    }
+}
+country_event = {
+    id = 86422334
+    title = "The loss of Alasonya"
+    desc = "Without a land connection to Alasonya, the owners of Yenisehir have taken it over."
+    trigger = {
+		owns = 831
+		NOT = {
+			owns = 832
+		}
+		NOT = {
+			owns = 821
+		}
+		NOT = {
+			owns = 820
+		}
+		NOT = {
+			owns = 833
+		}
+		NOT = { num_of_cities = 1 }
+    }
+    mean_time_to_happen = {
+        days = 1
+    }
+    option = {
+        name = "Tragic!"
+        832 = { owner = { country_event = 86422333 } }
     }
 }
 country_event = {
@@ -13259,6 +13231,93 @@ country_event = {
     }
 }
 country_event = {
+    id = 565643233
+    title = "Jaen"
+    desc = "EVTDESC565643233"
+	is_triggered_only = yes
+    option = {
+        name = "Huzzah!"
+        2287 = { secede_province = THIS }
+    }
+}
+country_event = {
+    id = 565643232
+    title = "The Loss of Jaen"
+    desc = "EVTDESC565643232"
+    trigger = {
+       owns = 2287
+	   NOT = {
+		owns = 2294
+	   }
+	   NOT = {
+		owns = 4011
+	   }
+	   NOT = {
+		owns = 2282
+	   }
+	   NOT = {
+		owns = 2291
+	   }
+	   NOT = {
+		owns = 4105
+	   }
+    }
+    mean_time_to_happen = {
+        days = 1
+    }
+    option = {
+        name = "Tragic!"
+        2294 = { owner = { country_event = 565643233 } }
+    }
+}
+country_event = {
+    id = 565643235
+    title = "Iquitos"
+    desc = "EVTDESC565643233"
+	is_triggered_only = yes
+    option = {
+        name = "Huzzah!"
+        4013 = { secede_province = THIS }
+    }
+}
+country_event = {
+    id = 565643234
+    title = "The Loss of Iquitos"
+    desc = "EVTDESC565643232"
+    trigger = {
+       owns = 4013
+	   NOT = {
+		owns = 4014
+	   }
+	   4014 = { empty = no }
+	   NOT = {
+		owns = 4015
+	   }
+	   NOT = {
+		owns = 2288
+	   }
+	   NOT = {
+		owns = 4071
+	   }
+	   NOT = {
+		owns = 2294
+	   }
+	   NOT = {
+		AND = {
+			owns = 4070
+			4071 = { empty = yes }
+		}
+	   }
+    }
+    mean_time_to_happen = {
+        days = 1
+    }
+    option = {
+        name = "Tragic!"
+        4014 = { owner = { country_event = 565643235 } }
+    }
+}
+country_event = {
     id = 123803
     title = "Delimiting the border with India"
     desc = "EVTDESC123803"
@@ -13501,18 +13560,18 @@ country_event = {
 		owns = 1207
 	   }
 	   NOT = {
-		owns = 3522
+		owns = 3520
 	   }
 	   NOT = {
 		owns = 3521
 	   }
 	   NOT = {
-		owns = 1210
+		owns = 4133
 	   }
 	   NOT = {
-		owns = 1211
+		owns = 4134
 	   }
-	   NOT = { AND = { NOT = { num_of_cities = 1 } ai = no } }
+	   OR = { tag = KUN tag = BDK }
     }
     mean_time_to_happen = {
         days = 1
@@ -13520,50 +13579,6 @@ country_event = {
     option = {
         name = "Tragic!"
         1207 = { owner = { country_event = 45324532 } }
-    }
-}
-country_event = {
-    id = 45324534
-    title = "Gazli"
-    desc = "Without a land connection to Gazli, its owners can no longer defend it. We will therefore take it over."
-	is_triggered_only = yes
-    option = {
-        name = "Huzzah!"
-        3441 = { secede_province = THIS }
-    }
-}
-country_event = {
-    id = 45324533
-    title = "The Loss of Gazli"
-    desc = "Without a land connection to Gazli, the owners of Khiva have taken it over."
-    trigger = {
-       owns = 3441
-	   NOT = {
-		owns = 1191
-	   }
-	   NOT = {
-		owns = 1192
-	   }
-	   NOT = {
-		owns = 3298
-	   }
-	   NOT = {
-		owns = 29
-	   }
-	   NOT = {
-		owns = 1198
-	   }
-	   NOT = {
-		owns = 1196
-	   }
-	   NOT = { AND = { NOT = { num_of_cities = 1 } ai = no } }
-    }
-    mean_time_to_happen = {
-        days = 1
-    }
-    option = {
-        name = "Tragic!"
-        1191 = { owner = { country_event = 45324534 } }
     }
 }
 country_event = {
@@ -13748,6 +13763,49 @@ country_event = {
     }
 }
 country_event = {
+    id = 86563221
+    title = "Kapoeta"
+    desc = "Without a land connection to Kapoeta, its owners can no longer defend it. We will therefore take it over."
+	is_triggered_only = yes
+    option = {
+        name = "Huzzah!"
+        1847 = { secede_province = THIS }
+	}
+}
+country_event = {
+    id = 86563222
+    title = "The Loss of Kapoeta"
+    desc = "Without a land connection to Kapoeta, the owners of Tekakomi have taken it over."
+    trigger = {
+       owns = 1847
+	   NOT = {
+		owns = 3669
+	   }
+	   NOT = {
+		owns = 3939
+	   }
+	   NOT = {
+		owns = 3928
+	   }
+	   NOT = {
+		owns = 3930
+	   }
+	   NOT = {
+		owns = 3595
+	   }
+	   NOT = {
+		owns = 1744
+	   }
+    }
+    mean_time_to_happen = {
+        days = 1
+    }
+    option = {
+        name = "Tragic!"
+        3669 = { owner = { country_event = 86563221 } }
+    }
+}
+country_event = {
     id = 123790
     title = "The Purchase of Krepost Ross"
     desc = "EVTDESC123790"
@@ -13786,7 +13844,7 @@ country_event = {
 	fire_only_once = yes
 	trigger = {
 		year = 1841
-		owns = 85
+		owns = 84
 		3340 = { OR = { owned_by = RUS owned_by = LSK } }
 		NOT = { tag = RUS }
     }
@@ -14466,6 +14524,42 @@ country_event = {
 
     option = {
         name = "A wise choice."
+		random_owned = {
+			limit = {
+				owner = {
+					4109 = { is_core = BRZ }
+				}
+			}
+			owner = {
+				2532 = { add_core = BRZ }
+				3568 = { add_core = BRZ }
+				830 = { add_core = BRZ }
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					4109 = { is_core = THIS }
+				}
+			}
+			owner = {
+				2532 = { add_core = THIS }
+				3568 = { add_core = THIS }
+				830 = { add_core = THIS }
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					4109 = { is_core = PAA }
+				}
+			}
+			owner = {
+				2532 = { add_core = PAA }
+				3568 = { add_core = PAA }
+				830 = { add_core = PAA }
+			}
+		}
     }
 }
 country_event = {
@@ -14479,10 +14573,14 @@ country_event = {
     option = {
         name = "Sign the treaty."
         relation = { who = FROM value = 80 }
+		830 = { remove_core = THIS remove_core = VNZ remove_core = GCO }
+		3568 = { remove_core = THIS remove_core = VNZ remove_core = GCO }
 		2532 = { remove_core = THIS remove_core = VNZ remove_core = GCO }
+		2404 = { remove_core = THIS remove_core = VNZ remove_core = GCO }
+		4204 = { remove_core = THIS remove_core = VNZ remove_core = GCO }
 		1977 = { remove_core = THIS remove_core = VNZ remove_core = GCO }
-		3999 = { remove_core = THIS remove_core = VNZ remove_core = GCO }
-		2532 = { secede_province = FROM }
+		4205 = { remove_core = THIS remove_core = VNZ remove_core = GCO }
+		3567 = { remove_core = THIS remove_core = VNZ remove_core = GCO }
 		FROM = { country_event = 123672 }
 		ai_chance = { factor = 1 }
     }
@@ -15436,6 +15534,7 @@ country_event = {
 
     option = {
         name = "Crush them!"
+		prestige = -1
         2211 = {
             secede_province = CUB
         }
@@ -16167,17 +16266,6 @@ country_event = {
                 consciousness = 8
                 militancy = 8
             }
-                        any_pop = {
-                limit = {
-                    is_culture_group = native_american
-                    location = {
-                        province_id = 85
-                    }
-                }
-                reduce_pop = 0.10
-                consciousness = 8
-                militancy = 8
-            }
 			            any_pop = {
                 limit = {
                     is_culture_group = native_american
@@ -16219,7 +16307,6 @@ country_event = {
         owns = 4034
         #owns = 3597
         owns = 103
-        owns = 128
 		NOT = { has_country_flag = native_protection_act_enacted }
 		NOT = { accepted_culture = native_american_minor }
     }
@@ -16296,17 +16383,6 @@ country_event = {
                     is_culture_group = native_american
                     location = {
                         province_id = 103
-                    }
-                }
-                reduce_pop = 0.10
-                consciousness = 8
-                militancy = 8
-            }
-            any_pop = {
-                limit = {
-                    is_culture_group = native_american
-                    location = {
-                        province_id = 128
                     }
                 }
                 reduce_pop = 0.10
@@ -16424,7 +16500,6 @@ country_event = {
     trigger = {
 		year = 1858
         owns = 92
-        owns = 114
         owns = 3467
 		NOT = { accepted_culture = native_american_minor }
 		NOT = { has_country_flag = native_protection_act_enacted }
@@ -16448,18 +16523,6 @@ country_event = {
                     is_culture_group = native_american
                     location = {
                         province_id = 3467
-                    }
-                }
-                reduce_pop = 0.50
-                consciousness = 8
-                militancy = 8
-                move_pop = 92
-            }
-            any_pop = {
-                limit = {
-                    is_culture_group = native_american
-                    location = {
-                        province_id = 114
                     }
                 }
                 reduce_pop = 0.50
@@ -16543,7 +16606,6 @@ country_event = {
     trigger = {
 		year = 1879
         owns = 108
-        owns = 3560
         owns = 109
 		NOT = { accepted_culture = native_american_minor }
 		NOT = { has_country_flag = native_protection_act_enacted }
@@ -16574,16 +16636,6 @@ country_event = {
             limit = {
                 is_culture_group = native_american
                 location = { province_id = 109 }
-            }
-            reduce_pop = 0.70
-            consciousness = 8
-            militancy = 8
-            move_pop = 99
-        }
-        any_pop = {
-            limit = {
-                is_culture_group = native_american
-                location = { province_id = 3560 }
             }
             reduce_pop = 0.70
             consciousness = 8
@@ -16675,12 +16727,11 @@ country_event = {
         owns = 95
         owns = 97
         owns = 107
-        owns = 111
-        owns = 110
         owns = 4145
         owns = 82
         owns = 4143
         owns = 3468
+        owns = 4099
         owns = 3463
         owns = 4144
 		NOT = { accepted_culture = native_american_minor }
@@ -16688,28 +16739,6 @@ country_event = {
     }
     option = {
         name = "Another victory."
-            any_pop = {
-                limit = {
-                    is_culture_group = native_american
-                    location = {
-                        province_id = 111
-                    }
-                }
-                reduce_pop = 0.60
-                consciousness = 8
-                militancy = 8
-            }
-            any_pop = {
-                limit = {
-                    is_culture_group = native_american
-                    location = {
-                        province_id = 110
-                    }
-                }
-                reduce_pop = 0.60
-                consciousness = 8
-                militancy = 8
-            }
             any_pop = {
                 limit = {
                     is_culture_group = native_american
@@ -16844,6 +16873,17 @@ country_event = {
                 consciousness = 8
                 militancy = 8
             }
+            any_pop = {
+                limit = {
+                    is_culture_group = native_american
+                    location = {
+                        province_id = 4099
+                    }
+                }
+                reduce_pop = 0.60
+                consciousness = 8
+                militancy = 8
+            }
     }
 }
 country_event = {
@@ -16857,7 +16897,6 @@ country_event = {
 		year = 1862
         owns = 157
         owns = 118
-        owns = 119
         owns = 4094
 		NOT = { accepted_culture = native_american_minor }
 		NOT = { has_country_flag = native_protection_act_enacted }
@@ -16894,7 +16933,7 @@ country_event = {
                 reduce_pop = 0.40
                 consciousness = 8
                 militancy = 8
-                move_pop = 119
+                move_pop = 122
             }
             any_pop = {
                 limit = {
@@ -16909,7 +16948,7 @@ country_event = {
                 reduce_pop = 0.40
                 consciousness = 8
                 militancy = 8
-                move_pop = 119
+                move_pop = 122
             }
     }
 }
@@ -16956,7 +16995,6 @@ country_event = {
 		owns = 3317
         owns = 116
         owns = 4103
-        owns = 4099
 		NOT = { accepted_culture = native_american_minor }
 		NOT = { has_country_flag = native_protection_act_enacted }
 		NOT = { accepted_culture = dakota }
@@ -16973,7 +17011,6 @@ country_event = {
                         OR = {
 							province_id = 116
 							province_id = 4103
-							province_id = 4099
 						}
                     }
                 }
@@ -17065,7 +17102,7 @@ country_event = {
     trigger = {
 		year = 1864
         owns = 3458
-        owns = 96
+        owns = 101
         owns = 198
 		NOT = { accepted_culture = native_american_minor }
 		NOT = { has_country_flag = native_protection_act_enacted }
@@ -17076,18 +17113,7 @@ country_event = {
                 limit = {
                     is_culture_group = native_american
                     location = {
-                        province_id = 98
-                    }
-                }
-                reduce_pop = 0.40
-                consciousness = 8
-                militancy = 8
-            }
-            any_pop = {
-                limit = {
-                    is_culture_group = native_american
-                    location = {
-                        province_id = 96
+                        province_id = 101
                     }
                 }
                 reduce_pop = 0.40
@@ -17717,7 +17743,9 @@ country_event = {
     picture = "ger_lorr_loss"
     option = {
         name = "Huzzah!"
-        3379 = { secede_province = THIS }
+		397 = { secede_province = THIS add_core = THIS }
+        3379 = { secede_province = THIS add_core = THIS }
+		FROM = { create_vassal = THIS create_alliance = THIS diplomatic_influence = { who = THIS value = 400 } }
     }
 }
 country_event = {
@@ -17729,7 +17757,10 @@ country_event = {
     picture = "ger_lorr_loss"
     option = {
         name = "Huzzah!"
-        396 = { secede_province = THIS }
+		GER = { release = THIS }
+		GCF = { release = THIS }
+        396 = { secede_province = THIS add_core = THIS }
+		FROM = { diplomatic_influence = { who = THIS value = 100 } }
     }
 }
 country_event = {
@@ -17741,10 +17772,13 @@ country_event = {
     picture = "ger_lorr_loss"
     option = {
         name = "Huzzah!"
-        1743 = { secede_province = THIS }
-        543 = { secede_province = THIS }
-        1953 = { secede_province = THIS }
-        3259 = { secede_province = THIS }
+		GER = { release = THIS }
+		GCF = { release = THIS }
+        1743 = { secede_province = THIS add_core = THIS }
+        543 = { secede_province = THIS add_core = THIS }
+        1953 = { secede_province = THIS add_core = THIS }
+        3259 = { secede_province = THIS add_core = THIS }
+		FROM = { diplomatic_influence = { who = THIS value = 100 } }
     }
 }
 country_event = {
@@ -17756,7 +17790,10 @@ country_event = {
     picture = "ger_lorr_loss"
     option = {
         name = "Huzzah!"
-        577 = { secede_province = THIS }
+		GER = { release = THIS }
+		GCF = { release = THIS }
+        577 = { secede_province = THIS add_core = THIS }
+		FROM = { diplomatic_influence = { who = THIS value = 50 } }
     }
 }
 country_event = {
@@ -17768,10 +17805,16 @@ country_event = {
     picture = "fra_lorr_rhi"
     option = {
         name = "We will have our revenge!"
+		PRU_578 = { remove_core = RHI }
+		any_owned = {
+			limit = { OR = { region = PRU_575 AND = { region = PRU_570 NOT = { province_id = 573 } } } }
+			add_core = RHI
+			secede_province = RHI
+		}
+		FROM = { create_vassal = RHI create_alliance = RHI diplomatic_influence = { who = RHI value = 400 } }
         2561 = { secede_province = THIS }
         578 = { secede_province = THIS }
         3265 = { secede_province = THIS }
-        570 = { secede_province = RHI }
     }
 }
 country_event = {
@@ -17820,101 +17863,7 @@ country_event = {
 		}
     }
 }
-country_event = {
-    id = 123553
-    title = "The Integration of the Bukey Horde"
-    desc = "EVTDESC123553"
-    fire_only_once = yes
-    picture = "bukey_annexation"
-    mean_time_to_happen = { months = 2 }
-    trigger = {
-        year = 1849
-        tag = RUS
-		neighbour = BKY
-        BKY = { owns = 1182 }
-        BKY = { vassal_of = THIS }
-        OR = {
-            2702 = { empty = yes }
-            2702 = { owned_by = RUS }
-        }
-    }
-    option = {
-        name = "Advance into Central Asia!"
-        inherit = BKY
-		BKY = { government = absolute_monarchy }
-        2702 = { secede_province = THIS }
-		ai_chance = { factor = 1 }
-    }
-}
-country_event = {
-    id = 34257422
-    title = "The Integration of Kyzylkum"
-    desc = "KYZYLKUMDESERT"
-    fire_only_once = yes
-    picture = "bukey_annexation"
-    mean_time_to_happen = { days = 5 }
-    trigger = {
-        tag = RUS
-		owns = 2612
-		owns = 1193
-        OR = {
-            3298 = { empty = yes }
-            3298 = { owned_by = RUS }
-        }
-        OR = {
-            29 = { empty = yes }
-            29 = { owned_by = RUS }
-        }
-    }
-    option = {
-        name = "Advance into Turkestan!"
-        3298 = { secede_province = THIS }
-        29 = { secede_province = THIS }
-		ai_chance = { factor = 1 }
-    }
-}
-country_event = {
-    id = 34257423
-    title = "The Integration of Turkmenistan"
-    desc = "Thanks to our control over Dashhowuz, we can now take our turn to conquer the hinterlands of Turkmenistan, a sparsely-populated area."
-    fire_only_once = yes
-    picture = "bukey_annexation"
-    mean_time_to_happen = { days = 5 }
-    trigger = {
-        OR = {
-			AND = {
-				tag = RUS
-				owns = 1196
-				OR = {
-					3505 = { empty = yes }
-					3505 = { owned_by = RUS }
-				}
-				OR = {
-					2656 = { empty = yes }
-					2656 = { owned_by = RUS }
-				}
-				OR = {
-					1205 = { empty = yes }
-					1205 = { owned_by = RUS }
-				}
-			}
-			AND = {
-				owns = 1196
-				3505 = { empty = yes }
-				2656 = { empty = yes }
-				1205 = { empty = yes }
-				year = 1891
-			}
-		}
-    }
-    option = {
-        name = "Advance into Turkmenistan!"
-        2656 = { secede_province = THIS }
-        1205 = { secede_province = THIS }
-        3505 = { secede_province = THIS }
-		ai_chance = { factor = 1 }
-    }
-}
+
 country_event = {
     id = 123554
     title = "The Matele Rebellion"
@@ -18107,32 +18056,34 @@ country_event = {
         badboy = -5
 		prestige = 25
 		MEX_85 = { add_core = THIS } #Add cores to all of California
-		87 = { remove_core = THIS } #Then remove cores just from Southern California
-		3449 = { remove_core = THIS }
-		3450 = { remove_core = THIS }
-		88 = { remove_core = THIS }
-		3451 = { remove_core = THIS }
-		90 = { remove_core = THIS }
-		89 = { remove_core = THIS }
-		3566 = { remove_core = THIS }
+		MEX_85_2 = { add_core = THIS } #Add cores to all of California
 		TEX_132 = { add_core = THIS } #Texas
-		MEX_94 = { add_core = THIS } #Nevada
-		96 = { remove_core = THIS } # Las Vegas
 		MEX_97 = { add_core = THIS } #Utah
-		USA_129 = { add_core = THIS } #Oklahoma
-		USA_106 = { add_core = THIS } #Colorado
-		USA_78 = { add_core = THIS } #Washington
-		USA_81 = { add_core = THIS } #Portland
+		4120 = { add_core = THIS } #Colorado
+		103 = { add_core = THIS } #Colorado
+		3466 = { add_core = THIS } #Washington
+		USA_81 = { add_core = THIS } #Oregon
 		USA_91 = { add_core = THIS } #Idaho
-		114 = { add_core = THIS } #Idaho
-		111 = { add_core = THIS } #Idaho
-		USA_111 = { add_core = THIS } #Wyoming
+		4145 = { add_core = THIS } #Wyoming
+		107 = { add_core = THIS } #Wyoming
+		USA_116 = { add_core = THIS } #Montana
 		USA_126 = { add_core = THIS } #Kansas
-		105 = { add_core = THIS }
-		4034 = { add_core = THIS }
-		4035 = { add_core = THIS }
-		3588 = { add_core = THIS }
-		4177 = { add_core = THIS }
+		USA_129 = { add_core = THIS } #Oklahoma
+		101 = { remove_core = THIS } #Las Vegas
+		2148 = { remove_core = THIS } #New Mexico
+		2662 = { remove_core = THIS }
+		4032 = { remove_core = THIS }
+		4033 = { remove_core = THIS } #New Mexico
+		87 = { remove_core = THIS remove_core = CAL } #Southern California
+		88 = { remove_core = THIS remove_core = CAL }
+		89 = { remove_core = THIS remove_core = CAL }
+		90 = { remove_core = THIS remove_core = CAL }
+		3448 = { remove_core = THIS remove_core = CAL }
+		3449 = { remove_core = THIS remove_core = CAL }
+		3450 = { remove_core = THIS remove_core = CAL }
+		3566 = { remove_core = THIS remove_core = CAL }
+		3451 = { remove_core = THIS remove_core = CAL } #Southern California
+		
 		MEX = { country_event = 123563 }
 		ai_chance = { factor = 5 }
     }
@@ -18140,32 +18091,23 @@ country_event = {
         name = "Take all of Alta California. (historical)"
 		set_global_flag = maw_usa_victory
 		prestige = 30
+		3466 = { add_core = THIS } #Washington
 		MEX_85 = { add_core = THIS } #California
-		TEX_132 = { add_core = THIS } #Texas
-		MEX_94 = { add_core = THIS } #Nevada
+		MEX_85_2 = { add_core = THIS } #California
 		MEX_97 = { add_core = THIS } #Utah
-		USA_129 = { add_core = THIS } #Oklahoma
-		USA_106 = { add_core = THIS } #Colorado
-		USA_78 = { add_core = THIS } #Washington
-		USA_81 = { add_core = THIS } #Portland
+		USA_81 = { add_core = THIS } #Oregon
 		USA_91 = { add_core = THIS } #Idaho
-		114 = { add_core = THIS } #Idaho
-		111 = { add_core = THIS } #Idaho
-		USA_111 = { add_core = THIS }
-		USA_126 = { add_core = THIS }
-		2148 = { add_core = THIS }
-		4033 = { add_core = THIS }
-		4177 = { add_core = THIS }
-		3588 = { add_core = THIS }
-		105 = { add_core = THIS }
-		4034 = { add_core = THIS }
-		4035 = { add_core = THIS }
-		3589 = { add_core = THIS }
-		4032 = { add_core = THIS }
-		101 = { add_core = THIS }
-		100 = { add_core = THIS }
-		3460 = { add_core = THIS }
-		114 = { add_core = THIS }
+		MEX_103 = { add_core = THIS } #New Mexico
+		4145 = { add_core = THIS } #Wyoming
+		107 = { add_core = THIS } #Wyoming
+		USA_116 = { add_core = THIS } #Montana
+		USA_126 = { add_core = THIS } #Kansas
+		USA_129 = { add_core = THIS } #Oklahoma
+		TEX_132 = { add_core = THIS } #Texas
+		102 = { remove_core = THIS } #Gadsden Purchase Arizona
+		4064 = { remove_core = THIS } #Gadsden Purchase Arizona
+		4052 = { remove_core = THIS } #Gadsden Purchase Arizona
+		2662 = { remove_core = THIS } #Gadsden Purchase New Mexico
 		MEX = { country_event = 123563 }
 		random_owned = { limit = { MEX = { ai = yes } } USA = { country_event = 123565 } }
 		ai_chance = { factor = 90 }
@@ -18173,34 +18115,31 @@ country_event = {
     option = {
         name = "Take land further South. §RGain 10 infamy§W"
 		set_global_flag = maw_usa_victory
-        badboy = 5
+        badboy = 10
 		prestige = 35
-        MEX_85 = { add_core = THIS } #California
-		TEX_132 = { add_core = THIS } #Texas
-		MEX_94 = { add_core = THIS } #Nevada
+        3466 = { add_core = THIS } #Washington
+		MEX_85 = { add_core = THIS } #California
+		MEX_85_2 = { add_core = THIS } #California
 		MEX_97 = { add_core = THIS } #Utah
-		USA_129 = { add_core = THIS } #Oklahoma
-		USA_106 = { add_core = THIS } #Colorado
-		USA_78 = { add_core = THIS } #Washington
-		USA_81 = { add_core = THIS } #Portland
+		USA_81 = { add_core = THIS } #Oregon
 		USA_91 = { add_core = THIS } #Idaho
-		114 = { add_core = THIS } #Idaho
-		111 = { add_core = THIS } #Idaho
-		USA_111 = { add_core = THIS }
-		USA_126 = { add_core = THIS }
-		MEX_2149 = { add_core = THIS }
-		MEX_2142 = { add_core = THIS }
-		MEX_2138 = { add_core = THIS }
-		MEX_100 = { add_core = THIS }
-		MEX_103 = { add_core = THIS }
-		102 = { add_core = THIS }
-		2662 = { add_core = THIS }
-		2156 = { remove_core = THIS } #Sinaloa
-		2157 = { remove_core = THIS } #Sinaloa
-		2153 = { remove_core = THIS } #Durango
-		2154 = { remove_core = THIS } #Durango
-		3973 = { remove_core = THIS } #Durango
-		MEX = { country_event = 123566 }
+		MEX_103 = { add_core = THIS } #New Mexico
+		4145 = { add_core = THIS } #Wyoming
+		107 = { add_core = THIS } #Wyoming
+		USA_116 = { add_core = THIS } #Montana
+		USA_126 = { add_core = THIS } #Kansas
+		USA_129 = { add_core = THIS } #Oklahoma
+		TEX_132 = { add_core = THIS } #Texas
+		MEX_2138 = { add_core = THIS } #Sonora-BC-Sinaloa
+		MEX_2142 = { add_core = THIS } #Chihuahua-Durango
+		MEX_2149 = { add_core = THIS } #Rio Grande
+		2153 = { remove_core = THIS } #Durango provinces
+		2154 = { remove_core = THIS }
+		3973 = { remove_core = THIS } #Durango provinces
+		2156 = { remove_core = THIS } #Sinaloa provinces
+		2157 = { remove_core = THIS } #Sinaloa provinces
+		
+		
 		random_owned = { limit = { MEX = { ai = yes } } USA = { country_event = 123565 } }
 		ai_chance = { factor = 5 }
     }
@@ -18215,43 +18154,47 @@ country_event = {
     is_triggered_only = yes
 	
 	option = {
-        name = "All of Mexico will be forever ours! §RGain 20 infamy§W"
+        name = "All of Mexico is ours! §RGain 20 infamy§W"
 		set_global_flag = maw_usa_victory
         badboy = 20
 		any_pop = { limit = { OR = { has_pop_culture = yankee has_pop_culture = dixie } } militancy = 3 consciousness = 5 }
-        MEX_85 = { add_core = THIS } #California
-		TEX_132 = { add_core = THIS } #Texas
-		MEX_94 = { add_core = THIS } #Nevada
+        3466 = { add_core = THIS } #Washington
+		MEX_85 = { add_core = THIS } #California
+		MEX_85_2 = { add_core = THIS } #California
 		MEX_97 = { add_core = THIS } #Utah
-		USA_129 = { add_core = THIS } #Oklahoma
-		USA_106 = { add_core = THIS } #Colorado
-		USA_78 = { add_core = THIS } #Washington
-		USA_81 = { add_core = THIS } #Portland
+		USA_81 = { add_core = THIS } #Oregon
 		USA_91 = { add_core = THIS } #Idaho
-		114 = { add_core = THIS } #Idaho
-		111 = { add_core = THIS } #Idaho
-		USA_111 = { add_core = THIS }
-		USA_126 = { add_core = THIS }
-		MEX_2149 = { add_core = THIS }
-		MEX_2142 = { add_core = THIS }
-		MEX_2138 = { add_core = THIS }
-		MEX_100 = { add_core = THIS }
-		MEX_103 = { add_core = THIS }
-		102 = { add_core = THIS }
-		2662 = { add_core = THIS }
-		2156 = { remove_core = THIS } #Sinaloa
-		2157 = { remove_core = THIS } #Sinaloa
-		2153 = { remove_core = THIS } #Durango
-		2154 = { remove_core = THIS } #Durango
-		3973 = { remove_core = THIS } #Durango
-		MEX = { country_event = 123567 }
+		MEX_103 = { add_core = THIS } #New Mexico
+		4145 = { add_core = THIS } #Wyoming
+		107 = { add_core = THIS } #Wyoming
+		USA_116 = { add_core = THIS } #Montana
+		USA_126 = { add_core = THIS } #Kansas
+		USA_129 = { add_core = THIS } #Oklahoma
+		TEX_132 = { add_core = THIS } #Texas
+		MEX_2138 = { add_core = THIS } #Sonora-BC-Sinaloa
+		MEX_2142 = { add_core = THIS } #Chihuahua-Durango
+		MEX_2149 = { add_core = THIS } #Rio Grande
+		2153 = { remove_core = THIS } #Durango provinces
+		2154 = { remove_core = THIS }
+		3973 = { remove_core = THIS } #Durango provinces
+		2156 = { remove_core = THIS } #Sinaloa provinces
+		2157 = { remove_core = THIS } #Sinaloa provinces
+		MEX = { country_event = 4207102 }
+		ai_chance = { factor = 0 }
+    }
+	
+    option = {
+        name = "The Mexicans will be our puppet. §RGain 10 infamy§W"
+        badboy = 10
+		any_pop = { limit = { OR = { has_pop_culture = yankee has_pop_culture = dixie } } militancy = 1 consciousness = 3 }
+        MEX = { country_event = 123567 }
 		ai_chance = { factor = 1 }
     }
 	
 	option = {
         name = "The Mexicans will remain an independent nation."
         any_pop = { consciousness = 1 }
-		ai_chance = { factor = 94 }
+		ai_chance = { factor = 99 }
     }
 }
 country_event = {
@@ -18264,6 +18207,7 @@ country_event = {
     option = {
         name = "Oh well."
         any_owned = { limit = { is_core = USA } secede_province = UTI }
+		any_owned = { limit = { is_core = THIS } remove_core = CAL remove_core = DES }
 		USA = { inherit = UTI }
     }
 
@@ -18285,6 +18229,36 @@ country_event = {
 }
 country_event = {
     id = 123567
+    title = "Treaty of Guadalupe-Hidalgo"
+    desc = "EVTDESC123567"
+    picture = "mexico-us-treaty"
+    fire_only_once = yes
+    is_triggered_only = yes
+    option = {
+        name = "Oh well."
+		any_owned = { limit = { is_core = USA } secede_province = UTI }
+		USA = {
+			inherit = UTI
+			create_vassal = MEX
+			set_country_flag = mexico_vassalusa
+			any_owned = {
+				limit = {
+					is_core = MEX
+				}
+				add_province_modifier = { name = patriot_uprising duration = 1000 }
+				any_pop = {
+					limit = {
+						is_culture_group = latin_american_cultures
+					}
+					militancy = 7
+					consciousness = 8
+				}
+			}
+		}
+    }
+}
+country_event = {
+    id = 4207102
     title = "Treaty of Guadalupe-Hidalgo"
     desc = "EVTDESC123567"
     picture = "mexico-us-treaty"
@@ -18356,26 +18330,7 @@ country_event = {
         prestige = 5
     }
 }
-country_event = {
-    id = 123570
-    title = "The integration of Bukhara"
-    desc = "EVTDESC123570"
-    fire_only_once = yes
-    picture = "khiva_integration"
-    mean_time_to_happen = { months = 1 }
-    trigger = {
-        year = 1873
-        tag = RUS
-        exists = BUK
-        BUK = { vassal_of = RUS }
-        BUK = { in_sphere = RUS }
-        war = no
-    }
-    option = {
-        name = "Proceed with the integration."
-        inherit = BUK
-    }
-}
+
 country_event = {
     id = 123571
     title = "Seizing Manifa"
@@ -18420,11 +18375,7 @@ country_event = {
 		USA_81 = { add_core = MEX }
 		USA_78 = { add_core = MEX }
 		USA_91 = { add_core = MEX }
-		114 = { add_core = MEX } #Idaho
-		111 = { add_core = MEX } #Idaho
 		3468 = { add_core = MEX }
-		111 = { add_core = MEX }
-		114 = { add_core = MEX }
 		3467 = { add_core = MEX }
 		random_owned = { limit = { owner = { USA = { exists = yes } } } owner = { USA = { country_event = 123575 } } }
 		set_country_flag = has_taken_oregon_or_more
@@ -18447,12 +18398,7 @@ country_event = {
 		USA_81 = { add_core = MEX }
 		USA_78 = { add_core = MEX }
 		USA_91 = { add_core = MEX }
-		114 = { add_core = MEX } #Idaho
-		111 = { add_core = MEX } #Idaho
 		USA_116 = { add_core = MEX }
-		USA_106 = { add_core = MEX }
-		USA_111 = { add_core = MEX }
-		USA_118 = { add_core = MEX }
 		USA_121 = { add_core = MEX }
 		USA_124 = { add_core = MEX }
 		USA_144 = { add_core = MEX }
@@ -18486,12 +18432,7 @@ country_event = {
 		USA_81 = { add_core = MEX }
 		USA_78 = { add_core = MEX }
 		USA_91 = { add_core = MEX }
-		114 = { add_core = MEX } #Idaho
-		111 = { add_core = MEX } #Idaho
 		USA_116 = { add_core = MEX }
-		USA_106 = { add_core = MEX }
-		USA_111 = { add_core = MEX }
-		USA_118 = { add_core = MEX }
 		USA_121 = { add_core = MEX }
 		USA_124 = { add_core = MEX }
 		USA_144 = { add_core = MEX }
@@ -18553,9 +18494,8 @@ country_event = {
 					region = USA_91
 					region = CAN_13
 					province_id = 3468
-					province_id = 111
+					province_id = 4099
 					province_id = 113
-					province_id = 114
 					province_id = 3467
 				}
 			}
@@ -18584,9 +18524,6 @@ country_event = {
 					region = USA_78
 					region = USA_91
 					region = USA_116
-					region = USA_106
-					region = USA_111
-					region = USA_118
 					region = USA_121
 					region = USA_124
 					region = USA_144
@@ -18597,8 +18534,6 @@ country_event = {
 					region = USA_139
 					region = TEX_132
 					region = USA_158
-					province_id = 111
-					province_id = 114
 				}
 				NOT = { province_id = 140 }
 			}
@@ -18630,9 +18565,6 @@ country_event = {
 					region = USA_78
 					region = USA_91
 					region = USA_116
-					region = USA_106
-					region = USA_111
-					region = USA_118
 					region = USA_121
 					region = USA_124
 					region = USA_144
@@ -18646,8 +18578,6 @@ country_event = {
 					province_id = 194
 					province_id = 197
 					region = USA_200
-					province_id = 111
-					province_id = 114
 				}
 			}
 			secede_province = UTI
@@ -18825,7 +18755,29 @@ country_event = {
 		}
 		exists = yes
         NOT = {
+			tag = HAZ
+			tag = KND
+			tag = BDN
+			tag = RDL
+			tag = MKR
+			tag = YEK
+			tag = KHL
+			tag = BHT
+			tag = BNB
+			tag = BOH
+			tag = BTL
+			tag = BZD
+			tag = TSI
+			tag = PLS
+			tag = KHZ
+			tag = SRN
+			tag = MKN
+			tag = DUB
+			tag = IRQ
+			tag = JOR
+			tag = JZR
 			tag = IQC
+			tag = YEM
 			has_country_flag = i_am_flc
 			AND = { tag = EQG NOT = { has_country_flag = post_colonial_country } }
 			AND = { tag = CMR NOT = { has_country_flag = post_colonial_country } }
@@ -18852,11 +18804,15 @@ country_event = {
 			tag = NEJ
 			AND = { tag = STP NOT = { has_country_flag = post_colonial_country } }
 			tag = HDJ
+			tag = ASI
 			tag = HAL
 			tag = UCA
+			tag = PAP
 			tag = BOE
 			tag = HBY
 			tag = MLN
+			tag = KTH
+			tag = SHD
 			tag = RZQ
 			tag = MGH
 			tag = IBD
@@ -18941,7 +18897,7 @@ country_event = {
             tag = SGF
             tag = GCF
             tag = AUB
-            tag = AUS
+            AND = { tag = AUS NOT = { has_country_flag = small_aus } }
             tag = GBU
             tag = MEX
             tag = MEE
@@ -18992,6 +18948,11 @@ country_event = {
 			tag = UBD
 			tag = GEO
 			tag = TCA
+			tag = DNN
+			tag = KHR
+			tag = LUR
+			tag = EZO
+			tag = ARC
         }
     }
     option = {
@@ -19537,9 +19498,9 @@ country_event = {
 			tag = BOR
 			tag = FRA
 		}
-		BRZ = { owns = 2415 }
-		BRZ = { owns = 2408 }
-		BRZ = { owns = 4109 }
+		2415 = { owner = { OR = { tag = BRZ tag = UPB tag = PAA } } }
+		2408 = { owner = { OR = { tag = BRZ tag = UPB tag = PAA } } }
+		4109 = { owner = { OR = { tag = BRZ tag = UPB tag = PAA } } }
     }
 
     mean_time_to_happen = { months = 1 }
@@ -19547,10 +19508,10 @@ country_event = {
     option = {
         name = "Support them."
         prestige = 3
-		BRZ = { country_event = 123619 }
-		diplomatic_influence = {
-			who = BRZ
-			value = -50
+		2415 = {
+			owner = {
+				country_event = 123619
+			}
 		}
 		ai_chance = { factor = 100 }
     }
@@ -19559,10 +19520,10 @@ country_event = {
         name = "Let's not cause conflict over a patch of jungle. §GLose 1 infamy§W"
         prestige = -3
 		badboy = -1
-		BRZ = { country_event = 123620 }
-		diplomatic_influence = {
-			who = BRZ
-			value = 50
+		2415 = {
+			owner = {
+				country_event = 123620
+			}
 		}
 		ai_chance = { factor = 0 }
     }
@@ -19575,6 +19536,25 @@ country_event = {
     picture = "independent_guyana"
     fire_only_once = yes
 	is_triggered_only = yes
+	immediate = {
+		set_country_flag = hide_tooltip
+		random_owned = {
+			limit = {
+				owner = {
+					has_country_flag = hide_tooltip
+				}
+			}
+			owner = {
+				FROM = {
+					diplomatic_influence = {
+						who = THIS
+						value = 50
+					}
+				}
+			}
+		}
+		clr_country_flag = hide_tooltip
+	}
     option = {
         name = "How nice of them!"
         prestige = 5
@@ -19591,10 +19571,34 @@ country_event = {
     picture = "independent_guyana"
     fire_only_once = yes
 	is_triggered_only = yes
+	immediate = {
+		set_country_flag = hide_tooltip
+		random_owned = {
+			limit = {
+				owner = {
+					has_country_flag = hide_tooltip
+				}
+			}
+			owner = {
+				FROM = {
+					diplomatic_influence = {
+						who = THIS
+						value = -50
+					}
+				}
+			}
+		}
+		clr_country_flag = hide_tooltip
+	}
     option = {
         name = "We shall regain it sooner or later..."
         prestige = -5
 		RIG = { government = prov_gov_conservative set_country_flag = colony_exemption }
+		2415 = {
+			owner = {
+				set_country_flag = you_are_there_brz
+			}
+		}
 		2415 = { secede_province = RIG }
 		RIG = { government = prov_gov_conservative }
 		FROM = {
@@ -19659,6 +19663,25 @@ country_event = {
     picture = "independent_guyana"
     fire_only_once = yes
 	is_triggered_only = yes
+	immediate = {
+		set_country_flag = hide_tooltip
+		random_owned = {
+			limit = {
+				owner = {
+					has_country_flag = hide_tooltip
+				}
+			}
+			owner = {
+				FROM = {
+					diplomatic_influence = {
+						who = THIS
+						value = -50
+					}
+				}
+			}
+		}
+		clr_country_flag = hide_tooltip
+	}
        option = {
         name = "We shall maintain the status quo."
         prestige = -5
@@ -19710,6 +19733,28 @@ country_event = {
     picture = "independent_guyana"
     fire_only_once = yes
 	is_triggered_only = yes
+	immediate = {
+		set_country_flag = hide_tooltip
+		random_owned = {
+			limit = {
+				owner = {
+					has_country_flag = hide_tooltip
+				}
+			}
+			owner = {
+				FROM = {
+					diplomatic_influence = {
+						who = THIS
+						value = 50
+					}
+				}
+				RIG = { government = democracy clr_country_flag = colony_exemption }
+				RIG = { annex_to = THIS }
+				RIG = { government = democracy }
+			}
+		}
+		clr_country_flag = hide_tooltip
+	}
     option = {
         name = "How nice of them!"
         prestige = 5
@@ -19738,7 +19783,7 @@ country_event = {
 			tag = BOR
 			tag = FRA
 		}
-		RIG = { owns = 2415 }
+		RIG = { owns = 2415 any_neighbor_country = { has_country_flag = you_are_there_brz } }
     }
 
     mean_time_to_happen = {
@@ -19749,25 +19794,14 @@ country_event = {
         name = "Reject the arbitration! §RGain 1 infamy§W"
         prestige = 3
 		badboy = 1
-		BRZ = { country_event = 123622 }
-		diplomatic_influence = {
-			who = BRZ
-			value = -50
-		}
+		any_country = { limit = { has_country_flag = you_are_there_brz } country_event = 123622 }
 		ai_chance = { factor = 5 }
     }
 
 	option = {
         name = "Agree to the arbitration."
         prestige = -5
-		BRZ = { country_event = 123623 }
-		diplomatic_influence = {
-			who = BRZ
-			value = 50
-		}
-		RIG = { government = democracy clr_country_flag = colony_exemption }
-		RIG = { annex_to = BRZ }
-		RIG = { government = democracy }
+		any_country = { limit = { has_country_flag = you_are_there_brz } country_event = 123623 }
 		ai_chance = { factor = 95 }
     }
 }
@@ -19781,125 +19815,166 @@ country_event = {
 	is_triggered_only = yes
     option = {
         name = "We agree!"
-		2404 = { remove_core = PBC remove_core = PEU remove_core = LPL }
-		3652 = { remove_core = PBC remove_core = PEU remove_core = LPL }
-		3651 = { remove_core = PBC remove_core = PEU remove_core = LPL }
-		4186 = { remove_core = PBC remove_core = PEU remove_core = LPL }
-		3995 = { remove_core = PBC remove_core = PEU remove_core = LPL }
+		2404 = { remove_core = THIS }
+		3652 = { remove_core = THIS }
+		3651 = { remove_core = THIS }
+		4186 = { remove_core = THIS }
+		4201 = { remove_core = THIS }
+		4212 = { remove_core = THIS }
+		4202 = { remove_core = THIS }
+		3381 = { remove_core = THIS }
+		3435 = { remove_core = THIS }
+		4187 = { remove_core = THIS }
+		3382 = { remove_core = THIS }
+		3380 = { remove_core = THIS }
+		4191 = { remove_core = THIS }
+		4196 = { remove_core = THIS }
+		random_owned = {
+			limit = {
+				owner = {
+					OR = { PEU = { vassal_of = THIS } AND = { 2295 = { owned by THIS } PEU = { exists = no } } }
+					OR = {
+						3381 = { is_core = PEU }
+						3382 = { is_core = PEU }
+						3435 = { is_core = PEU }
+						3651 = { is_core = PEU }
+						3652 = { is_core = PEU }
+						4186 = { is_core = PEU }
+						4187 = { is_core = PEU }
+						4201 = { is_core = PEU }
+						4212 = { is_core = PEU }
+						4202 = { is_core = PEU }
+					}
+				}
+			}
+			owner = {
+				3381 = { remove_core = PEU }
+				3382 = { remove_core = PEU }
+				3435 = { remove_core = PEU }
+				3651 = { remove_core = PEU }
+				3652 = { remove_core = PEU }
+				4186 = { remove_core = PEU }
+				4187 = { remove_core = PEU }
+				4201 = { remove_core = PEU }
+				4212 = { remove_core = PEU }
+				4202 = { remove_core = PEU }
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					OR = { SPU = { vassal_of = THIS } AND = { 2304 = { owned by THIS } SPU = { exists = no } } }
+					OR = {
+						3382 = { is_core = SPU }
+						3435 = { is_core = SPU }
+						4187 = { is_core = SPU }
+					}
+				}
+			}
+			owner = {
+				3382 = { remove_core = SPU }
+				3435 = { remove_core = SPU }
+				4187 = { remove_core = SPU }
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					OR = { BOL = { vassal_of = THIS } AND = { 2310 = { owned by THIS } BOL = { exists = no } } }
+					OR = {
+						3380 = { is_core = BOL }
+						3381 = { is_core = BOL }
+						3382 = { is_core = BOL }
+						3435 = { is_core = BOL }
+						4187 = { is_core = BOL }
+						4191 = { is_core = BOL }
+						4196 = { is_core = BOL }
+					}
+				}
+			}
+			owner = {
+				3380 = { remove_core = BOL }
+				3381 = { remove_core = BOL }
+				3382 = { remove_core = BOL }
+				3435 = { remove_core = BOL }
+				4187 = { remove_core = BOL }
+				4191 = { remove_core = BOL }
+				4196 = { remove_core = BOL }
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					OR = { LPL = { vassal_of = THIS } AND = { 2348 = { owned by THIS } LPL = { exists = no } } }
+					OR = {
+						3380 = { is_core = LPL }
+						3381 = { is_core = LPL }
+						3382 = { is_core = LPL }
+						3435 = { is_core = LPL }
+						4187 = { is_core = LPL }
+						4191 = { is_core = LPL }
+						4196 = { is_core = LPL }
+					}
+				}
+			}
+			owner = {
+				3380 = { remove_core = LPL }
+				3381 = { remove_core = LPL }
+				3382 = { remove_core = LPL }
+				3435 = { remove_core = LPL }
+				4187 = { remove_core = LPL }
+				4191 = { remove_core = LPL }
+				4196 = { remove_core = LPL }
+			}
+		}
         prestige = -5
 		relation = {
 			who = FROM
 			value = 50
 		}
-		3381 = {
-			remove_core = BOL
-			remove_core = PBC
-			remove_core = PEU
-			remove_core = LPL
-		}
-		3435 = {
-			remove_core = BOL
-			remove_core = PBC
-			remove_core = PEU
-			remove_core = LPL
-		}
-		4187 = {
-			remove_core = BOL
-			remove_core = PBC
-			remove_core = PEU
-			remove_core = LPL
-		}
 		any_owned = {
 			limit = {
 				OR = {
+					province_id = 2404
+					province_id = 3380
 					province_id = 3381
+					province_id = 3382
 					province_id = 3435
+					province_id = 3651
+					province_id = 3652
+					province_id = 4186
 					province_id = 4187
+					province_id = 4191
+					province_id = 4196
+					province_id = 4201
+					province_id = 4212
+					province_id = 4202
 				}
 			}
 			secede_province = FROM
 		}
-		random_owned = {
-			limit = {
-				owner = {
-					owns = 3382
+		any_country = {
+			limit = { vassal_of = THIS }
+			any_owner = {
+				limit = {
 					OR = {
-						tag = PBC
-						tag = BOL
-						tag = LPL
-						3382 = { empty = yes }
+						province_id = 2404
+						province_id = 3380
+						province_id = 3381
+						province_id = 3382
+						province_id = 3435
+						province_id = 3651
+						province_id = 3652
+						province_id = 4186
+						province_id = 4187
+						province_id = 4191
+						province_id = 4196
+						province_id = 4201
+						province_id = 4212
+						province_id = 4202
 					}
 				}
-			}
-			owner = {
-				3382 = { remove_core = PEU }
-			}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					owns = 3382
-					tag = PEU
-				}
-			}
-			owner = {
-				3382 = { remove_core = BOL remove_core = PBC }
-			}
-		}
-		any_owned = {
-			limit = {
-				province_id = 3382
-			}
-			secede_province = FROM
-		}
-		3382 = {
-			remove_core = BOL
-			remove_core = PBC
-			remove_core = PEU
-			remove_core = LPL
-		}
-		3380 = {
-			remove_core = BOL
-			remove_core = PBC
-			remove_core = LPL
-		}
-		3990 = {
-			remove_core = BOL
-			remove_core = PBC
-			remove_core = LPL
-		}
-		3988 = {
-			remove_core = BOL
-			remove_core = PBC
-			remove_core = LPL
-		}
-		any_owned = {
-			limit = { OR = { province_id = 3380 province_id = 3990 province_id = 3988 } }
-			secede_province = FROM
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					2310 = { NOT = { is_core = PEU } }
-					4091 = { is_core = PEU }
-				}
-			}
-			owner = {
-				2320 = { remove_core = PEU }
-				4091 = { remove_core = PEU }
-				2293 = { remove_core = PEU }
-				4006 = { remove_core = PEU }
-				2316 = { remove_core = PEU }
-				4003 = { remove_core = PEU }
-				4004 = { remove_core = PEU }
-				4005 = { remove_core = PEU }
-				2317 = { remove_core = PEU }
-				3380 = { remove_core = PEU }
-				3990 = { remove_core = PEU }
-				3988 = { remove_core = PEU }
-				2318 = { remove_core = PEU }
-				4092 = { remove_core = PEU }
-				4024 = { remove_core = PEU }
+				secede_province = FROM
 			}
 		}
 		FROM = { country_event = 123629 }
@@ -19936,7 +20011,7 @@ country_event = {
 		4092 = { add_core = THIS add_core = MGO }
 		4024 = { add_core = THIS add_core = MGO }
 		3380 = { add_core = THIS add_core = MGO }
-		3990 = { add_core = THIS add_core = MGO }
+		4196 = { add_core = THIS add_core = MGO }
 		2316 = { add_core = THIS add_core = MGO }
 		4003 = { add_core = THIS add_core = MGO }
 		4004 = { add_core = THIS add_core = MGO }

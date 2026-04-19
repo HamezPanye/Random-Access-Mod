@@ -93,7 +93,7 @@ country_event = {
         NOT = { has_country_flag = slavery_still_stands }
     }
     mean_time_to_happen = {
-        months = 36
+        months = 30
         modifier = {
             factor = 0.9
             average_consciousness = 6
@@ -131,7 +131,7 @@ country_event = {
             consciousness = -1
         }
         ai_chance = {
-            factor = 70
+            factor = 90
             modifier = {
                 factor = 0.2
                 NOT = {
@@ -154,7 +154,7 @@ country_event = {
             duration = -1
         }
         ai_chance = {
-            factor = 30
+            factor = 10
             modifier = {
                     factor = 0.5
                     average_militancy = 7
@@ -1453,6 +1453,7 @@ country_event = {
         name = "It was getting a bit crowded here anyhow."
         set_global_flag = california_boom_global_flag
         MEX_85 = { remove_province_modifier = california_boom_modifier add_province_modifier = { name = california_slow_boom_modifier duration = 5600 } }
+        MEX_85_2 = { remove_province_modifier = california_boom_modifier add_province_modifier = { name = california_slow_boom_modifier duration = 5600 } }
     }
 }
 

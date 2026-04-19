@@ -2,7 +2,6 @@ capital = 1121
 primary_culture = persian
 culture = tajik
 culture = azerbaijani
-culture = lurish
 culture = talysh
 culture = mazanderani
 culture = qashqai
@@ -54,6 +53,15 @@ upper_house = {
 }
 
 set_country_flag = shiite_country
+set_country_flag = fathalishah
+set_country_flag = abbasmirzaalive
+set_country_flag = is_iran
+
+1834.1.1 = {
+	clr_country_flag = fathalishah
+	clr_country_flag = abbasmirzaalive
+	set_country_flag = mohammadshah
+}
 
 foreign_training = yes_foreign_training
 foreign_weapons = yes_foreign_weapons
@@ -61,7 +69,6 @@ set_country_flag = using_foreign_weapons
 foreign_artillery = yes_foreign_artillery
 set_country_flag = using_foreign_artillery
 monetary_reform = yes_monetary_reform
-education_reform = yes_education_reform
 
 govt_flag = {
     government = absolute_empire

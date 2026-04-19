@@ -1,0 +1,18 @@
+EVTNAME19356;A war to end all wars;;;;;;;;;;;;;x
+EVTDESC19356;\n\nIt_has_become_increasingly_clear_that_we_have_entered_a_new_era_of_unprecedented_warfare._The_conflicts_of_our_time_are_no_longer_mere_local_issues,_but_instead_reach_every_corner_of_the_world._Considering_the_ever_increasing_stakes_and_the_terrifying_impact_of_these_hostilities_on_the_nations_involved,_there_is_no_longer_any_need_for_restrain.\n\n_From_now_on_a_great_war_will_allow_a_side_that_is_clearly_winning_the_ability_to_add_even_more_wargoals;;;;;;;;;;;;;x
+EVTOPTA19356;Gentlemen, all I ask for is war, a war so grand as to make Hell itself tremble;;;;;;;;;;;;;x
+EVTDESC19356_NEWS_LONG;It_has_become_increasingly_clear_that_we_have_entered_a_new_era_of_unprecedented_warfare._The_conflicts_of_our_time_are_no_longer_mere_local_issues,_but_instead_reach_every_corner_of_the_world._Considering_the_ever_increasing_stakes_and_the_terrifying_impact_of_these_hostilities_on_the_nations_involved,_there_is_no_longer_any_need_for_restrain.;;;;;;;;;;;;;x
+EVTDESC19356_NEWS_MEDIUM;It_has_become_increasingly_clear_that_we_have_entered_a_new_era_of_unprecedented_warfare._The_conflicts_of_our_time_are_no_longer_mere_local_issues,_but_instead_reach_every_corner_of_the_world._Considering_the_ever_increasing_stakes_and_the_terrifying_impact_of_these_hostilities_on_the_nations_involved,_there_is_no_longer_any_need_for_restrain.;;;;;;;;;;;;;x
+EVTDESC19356_NEWS_SHORT;It_has_become_increasingly_clear_that_we_have_entered_a_new_era_of_unprecedented_warfare.;;;;;;;;;;;;;x
+ASSIMILATE_EFFECT;Assimilate all Pops in state\n;;;;;;;;;;;;;x
+WORLD_WARS_ENABLE_DESC;Great wars can now become World wars;;;;;;;;;;;;;x
+WORLD_WARS_ENABLED_DESC;World wars are enabled;;;;;;;;;;;;;x
+WORLD_WARS_DISABLED_DESC;World wars are NOT enabled;;;;;;;;;;;;;x
+SM_WINDOW;Window mode;;;;;;;;;;;;;x
+SM_WINDOWED;Windowed;;;;;;;;;;;;;x
+SM_FULLSCREEN;Fullscreen;;;;;;;;;;;;;x
+SM_BORDERLESS;Borderless;;;;;;;;;;;;;x
+IGNORE_DECISION_ON;This decision is set to NOT notify the player when it is available to be taken.\n\n§GClick to change notification status.§!;;;;;;;;;;;;;x
+IGNORE_DECISION_OFF;This decision is set to notify the player when it is available to be taken.\n\n§GClick to change notification status.§!;;;;;;;;;;;;;x
+SPLITINHALF;Split in Half;;;;;;;;;;;;;x
+SPLITINHALF_DRO;Split in half will split the current unit into two roughly even-sized units and select the larger of the two units.;;;;;;;;;;;;;x

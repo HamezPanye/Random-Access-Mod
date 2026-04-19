@@ -3,7 +3,7 @@ KSJ = {
 }
 
 RUS = {
-    truce_until = 1841.1.1
+    truce_until = 1845.1.1
 }
 
 army = {
@@ -17,7 +17,7 @@ army = {
 }
 
 leader = {
-    name = "Kenesary Khan"
+    name = "Kenesary Qasymuly"
     type = land
     date = 1825.1.1
     background = attack_3.1

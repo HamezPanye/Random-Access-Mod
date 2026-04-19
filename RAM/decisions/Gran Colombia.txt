@@ -1,34 +1,53 @@
 political_decisions = {
-    gran_colombia_by_sword = {
-        picture = unite_gran_colombia
+    gco_afro_latino_rights = {
+        picture = gco_afro_latino
         potential = {
+            tag = GCO
+            slavery = no_slavery
             OR = {
-                tag = CLM
-                tag = ECU
-				tag = ECM
-                tag = VNZ
+                government = hms_government
+                government = democracy
+                government = constitutional_empire
+				government = radical_republic
+				government = proletarian_dictatorship
             }
-            NOT = {
-                exists = GCO
-                has_country_flag = we_shall_unite_by_sword
-            }
+			NOT = { accepted_culture = afro_latino }
+            NOT = { has_country_flag = gco_afro_latino_accepted }
         }
 
         allow = {
-            state_n_government = 1
-            rank = 12
-            war_policy = jingoism
-            war = no
+            biologism = 1
+			OR = {
+				ruling_party_ideology = liberal
+				ruling_party_ideology = radical
+				ruling_party_ideology = socialist
+				ruling_party_ideology = communist
+			}
+			citizens_rights = all_voting_pops
+			slavery = no_slavery
+			NOT = { citizenship_policy = residency }
         }
 
         effect = {
-            set_country_flag = we_shall_unite_by_sword
-            CLM = { all_core = { add_core = THIS } }
-            ECU = { all_core = { add_core = THIS } }
-            ECM = { all_core = { add_core = THIS } }
-            VNZ = { all_core = { add_core = THIS } }
+            set_country_flag = gco_afro_latino_accepted
+            add_accepted_culture = afro_latino
+            any_pop = { limit = { has_pop_culture = afro_latino } consciousness = -5 militancy = -6 }
+            any_pop = {
+				limit = {
+					OR = {
+						pop_majority_ideology = conservative
+						pop_majority_ideology = reactionary
+					}
+					OR = {
+						is_primary_culture = yes
+						is_accepted_culture = yes
+					}
+					NOT = { has_pop_culture = afro_latino }
+				}
+				militancy = 2
+				consciousness = 3
+			}
         }
-        ai_will_do = { factor = 1 }
     }
 
     form_gran_colombia = {
@@ -45,8 +64,10 @@ political_decisions = {
         }
 
         allow = {
-            prestige = 50
-            nationalism_n_imperialism = 1
+            OR = {
+				prestige = 50
+				AND = { owns = 2247 owns = 2279 }
+			}
             CLM = {
                 OR = {
                     in_sphere = THIS
@@ -91,6 +112,7 @@ political_decisions = {
 							empty = yes
                         }
                     }
+					NOT = { any_land_province = { is_core = ECU } }
                 }
             }
             ECM = {
@@ -114,6 +136,7 @@ political_decisions = {
 							empty = yes
                         }
                     }
+					NOT = { any_land_province = { is_core = ECM } }
                 }
             }
             VNZ = {
@@ -146,6 +169,13 @@ political_decisions = {
 
         effect = {
             prestige = 10
+			random_owned = { 
+				limit = { owner = { government = prov_gov_liberal } }
+				owner = { government = democracy  }
+				CLM = { all_core = { limit = { OR = { province_id = 2401 province_id = 3567 province_id = 2261 } } remove_core = VNZ } }
+				ECM = { all_core = { remove_core = VNZ } }
+				ECU = { all_core = { remove_core = VNZ } }
+			}
             CLM = { all_core = { add_core = GCO } }
             ECU = { all_core = { add_core = GCO } }
             ECM = { all_core = { add_core = GCO } }
@@ -154,11 +184,12 @@ political_decisions = {
             # some early claims we can roll with for future colombian expansion
             2401 = { add_core = GCO }
             3567 = { add_core = GCO }
-            3998 = { add_core = GCO } 
+            4204 = { add_core = GCO } 
+            2404 = { add_core = GCO } 
 			3359 = { add_core = GCO }
 			2532 = { add_core = GCO }
 			1977 = { add_core = GCO }
-			3999 = { add_core = GCO }
+			4205 = { add_core = GCO }
 			3359 = { add_core = GCO }
             any_country = {
                 limit = {
@@ -221,11 +252,12 @@ political_decisions = {
         }
 
         allow = {
-            owns = 2254
+            owns = 3748
             owns = 2270
 			owns = 2264
 			owns = 2279
 			owns = 2247
+			money = 20000
         }
 
         effect = {
@@ -240,7 +272,7 @@ political_decisions = {
         potential = {
             2239 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = north_america } } } }
             AMA = { exists = no }
-			OR = { tag = GCO }
+			OR = { tag = GCO tag = FGC }
             NOT = { has_country_flag = accepted_guyana_purchase }
         }
 
@@ -304,7 +336,7 @@ political_decisions = {
             2240 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = north_america } } } }
             2239 = { owned_by = THIS }
             GUY = { exists = no }
-			OR = { tag = GCO }
+			OR = { tag = GCO tag = FGC }
             has_country_flag = guyana_purchase
             NOT = { has_country_flag = accepted_suriname_purchase }
         }
@@ -327,7 +359,7 @@ political_decisions = {
         potential = {
             2241 = { NOT = { owned_by = THIS } owner = { NOT = { capital_scope = { continent = north_america } } } }
             2240 = { owned_by = THIS }
-			OR = { tag = GCO }
+			OR = { tag = GCO tag = FGC }
             RIG = { exists = no }
             NOT = { has_country_flag = accepted_french_guyana_purchase }
         }
@@ -362,6 +394,8 @@ political_decisions = {
 			is_greater_power = yes
 			PEU = { capital_scope = { is_core = THIS owned_by = THIS } }
 			BOL = { capital_scope = { is_core = THIS owned_by = THIS } }
+			2264 = { is_core = THIS owned_by = THIS }
+			2279 = { is_core = THIS owned_by = THIS }
 			2209 = { is_core = THIS owned_by = THIS }
 			2214 = { is_core = THIS owned_by = THIS }
 			2222 = { is_core = THIS owned_by = THIS }
@@ -373,6 +407,7 @@ political_decisions = {
 			2322 = { add_core = GCO }
 			2322 = { add_core = BOL }
 			4182 = { add_core = GCO }
+			4182 = { add_core = BOL }
 			2415 = { add_core = GCO }
 			2407 = { add_core = GCO }
 			4076 = { add_core = GCO }
@@ -380,19 +415,21 @@ political_decisions = {
 			2408 = { add_core = GCO }
 			4109 = { add_core = GCO }
 			2402 = { add_core = GCO }
-			3994 = { add_core = GCO }
+			4200 = { add_core = GCO }
 			2404 = { add_core = GCO }
-			3998 = { add_core = GCO }
+			4204 = { add_core = GCO }
+			2404 = { add_core = GCO }
 			3651 = { add_core = GCO }
 			4186 = { add_core = GCO }
 			3652 = { add_core = GCO }
-			3996 = { add_core = GCO }
-			3995 = { add_core = GCO }
+			4202 = { add_core = GCO }
+			4201 = { add_core = GCO }
+            4212 = { add_core = GCO }
 			3652 = { add_core = GCO }
-			3993 = { add_core = GCO }
+			4199 = { add_core = GCO }
 			3567 = { add_core = GCO }
 			2403 = { add_core = GCO }
-			3992 = { add_core = GCO }
+			4198 = { add_core = GCO }
 			3435 = { add_core = GCO }
 			4187 = { add_core = GCO }
 			3381 = { add_core = GCO }
@@ -406,6 +443,7 @@ political_decisions = {
 			COS = { all_core = { add_core = FGC } }
 			NIC = { all_core = { add_core = FGC } }
 			HON = { all_core = { add_core = FGC } }
+			ELS = { all_core = { add_core = FGC } }
 			GUA = { all_core = { add_core = FGC } }
 			UCA = { all_core = { add_core = FGC } }
 			any_country = {

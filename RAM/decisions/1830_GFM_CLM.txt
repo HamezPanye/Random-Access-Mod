@@ -3,15 +3,7 @@ political_decisions = {
         picture = pedemonte
         potential = {
 			tag = GCO
-			2286 = { is_core = GCO }
-			2287 = { is_core = GCO }
-			2291 = { is_core = GCO }
-			4013 = { is_core = GCO }
-			4014 = { is_core = GCO }
-			4015 = { is_core = GCO }
-			2294 = { is_core = GCO }
-			4071 = { is_core = GCO }
-			4070 = { owned_by = GCO is_core = GCO }
+			4070 = { owned_by = GCO }
 			4072 = { owned_by = PEU is_core = PEU }
 			4010 = { owned_by = PEU is_core = PEU }
 			2287 = { owned_by = PEU is_core = PEU }
@@ -131,24 +123,106 @@ political_decisions = {
 			696 = { remove_core = CLM }
 			2401 = { remove_core = CLM }
 			3567 = { remove_core = CLM }
-			3998 = { remove_core = CLM }
+			4204 = { remove_core = CLM }
 			3359 = { remove_core = CLM }
+			904 = { add_core = ECU }
+			3376 = { add_core = ECU }
+			696 = { add_core = ECU }
+			2256 = { add_core = ECU }
+			2257 = { add_core = ECU }
+			2258 = { add_core = ECU }
+			2260 = { add_core = ECU }
+			2261 = { add_core = ECU }
+			2401 = { add_core = ECU }
+			3567 = { add_core = ECU }
+			4204 = { add_core = ECU }
+			4073 = { add_core = ECU }
+			4189 = { add_core = ECU }
 			PNM = { country_event = { id = 127837 days = 90 } }
 			PEU = { relation = { who = THIS value = 190 } }
-			define_general = { name = "Tom?s Cipriano de Mosquera" personality = defence_3.1 background = attack_4.1 }
+			define_general = { name = "Tomás Cipriano de Mosquera" personality = defence_3.1 background = attack_4.1 }
 			define_general = { name = "Francisco José de Paula Santander Omaña" personality = defence_4.1 background = attack_2.1 }
 			random_owned = {
-				limit = { owner = { 3567 = { OR = { owned_by = ECU owned_by = VNZ } } } }
+				limit = { owner = { 3567 = { OR = { owned_by = ECU owned_by = VNZ } } 4204 = { owned_by = BRZ } } }
 				owner = { 
 					3567 = {
 						# Audax Validator "." Ignore_NEXT
 						secede_province = THIS
 						# Audax Validator "." Ignore_NEXT 
-						secede_province = BRZ 
+						secede_province = BRZ
+						add_core = BRZ
 					}
 				}
 			}
-			3567 = { add_core = BRZ } # Rio Negro - Goes to Brazil and gives them a core
+			random_owned = {
+				limit = { owner = { 3567 = { OR = { owned_by = ECU owned_by = VNZ } } 4204 = { owned_by = UPB } } }
+				owner = { 
+					3567 = {
+						# Audax Validator "." Ignore_NEXT
+						secede_province = THIS
+						# Audax Validator "." Ignore_NEXT 
+						secede_province = UPB
+						add_core = UPB
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { 3567 = { OR = { owned_by = ECU owned_by = VNZ } } 4204 = { owned_by = PAA } } }
+				owner = { 
+					3567 = {
+						# Audax Validator "." Ignore_NEXT
+						secede_province = THIS
+						# Audax Validator "." Ignore_NEXT 
+						secede_province = PAA
+						add_core = PAA
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { 4204 = { owned_by = BRZ is_core = BRZ } } }
+				owner = { 
+					3567 = {
+						add_core = BRZ
+						add_core = PAA
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { 4204 = { owned_by = UPB is_core = BRZ } } }
+				owner = { 
+					3567 = {
+						add_core = BRZ
+						add_core = PAA
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { 4204 = { owned_by = UPB is_core = UPB } } }
+				owner = { 
+					3567 = {
+						add_core = UPB
+						add_core = PAA
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { 4204 = { owned_by = UPB is_core = UPB is_core = BRZ } } }
+				owner = { 
+					3567 = {
+						add_core = BRZ
+						add_core = UPB
+						add_core = PAA
+					}
+				}
+			}
+			random_owned = {
+				limit = { owner = { 4204 = { owned_by = PAA is_core = PAA } } }
+				owner = { 
+					3567 = {
+						add_core = PAA
+					}
+				}
+			}
 			any_owned = {
 				limit = {
 					is_core = VNZ
@@ -204,7 +278,7 @@ political_decisions = {
 			696 = { add_core = THIS }
 			2401 = { add_core = THIS }
 			3567 = { add_core = THIS }
-			3998 = { add_core = THIS }
+			4204 = { add_core = THIS }
 			3359 = { add_core = THIS }
 			add_country_modifier = {
 				name = small_country_draft

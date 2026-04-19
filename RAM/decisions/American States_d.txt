@@ -185,12 +185,10 @@ political_decisions = {
             is_vassal = no
 			NOT = {
 				68 = { is_core = NEN }
-				69 = { is_core = NEN }
 				70 = { is_core = NEN }
 				71 = { is_core = NEN }
 				72 = { is_core = NEN }
 				73 = { is_core = NEN }
-				3280 = { is_core = NEN }
 			}
         }
 
@@ -461,13 +459,15 @@ political_decisions = {
                 war_policy = jingoism
                 war_policy = pro_military
             }
-            prestige = 100
+            prestige = 25
             has_unclaimed_cores = no
         }
 
         effect = {
             set_country_flag = ULA_greater
-            badboy = 15
+            badboy = 10
+			add_accepted_culture = french_canadian
+			add_accepted_culture = afro_french
             any_country = {
                 limit = {
                     OR = {
@@ -485,10 +485,7 @@ political_decisions = {
 			142 = { add_core = ULA } #Louisiana
             USA_144 = { add_core = ULA } #Arkansas
             USA_148 = { add_core = ULA } #Missouri
-            119 = { add_core = ULA } #North Dakota
-            4094 = { add_core = ULA } #North Dakota
             117 = { add_core = ULA } #North Dakota
-            USA_121 = { add_core = ULA } #South Dakota
             USA_124 = { add_core = ULA } #Nebraska
             USA_151 = { add_core = ULA } #Iowa
 			USA_126 = { add_core = ULA } #Kansas
@@ -500,25 +497,122 @@ political_decisions = {
 			113 = { add_core = ULA } #Montana
 			116 = { add_core = ULA } #Montana
 			4103 = { add_core = ULA } #Montana
-			4099 = { add_core = ULA } #Montana
             USA_129 = { add_core = ULA } #Oklahoma
+			117 = { add_core = ULA } #Dakota
+			120 = { add_core = ULA } #Dakota
+			121 = { add_core = ULA } #Dakota
+			122 = { add_core = ULA } #Dakota
             106 = { add_core = ULA } #Colorado
 			3317 = { add_core = ULA } #Wyoming
             112 = { add_core = ULA } #Wyoming
             22 = { add_core = ULA } #Wyoming
 			107 = { add_core = ULA } #Wyoming
 			3468 = { add_core = ULA } #Wyoming
+			4099 = { add_core = ULA } #Wyoming
 			4145 = { add_core = ULA } #Wyoming
 			106 = { add_core = ULA } #Colorado
 			103 = { add_core = ULA } #Colorado
 			106 = { add_core = ULA } #Colorado
 			4120 = { add_core = ULA } #Colorado
-			4064 = { add_core = ULA } #Colorado
 			4063 = { add_core = ULA } #Texas
 			4035 = { add_core = ULA } #Texas
 			135 = { add_core = ULA } #Texas
             24 = { add_core = ULA } #bits of Lousianna territory in Canada
             30 = { add_core = ULA } #bits of Lousianna territory in Canada
+        }
+        ai_will_do = { factor = 1 }
+    }
+	
+	ULA_even_greater = {
+        picture = establish_panfrenchism
+        potential = {
+            tag = ULA
+            rank = 8
+            is_vassal = no
+            has_country_flag = ULA_greater
+			NOT = { has_country_flag = ULA_even_greater }
+            NOT = { has_global_flag = treaty_of_new_york }
+            FRA = { NOT = { has_country_flag = war_for_louisiana } }
+            BOR = { NOT = { has_country_flag = war_for_louisiana } }
+        }
+
+        allow = {
+            owns = 4119
+			owns = 158
+            OR = {
+                war_policy = jingoism
+                war_policy = pro_military
+            }
+            prestige = 100
+			total_amount_of_ships = 50
+            THIS = { all_core = { OR = { owned_by = THIS empty = yes } } }
+        }
+
+        effect = {
+            set_country_flag = ULA_even_greater
+            badboy = 20
+            any_country = {
+                limit = {
+                    OR = {
+                        tag = USA
+                        tag = CSA
+                        tag = FSA
+						tag = MEX
+						tag = ENG
+						tag = CAN
+                    }
+                }
+                relation = {
+                    who = THIS
+                    value = -150
+                }
+            }
+			CAN_50 = { add_core = ULA } #Ontario
+			CAN_58 = { add_core = ULA } #Quebec
+			ENG_68 = { add_core = ULA } #Maritimes
+			ENG_74 = { add_core = ULA } #Newfoundland
+			USA_158 = { add_core = ULA } #Minnesota
+			USA_162 = { add_core = ULA } #Wisconsin
+			USA_168 = { add_core = ULA } #Illinois
+			USA_170 = { add_core = ULA } #Indiana
+			USA_176 = { add_core = ULA } #Michigan
+			USA_178 = { add_core = ULA } #Ohio
+			USA_185 = { add_core = ULA } #Kentucky
+            USA_194 = { add_core = ULA } #Mississippi
+			USA_247 = { add_core = ULA } #New England
+			33 = { add_core = ULA } #Saskachewan
+			34 = { add_core = ULA } #Saskachewan
+			35 = { add_core = ULA } #Saskachewan
+			37 = { add_core = ULA } #Manitoba
+			39 = { add_core = ULA } #Manitoba
+			40 = { add_core = ULA } #Manitoba
+			41 = { add_core = ULA } #Manitoba
+			42 = { add_core = ULA } #Manitoba
+			2595 = { add_core = ULA } #Manitoba
+			4049 = { add_core = ULA } #Manitoba
+			4053 = { add_core = ULA } #Manitoba
+			4097 = { add_core = ULA } #Manitoba
+			235 = { add_core = ULA } #New York
+			236 = { add_core = ULA } #New York
+			237 = { add_core = ULA } #New York
+			238 = { add_core = ULA } #New York
+			239 = { add_core = ULA } #New York
+			240 = { add_core = ULA } #New York
+			227 = { add_core = ULA } #Pennsylvania
+			228 = { add_core = ULA } #Pennsylvania
+			2627 = { add_core = ULA } #Pennsylvania
+			218 = { add_core = ULA } #West Virginia
+			188 = { add_core = ULA } #Tennessee
+			189 = { add_core = ULA } #Tennessee
+			197 = { add_core = ULA } #Alabama
+			3310 = { add_core = ULA } #Alabama
+			4039 = { add_core = ULA } #Alabama
+			140 = { add_core = ULA } #Louisiana
+			141 = { add_core = ULA } #Louisiana
+			43 = { add_core = ULA } #Texas
+			132 = { add_core = ULA } #Texas
+			118 = { add_core = ULA } #Dakota
+			4094 = { add_core = ULA } #Dakota
         }
         ai_will_do = { factor = 1 }
     }
@@ -843,7 +937,6 @@ political_decisions = {
 			owns = 106
 			owns = 124
 			owns = 4056
-			owns = 4100
 			owns = 125
 			owns = 4101
 			owns = 4044
@@ -856,16 +949,15 @@ political_decisions = {
 			owns = 122
 			owns = 117
 			owns = 118
-			owns = 119
 			owns = 4094
 			owns = 112
 			owns = 22
 			owns = 3317
 			owns = 3468
+			owns = 4099
 			owns = 115
 			owns = 116
 			owns = 4103
-			owns = 4099
 			owns = 3467
         }
 
@@ -891,7 +983,6 @@ political_decisions = {
 							province_id = 123
 							province_id = 124
 							province_id = 4056
-							province_id = 4100
 							province_id = 125
 							province_id = 4101
 							province_id = 151
@@ -912,18 +1003,15 @@ political_decisions = {
                     NOT = { is_culture_group = native_american }
 					location = {
 						OR = {
-							province_id = 119
 							province_id = 4094
 							province_id = 112
 							province_id = 22
 							province_id = 3317
 							province_id = 3468
 							province_id = 113
-							province_id = 114
 							province_id = 115
 							province_id = 116
 							province_id = 4103
-							province_id = 4099
 							province_id = 3467
 							province_id = 3321
 						}
@@ -944,7 +1032,6 @@ political_decisions = {
 							province_id = 36
 							province_id = 157
 							province_id = 158
-							province_id = 4046
 							province_id = 120
 							province_id = 121
 							province_id = 122
@@ -1123,7 +1210,6 @@ political_decisions = {
 						province_id = 155
 						province_id = 4067
 						province_id = 158
-						province_id = 4046
 						region = USA_162
 						region = USA_176
 						region = USA_168
@@ -1500,7 +1586,6 @@ political_decisions = {
 			owns = 50
 			owns = 3616
 			owns = 158
-			owns = 4046
         }
 
         effect = {
@@ -2089,7 +2174,6 @@ political_decisions = {
 					location = {
 						OR = {
 							province_id = 158
-							province_id = 4046
 						}
 					}
                 }
@@ -2156,7 +2240,6 @@ political_decisions = {
 						province_id = 50
 						province_id = 3616
 						province_id = 158
-						province_id = 4046
 					}
 				}
 				secede_province = UTI
@@ -2255,7 +2338,6 @@ political_decisions = {
 			92 = { OR = { owned_by = THIS empty = yes } }
 			93 = { OR = { owned_by = THIS empty = yes } }
 			113 = { OR = { owned_by = THIS empty = yes } }
-			114 = { OR = { owned_by = THIS empty = yes } }
 			3467 = { OR = { owned_by = THIS empty = yes } }
 			#Oregon
 			81 = { OR = { owned_by = THIS empty = yes } }
@@ -2279,7 +2361,6 @@ political_decisions = {
 			104 = { OR = { owned_by = THIS empty = yes } }
 			84 = { OR = { owned_by = THIS empty = yes } }
 			4142 = { OR = { owned_by = THIS empty = yes } }
-			85 = { OR = { owned_by = THIS empty = yes } }
 			86 = { OR = { owned_by = THIS empty = yes } }
 			3448 = { OR = { owned_by = THIS empty = yes } }
 			3452 = { OR = { owned_by = THIS empty = yes } }
@@ -2297,13 +2378,11 @@ political_decisions = {
 			3566 = { OR = { owned_by = THIS empty = yes } }
 			#Nevada n Utah
 			97 = { OR = { owned_by = THIS empty = yes } }
-			98 = { OR = { owned_by = THIS empty = yes } }
 			99 = { OR = { owned_by = THIS empty = yes } }
 			4055 = { OR = { owned_by = THIS empty = yes } }
 			3459 = { OR = { owned_by = THIS empty = yes } }
 			94 = { OR = { owned_by = THIS empty = yes } }
 			95 = { OR = { owned_by = THIS empty = yes } }
-			96 = { OR = { owned_by = THIS empty = yes } }
 			3457 = { OR = { owned_by = THIS empty = yes } }
 			3458 = { OR = { owned_by = THIS empty = yes } }
 			#New Mexico n Arizona
@@ -2315,14 +2394,13 @@ political_decisions = {
 			2662 = { OR = { owned_by = THIS empty = yes } }
 			3588 = { OR = { owned_by = THIS empty = yes } }
 			4177 = { OR = { owned_by = THIS empty = yes } }
-			3589 = { OR = { owned_by = THIS empty = yes } }
 			4032 = { OR = { owned_by = THIS empty = yes } }
 			100 = { OR = { owned_by = THIS empty = yes } }
 			101 = { OR = { owned_by = THIS empty = yes } }
 			102 = { OR = { owned_by = THIS empty = yes } }
+			4064 = { OR = { owned_by = THIS empty = yes } }
 			4052 = { OR = { owned_by = THIS empty = yes } }
 			3460 = { OR = { owned_by = THIS empty = yes } }
-			110 = { OR = { owned_by = THIS empty = yes } }
 			4145 = { OR = { owned_by = THIS empty = yes } }
 			107 = { OR = { owned_by = THIS empty = yes } }
 			108 = { OR = { owned_by = THIS empty = yes } }
@@ -2331,7 +2409,6 @@ political_decisions = {
 			4120 = { OR = { owned_by = THIS empty = yes } }
 			103 = { OR = { owned_by = THIS empty = yes } }
 			3560 = { OR = { owned_by = THIS empty = yes } }
-			128 = { OR = { owned_by = THIS empty = yes } }
 			129 = { OR = { owned_by = THIS empty = yes } }
 			#Texas
 			133 = { OR = { owned_by = THIS empty = yes } }
@@ -2354,6 +2431,7 @@ political_decisions = {
 			2141 = { OR = { owned_by = THIS empty = yes } }
 			4059 = { OR = { owned_by = THIS empty = yes } }
 			3456 = { OR = { owned_by = THIS empty = yes } }
+			98 = { OR = { owned_by = THIS empty = yes } }
 			#Durango
 			2142 = { OR = { owned_by = THIS empty = yes } }
 			2143 = { OR = { owned_by = THIS empty = yes } }
@@ -2409,7 +2487,6 @@ political_decisions = {
 							province_id = 92
 							province_id = 93
 							province_id = 113
-							province_id = 114
 							province_id = 3467
 						}
 					}
@@ -2568,7 +2645,6 @@ political_decisions = {
 							province_id = 104
 							province_id = 84
 							province_id = 4142
-							province_id = 85
 							province_id = 86
 							province_id = 3448
 							province_id = 3452
@@ -2612,13 +2688,11 @@ political_decisions = {
 						OR = {
 							#Nevada n Utah
 							province_id = 97
-							province_id = 98
 							province_id = 99
 							province_id = 4055
 							province_id = 3459
 							province_id = 94
 							province_id = 95
-							province_id = 96
 							province_id = 3457
 							province_id = 3458
 						}
@@ -2647,9 +2721,9 @@ political_decisions = {
 							province_id = 100
 							province_id = 101
 							province_id = 102
+							province_id = 4064
 							province_id = 4052
 							province_id = 3460
-							province_id = 110
 							province_id = 4145
 							province_id = 107
 							province_id = 108
@@ -2658,7 +2732,6 @@ political_decisions = {
 							province_id = 4120
 							province_id = 103
 							province_id = 3560
-							province_id = 128
 							province_id = 129
 						}
 					}
@@ -2707,6 +2780,7 @@ political_decisions = {
 							province_id = 2141
 							province_id = 4059
 							province_id = 3456
+							province_id = 98
 						}
 					}
                 }
@@ -2814,7 +2888,6 @@ political_decisions = {
 						province_id = 92
 						province_id = 93
 						province_id = 113
-						province_id = 114
 						province_id = 3467
 						#Oregon
 						province_id = 81
@@ -2834,7 +2907,6 @@ political_decisions = {
 						province_id = 104
 						province_id = 84
 						province_id = 4142
-						province_id = 85
 						province_id = 86
 						province_id = 3448
 						province_id = 3452
@@ -2852,13 +2924,11 @@ political_decisions = {
 						province_id = 3566
 						#Nevada n Utah
 						province_id = 97
-						province_id = 98
 						province_id = 99
 						province_id = 4055
 						province_id = 3459
 						province_id = 94
 						province_id = 95
-						province_id = 96
 						province_id = 3457
 						province_id = 3458
 						#New Mexico n Arizona
@@ -2870,14 +2940,13 @@ political_decisions = {
 						province_id = 2662
 						province_id = 3588
 						province_id = 4177
-						province_id = 3589
 						province_id = 4032
 						province_id = 100
 						province_id = 101
 						province_id = 102
+						province_id = 4064
 						province_id = 4052
 						province_id = 3460
-						province_id = 110
 						province_id = 4145
 						province_id = 107
 						province_id = 108
@@ -2886,7 +2955,6 @@ political_decisions = {
 						province_id = 4120
 						province_id = 103
 						province_id = 3560
-						province_id = 128
 						province_id = 129
 						#Texas
 						province_id = 133
@@ -2909,6 +2977,7 @@ political_decisions = {
 						province_id = 2141
 						province_id = 4059
 						province_id = 3456
+						province_id = 98
 						#Durango
 						province_id = 2142
 						province_id = 2143
@@ -2948,7 +3017,6 @@ political_decisions = {
 						province_id = 92
 						province_id = 93
 						province_id = 113
-						province_id = 114
 						province_id = 3467
 						#Oregon
 						province_id = 81
@@ -2968,7 +3036,6 @@ political_decisions = {
 						province_id = 104
 						province_id = 84
 						province_id = 4142
-						province_id = 85
 						province_id = 86
 						province_id = 3448
 						province_id = 3452
@@ -2986,13 +3053,11 @@ political_decisions = {
 						province_id = 3566
 						#Nevada n Utah
 						province_id = 97
-						province_id = 98
 						province_id = 99
 						province_id = 4055
 						province_id = 3459
 						province_id = 94
 						province_id = 95
-						province_id = 96
 						province_id = 3457
 						province_id = 3458
 						#New Mexico n Arizona
@@ -3004,14 +3069,13 @@ political_decisions = {
 						province_id = 2662
 						province_id = 3588
 						province_id = 4177
-						province_id = 3589
 						province_id = 4032
 						province_id = 100
 						province_id = 101
 						province_id = 102
+						province_id = 4064
 						province_id = 4052
 						province_id = 3460
-						province_id = 110
 						province_id = 4145
 						province_id = 107
 						province_id = 108
@@ -3020,7 +3084,6 @@ political_decisions = {
 						province_id = 4120
 						province_id = 103
 						province_id = 3560
-						province_id = 128
 						province_id = 129
 						#Texas
 						province_id = 133
@@ -3043,6 +3106,7 @@ political_decisions = {
 						province_id = 2141
 						province_id = 4059
 						province_id = 3456
+						province_id = 98
 						#Durango
 						province_id = 2142
 						province_id = 2143

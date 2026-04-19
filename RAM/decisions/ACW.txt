@@ -586,18 +586,15 @@ political_decisions = {
             any_pop = { limit = { location = { state_scope = { is_slave = yes } } } consciousness = 7 }
             any_pop = { limit = { location = { state_scope = { NOT = { is_slave = yes } } } } consciousness = -4 }
 
-            USA_106 = { is_slave = no remove_core = CSA }
-            MEX_100 = { is_slave = no remove_core = CSA }
             MEX_103 = { is_slave = no remove_core = CSA }
-            MEX_94 = { is_slave = no remove_core = CSA }
             MEX_97 = { is_slave = no remove_core = CSA }
             MEX_85 = { is_slave = no remove_core = CSA }
-            USA_111 = { is_slave = no remove_core = CSA }
+            MEX_85_2 = { is_slave = no remove_core = CSA }
+            USA_124 = { is_slave = no remove_core = CSA }
             USA_176 = { is_slave = no remove_core = CSA }
             USA_162 = { is_slave = no remove_core = CSA }
             USA_151 = { is_slave = no remove_core = CSA }
             USA_158 = { is_slave = no remove_core = CSA }
-            USA_118 = { is_slave = no remove_core = CSA }
             USA_121 = { is_slave = no remove_core = CSA }
             USA_116 = { is_slave = no remove_core = CSA }
             USA_91 = { is_slave = no remove_core = CSA }
@@ -720,7 +717,11 @@ political_decisions = {
             owns = 139
             NOT = {
 				war_with = CSA
+			}
+            NOT = {
                 exists = CSA
+			}
+            NOT = {
                 has_global_flag = alt_american_civil_war_has_happened
                 has_country_flag = has_used_radical_reconstruction
                 has_country_flag = has_used_radical_reconstruction_FSA
@@ -856,6 +857,7 @@ political_decisions = {
                 OR = {
 					region = MEX_2138
 					region = MEX_85
+					region = MEX_85_2
 					region = USA_1
 					region = CAN_13
 					region = USA_81
@@ -949,6 +951,7 @@ political_decisions = {
                         any_owned_province = {
                             OR = {
                                 region = MEX_85
+                                region = MEX_85_2
                                 region = USA_78
                                 region = USA_81
                                 region = CAN_13
@@ -1069,7 +1072,6 @@ political_decisions = {
         effect = {
             set_country_flag = 36_or_fight
             badboy = 5
-            MEX_100 = { add_core = CSA }
             MEX_103 = { add_core = CSA }
             TEX_132 = { add_core = CSA }
             USA_129 = { add_core = CSA }
@@ -1089,7 +1091,6 @@ political_decisions = {
 			3451 = { add_core = CSA }
 			90 = { add_core = CSA }
 			89 = { add_core = CSA }
-            96 = { add_core = CSA }
 			3566 = { add_core = CSA }
             any_neighbor_country = { limit = { any_owned_province = { is_core = THIS } } country_event = 441268 }
         }
@@ -1201,12 +1202,12 @@ political_decisions = {
             TEX = { all_core = { remove_core = TEX } }
             TEX_132 = { add_core = TEX }
             MEX_85 = { is_slave = no remove_core = CSA }
-            USA_111 = { is_slave = no remove_core = CSA }
+            MEX_85_2 = { is_slave = no remove_core = CSA }
+            USA_124 = { is_slave = no remove_core = CSA }
             USA_176 = { is_slave = no remove_core = CSA }
             USA_162 = { is_slave = no remove_core = CSA }
             USA_151 = { is_slave = no remove_core = CSA }
             USA_158 = { is_slave = no remove_core = CSA }
-            USA_118 = { is_slave = no remove_core = CSA }
             USA_121 = { is_slave = no remove_core = CSA }
             USA_116 = { is_slave = no remove_core = CSA }
             USA_91 = { is_slave = no remove_core = CSA }
@@ -1317,7 +1318,11 @@ political_decisions = {
     guano_islands_act = {
 		picture = guano_act
         potential = {
-			owns = 658
+			OR = {
+				owns = 658
+				AND = { owns = 232 is_sphere_leader_of = HAW }
+				year = 1880
+			}
 			OR = {
 				owns = 200
 				owns = 4042
@@ -1335,6 +1340,7 @@ political_decisions = {
 				owns = 2203
 				owns = 4081
 				owns = 3564
+				owns = 128
 				owns = 1723
 				owns = 2272
 				owns = 2255
@@ -1364,6 +1370,14 @@ political_decisions = {
         }
 
         allow = {
+			OR = {
+				owns = 658
+				AND = {
+					THIS = { is_greater_power = yes }
+					658 = { owner = { in_sphere = THIS } }
+					NOT = { owns = 658 }
+				}
+			}
 			nationalism_n_imperialism = 1
 			civilized = yes
 			total_amount_of_ships = 10
@@ -1379,21 +1393,19 @@ political_decisions = {
 			random_owned = {
 				limit = {
 					owner = {
-						2623 = { empty = yes }
+						2623 = {
+							OR = {
+								empty = yes
+								owner = {
+									in_sphere = THIS
+									NOT = { rank = 16 }
+								}
+							}
+						}
 					}
 				}
 				owner = {
 					2623 = { secede_province = THIS any_pop = { literacy = -0.99 } }
-				}
-			}
-			random_owned = {
-				limit = {
-					owner = {
-						2526 = { empty = yes }
-					}
-				}
-				owner = {
-					2526 = { secede_province = THIS any_pop = { literacy = -0.99 } }
 				}
 			}
 			random_owned = {
@@ -1442,7 +1454,6 @@ political_decisions = {
 					158 = { change_province_name = "Duluth" }
 				}
 			}
-            4046 = { trade_goods = iron }
             158 = { trade_goods = iron }
             157 = { trade_goods = iron }
             102 = { trade_goods = iron }
@@ -1450,11 +1461,9 @@ political_decisions = {
             2662 = { trade_goods = iron }
             3453 = { trade_goods = iron }
             235 = { trade_goods = iron }
-            98 = { trade_goods = iron }
             101 = { trade_goods = iron }
             94 = { trade_goods = iron }
             95 = { trade_goods = mercury }
-            96 = { trade_goods = iron }
             3457 = { trade_goods = iron }
             3458 = { trade_goods = iron }
 			88 = { trade_goods = iron }
@@ -1502,20 +1511,6 @@ political_decisions = {
                     reduce_pop = 0.25
                 }
             }
-			98 = {
-                add_province_modifier = { name = home_of_the_mormons duration = 10950 }
-                any_pop = {
-                    limit = { is_culture_group = native_american }
-                    reduce_pop = 0.25
-                }
-            }
-			99 = {
-                add_province_modifier = { name = home_of_the_mormons duration = 10950 }
-                any_pop = {
-                    limit = { is_culture_group = native_american }
-                    reduce_pop = 0.25
-                }
-            }
 			4055 = {
                 add_province_modifier = { name = home_of_the_mormons duration = 10950 }
                 any_pop = {
@@ -1523,14 +1518,6 @@ political_decisions = {
                     reduce_pop = 0.25
                 }
             }
-			3459 = {
-                add_province_modifier = { name = home_of_the_mormons duration = 10950 }
-                any_pop = {
-                    limit = { is_culture_group = native_american }
-                    reduce_pop = 0.25
-                }
-            }
-            MEX_94 = { add_core = DES }
             MEX_97 = { add_core = DES }
             88 = { add_core = DES }
             89 = { add_core = DES }
@@ -1558,20 +1545,16 @@ political_decisions = {
                 owns = 112
                 owns = 22
 				owns = 3317
-                owns = 111
                 owns = 106
                 owns = 130
                 owns = 4036
                 owns = 131
                 owns = 113
-                owns = 114
                 owns = 115
                 owns = 116
                 owns = 4103
-                owns = 4099
                 owns = 117
                 owns = 118
-                owns = 119
                 owns = 4094
                 owns = 120
                 owns = 121
@@ -1579,7 +1562,6 @@ political_decisions = {
                 owns = 123
                 owns = 124
                 owns = 4056
-                owns = 4100
                 owns = 125
                 owns = 4101
                 owns = 126
@@ -1619,7 +1601,7 @@ political_decisions = {
 			any_owned = { limit = { province_id = 106 owner = { NOT = { has_global_flag = denver_is_real } } } change_province_name = "Denver" add_province_modifier = { name = recently_built_city duration = 180 } }
 			any_owned = { limit = { province_id = 130 } change_province_name = "Oklahoma City" add_province_modifier = { name = recently_built_city duration = 180 } set_global_flag = oklahoma_city_happened }
 			any_owned = { limit = { province_id = 3467 } change_province_name = "Helena" add_province_modifier = { name = recently_built_city duration = 180 } set_global_flag = helena_founded }
-			any_owned = { limit = { province_id = 119 } change_province_name = "Bismarck" add_province_modifier = { name = recently_built_city duration = 180 } set_global_flag = bismarck_founded }
+			any_owned = { limit = { province_id = 122 } change_province_name = "Bismarck" add_province_modifier = { name = recently_built_city duration = 180 } set_global_flag = bismarck_founded }
 			any_owned = { limit = { province_id = 120 } change_province_name = "Yankton" add_province_modifier = { name = recently_built_city duration = 180 } set_global_flag = yankton_founded }
 			any_owned = { limit = { province_id = 123 } change_province_name = "Omaha" add_province_modifier = { name = recently_built_city duration = 180 } }
 			any_owned = { limit = { province_id = 4037 } change_province_name = "Topeka" add_province_modifier = { name = recently_built_city duration = 180 } set_global_flag = topeka_happened }
@@ -1627,7 +1609,6 @@ political_decisions = {
 			any_owned = { limit = { province_id = 4067 } change_province_name = "Minneapolis" add_province_modifier = { name = recently_built_city duration = 180 } set_global_flag = minneapolis_founded }
 			any_owned = { limit = { province_id = 3317 } change_province_name = "Cheyenne" add_province_modifier = { name = recently_built_city duration = 180 } }
 			any_owned = { limit = { province_id = 97 } add_province_modifier = { name = recently_built_city duration = 180 } }
-			any_owned = { limit = { province_id = 96 } add_province_modifier = { name = recently_built_city duration = 180 } }
         }
         ai_will_do = { factor = 1 }
     }

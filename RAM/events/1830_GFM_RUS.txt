@@ -16,7 +16,7 @@ country_event = {
     trigger = {
         tag = RUS
 		month = 11
-        POL = { owns = 706 }
+        POL = { owns = 706 vassal_of = THIS }
         year = 1830
         NOT = { has_global_flag = november_uprising_happened }
 		NOT = { year = 1836 }
@@ -211,7 +211,7 @@ country_event = {
 
     trigger = {
         tag = RUS
-        POL = { owns = 706 }
+        POL = { owns = 706 is_vassal = no }
         has_global_flag = november_uprising_happened
 		NOT = { has_country_flag = gave_in_nov_uprising }
         year = 1831
@@ -227,14 +227,17 @@ country_event = {
         set_country_flag = through_november_uprising
         POL = {
             add_country_modifier = { name = all_or_nothing duration = 3650 }
-        }
-		POL = {
-			war = {
-				target = THIS
-				attacker_goal = { casus_belli = humiliate_no_infamy }
-				defender_goal = { casus_belli = conquest_any }
-				call_ally = no
+			define_general = {
+				name = "Józef Zachariasz Bem"
+				personality = defense_3.1
+				background = attack_2.1
 			}
+        }
+		war = {
+				target = POL
+				attacker_goal = { casus_belli = conquest_any }
+				defender_goal = { casus_belli = humiliate_no_infamy }
+				call_ally = no
 		}
 
         ai_chance = { factor = 100 }
@@ -311,7 +314,8 @@ country_event = {
 
     option = {
         name = "EVTOPT127853B"    #be lenient
-        prestige = -30
+		set_country_flag = mercy_for_poland
+		prestige = -30
         any_pop = {
             limit = { is_accepted_culture = no }
             consciousness = 6

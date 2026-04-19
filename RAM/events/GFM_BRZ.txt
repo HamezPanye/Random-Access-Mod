@@ -92,6 +92,7 @@ country_event = {
 
     option = {
         name = "Avante Legalistas!"
+		prestige = -3
         set_country_flag = liberal_revolt_brz
         any_pop = {
             limit = {
@@ -240,6 +241,12 @@ country_event = {
     option = {
         name = "Huzzah!"
         clr_country_flag = liberal_revolt_brz
+		random_owned = { 
+			limit = {
+				owner = { has_country_flag = oribe_is_waiting }
+			}
+			owner = { clr_country_flag = oribe_is_waiting set_country_flag = oribe_is_ready }
+		}
     }
 }
 
@@ -336,6 +343,7 @@ country_event = { # Fluff?
 
     option = {
         name = "Unfortunate."
+		prestige = -1
         any_pop = { limit = { location = { province_id = 2436 } has_pop_culture = afro_brazilian } militancy = 4 }
     }
 }
@@ -357,7 +365,7 @@ country_event = { # Metric System
 
     option = {
         name = "Great!"
-        prestige = 5
+        prestige = 3
         research_points = 800
         set_country_flag = brz_metric
     }
@@ -381,6 +389,7 @@ country_event = {
 
     option = {
 	    name = "Damn!"
+		prestige = -1
         any_pop = { limit = { location = { province_id = 2428 } } militancy = 5 }
     }
 }
@@ -464,6 +473,7 @@ country_event = {
 
     option = {
         name = "Put them down!"
+		prestige = -1
         PNB = {
             set_country_flag = praieira
             government = democracy
@@ -552,6 +562,8 @@ country_event = {
         OR = {
             tag = BRZ
             tag = UPB
+            tag = PAA
+            tag = MAR
         }
         NOT = { has_country_flag = northeast_seca_gone }
     }
@@ -580,6 +592,7 @@ country_event = { # Muckers revolt
 
     option = {
         name = "Insane."
+		prestige = -1
         any_pop = { limit = { location = { region = BRZ_2467 } OR = { has_pop_culture = north_german has_pop_culture = south_german } } consciousness = 2 militancy = 1 }
     }
 }
@@ -690,10 +703,13 @@ country_event = { # Nina Rodrigues
     fire_only_once = yes
 	
     trigger = {
+		owns = 2424
         year = 1890
         OR = {
             tag = BRZ
             tag = UPB
+            tag = MAR
+            tag = PAA
         }
     }
 	
@@ -773,7 +789,7 @@ country_event = { # Fluff?
 
     option = {
         name = "Great!"
-        prestige = 10
+        prestige = 3
     }
 }
 
@@ -792,107 +808,16 @@ country_event = {
         OR = {
             tag = BRZ
             tag = UPB
+            tag = BAH
         }
 		slavery = yes_slavery
     }
 
     option = {
         name = "EVTOPTA47081"
-        prestige = 5
+        prestige = 3
 		any_pop = { limit = { has_pop_culture = afro_brazilian } consciousness = 5 militancy = 3 }
 		any_pop = { dominant_issue = { value = freedom_of_womb factor = 0.1 } ideology = { value = liberal factor = 0.2 } consciousness = 2 }
-    }
-}
-
-country_event = {
-    id = 47082
-    title = "The Military Colony of Rio Branco"
-    desc = "rio_branco_colony_desc"
-    picture = "treaty_of_petropolis"
-
-    fire_only_once = yes
-	
-    trigger = {
-        year = 1848
-        owns = 3999
-        OR = {
-            tag = BRZ
-            tag = UPB
-        }
-        money = 100000
-        NOT = { 2532 = { owned_by = THIS } }
-    }
-
-    mean_time_to_happen = { months = 3 }
-
-    option = {
-        name = "But of course! §R(Pay or owe 50,000¤)§W"
-        money = -50000
-        2532 = { owner = { country_event = 47083 } }
-        relation = { who = VNZ value = -20 }
-        prestige = 5
-        set_country_flag = rio_branco_colony
-        ai_chance = { factor = 50 }
-    }
-
-    option = {
-        name = "Who cares! Just a bunch of trees anyway."
-        prestige = -1
-        ai_chance = { factor = 50 }
-    }
-}
-
-country_event = {
-    id = 47083
-    title = "A Brazilian Outpost in the Rio Branco"
-    desc = "EVTDESC47083"
-    picture = "treaty_of_petropolis"
-
-    fire_only_once = yes
-    is_triggered_only = yes
-
-    option = {
-        name = "Unacceptable, expel them!"
-        relation = { who = FROM value = -100 }
-		FROM = { country_event = 123673 }
-		2278 = { add_core = FROM add_core = PAA }
-        random_owned = {
-            limit = { owner = { UPB = { owns = 1977 } } }
-            owner = {
-				2532 = { add_core = UPB add_core = BRZ add_core = PAA }
-				2278 = { add_core = UPB add_core = BRZ add_core = PAA }
-			}
-        }
-        random_owned = {
-            limit = { owner = { BRZ = { owns = 1977 } } }
-            owner = {
-				2532 = { add_core = BRZ add_core = PAA }
-				2278 = { add_core = BRZ add_core = PAA }
-			}
-        }
-        ai_chance = { factor = 25 }
-    }
-
-    option = {
-        name = "Sign a navigational treaty."
-        relation = { who = FROM value = 80 }
-		2532 = { remove_core = THIS remove_core = GCO add_core = FROM }
-		3567 = { remove_core = VNZ remove_core = GCO add_core = FROM }
-        3998 = { remove_core = VNZ remove_core = GCO add_core = FROM } 
-		2401 = { remove_core = VNZ remove_core = GCO add_core = FROM }
-		1977 = { remove_core = VNZ remove_core = GCO add_core = FROM }
-		3999 = { remove_core = VNZ remove_core = GCO add_core = FROM }
-        random_owned = {
-            limit = { owner = { UPB = { owns = 1977 } } }
-            owner = { 2532 = { secede_province = UPB add_core = UPB add_core = BRZ add_core = PAA } }
-        }
-        random_owned = {
-            limit = { owner = { BRZ = { owns = 1977 } } }
-            owner = { 2532 = { secede_province = BRZ add_core = BRZ add_core = PAA } }
-        }
-        2532 = { change_province_name = "Forte de São Joachim" }
-        FROM = { country_event = 123672 }
-        ai_chance = { factor = 75 }
     }
 }
 
@@ -906,21 +831,25 @@ country_event = {
     mean_time_to_happen = { months = 2 }
 
     trigger = {
-        year = 1850
+        year = 1855
         OR = {
             tag = BRZ
             tag = UPB
+            tag = PAA
         }
         OR = {
             owns = 3651
             owns = 4186
-            owns = 3995
+            owns = 4201
+            owns = 4212
             owns = 3652
-            owns = 3996
+            owns = 4202
         }
 		OR = {
-            PEU = { owns = 4015 }
-            AND = { PBC = { owns = 4015 } 3995 = { is_core = PBC } }
+            AND = { PEU = { owns = 4015 } 4201 = { is_core = PEU } }
+            AND = { PBC = { owns = 4015 } 4201 = { is_core = PBC } }
+            AND = { PEU = { owns = 4015 } 4212 = { is_core = PEU } }
+            AND = { PBC = { owns = 4015 } 4212 = { is_core = PBC } }
         }
         war = no
     }
@@ -928,14 +857,14 @@ country_event = {
     option = {
         name = "Of course!"
         4015 = { owner = { country_event = 47085 } }
-        prestige = 5
+        prestige = 2
         set_country_flag = peru_brazil_treaty_1
     }
 }
 
 country_event = {
     id = 47085
-    title = "Brazil proposes a treaty"
+    title = "$FROMCOUNTRY$ proposes a treaty"
     desc = "peu_brz_treaty_2_desc"
     picture = "treaty_of_petropolis"
 
@@ -946,17 +875,21 @@ country_event = {
         name = "We must give up these ludicrous claims."
         4186 = { remove_core = THIS }
         3651 = { remove_core = THIS }
-        3995 = { remove_core = THIS }
+        4201 = { remove_core = THIS }
+        4212 = { remove_core = THIS }
         3652 = { remove_core = THIS }
-        3996 = { remove_core = THIS }
+        4202 = { remove_core = THIS }
+		3359 = { remove_core = THIS }
         any_owned = {
             limit = {
                 OR = {
                     province_id = 3651
-                    province_id = 3995
+                    province_id = 4201
+                    province_id = 4212
                     province_id = 3652
-                    province_id = 3996
+                    province_id = 4202
                     province_id = 4186
+					province_id = 3359
                 }
             }
             secede_province = FROM
@@ -1018,21 +951,20 @@ country_event = {
             truce_with = BRZ
             truce_with = UPB
         }
+		NOT = { year = 1847 }
+        NOT = { has_global_flag = weimmortalizintobiwthisone }
     }
 
     option = {
         name = "Huzzah!"
+		set_global_flag = weimmortalizintobiwthisone
         government = democracy
-        2401 = { add_core = PAA }
+        4075 = { add_core = PAA }
         3359 = { add_core = PAA }
         2532 = { add_core = PAA }
-        3568 = { add_core = PAA }
-        830 = { add_core = PAA }
+        2401 = { add_core = PAA }
+        2261 = { add_core = PAA }
         BRZ = {
-            any_owned = {
-                limit = { is_core = PAA }
-                secede_province = PAA
-            }
             clr_country_flag = cabanagem_revolt
         }
     }
@@ -1092,7 +1024,7 @@ country_event = { # Fluff?
 
     option = {
         name = "Undoubtedly his Magnum Opus."
-        prestige = 5
+        prestige = 3
         any_pop = { limit = { has_pop_culture = brazilian } consciousness = -0.5 }
     }
 }
@@ -1107,6 +1039,7 @@ country_event = { # Contestado War event caused by [sp_rgs_railway]
     mean_time_to_happen = { months = 5 }
 
     trigger = {
+		owns = 2459
         has_country_flag = sp_rgs_railway_1
         OR = {
             tag = BRZ
@@ -1162,7 +1095,7 @@ country_event = { # São Paulo-Rio Grande railway finished
 
     option = {
         name = "Give all of it to Paraná"
-        prestige = 5
+        prestige = 1
         money = -50000
         any_owned = {
             limit = {
@@ -1182,7 +1115,7 @@ country_event = { # São Paulo-Rio Grande railway finished
 
     option = {
         name = "Give all of it to Santa Catharina"
-        prestige = 5
+        prestige = 1
         money = -50000
         any_owned = {
             limit = {
@@ -1241,8 +1174,8 @@ country_event = {
         name = "We refuse."
         any_country = {
             limit = {
-                OR = { tag = BRZ tag = UPB }
-                exists = yes
+                OR = { tag = BRZ tag = UPB tag = PAA }
+                owns = 4204
             }
             country_event = 47112 relation = { who = THIS value = -50 }
         }
@@ -1301,7 +1234,8 @@ country_event = {
         2261 = { add_core = THIS }
         2401 = { add_core = THIS }
         3567 = { add_core = THIS }
-        3998 = { add_core = THIS } 
+        4204 = { add_core = THIS } 
+        2404 = { add_core = THIS } 
         3359 = { add_core = THIS }
         any_country = {
             limit = {
@@ -1317,14 +1251,15 @@ country_event = {
                         province_id = 2261
                         province_id = 2401
                         province_id = 3567
-                        province_id = 3998 
+                        province_id = 4204 
+                        province_id = 2404 
                         province_id = 3359
                     }
                 }
                 secede_province = THIS
             }
         }
-        prestige = 3
+        prestige = 1.5
         badboy = 2.5
         ai_chance = {
 			factor = 10
@@ -1349,7 +1284,8 @@ country_event = {
             any_owned = {
                 limit = {
 					OR = {
-						province_id = 3998
+						province_id = 4204
+						province_id = 2404
 						province_id = 2401
 						province_id = 3567
 						province_id = 3359
@@ -1358,7 +1294,8 @@ country_event = {
                 secede_province = THIS
            }
         }
-		3998 = { remove_core = FROM add_core = THIS }
+		4204 = { remove_core = FROM add_core = THIS }
+		2404 = { remove_core = FROM add_core = THIS }
 		2401 = { remove_core = FROM add_core = THIS }
 		3567 = { remove_core = FROM add_core = THIS }
 		3359 = { remove_core = FROM add_core = THIS }
@@ -1433,23 +1370,26 @@ province_event = {
             province_id = 2321
             province_id = 2401
             province_id = 2402
-            province_id = 3994
+            province_id = 4200
+            province_id = 110
             province_id = 1977
-            province_id = 3999
+            province_id = 4205
             province_id = 2403
             province_id = 2404
             province_id = 3651
             province_id = 4186
-            province_id = 3995
+            province_id = 4201
+            province_id = 4212
             province_id = 3652
-            province_id = 3996
+            province_id = 4202
             province_id = 2405
-            province_id = 3993
+            province_id = 4199
             province_id = 2407
             province_id = 4076
             province_id = 2408
             province_id = 4109
             province_id = 2410
+            province_id = 3979
             province_id = 2411
             province_id = 2412
             province_id = 2413
@@ -1458,21 +1398,21 @@ province_event = {
 			province_id = 2416
 			province_id = 4183
 			province_id = 2417
-            province_id = 3989
+            province_id = 4192
 			province_id = 2418
 			province_id = 4184
 			province_id = 4110
 			province_id = 2419
-            province_id = 3987
+            province_id = 4190
             province_id = 4117
-            province_id = 3988
+            province_id = 4191
 			province_id = 2420
 			province_id = 4115
 			province_id = 2532
 			province_id = 2549
 			province_id = 2550
-            province_id = 3991
-            province_id = 3992
+            province_id = 4197
+            province_id = 4198
 			province_id = 2600
 			province_id = 3326
 			province_id = 3359
@@ -1484,7 +1424,7 @@ province_event = {
 			province_id = 4187
 			province_id = 3557
 			province_id = 3567
-            province_id = 3998 
+            province_id = 4204 
 			province_id = 3568
             province_id = 1979 
             province_id = 2239 
@@ -1499,6 +1439,7 @@ province_event = {
             province_id = 3556  
             province_id = 3653 
             province_id = 3781
+            province_id = 4196
         }
         NOT = { has_province_modifier = green_hell_start has_province_modifier = green_hell_mid has_province_modifier = green_hell_late }
     }
@@ -1568,21 +1509,24 @@ province_event = {
                                 province_id = 2402
                                 province_id = 2403
                                 province_id = 2404
-                                province_id = 3994
+                                province_id = 4200
+                                province_id = 110
                                 province_id = 1977
-                                province_id = 3999
+                                province_id = 4205
                                 province_id = 3651
                                 province_id = 4186
-                                province_id = 3995
+                                province_id = 4201
+                                province_id = 4212
                                 province_id = 3652
-                                province_id = 3996
+                                province_id = 4202
                                 province_id = 2405
-                                province_id = 3993
+                                province_id = 4199
                                 province_id = 2407
                                 province_id = 4076
                                 province_id = 2408
                                 province_id = 4109
                                 province_id = 2410
+                                province_id = 3979
                                 province_id = 2411
                                 province_id = 2412
                                 province_id = 2413
@@ -1591,21 +1535,21 @@ province_event = {
                     			province_id = 2416
                     			province_id = 4183
                     			province_id = 2417
-                                province_id = 3989
+                                province_id = 4192
                     			province_id = 2418
                     			province_id = 4184
                     			province_id = 4110
                     			province_id = 2419
-                                province_id = 3987
+                                province_id = 4190
                                 province_id = 4117
                     			province_id = 2420
                     			province_id = 4115
-                                province_id = 3988
+                                province_id = 4191
                     			province_id = 2532
                     			province_id = 2549
                     			province_id = 2550
-                                province_id = 3991
-                                province_id = 3992 
+                                province_id = 4197
+                                province_id = 4198 
                     			province_id = 2600
                     			province_id = 3326
                     			province_id = 3359
@@ -1617,7 +1561,7 @@ province_event = {
                     			province_id = 4187
                     			province_id = 3557
                     			province_id = 3567
-                                province_id = 3998 
+                                province_id = 4204 
                     			province_id = 3568
                                 province_id = 1979 
                                 province_id = 2239 
@@ -1632,6 +1576,7 @@ province_event = {
                                 province_id = 3556  
                                 province_id = 3653 
                                 province_id = 3781
+                                province_id = 4196
                             }
                         }
                         add_province_modifier = { name = green_hell_start duration = -1 }
@@ -1702,23 +1647,26 @@ province_event = {
                                 province_id = 2321
                                 province_id = 2401
                                 province_id = 2402
-                                province_id = 3994
+                                province_id = 4200
+                                province_id = 110
                                 province_id = 2403
                                 province_id = 2404
                                 province_id = 1977
-                                province_id = 3999
+                                province_id = 4205
                                 province_id = 3651
                                 province_id = 4186
                                 province_id = 3652
-                                province_id = 3995
-                                province_id = 3996
+                                province_id = 4201
+                                province_id = 4212
+                                province_id = 4202
                                 province_id = 2405
-                                province_id = 3993
+                                province_id = 4199
                                 province_id = 2407
                                 province_id = 4076
                                 province_id = 2408
                                 province_id = 4109
                                 province_id = 2410
+                                province_id = 3979
                                 province_id = 2411
                                 province_id = 2412
                                 province_id = 2413
@@ -1727,21 +1675,21 @@ province_event = {
                     			province_id = 2416
                     			province_id = 4183
                     			province_id = 2417
-                                province_id = 3989
+                                province_id = 4192
                     			province_id = 2418
                     			province_id = 4184
                     			province_id = 4110
                     			province_id = 2419
-                                province_id = 3987
+                                province_id = 4190
                                 province_id = 4117
                     			province_id = 2420
                     			province_id = 4115
-                                province_id = 3988
+                                province_id = 4191
                     			province_id = 2532
                     			province_id = 2549
                     			province_id = 2550
-                                province_id = 3991
-                                province_id = 3992
+                                province_id = 4197
+                                province_id = 4198
                     			province_id = 2600
                     			province_id = 3326
                     			province_id = 3359
@@ -1753,7 +1701,7 @@ province_event = {
                     			province_id = 4187
                     			province_id = 3557
                     			province_id = 3567
-                                province_id = 3998 
+                                province_id = 4204 
                     			province_id = 3568
                                 province_id = 1979 
                                 province_id = 2239 
@@ -1768,6 +1716,7 @@ province_event = {
                                 province_id = 3556  
                                 province_id = 3653 
                                 province_id = 3781
+                                province_id = 4196
                             }
                         }
                         add_province_modifier = { name = green_hell_mid duration = -1 }
@@ -1839,22 +1788,25 @@ province_event = {
                                 province_id = 2401 
                                 province_id = 2405
                                 province_id = 2402
-                                province_id = 3994
+                                province_id = 4200
+                                province_id = 110
                                 province_id = 2403
                                 province_id = 2404
                                 province_id = 1977
-                                province_id = 3999
+                                province_id = 4205
                                 province_id = 3651
                                 province_id = 4186
                                 province_id = 3652
-                                province_id = 3996
-                                province_id = 3993
-                                province_id = 3995
+                                province_id = 4202
+                                province_id = 4199
+                                province_id = 4201
+                                province_id = 4212
                                 province_id = 2407
                                 province_id = 4076
                                 province_id = 2408
                                 province_id = 4109
                                 province_id = 2410
+                                province_id = 3979
                                 province_id = 2411
                                 province_id = 2412
                                 province_id = 2413
@@ -1863,21 +1815,21 @@ province_event = {
                     			province_id = 2416
                     			province_id = 4183
                     			province_id = 2417
-                                province_id = 3989
+                                province_id = 4192
                     			province_id = 2418
                     			province_id = 4184
                     			province_id = 4110
                     			province_id = 2419
-                                province_id = 3987
+                                province_id = 4190
                                 province_id = 4117
-                                province_id = 3988
+                                province_id = 4191
                     			province_id = 2420
                     			province_id = 4115
                     			province_id = 2532
                     			province_id = 2549
                     			province_id = 2550
-                                province_id = 3991
-                                province_id = 3992
+                                province_id = 4197
+                                province_id = 4198
                     			province_id = 2600
                     			province_id = 3326
                     			province_id = 3359
@@ -1889,7 +1841,7 @@ province_event = {
                     			province_id = 4187
                     			province_id = 3557
                     			province_id = 3567
-                                province_id = 3998 
+                                province_id = 4204 
                     			province_id = 3568
                                 province_id = 1979 
                                 province_id = 2239 
@@ -1904,6 +1856,7 @@ province_event = {
                                 province_id = 3556  
                                 province_id = 3653 
                                 province_id = 3781
+                                province_id = 4196
                             }
                         }
                         add_province_modifier = { name = green_hell_late duration = -1 }
@@ -2111,22 +2064,25 @@ province_event = {
                         province_id = 2401
                         province_id = 2402
                         province_id = 2403
-                        province_id = 3994
+                        province_id = 4200
+                        province_id = 110
                         province_id = 1977
-                        province_id = 3999
+                        province_id = 4205
                         province_id = 2404
                         province_id = 3651
                         province_id = 4186
                         province_id = 3652
-                        province_id = 3996
+                        province_id = 4202
                         province_id = 2405
-                        province_id = 3993
+                        province_id = 4199
                         province_id = 2407
                         province_id = 4076
-                        province_id = 3995
+                        province_id = 4201
+                        province_id = 4212
                         province_id = 2408
                         province_id = 4109
                         province_id = 2410
+                        province_id = 3979
                         province_id = 2411
                         province_id = 2412
                         province_id = 2413
@@ -2135,21 +2091,21 @@ province_event = {
             			province_id = 2416
             			province_id = 4183
             			province_id = 2417
-                        province_id = 3989
+                        province_id = 4192
             			province_id = 2418
             			province_id = 4184
             			province_id = 4110
             			province_id = 2419
-                        province_id = 3987
+                        province_id = 4190
                         province_id = 4117
-                        province_id = 3988
+                        province_id = 4191
             			province_id = 2420
             			province_id = 4115
             			province_id = 2532
             			province_id = 2549
             			province_id = 2550
-                        province_id = 3991
-                        province_id = 3992
+                        province_id = 4197
+                        province_id = 4198
             			province_id = 2600
             			province_id = 3326
             			province_id = 3359
@@ -2161,7 +2117,7 @@ province_event = {
             			province_id = 4187
             			province_id = 3557
             			province_id = 3567
-                        province_id = 3998 
+                        province_id = 4204 
             			province_id = 3568
                         province_id = 1979 
                         province_id = 2239 
@@ -2243,22 +2199,25 @@ province_event = {
                                 province_id = 2401
                                 province_id = 2402
                                 province_id = 2403
-                                province_id = 3994
+                                province_id = 4200
+                                province_id = 110
                                 province_id = 1977
-                                province_id = 3999
+                                province_id = 4205
                                 province_id = 2404
                                 province_id = 3651
                                 province_id = 4186
                                 province_id = 3652
-                                province_id = 3996
+                                province_id = 4202
                                 province_id = 2405
                                 province_id = 2407
                                 province_id = 4076
-                                province_id = 3993
-                                province_id = 3995
+                                province_id = 4199
+                                province_id = 4201
+                                province_id = 4212
                                 province_id = 2408
                                 province_id = 4109
                                 province_id = 2410
+                                province_id = 3979
                                 province_id = 2411
                                 province_id = 2412
                                 province_id = 2413
@@ -2267,21 +2226,21 @@ province_event = {
                     			province_id = 2416
                     			province_id = 4183
                     			province_id = 2417
-                                province_id = 3989
+                                province_id = 4192
                     			province_id = 2418
                     			province_id = 4184
                     			province_id = 4110
                     			province_id = 2419
-                                province_id = 3987
+                                province_id = 4190
                                 province_id = 4117
                     			province_id = 2420
                     			province_id = 4115
-                                province_id = 3988
+                                province_id = 4191
                     			province_id = 2532
                     			province_id = 2549
                     			province_id = 2550
-                                province_id = 3991
-                                province_id = 3992
+                                province_id = 4197
+                                province_id = 4198
                     			province_id = 2600
                     			province_id = 3326
                     			province_id = 3359
@@ -2293,7 +2252,7 @@ province_event = {
                     			province_id = 4187
                     			province_id = 3557
                     			province_id = 3567
-                                province_id = 3998 
+                                province_id = 4204 
                     			province_id = 3568
                                 province_id = 1979 
                                 province_id = 2239 
@@ -2448,7 +2407,7 @@ country_event = {
     desc = "EVTDESC47119"
     trigger = {
         owns = 2401 # Isana    
-	    NOT = { owns = 3567 owns = 904 owns = 2261 owns = 3998 }
+	    NOT = { owns = 3567 owns = 904 owns = 2261 owns = 4204 }
     }
 
     mean_time_to_happen = { days = 1 }

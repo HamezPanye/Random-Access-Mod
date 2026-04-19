@@ -61,9 +61,7 @@ country_event = {
 		3454 = { naval_base = -6 }
 		3455 = { naval_base = -6 }
 		3340 = { naval_base = -6 }
-		85 = { naval_base = -6 }
 		104 = { naval_base = -6 }
-		3448 = { naval_base = -6 }
 		3450 = { naval_base = -6 }
 		90 = { naval_base = -6 }
 		3566 = { naval_base = -6 }
@@ -128,14 +126,17 @@ country_event = {
         }
         add_accepted_culture = anglo_canadian
         CAN_50 = { is_slave = no }
-        MEX_100 = { add_core = CAL }
+		102 = { add_core = CAL }
+		4064 = { add_core = CAL }
+		4052 = { add_core = CAL }
+		85 = { add_core = CAL }
+		101 = { add_core = CAL }
+		3460 = { add_core = CAL }
         2148 = { add_core = CAL }
         4033 = { add_core = CAL }
-        3589 = { add_core = CAL }
         4032 = { add_core = CAL }
         2662 = { add_core = CAL }
         107 = { add_core = TEX }
-        128 = { add_core = TEX }
         129 = { add_core = TEX }
         109 = { add_core = TEX }
         103 = { add_core = TEX }
@@ -145,11 +146,9 @@ country_event = {
         3588 = { add_core = TEX }
         4177 = { add_core = TEX }
         #3597 = { add_core = TEX }
-        110 = { add_core = DES }
         4145 = { add_core = DES }
         108 = { add_core = DES }
         4176 = { add_core = DES }
-        3560 = { add_core = DES }
         release_vassal = CAL
         release_vassal = TEX
         release_vassal = DES
@@ -168,7 +167,103 @@ country_event = {
             who = DES
             value = 400
         }
+		random_owned = {
+			limit = {
+				owner = { owns = 2172 }
+			}
+			owner = {
+				release_vassal = MEX
+				create_alliance = MEX
+				diplomatic_influence = {
+					who = MEX
+					value = 400
+				}
+			}
+		}
         set_country_flag = pacific_states
+    }
+}
+
+country_event = {
+    id = 800804
+    title = "The Loss of the Western States" #The Treaty of New York - Maximilian lives
+    desc = "EVTDESC800804"
+    picture = "treaty"
+    major = yes
+
+    is_triggered_only = yes
+
+    option = {
+        name = "EVT99971OPTA"
+        prestige = -30
+        any_pop = {
+            limit = {
+                culture = french_canadian
+            }
+            move_pop = 249
+        }
+        add_accepted_culture = anglo_canadian
+        CAN_50 = { is_slave = no }
+		any_owned = {
+			limit = {
+				OR = {
+					region = MEX_85
+					region = MEX_85_2
+					region = MEX_2138
+					region = MEX_2142
+					province_id = 2148
+					province_id = 2662
+					province_id = 102
+					province_id = 4064
+					province_id = 4052
+					province_id = 85
+					province_id = 101
+					province_id = 3460
+				}
+			}
+			add_core = CAL
+			add_core = MEX
+			add_core = MEE
+			secede_province = MEE
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 107
+					province_id = 129
+					province_id = 109
+					province_id = 103
+					province_id = 105
+					province_id = 3588
+					region = MEX_2149
+					region = TEX_132
+				}
+			}
+			add_core = TEX
+			add_core = MEX
+			add_core = MEE
+			secede_province = MEE
+		}
+		any_owned = {
+			limit = {
+				OR = {
+					region = MEX_97
+					province_id = 108
+				}
+			}
+			add_core = DES
+			add_core = MEX
+			add_core = MEE
+			secede_province = MEE
+		}
+        any_country = {
+			limit = {
+				vassal_of = THIS
+				OR = { tag = CAL tag = DES tag = TEX }
+			}
+			annex_to = MEE
+		}
+        set_country_flag = loss_of_pacific_states
     }
 }
 
@@ -578,7 +673,7 @@ country_event = {
 
     option = {
         name = "What an exciting time to be alive!"
-        prestige = 3
+        prestige = 1
     }
 }
 
@@ -1058,6 +1153,7 @@ country_event = {
         tag = USA
         owns = 4052 #S Arizona
         owns = 102 #S Arizona
+        owns = 4064 #S Arizona
         
     }
 
@@ -2063,30 +2159,29 @@ country_event = {
             limit = {
                 owner = {
                     NOT = { money = 50000 }
-                    check_variable = { which = owed_cash_money value = 9 }
                 }
             }
-            owner = { change_variable = { which = owed_cash_money value = 50 } }
-        }
-        random_owned = {
-            limit = {
-                owner = {
-                    NOT = { money = 50000 }
-                    NOT = { check_variable = { which = owed_cash_money value = 1 } }
-                }
-            }
-            owner = { set_variable = { which = owed_cash_money value = 50 } }
+            owner = { change_variable = { which = owed_cash_money value = 500 } }
         }
         random_owned = {
             limit = { owner = { money = 50000 } }
             owner = { treasury = -50000 }
         }
         102 = { add_core = THIS secede_province = THIS remove_core = MEX }
+        4064 = { add_core = THIS secede_province = THIS remove_core = MEX }
         4052 = { add_core = THIS secede_province = THIS remove_core = MEX }
         2662 = { add_core = THIS secede_province = THIS remove_core = MEX }
         random_owned = {
             limit = {
                 province_id = 100
+                is_core = CSA
+            }
+            102 = { add_core = CSA }
+            4064 = { add_core = CSA }
+        }
+        random_owned = {
+            limit = {
+                province_id = 4064
                 is_core = CSA
             }
             102 = { add_core = CSA }
@@ -2097,6 +2192,13 @@ country_event = {
                 is_core = CSA
             }
             4052 = { add_core = CSA }
+        }
+        random_owned = {
+            limit = {
+                province_id = 102
+                is_core = CSA
+            }
+            4064 = { add_core = CSA }
         }
 
         random_owned = {
@@ -2136,9 +2238,17 @@ country_event = {
         badboy = 10
         prestige = -5
         102 = { add_core = THIS }
+        4064 = { add_core = THIS }
         4052 = { add_core = THIS }
         2662 = { add_core = THIS }
 
+        random_owned = {
+            limit = {
+                province_id = 4064
+                is_core = CSA
+            }
+            102 = { add_core = CSA }
+        }
         random_owned = {
             limit = {
                 province_id = 100
@@ -2152,6 +2262,13 @@ country_event = {
                 is_core = CSA
             }
             4052 = { add_core = CSA }
+        }
+        random_owned = {
+            limit = {
+                province_id = 102
+                is_core = CSA
+            }
+            4064 = { add_core = CSA }
         }
 
         random_owned = {
@@ -2194,19 +2311,9 @@ country_event = {
             limit = {
                 owner = {
                     NOT = { money = 10000 }
-                    check_variable = { which = owed_cash_money value = 9 }
                 }
             }
-            owner = { change_variable = { which = owed_cash_money value = 10 } }
-        }
-        random_owned = {
-            limit = {
-                owner = {
-                    NOT = { money = 10000 }
-                    NOT = { check_variable = { which = owed_cash_money value = 1 } }
-                }
-            }
-            owner = { set_variable = { which = owed_cash_money value = 10 } }
+            owner = { change_variable = { which = owed_cash_money value = 100 } }
         }
         random_owned = {
             limit = { owner = { money = 10000 } }
@@ -2315,10 +2422,8 @@ country_event = {
                 province_id = 105
                 province_id = 4034
                 province_id = 4035
-                province_id = 3589
                 province_id = 4032
                 #province_id = 3597
-                province_id = 128
                 province_id = 103
             }
         }
@@ -2334,7 +2439,6 @@ country_event = {
                     limit = {
                         OR = {
                             province_id = 135
-							province_id = 3589
 							province_id = 4032
 							#province_id = 3597
 							province_id = 136
@@ -2347,7 +2451,6 @@ country_event = {
                             province_id = 4033
                             province_id = 106
                             province_id = 127
-                            province_id = 128
                             province_id = 131
                             province_id = 134
                             province_id = 4062
@@ -2367,7 +2470,6 @@ country_event = {
                             province_id = 123
                             province_id = 124
                             province_id = 4056
-                            province_id = 4100
                             province_id = 138
                             province_id = 137
                         }
@@ -2379,7 +2481,6 @@ country_event = {
                         limit = {
                             OR = {
                                 province_id = 135
-								province_id = 3589
 								province_id = 4032
 								#province_id = 3597
                                 province_id = 136
@@ -2394,7 +2495,6 @@ country_event = {
                                 province_id = 103
                                 province_id = 106
                                 province_id = 127
-                                province_id = 128
                                 province_id = 131
                                 province_id = 134
                                 province_id = 4062
@@ -2414,7 +2514,6 @@ country_event = {
                                 province_id = 123
                                 province_id = 124
                                 province_id = 4056
-                                province_id = 4100
                                 province_id = 138
                                 province_id = 137
                             }
@@ -2429,7 +2528,6 @@ country_event = {
                     limit = {
                         OR = {
                             province_id = 135
-							province_id = 3589
 							province_id = 4032
 							##province_id = 3597
                             province_id = 136
@@ -2445,7 +2543,6 @@ country_event = {
                             province_id = 103
                             province_id = 106
                             province_id = 127
-                            province_id = 128
                             province_id = 131
                             province_id = 134
                             province_id = 4062
@@ -2465,7 +2562,6 @@ country_event = {
                             province_id = 123
                             province_id = 124
                             province_id = 4056
-                            province_id = 4100
                             province_id = 138
                             province_id = 137
                         }
@@ -2478,7 +2574,6 @@ country_event = {
                         limit = {
                             OR = {
                                 province_id = 135
-								province_id = 3589
 								province_id = 4032
 								#province_id = 3597
                                 province_id = 136
@@ -2494,7 +2589,6 @@ country_event = {
                                 province_id = 103
                                 province_id = 106
                                 province_id = 127
-                                province_id = 128
                                 province_id = 131
                                 province_id = 134
                                 province_id = 4062
@@ -2514,7 +2608,6 @@ country_event = {
                                 province_id = 123
                                 province_id = 124
                                 province_id = 4056
-                                province_id = 4100
                                 province_id = 138
                                 province_id = 137
                             }
@@ -2547,7 +2640,6 @@ country_event = {
                     limit = {
                         OR = {
                             province_id = 135
-							province_id = 3589
 							province_id = 4032
 							#province_id = 3597
                             province_id = 136
@@ -2563,7 +2655,6 @@ country_event = {
                             province_id = 103
                             province_id = 106
                             province_id = 127
-                            province_id = 128
                             province_id = 131
                             province_id = 134
                             province_id = 4062
@@ -2584,7 +2675,6 @@ country_event = {
                                 province_id = 4035
                                 province_id = 2148
 								province_id = 4033
-								province_id = 3589
 								province_id = 4032
 								#province_id = 3597
                                 province_id = 3588
@@ -2592,7 +2682,6 @@ country_event = {
                                 province_id = 103
                                 province_id = 106
                                 province_id = 127
-                                province_id = 128
                                 province_id = 131
                                 province_id = 134
                                 province_id = 4062
@@ -2607,7 +2696,6 @@ country_event = {
                     limit = {
                         OR = {
                             province_id = 135
-							province_id = 3589
 							province_id = 4032
 							#province_id = 3597
                             province_id = 136
@@ -2623,7 +2711,6 @@ country_event = {
                             province_id = 103
                             province_id = 106
                             province_id = 127
-                            province_id = 128
                             province_id = 131
                             province_id = 134
                             province_id = 4062
@@ -2637,7 +2724,6 @@ country_event = {
                         limit = {
                             OR = {
                                 province_id = 135
-								province_id = 3589
 								#province_id = 3597
                                 province_id = 136
                                 province_id = 4031
@@ -2652,7 +2738,6 @@ country_event = {
                                 province_id = 103
                                 province_id = 106
                                 province_id = 127
-                                province_id = 128
                                 province_id = 131
                                 province_id = 134
                                 province_id = 4062
@@ -2667,7 +2752,6 @@ country_event = {
                     limit = {
                         OR = {
                             province_id = 135
-							province_id = 3589
 							province_id = 4032
 							#province_id = 3597
                             province_id = 136
@@ -2683,7 +2767,6 @@ country_event = {
                             province_id = 103
                             province_id = 106
                             province_id = 127
-                            province_id = 128
                             province_id = 131
                             province_id = 134
                             province_id = 4062
@@ -2697,7 +2780,6 @@ country_event = {
                         limit = {
                             OR = {
                                 province_id = 135
-								province_id = 3589
 								province_id = 4032
 								#province_id = 3597
                                 province_id = 136
@@ -2713,7 +2795,6 @@ country_event = {
                                 province_id = 103
                                 province_id = 106
                                 province_id = 127
-                                province_id = 128
                                 province_id = 131
                                 province_id = 134
                                 province_id = 4062
@@ -2776,13 +2857,121 @@ country_event = {
 	option = {
 		name = "US_SUPPORTS_FILIBUSTERS"
 		set_global_flag = Filibusters_revolt
-		any_owned = {
+		MEX_2138 = { add_core = SON }
+		random_owned = {
 			limit = {
-				region = MEX_2138
+				owner = {
+					102 = { owned_by = MEX }
+				}
 			}
-			add_province_modifier = { name = william_walkers_fillibusters duration = 960 }
+			owner = {
+				102 = { add_core = SON }
+			}
 		}
-        relation = { who = MEX value = -100 }
+		random_owned = {
+			limit = {
+				owner = {
+					4064 = { owned_by = MEX }
+				}
+			}
+			owner = {
+				4064 = { add_core = SON }
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					4052 = { owned_by = MEX }
+				}
+			}
+			owner = {
+				4052 = { add_core = SON }
+			}
+		}
+		MEX = {
+			any_pop = {
+				consciousness = 1
+				militancy = 0.5
+			}
+			any_owned = {
+				limit = {
+					OR = {
+						province_id = 2138
+						province_id = 2139
+						province_id = 3456
+						province_id = 98
+					}
+				}
+				secede_province = THIS
+			}
+		}
+		release = SON
+		SON = {
+			capital = 2138
+			leadership = 10
+			create_alliance = USA
+			primary_culture = yankee
+			government = democracy
+			nationalvalue = nv_liberty
+			activate_technology = post_napoleonic_thought
+			activate_technology = flintlock_rifles
+			activate_technology = bronze_muzzle_loaded_artillery
+			activate_technology = military_staff_system
+			activate_technology = army_command_principle
+			activate_technology = post_nelsonian_thought
+			activate_technology = clipper_design
+			activate_technology = classicism_n_early_romanticism
+			activate_technology = late_enlightenment_philosophy
+			activate_technology = malthusian_thought
+			activate_technology = enlightenment_thought
+			activate_technology = introspectionism
+			activate_technology = private_banks
+			activate_technology = no_standard
+			activate_technology = early_classical_theory_and_critique
+			activate_technology = freedom_of_trade
+			activate_technology = guild_based_production
+			activate_technology = piston_steam_engine
+			activate_technology = mechanical_production
+			activate_technology = hot_blast
+			activate_technology = basic_chemistry
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					4052 = { owned_by = MEX }
+				}
+			}
+			owner = {
+				MEX = {
+					war = {
+						target = SON
+						attacker_goal = { casus_belli = conquest_any }
+						defender_goal = { casus_belli = acquire_all_cores }
+						call_ally = yes
+					}
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					NOT = { 4052 = { owned_by = MEX } }
+				}
+			}
+			owner = {
+				MEX = {
+					war = {
+						target = SON
+						attacker_goal = { casus_belli = conquest_any }
+						defender_goal = { casus_belli = acquire_core_state state_province_id = 4059 }
+						call_ally = yes
+					}
+				}
+			}
+		}
+		relation = { who = SON value = 200 }
+		diplomatic_influence = { who = SON value = 400 }
+		military_access = SON
 		money = -5000
 		ai_chance = { factor = 0 }
 	}

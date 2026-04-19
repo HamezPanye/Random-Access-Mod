@@ -472,6 +472,7 @@ political_decisions = {
             primary_culture = baluchi
             NOT = { has_global_flag = baluchistan_formed }
             NOT = { tag = HND }
+			NOT = { tag = BLC }
             NOT = { has_country_flag = post_colonial_country }
         }
 
@@ -1321,7 +1322,9 @@ political_decisions = {
             SIN = { all_core = { add_core = PAK remove_core = SIN } }
             PNJ = { all_core = { add_core = PAK } }
             KAS = { all_core = { add_core = PAK } }
+			4157 = { add_core = PAK }
 			3509 = { add_core = PAK }
+			3538 = { add_core = PAK }
 			1220 = { add_core = PAK }
 			1219 = { add_core = PAK }
 			1218 = { add_core = PAK }
@@ -1334,6 +1337,7 @@ political_decisions = {
 			3258 = { add_core = PAK }
 			3508 = { add_core = PAK }
 			2640 = { add_core = PAK }
+			3527 = { remove_core = PAK }
             random_country = {
                 limit = { tag = BNG exists = no }
                 BNG = { all_core = { remove_core = BNG } }
@@ -1515,6 +1519,7 @@ political_decisions = {
 				is_culture_group = south_asian
 				tag = PNJ 
 				AND = { has_country_flag = is_new_ca_empire accepted_culture = panjabi }
+				AND = { tag = KHR has_global_flag = afsharidindia }
 			}
 			OR = {
 				1236 = {

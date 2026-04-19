@@ -5,47 +5,31 @@ political_decisions = {
 			tag = JAP
 			has_country_flag = otsu_incident
 			civilized = yes
-			RUS = {
-				owns = 1082
-				owns = 1481
-			}
 			OR = {
-				QNG = {
-					owns = 1479
-					owns = 1480
-					owns = 1552
-					owns = 1553
-					owns = 1554
-					owns = 1555
-					owns = 3440
-					owns = 1879
+				1481 = { owned_by = RUS } 
+				AND = {
+					1481 = { OR = { owned_by = THIS owner = { vassal_of = THIS } } }
+					1082 = { owned_by = RUS }
+					RUS = { has_country_flag = liaodong_crisis }
 				}
-				CHI = {
-					owns = 1479
-					owns = 1480
-					owns = 1552
-					owns = 1554
-					owns = 1555
-					owns = 3440
-					owns = 1533
-					owns = 1879
+				AND = {
+					1481 = { OR = { owned_by = THIS owner = { vassal_of = THIS } } }
+					1082 = { OR = { owned_by = THIS owner = { vassal_of = THIS } } }
+					1080 = { owned_by = RUS }
+					RUS = { has_country_flag = liaodong_crisis }
 				}
-				TPG = {
-					owns = 1479
-					owns = 1480
-					owns = 1552
-					owns = 1554
-					owns = 1555
-					owns = 3440
-					owns = 1533
-					owns = 1879
+				AND = {
+					1481 = { OR = { owned_by = THIS owner = { vassal_of = THIS } } }
+					1082 = { OR = { owned_by = THIS owner = { vassal_of = THIS } } }
+					1080 = { OR = { owned_by = THIS owner = { vassal_of = THIS } } }
+					1072 = { owned_by = RUS }
+					RUS = { has_country_flag = liaodong_crisis }
 				}
 			}
-			NOT = { has_country_flag = only_one_war_with_russia }
+				NOT = { has_country_flag = only_one_war_with_russia }
 		}
 		allow = {
 			has_country_modifier = fukoku_kyohei
-			mass_politics = 1
 			war = no
 			OR = {
 				ai = yes
@@ -69,7 +53,16 @@ political_decisions = {
 			set_country_flag = only_one_war_with_russia
 		}
 
-		ai_will_do = { factor = 1 }
+		ai_will_do = { 
+			factor = 1
+			modifier = {
+				factor = 0 
+				NOT = {
+					year = 1905
+					has_country_flag = otsu_incident 
+				}
+			}
+		}
 	}
 
 	remove_jap_and_rus_military_access = {
@@ -158,8 +151,11 @@ political_decisions = {
 					any_owned_province = { is_core = MCK }
 				}
 			}
-			NOT = { has_country_flag = invading_manchuria }
-			NOT = { has_global_flag = annexed_manchuria }
+			NOT = { 
+				has_country_flag = invading_manchuria 
+				has_global_flag = annexed_manchuria
+				has_country_flag = mck_organized 
+			}
 		}
 
 		allow = {
@@ -294,7 +290,10 @@ political_decisions = {
 		potential = {
 			has_country_flag = rj_war_victor
 			tag = JAP
-			NOT = { has_global_flag = japan_trying_to_expel_the_russians }
+			NOT = { 
+				has_global_flag = japan_trying_to_expel_the_russians
+				has_global_flag = russians_expelled_far_east 
+			}
 		}
 
 		allow = {
@@ -311,10 +310,9 @@ political_decisions = {
 						is_core = KAM
 						is_core = BRY
 						is_core = LSK
-						province_id = 2645
-						province_id = 2696
-						province_id = 2644
-						province_id = 1087
+						is_core = YAK
+						region = RUS_1075
+						region = JAP_1086
 						province_id = 1088
 						province_id = 1089
 						province_id = 1086

@@ -1,6 +1,6 @@
 capital = 1202
-primary_culture = uzbek
-culture = sart
+primary_culture = sart
+culture = uzbek
 culture = kipchak_minor
 culture = tajik
 religion = sunni
@@ -50,6 +50,10 @@ govt_flag = {
 govt_flag = {
     government = constitutional_empire
     flag = theocracy
+}
+govt_flag = {
+    government = colonial_company
+    flag = absolute_monarchy
 }
 
 ruling_party = KOK_conservative

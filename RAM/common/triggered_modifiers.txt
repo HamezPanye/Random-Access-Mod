@@ -267,8 +267,8 @@ secularized_nation = {
         exists = yes
         has_country_flag = secularized_nation
     }
-	education_efficiency_modifier = 1.0
-	industry_tech_research_bonus = 0.5
+	education_efficiency_modifier = 0.2
+	industry_tech_research_bonus = 0.05
 	culture_tech_research_bonus = 0.02
 	research_points_modifier = 0.2
 	icon = 17
@@ -1044,6 +1044,27 @@ central_american_ai = {
     icon = 19
 }
 
+central_american_player = {
+    trigger = {
+        capital_scope = {
+            continent = north_america
+        }
+        is_greater_power = no
+        exists = yes
+        ai = no
+        NOT = {
+            total_pops = 40000
+            is_culture_group = american_cultures
+            is_culture_group = native_american
+            primary_culture = mexican
+            capital = 2339
+        }
+    }
+    supply_consumption = -0.05
+    mobilisation_size = 0.06
+    icon = 19
+}
+
 south_american_ai = {
     trigger = {
         capital_scope = {
@@ -1129,6 +1150,17 @@ south_american_player_ii = {
     icon = 19
 }
 
+native_american_six = {
+    trigger = {
+        is_culture_group = native_american
+        NOT = { total_pops = 7500 }
+        exists = yes
+    }
+    supply_consumption = -0.05
+    mobilisation_size = 0.15
+    icon = 19
+}
+
 native_american_five = {
     trigger = {
         is_culture_group = native_american
@@ -1136,14 +1168,14 @@ native_american_five = {
         exists = yes
     }
     supply_consumption = -0.05
-    mobilisation_size = 0.31
+    mobilisation_size = 0.25
     icon = 19
 }
 
 native_american_four = {
     trigger = {
         is_culture_group = native_american
-        NOT = { total_pops = 20000 }
+        NOT = { total_pops = 25000 }
         exists = yes
     }
     supply_consumption = -0.05
