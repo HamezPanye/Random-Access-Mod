@@ -93,25 +93,25 @@
     }
 	
 	clergymen = {
-        culture = astrakhani
+        culture = tatar
         religion = sunni
         size = 5
     }
 	
 	artisans = {
-        culture = astrakhani
+        culture = tatar
         religion = sunni
         size = 45
     }
 
     farmers = {
-        culture = astrakhani
+        culture = tatar
         religion = sunni
         size = 225
     }
 
     farmers = {
-        culture = nogai
+        culture = kipchak_minor
         religion = sunni
         size = 175
     }
@@ -949,19 +949,19 @@
 	clergymen = {
         culture = kirgiz
         religion = sunni
-        size = 10
+        size = 25
     }
 	
 	artisans = {
         culture = kirgiz
         religion = sunni
-        size = 35
+        size = 100
     }
 	
 	farmers = {
         culture = kirgiz
         religion = sunni
-        size = 580
+        size = 3000
     }
 	
 	aristocrats = {
@@ -991,7 +991,7 @@
 	farmers = {
         culture = kazak
         religion = sunni
-        size = 28950
+        size = 26450
     }
 
     slaves = {
@@ -1498,7 +1498,7 @@
 	farmers = {
         culture = kazak
         religion = sunni
-        size = 25015
+        size = 26015
     }
 	
 	clergymen = {
@@ -1516,7 +1516,7 @@
 	farmers = {
         culture = kirgiz
         religion = sunni
-        size = 430
+        size = 1430
     }
 	
 	artisans = {
@@ -1559,12 +1559,6 @@
         culture = oirat
         religion = gelugpa
         size = 75
-    }
-	
-	soldiers = {
-        culture = han_chinese
-        religion = confucian
-        size = 105
     }
 }
 #Ili (69000/17000 POPS)
@@ -1614,7 +1608,7 @@
 	farmers = {
         culture = kazak
         religion = sunni
-        size = 7580
+        size = 7080
     }
 	
 	clergymen = {
@@ -1626,13 +1620,13 @@
 	artisans = {
         culture = kirgiz
         religion = sunni
-        size = 35
+        size = 135
     }
 	
 	farmers = {
         culture = kirgiz
         religion = sunni
-        size = 275
+        size = 1275
     }
 	
 	aristocrats = {
@@ -1698,13 +1692,13 @@
 	soldiers = {
         culture = manchu
         religion = mahayana
-        size = 910
+        size = 1110
     }
 	
 	farmers = {
         culture = manchu
         religion = mahayana
-        size = 300
+        size = 2300
     }
 	
 	soldiers = {
@@ -2040,25 +2034,25 @@
 	farmers = {
         culture = kazak
         religion = sunni
-        size = 27025
+        size = 23025
     }
 	
 	clergymen = {
         culture = kirgiz
         religion = sunni
-        size = 5
+        size = 15
     }
 
 	artisans = {
         culture = kirgiz
         religion = sunni
-        size = 60
+        size = 250
     }
 	
 	farmers = {
         culture = kirgiz
         religion = sunni
-        size = 700
+        size = 2500
     }
 	
 	artisans = {
@@ -2083,6 +2077,24 @@
         culture = tajik
         religion = sunni
         size = 175
+    }
+	
+	farmers = {
+        culture = kalmyk
+        religion = sunni
+        size = 570
+    }
+	
+	soldiers = {
+        culture = oirat
+        religion = gelugpa
+        size = 175
+    }
+	
+	soldiers = {
+        culture = han_chinese
+        religion = confucian
+        size = 205
     }
 }
 #Khwarazm Region (168000) #see Uzbekistan.txt and Turkmenistan.txt for balance of region
@@ -2348,19 +2360,19 @@
 	artisans = {
         culture = kipchak_minor
         religion = sunni
-        size = 150
+        size = 550
     }
 	
 	clergymen = {
         culture = kipchak_minor
         religion = sunni
-        size = 10
+        size = 550
     }
 	
 	farmers = {
         culture = kipchak_minor
         religion = sunni
-        size = 1310
+        size = 4810
     }
 
     clergymen = {
@@ -2426,7 +2438,7 @@
     farmers = {
         culture = kazak
         religion = sunni
-        size = 10240
+        size = 6240
     }
 }
 #Aqtau (14000/3000 POPS)
@@ -2552,7 +2564,7 @@
     farmers = {
         culture = kazak
         religion = sunni
-        size = 6355
+        size = 6855
     }
 	slaves = {
         culture = russian
@@ -2749,7 +2761,19 @@
 	farmers = {
         culture = kazak
         religion = sunni
-        size = 36850
+        size = 34850
+    }
+	
+	soldiers = {
+        culture = uighur
+        religion = sunni
+        size = 500
+    }
+	
+	farmers = {
+        culture = uighur
+        religion = sunni
+        size = 3000
     }
 }
 

@@ -146,8 +146,7 @@
         religion = animist
         size = 200
     }
-}
-4084 = {
+
     farmers = {
         culture = dene
         religion = animist
@@ -1012,9 +1011,7 @@
         religion = animist
         size = 2720
     }
-}
-#Sonoma (1400/350 POPS)
-85 = {
+
     aristocrats = {
         culture = yankee
         religion = protestant
@@ -1281,6 +1278,30 @@
         religion = animist
         size = 2010
     }
+	
+    aristocrats = {
+        culture = native_american_minor
+        religion = animist
+        size = 10
+    }
+
+    clergymen = {
+        culture = native_american_minor
+        religion = animist
+        size = 25
+    }
+
+    soldiers = {
+        culture = native_american_minor
+        religion = animist
+        size = 15
+    }
+
+    farmers = {
+        culture = native_american_minor
+        religion = animist
+        size = 238
+    }
 }
 #Los Angeles (8000/2000 POPS)
 89 = {
@@ -1464,9 +1485,6 @@
         size = 42
     }
 
-}
-#Santa Clara (9600/2400 POPS)
-3448 = {
     aristocrats = {
         culture = mexican
         religion = catholic
@@ -1577,6 +1595,43 @@
         size = 5
     }
 }
+3448 = {
+    aristocrats = {
+        culture = native_american_minor
+        religion = animist
+        size = 5
+    }
+
+    clergymen = {
+        culture = native_american_minor
+        religion = animist
+        size = 10
+    }
+
+    artisans = {
+        culture = native_american_minor
+        religion = animist
+        size = 25
+    }
+
+    soldiers = {
+        culture = native_american_minor
+        religion = animist
+        size = 7
+    }
+
+	farmers = {
+        culture = native_american_minor
+        religion = animist
+        size = 2100
+    }
+
+    farmers = {
+        culture = yankee
+        religion = protestant
+        size = 5
+    }
+}
 #Santa Barbara (4000/1000 POPS)
 3450 = {
     aristocrats = {
@@ -1655,7 +1710,7 @@
     farmers = {
         culture = native_american_minor
         religion = animist
-        size = 520
+        size = 230
     }
 
 	farmers = {
@@ -1901,6 +1956,42 @@
         religion = animist
         size = 1500
     }
+	
+    aristocrats = {
+        culture = native_american_minor
+        religion = animist
+        size = 10
+    }
+
+    clergymen = {
+        culture = native_american_minor
+        religion = animist
+        size = 10
+    }
+
+    artisans = {
+        culture = native_american_minor
+        religion = animist
+        size = 10
+    }
+
+    soldiers = {
+        culture = native_american_minor
+        religion = animist
+        size = 10
+    }
+
+    farmers = {
+        culture = native_american_minor
+        religion = animist
+        size = 1300
+    }
+
+    farmers = {
+        culture = cree
+        religion = animist
+        size = 200
+    }
 }
 #Pocatello (12000/3000 POPS)
 93 = {
@@ -1932,6 +2023,24 @@
         culture = utian
         religion = animist
         size = 2600
+    }
+	
+    aristocrats = {
+        culture = utian
+        religion = animist
+        size = 50
+    }
+
+    soldiers = {
+        culture = utian
+        religion = animist
+        size = 100
+    }
+
+    farmers = {
+        culture = utian
+        religion = animist
+        size = 3100
     }
 }
 #Nevada Region (12000)
@@ -1990,33 +2099,6 @@
     }
 
 }
-#Las Vegas (4000/1000 POPS)
-96 = {
-    aristocrats = {
-        culture = utian
-        religion = animist
-        size = 15
-    }
-
-    clergymen = {
-        culture = utian
-        religion = animist
-        size = 25
-    }
-
-    soldiers = {
-        culture = utian
-        religion = animist
-        size = 25
-    }
-
-    farmers = {
-        culture = utian
-        religion = animist
-        size = 1500
-    }
-
-}
 #Reno (2000/500 POPS)
 3457 = {
     aristocrats = {
@@ -2068,6 +2150,42 @@
         culture = utian
         religion = animist
         size = 1600
+    }
+	
+    aristocrats = {
+        culture = utian
+        religion = animist
+        size = 10
+    }
+
+    clergymen = {
+        culture = utian
+        religion = animist
+        size = 15
+    }
+
+    soldiers = {
+        culture = utian
+        religion = animist
+        size = 15
+    }
+
+    farmers = {
+        culture = utian
+        religion = animist
+        size = 700
+    }
+
+    farmers = {
+        culture = utian
+        religion = animist
+        size = 400
+    }
+
+    farmers = {
+        culture = utian
+        religion = animist
+        size = 300
     }
 
 }
@@ -2141,45 +2259,6 @@
         size = 10
     }
 }
-#Cedar City (2000/500 POPS)
-98 = {
-    aristocrats = {
-        culture = utian
-        religion = animist
-        size = 10
-    }
-
-    clergymen = {
-        culture = utian
-        religion = animist
-        size = 15
-    }
-
-    soldiers = {
-        culture = utian
-        religion = animist
-        size = 15
-    }
-
-    farmers = {
-        culture = utian
-        religion = animist
-        size = 700
-    }
-
-    farmers = {
-        culture = utian
-        religion = animist
-        size = 400
-    }
-
-    farmers = {
-        culture = utian
-        religion = animist
-        size = 300
-    }
-
-}
 #Moab (4000/1000 POPS)
 99 = {
     aristocrats = {
@@ -2210,6 +2289,36 @@
         culture = dene
         religion = animist
         size = 300
+    }
+	
+    aristocrats = {
+        culture = utian
+        religion = animist
+        size = 5
+    }
+
+    clergymen = {
+        culture = utian
+        religion = animist
+        size = 10
+    }
+
+    soldiers = {
+        culture = utian
+        religion = animist
+        size = 8
+    }
+
+    farmers = {
+        culture = utian
+        religion = animist
+        size = 900
+    }
+
+    farmers = {
+        culture = dene
+        religion = animist
+        size = 800
     }
 }
 4055 = {
@@ -2317,11 +2426,39 @@
         size = 100
     }
 
+    aristocrats = {
+        culture = utian
+        religion = animist
+        size = 25
+    }
+
+    clergymen = {
+        culture = utian
+        religion = animist
+        size = 50
+    }
+
+    artisans = {
+        culture = utian
+        religion = animist
+        size = 25
+    }
+
+    soldiers = {
+        culture = utian
+        religion = animist
+        size = 25
+    }
+
+    farmers = {
+        culture = utian
+        religion = animist
+        size = 1350
+    }
 }
 #Arizona Region (37000)
 #"ruled" by Mexico 1836/de facto under Native Control
-#Phoenix (12000/3000 POPS)
-100 = {
+85 = {
     aristocrats = {
         culture = native_american_minor
         religion = animist
@@ -2349,19 +2486,69 @@
     farmers = {
         culture = native_american_minor
         religion = animist
+        size = 530
+    }
+
+    farmers = {
+        culture = native_american_minor
+        religion = animist
+        size = 150
+    }
+
+    farmers = {
+        culture = native_american_minor
+        religion = animist
+        size = 90
+    }
+
+    farmers = {
+        culture = native_american_minor
+        religion = animist
+        size = 30
+    }
+
+    farmers = {
+        culture = nahua
+        religion = animist
+        size = 200
+    }
+
+    farmers = {
+        culture = dene
+        religion = animist
+        size = 400
+    }
+}
+#Phoenix (12000/3000 POPS)
+100 = {
+    farmers = {
+        culture = dene
+        religion = animist
+        size = 1900
+    }
+
+    farmers = {
+        culture = nahua
+        religion = animist
+        size = 100
+    }
+	
+	farmers = {
+        culture = yankee
+        religion = protestant
+        size = 10
+    }
+	
+	farmers = {
+        culture = pueblo
+        religion = animist
         size = 800
     }
 
     farmers = {
         culture = dene
         religion = animist
-        size = 1000
-    }
-
-    farmers = {
-        culture = nahua
-        religion = animist
-        size = 300
+        size = 500
     }
 	
 	farmers = {
@@ -2438,6 +2625,30 @@
         size = 300
     }
 	
+    aristocrats = {
+        culture = utian
+        religion = animist
+        size = 15
+    }
+
+    clergymen = {
+        culture = utian
+        religion = animist
+        size = 25
+    }
+
+    soldiers = {
+        culture = utian
+        religion = animist
+        size = 25
+    }
+
+    farmers = {
+        culture = utian
+        religion = animist
+        size = 1200
+    }
+	
 	farmers = {
         culture = yankee
         religion = protestant
@@ -2471,9 +2682,15 @@
     }
 
     farmers = {
+        culture = dene
+        religion = animist
+        size = 950
+    }
+
+    farmers = {
         culture = utian
         religion = animist
-        size = 1100
+        size = 150
     }
 
     aristocrats = {
@@ -2536,19 +2753,56 @@
     farmers = {
         culture = nahua
         religion = animist
-        size = 2600
+        size = 1500
     }
 
     farmers = {
-        culture = native_american_minor
+        culture = utian
         religion = animist
-        size = 300
+        size = 700
     }
 
     farmers = {
         culture = dene
         religion = animist
-        size = 150
+        size = 450
+    }
+	
+	farmers = {
+        culture = yankee
+        religion = protestant
+        size = 10
+    }
+}
+4064 = {
+    aristocrats = {
+        culture = nahua
+        religion = animist
+        size = 50
+    }
+
+    clergymen = {
+        culture = nahua
+        religion = animist
+        size = 75
+    }
+
+    soldiers = {
+        culture = nahua
+        religion = animist
+        size = 25
+    }
+
+    farmers = {
+        culture = nahua
+        religion = animist
+        size = 2100
+    }
+
+    farmers = {
+        culture = native_american_minor
+        religion = animist
+        size = 400
     }
 	
 	farmers = {
@@ -2675,42 +2929,47 @@
         religion = animist
         size = 400
     }
-}
-4064 = {
+	
     aristocrats = {
-        culture = cree
+        culture = pueblo
+        religion = animist
+        size = 5
+    }
+
+    clergymen = {
+        culture = pueblo
         religion = animist
         size = 10
     }
 
-    clergymen = {
-        culture = cree
+    artisans = {
+        culture = pueblo
         religion = animist
-        size = 25
+        size = 20
     }
 
-    artisans = {
-        culture = cree
+    soldiers = {
+        culture = pueblo
         religion = animist
-        size = 50
-    }
-	
-    farmers = {
-        culture = cree
-        religion = animist
-        size = 1900
+        size = 10
     }
 
     farmers = {
         culture = pueblo
         religion = animist
-        size = 240
+        size = 1300
     }
 
     farmers = {
-        culture = dene
+        culture = utian
         religion = animist
-        size = 90
+        size = 300
+    }
+	
+	farmers = {
+        culture = yankee
+        religion = protestant
+        size = 10
     }
 }
 
@@ -2955,26 +3214,6 @@
 #        size = 200
 #    }
 #}
-
-3589 = {
-	farmers = {
-        culture = pueblo
-        religion = animist
-        size = 800
-    }
-
-    farmers = {
-        culture = dene
-        religion = animist
-        size = 500
-    }
-	
-	farmers = {
-        culture = yankee
-        religion = protestant
-        size = 10
-    }
-}
 
 3588 = {
 	farmers = {
@@ -3284,38 +3523,6 @@
         size = 210
     }
 }
-#Yampa
-3560 = {
-    aristocrats = {
-        culture = utian
-        religion = animist
-        size = 5
-    }
-
-    clergymen = {
-        culture = utian
-        religion = animist
-        size = 10
-    }
-
-    soldiers = {
-        culture = utian
-        religion = animist
-        size = 8
-    }
-
-    farmers = {
-        culture = utian
-        religion = animist
-        size = 900
-    }
-
-    farmers = {
-        culture = dene
-        religion = animist
-        size = 800
-    }
-}
 #Pueblo (4000/1000 POPS)
 109 = {
     aristocrats = {
@@ -3356,38 +3563,6 @@
 }
 #Wyoming Region (28000)
 #"ruled" by the USA/de facto under Native Control
-#Cheyenne (8000/2000 POPS)
-110 = {
-    aristocrats = {
-        culture = utian
-        religion = animist
-        size = 25
-    }
-
-    clergymen = {
-        culture = utian
-        religion = animist
-        size = 50
-    }
-
-    artisans = {
-        culture = utian
-        religion = animist
-        size = 25
-    }
-
-    soldiers = {
-        culture = utian
-        religion = animist
-        size = 25
-    }
-
-    farmers = {
-        culture = utian
-        religion = animist
-        size = 1350
-    }
-}
 4145 = {
     aristocrats = {
         culture = utian
@@ -3417,26 +3592,6 @@
         culture = utian
         religion = animist
         size = 650
-    }
-}
-#Cody (12000/3000 POPS)
-111 = {
-    aristocrats = {
-        culture = utian
-        religion = animist
-        size = 50
-    }
-
-    soldiers = {
-        culture = utian
-        religion = animist
-        size = 100
-    }
-
-    farmers = {
-        culture = utian
-        religion = animist
-        size = 3100
     }
 }
 #Casper (4000/1000 POPS)
@@ -3688,44 +3843,6 @@
         culture = cree
         religion = animist
         size = 900
-    }
-}
-#Missoula (4000/1000 POPS)
-114 = {
-    aristocrats = {
-        culture = native_american_minor
-        religion = animist
-        size = 10
-    }
-
-    clergymen = {
-        culture = native_american_minor
-        religion = animist
-        size = 10
-    }
-
-    artisans = {
-        culture = native_american_minor
-        religion = animist
-        size = 10
-    }
-
-    soldiers = {
-        culture = native_american_minor
-        religion = animist
-        size = 10
-    }
-
-    farmers = {
-        culture = native_american_minor
-        religion = animist
-        size = 1300
-    }
-
-    farmers = {
-        culture = cree
-        religion = animist
-        size = 200
     }
 }
 #Great Falls (8000/2000 POPS)
@@ -4067,50 +4184,6 @@
         size = 900
     }
 }
-#Dickinson (8000/2000 POPS)
-119 = {
-    aristocrats = {
-        culture = dakota
-        religion = animist
-        size = 30
-    }
-
-    clergymen = {
-        culture = dakota
-        religion = animist
-        size = 20
-    }
-
-    artisans = {
-        culture = dakota
-        religion = animist
-        size = 50
-    }
-
-    soldiers = {
-        culture = dakota
-        religion = animist
-        size = 40
-    }
-
-    farmers = {
-        culture = dakota
-        religion = animist
-        size = 2200
-    }
-
-    farmers = {
-        culture = cree
-        religion = animist
-        size = 400
-    }
-
-    farmers = {
-        culture = dakota
-        religion = animist
-        size = 600
-    }
-}
 #South Dakota Region (24000)
 #"ruled" by the USA/de facto under Native Control
 #Sioux Falls (8000/2000 POPS)
@@ -4207,6 +4280,48 @@
         culture = cree
         religion = animist
         size = 130
+    }
+	
+    aristocrats = {
+        culture = dakota
+        religion = animist
+        size = 30
+    }
+
+    clergymen = {
+        culture = dakota
+        religion = animist
+        size = 20
+    }
+
+    artisans = {
+        culture = dakota
+        religion = animist
+        size = 50
+    }
+
+    soldiers = {
+        culture = dakota
+        religion = animist
+        size = 40
+    }
+
+    farmers = {
+        culture = dakota
+        religion = animist
+        size = 2200
+    }
+
+    farmers = {
+        culture = cree
+        religion = animist
+        size = 400
+    }
+
+    farmers = {
+        culture = dakota
+        religion = animist
+        size = 600
     }
 }
 #Nebraska Region (20000)
@@ -4345,7 +4460,7 @@
     farmers = {
         culture = cree
         religion = animist
-        size = 900
+        size = 1400
     }
 
     farmers = {
@@ -4360,7 +4475,7 @@
         size = 100
     }
 }
-4100 = {
+4056 = {
     farmers = {
         culture = yankee
         religion = protestant
@@ -4432,8 +4547,7 @@
         religion = animist
         size = 100
     }
-}
-4056 = {
+	
     aristocrats = {
         culture = cree
         religion = animist
@@ -4665,50 +4779,6 @@
         size = 1000
     }
 }
-#Wichita (8000/2000 POPS)
-128 = {
-    aristocrats = {
-        culture = pueblo
-        religion = animist
-        size = 5
-    }
-
-    clergymen = {
-        culture = pueblo
-        religion = animist
-        size = 10
-    }
-
-    artisans = {
-        culture = pueblo
-        religion = animist
-        size = 20
-    }
-
-    soldiers = {
-        culture = pueblo
-        religion = animist
-        size = 10
-    }
-
-    farmers = {
-        culture = pueblo
-        religion = animist
-        size = 1300
-    }
-
-    farmers = {
-        culture = utian
-        religion = animist
-        size = 300
-    }
-	
-	farmers = {
-        culture = yankee
-        religion = protestant
-        size = 10
-    }
-}
 4065 = {
     aristocrats = {
         culture = pueblo
@@ -4799,6 +4869,42 @@
         culture = yankee
         religion = protestant
         size = 10
+    }
+	
+    aristocrats = {
+        culture = cree
+        religion = animist
+        size = 10
+    }
+
+    clergymen = {
+        culture = cree
+        religion = animist
+        size = 25
+    }
+
+    artisans = {
+        culture = cree
+        religion = animist
+        size = 50
+    }
+	
+    farmers = {
+        culture = cree
+        religion = animist
+        size = 1400
+    }
+
+    farmers = {
+        culture = pueblo
+        religion = animist
+        size = 240
+    }
+
+    farmers = {
+        culture = dene
+        religion = animist
+        size = 90
     }
 }
 #Oklahoma Region (32000)
@@ -5720,14 +5826,14 @@
     farmers = {
         culture = dene
         religion = animist
-        size = 690
+        size = 4690
         militancy = 9
     }
 
     farmers = {
         culture = utian
         religion = animist
-        size = 400
+        size = 900
         militancy = 9
     }
 
@@ -5758,7 +5864,7 @@
     farmers = {
         culture = mexican
         religion = catholic
-        size = 550
+        size = 150
         militancy = 9
     }
 }
@@ -5794,14 +5900,14 @@
     farmers = {
         culture = dene
         religion = animist
-        size = 1690
+        size = 1290
         militancy = 9
     }
 
     farmers = {
         culture = utian
         religion = animist
-        size = 400
+        size = 200
         militancy = 9
     }
 
@@ -7520,8 +7626,7 @@
 		religion = catholic
 		size = 30
 	}
-}
-4046 = {
+
     aristocrats = {
         culture = cree
         religion = animist

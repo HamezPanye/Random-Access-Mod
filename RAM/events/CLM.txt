@@ -148,6 +148,7 @@ country_event = {
 			owns = 2206
 			owns = 2205
 			owns = 3564
+			owns = 128
 			owns = 3447
 		}
 		has_global_flag = war_of_the_supremes_has_happened
@@ -169,6 +170,7 @@ country_event = {
 					province_id = 2206
 					province_id = 2205
 					province_id = 3564
+					province_id = 128
 					province_id = 3447
 				}
             }
@@ -201,6 +203,7 @@ country_event = {
 					province_id = 2206
 					province_id = 2205
 					province_id = 3564
+					province_id = 128
 					province_id = 3447
 				}
             }
@@ -325,6 +328,19 @@ country_event = { #colombian revolt success event
 				clr_global_flag = melistas
 			}
 		}
+		random_owned = {
+			limit = {
+				owner = {
+					has_global_flag = clm_1876_civil_war
+					has_global_flag = clm_into_gco
+				}
+			}
+			owner = {
+				clr_global_flag = clm_1876_civil_war
+				clr_global_flag = clm_into_gco
+			}
+		}
+		
 		clr_global_flag = war_of_the_supremes
 		capital = 2247
     }
@@ -516,7 +532,8 @@ country_event = {
 			owns = 3359
 			owns = 2401
 			owns = 3567
-            owns = 3998 
+            owns = 4204 
+            owns = 2404 
 			owns = 2261
 			owns = 904
 			owns = 696
@@ -550,7 +567,8 @@ country_event = {
 					province_id = 3359
 					province_id = 2401
 					province_id = 3567
-                    province_id = 3998 
+                    province_id = 4204 
+                    province_id = 2404 
 					province_id = 2261
 					province_id = 3376
 					province_id = 904
@@ -590,7 +608,8 @@ country_event = {
 					province_id = 3359
 					province_id = 2401
 					province_id = 3567
-                    province_id = 3998 
+                    province_id = 4204 
+                    province_id = 2404 
 					province_id = 2261
 					province_id = 3376
 					province_id = 904
@@ -640,7 +659,8 @@ country_event = {
 			owns = 3359
 			owns = 2401
 			owns = 3567
-            owns = 3998 
+            owns = 4204 
+            owns = 2404 
 			owns = 2261
 			owns = 904
 			owns = 696
@@ -676,7 +696,8 @@ country_event = {
 					province_id = 3359
 					province_id = 2401
 					province_id = 3567
-                    province_id = 3998 
+                    province_id = 4204 
+                    province_id = 2404 
 					province_id = 2261
 					province_id = 3376
 					province_id = 904
@@ -710,6 +731,7 @@ country_event = {
             attacker_goal = { casus_belli = conquest }
             defender_goal = { casus_belli = civil_war }
         }
+		set_global_flag = clm_1876_civil_war
 		CLR = { ruling_party_ideology = conservative government = prov_gov_conservative }
     }
     option = {
@@ -720,7 +742,8 @@ country_event = {
 					province_id = 3359
 					province_id = 2401
 					province_id = 3567
-                    province_id = 3998 
+                    province_id = 4204 
+                    province_id = 2404 
 					province_id = 2261
 					province_id = 3376
 					province_id = 904
@@ -754,6 +777,7 @@ country_event = {
             attacker_goal = { casus_belli = conquest }
             defender_goal = { casus_belli = civil_war }
         }
+		set_global_flag = clm_1876_civil_war
         change_tag_no_core_switch = CLR
 		CLR = { ruling_party_ideology = conservative government = prov_gov_conservative }
     }
@@ -876,6 +900,8 @@ country_event = {
 			ruling_party_ideology = conservative
 			ruling_party_ideology = reactionary
 		}
+		NOT = { government = radical_republic }
+		NOT = { government = proletarian_dictatorship }
         NOT = { exists = CLR }
         NOT = { year = 1896 }
         NOT = { exists = CLR }
@@ -950,6 +976,7 @@ country_event = {
         name = "173163OPTB"
 		prestige = -20
 		3564 = { remove_core = THIS remove_core = CLM }
+		128 = { add_core = FROM remove_core = THIS remove_core = CLM }
 		ai_chance = { factor = 0 }
     }
 }

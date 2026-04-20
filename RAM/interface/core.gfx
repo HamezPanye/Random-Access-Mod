@@ -1168,6 +1168,12 @@ bitmapfont = {
 	}
 	
 	bitmapfont = {
+		name = "vic_18_white_no_colon"
+		fontname = "vic_18_no_colon"
+		color = 0xFFFFFFFF
+	}
+	
+	bitmapfont = {
 		name = "vic_18"
 		fontname = "vic_18"
 		color = 0xffffffff

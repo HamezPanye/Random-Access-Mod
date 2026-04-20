@@ -162,9 +162,9 @@ political_decisions = {
 		picture = map_oregon
 		potential = {
 			has_global_flag = mexican_victory
-			has_global_flag = mex_took_oregon_maw
 			tag = USA
 			NOT = { has_global_flag = usa_comeback_one }
+			78 = { NOT = { is_core = USA } }
 		}
 
 		allow = {
@@ -177,6 +177,8 @@ political_decisions = {
 				AND = { rank = 6 NOT = { MEX = { rank = 5 } } }
 				AND = { rank = 7 NOT = { MEX = { rank = 6 } } }
 				AND = { rank = 8 NOT = { MEX = { rank = 7 } } }
+				NOT = { exists = MEX }
+				AND = { is_greater_power = yes MEX = { is_greater_power = no } }
 			}
 			war = no
 			is_disarmed = no
@@ -206,14 +208,11 @@ political_decisions = {
 			USA_158 = { add_core = THIS }
 			USA_124 = { add_core = THIS }
 			USA_121 = { add_core = THIS }
-			USA_118 = { add_core = THIS }
 			USA_116 = { add_core = THIS }
-			USA_111 = { add_core = THIS }
 			USA_91 = { add_core = THIS }
 			USA_81 = { add_core = THIS }
 			USA_78 = { add_core = THIS }
 			106 = { add_core = THIS }
-			4064 = { add_core = THIS }
 			126 = { add_core = THIS }
 			4037 = { add_core = THIS }
 			4065 = { add_core = THIS }
@@ -222,10 +221,7 @@ political_decisions = {
 			130 = { add_core = THIS }
 			4036 = { add_core = THIS }
 			131 = { add_core = THIS }
-			111 = { add_core = THIS }
-			114 = { add_core = THIS }
 			107 = { remove_core = THIS }
-			110 = { remove_core = THIS }
 			4145 = { remove_core = THIS }
 		}
 	}
@@ -255,6 +251,8 @@ political_decisions = {
 				AND = { rank = 6 NOT = { MEX = { rank = 5 } } }
 				AND = { rank = 7 NOT = { MEX = { rank = 6 } } }
 				AND = { rank = 8 NOT = { MEX = { rank = 7 } } }
+				NOT = { exists = MEX }
+				AND = { is_greater_power = yes MEX = { is_greater_power = no } }
 			}
 			war = no
 			is_disarmed = no
@@ -274,7 +272,6 @@ political_decisions = {
 			4034 = { add_core = THIS }
 			4035 = { add_core = THIS }
 			129 = { add_core = THIS }
-			128 = { add_core = THIS }
 			103 = { add_core = THIS }
 			109 = { add_core = THIS }
 			4120 = { add_core = THIS }
@@ -310,6 +307,8 @@ political_decisions = {
 				AND = { rank = 6 NOT = { MEX = { rank = 5 } } }
 				AND = { rank = 7 NOT = { MEX = { rank = 6 } } }
 				AND = { rank = 8 NOT = { MEX = { rank = 7 } } }
+				NOT = { exists = MEX }
+				AND = { is_greater_power = yes MEX = { is_greater_power = no } }
 			}
 			war = no
 			is_disarmed = no
@@ -325,15 +324,18 @@ political_decisions = {
 			set_global_flag = usa_comeback_three
 			badboy = 10
 			MEX_85 = { add_core = THIS }
-			MEX_94 = { add_core = THIS }
+			MEX_85_2 = { add_core = THIS }
 			MEX_97 = { add_core = THIS }
-			MEX_100 = { add_core = THIS }
 			MEX_103 = { add_core = THIS }
-			USA_106 = { add_core = THIS }
-			USA_111 = { add_core = THIS }
+			USA_116 = { add_core = THIS }
+			USA_124 = { add_core = THIS }
 			102 = { remove_core = THIS }
+			4064 = { remove_core = THIS }
 			4052 = { remove_core = THIS }
 			2662 = { remove_core = THIS }
+			4120 = { add_core = THIS } #Colorado
+			103 = { add_core = THIS } #Colorado
+			106 = { add_core = THIS } #Colorado
 		}
 	}
 
@@ -382,79 +384,6 @@ political_decisions = {
 		}
 	}
 
-	vnr_creates_gco = {
-		picture = unite_gran_colombia
-		potential = {
-			tag = VNR
-			NOT = { exists = GCO }
-			NOT = { has_global_flag = gc_reformation_failed }
-		}
-
-		allow = {
-			war = no
-			NOT = { exists = VNZ }
-		}
-
-		effect = {
-			capital = 2264
-			prestige = 15
-			2532 = { add_core = VNZ }
-			VNZ = { all_core = { add_core = GCO } }
-			CLM = { all_core = { add_core = GCO } }
-			2287 = { add_core = ECU }
-			4011 = { add_core = ECU }
-			2291 = { add_core = ECU }
-			ECU = { all_core = { add_core = GCO } }
-			ECM = { all_core = { add_core = GCO } }
-			change_tag = GCO
-			2532 = { add_core = GCO }
-			3567 = { add_core = GCO }
-			3998 = { add_core = GCO } 
-			2401 = { add_core = GCO }
-			1977 = { add_core = GCO }
-			3359 = { add_core = GCO }
-			add_accepted_culture = caribeno
-			VNR = { all_core = { remove_core = VNR } }
-			badboy = 5
-			political_reform = federalism
-			government = democracy
-			random_owned = {
-				limit = {
-					owner = {
-						CLM = { exists = yes }
-					}
-				}
-				owner = {
-					CLM = { casus_belli = { target = GCO type = liberate_country months = 120 } }
-					GCO = {
-						war = {
-							target = CLM
-							attacker_goal = { casus_belli = conquest_any }
-							defender_goal = { casus_belli = liberate_country country = VNZ }
-						}
-					}
-				}
-			}
-			random_owned = {
-				limit = {
-					owner = {
-						ECU = { exists = yes }
-					}
-				}
-				owner = {
-					ECU = { casus_belli = { target = GCO type = liberate_country months = 120 } }
-					GCO = {
-						war = {
-							target = ECU
-							attacker_goal = { casus_belli = conquest_any }
-							defender_goal = { casus_belli = liberate_country country = VNZ }
-						}
-					}
-				}
-			}
-		}
-	}
-	
 	negotiate_for_alta = {
 		picture = CAL_greater_california
 		potential = {
@@ -462,14 +391,13 @@ political_decisions = {
             is_greater_power = yes
             NOT = { has_country_flag = hasmanifestdestiny }
 			NOT = { has_country_flag = negotiating_alta }
-			NOT = { has_country_flag = bought_alta }
-			NOT = { has_country_flag = alta_failed }
+			NOT = { has_global_flag = bought_alta }
+			NOT = { has_global_flag = railroaded_mex_keeps_north_mexico }
 		}
 		
 		allow = {
             war = no
-			idealism = 1
-			state_n_government = 1
+			year = 1844
             NOT = { MEX = { any_owned_province = { country_units_in_province = USA } } }
             OR = {
                 TEX = { in_sphere = THIS }
@@ -478,14 +406,19 @@ political_decisions = {
                 any_owned_province = { is_core = MEX }
             }
             MEX = { is_vassal = no exists = yes }
-			money = 300000
+			OR = {
+				money = 500000
+				ai = yes
+			}
         }
 		
 		effect = {
 			set_country_flag = negotiating_alta
 			MEX = { country_event = 4207070 }
 		}
-		ai_will_do = { factor = 0 }
+		ai_will_do = {
+			factor = 1
+		}
 	}
 	
 	we_surrender_to_player = {
@@ -559,7 +492,6 @@ political_decisions = {
 			2143 = { add_core = RGR }
 			2662 = { add_core = RGR }
 			2148 = { add_core = RGR }
-			3589 = { add_core = RGR }
 			3560 = { add_core = RGR }
 			108 = { add_core = RGR }
 			4176 = { add_core = RGR }
@@ -573,7 +505,6 @@ political_decisions = {
 			2143 = { add_core = RGR }
 			2662 = { add_core = RGR }
 			2148 = { add_core = RGR }
-			3589 = { add_core = RGR }
 			3560 = { add_core = RGR }
 			4032 = { add_core = RGR }
 			4033 = { add_core = RGR }
@@ -898,7 +829,6 @@ political_decisions = {
 						province_id = 109
 						province_id = 4120
 						province_id = 103
-						province_id = 128
 						province_id = 129
 					}
 				}
@@ -1106,108 +1036,15 @@ political_decisions = {
 		}
 	}
 	
-	fgc_invite_people = {
-	picture = BolivarSA2
-		potential = {
-			tag = FGC
-			is_vassal = no
-			any_land_province = { owner = { is_culture_group = latin_american_cultures NOT = { tag = THIS primary_culture = brazilian } } }
-		}
-		
-		allow = {
-			phenomenology_n_hermeneutic = 1
-			rank = 16
-			war = no
-			is_disarmed = no
-			any_neighbor_country = {
-				is_culture_group = latin_american_cultures
-				NOT = { primary_culture = brazilian }
-				OR = {
-					NOT = { has_country_flag = rejected_fgc_annexation }
-					AND = {
-						has_country_flag = rejected_fgc_annexation
-						NOT = { has_country_flag = claimed_by_fgc }
-					}
-				}
-			}
-		}
-		
-		effect = {
-			any_neighbor_country = { limit = { is_culture_group = latin_american_cultures NOT = { primary_culture = brazilian } } country_event = 4207086 }
-		}
-	}
-#	
-#	anr_invite_people = {
-#	picture = BOL_Sucre
-#		potential = {
-#			tag = ANR
-#			is_vassal = no
-#			any_land_province = { owner = { is_culture_group = latin_american_cultures NOT = { tag = THIS primary_culture = brazilian } } }
-#		}
-#		
-#		allow = {
-#			phenomenology_n_hermeneutic = 1
-#			rank = 16
-#			war = no
-#			is_disarmed = no
-#			any_neighbor_country = {
-#				is_culture_group = latin_american_cultures
-#				NOT = { primary_culture = brazilian }
-#				OR = {
-#					NOT = { has_country_flag = rejected_anr_annexation }
-#					AND = {
-#						has_country_flag = rejected_anr_annexation
-#						NOT = { has_country_flag = claimed_by_anr }
-#					}
-#				}
-#			}
-#		}
-#		
-#		effect = {
-#			any_neighbor_country = { limit = { is_culture_group = latin_american_cultures NOT = { primary_culture = brazilian } } country_event = 4207086 }
-#		}
-#	}
-	
-#	lpc_invite_people = {
-#	picture = SanMartinSA1
-#		potential = {
-#			tag = LPC
-#			is_vassal = no
-#			any_land_province = { owner = { is_culture_group = latin_american_cultures NOT = { tag = THIS primary_culture = brazilian } } }
-#		}
-#		
-#		allow = {
-#			phenomenology_n_hermeneutic = 1
-#			rank = 16
-#			war = no
-#			is_disarmed = no
-#			any_neighbor_country = {
-#				is_culture_group = latin_american_cultures
-#				NOT = { primary_culture = brazilian }
-#				OR = {
-#					NOT = { has_country_flag = rejected_lpc_annexation }
-#					AND = {
-#						has_country_flag = rejected_lpc_annexation
-#						NOT = { has_country_flag = claimed_by_lpc }
-#					}
-#				}
-#			}
-#		}
-#		
-#		effect = {
-#			any_neighbor_country = { limit = { is_culture_group = latin_american_cultures NOT = { primary_culture = brazilian } } country_event = 4207086 }
-#		}
-#	}
-	
 	seize_santa_barbara = {
 	picture = altoperu
 		potential = {
 			tag = BRZ
 			year = 1853
-			owns = 3998
-			696 = { NOT = { owned_by = THIS } owned_by = GCO }
+			owns = 4204
+			4017 = { NOT = { owned_by = THIS } owned_by = GCO }
 			has_global_flag = PEU_partition
-			NOT = { has_global_flag = barbara_seized }
+			NOT = { has_global_flag = carlos_seized }
 		}
 		
 		allow = {
@@ -1217,7 +1054,7 @@ political_decisions = {
 		}
 		
 		effect = {
-			set_global_flag = barbara_seized
+			set_global_flag = carlos_seized
 			badboy = 5
 			696 = { add_core = BRZ }
 			2278 = { add_core = BRZ }

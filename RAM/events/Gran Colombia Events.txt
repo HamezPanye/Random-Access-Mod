@@ -7,6 +7,47 @@ country_event = {
     is_triggered_only = yes
 
     option = {
+        name = "Build a city so magnificent that others will be humbled."
+		set_country_flag = GCO_capital
+		treasury = -20000
+		capital = 3748
+		prestige = 10
+        3748 = { 
+			add_province_modifier = { name = new_capital_modifier duration = 18250 }
+			add_province_modifier = { name = recently_built_city duration = 3650 }
+			life_rating = 20
+			change_province_name = "Bolivar"
+		}
+		political_reform = federalism
+		set_country_flag = stay_federalist
+		any_pop = {
+			limit = { culture = north_andean }
+			militancy = -1
+		}
+		ai_chance = {
+			factor = 1000
+			modifier = {
+				factor = 0
+				NOT = { money = 20000 }
+			}
+		}
+	}
+
+    option = {
+        name = "Maracaibo shall guide our nation as a new refurbished capital city."
+		prestige = 10
+		capital = 2270
+		2270 = {
+		    add_province_modifier = { name = new_capital_modifier duration = 18250 }
+		    any_pop = {
+				limit = { culture = north_andean }
+				militancy = -5
+			}
+		}
+		ai_chance = { factor = 70 }
+	}
+
+    option = {
         name = "The capital will change to Bogota."
         capital = 2247
         prestige = 10
@@ -30,7 +71,7 @@ country_event = {
 				limit = { culture = north_andean }
 				militancy = -5
 			}
-			add_province_modifier = { name = new_capital_modifier duration = 1825 }
+			add_province_modifier = { name = new_capital_modifier duration = 10950 }
 		}
 		ai_chance = { factor = 5 }
 	}
@@ -47,44 +88,6 @@ country_event = {
 			add_province_modifier = { name = new_capital_modifier duration = 1825 }
 		}
 		ai_chance = { factor = 0 }
-	}
-
-    option = {
-        name = "We need a new, refurbished capital city."
-		prestige = 10
-		capital = 2270
-		2270 = {
-		    add_province_modifier = { name = new_capital_modifier duration = 1825 }
-		    any_pop = {
-				limit = { culture = north_andean }
-				militancy = -5
-			}
-		}
-		ai_chance = { factor = 70 }
-	}
-
-    option = {
-        name = "Build a city so magnificent that others will be humbled."
-		set_country_flag = GCO_capital
-		treasury = -50000
-		capital = 2254
-		prestige = 10
-        2254 = { 
-			add_province_modifier = { name = new_capital_modifier duration = 1825 }
-			add_province_modifier = { name = recently_built_city duration = 730 } 
-			change_province_name = "Bolivar" 
-		}
-		any_pop = {
-			limit = { culture = north_andean }
-			militancy = -1
-		}
-		ai_chance = {
-			factor = 200
-			modifier = {
-				factor = 0
-				NOT = { money = 50000 }
-			}
-		}
 	}
 
     option = {
@@ -146,7 +149,7 @@ country_event = {
 		GCO = { 
 			war = {
 				target = PBC
-				attacker_goal = { casus_belli = scripted_war_big country = GCO }
+				attacker_goal = { casus_belli = scripted_war_huge country = GCO }
 				defender_goal = { casus_belli = scripted_war_small country = PBC }
 				call_ally = no
 			}
@@ -282,7 +285,6 @@ country_event = {
 		prestige = 10
 		set_global_flag = PEU_partition 
 		inherit = PEU
-		PEU = { all_core = { add_core = GCO } }
 		SPU = { all_core = { remove_core = SPU } }
 		4007 = { remove_core = THIS }
 		2404 = { remove_core = THIS }
@@ -290,8 +292,9 @@ country_event = {
 		3651 = { remove_core = THIS }
 		4186 = { remove_core = THIS }
 		3652 = { remove_core = THIS }
-		3995 = { remove_core = THIS }
-		3996 = { remove_core = THIS }
+		4201 = { remove_core = THIS }
+		4212 = { remove_core = THIS }
+		4202 = { remove_core = THIS }
 		random_owned = {
 			limit = { SPU = { exists = yes } }
 			GCO = { inherit = SPU } 
@@ -398,8 +401,8 @@ country_event = {
             owner = { relation = { who = LPL value = 50 } } 
 		}
 		3380 = { add_core = BRZ remove_core = GCO }
-		3990 = { add_core = BRZ remove_core = GCO }
-		3988 = { add_core = BRZ remove_core = GCO }
+		4196 = { add_core = BRZ remove_core = GCO }
+		4191 = { add_core = BRZ remove_core = GCO }
 		3381 = { add_core = BRZ remove_core = GCO }
 		3435 = { add_core = BRZ remove_core = GCO }
 		4187 = { add_core = BRZ remove_core = GCO }
@@ -410,8 +413,8 @@ country_event = {
 				limit = {
 					OR = {
 						province_id = 3380
-						province_id = 3990
-						province_id = 3988
+						province_id = 4196
+						province_id = 4191
 						province_id = 3381
 						province_id = 3435
 						province_id = 4187
@@ -502,6 +505,27 @@ country_event = {
 						}
 					}
 					add_core = THIS remove_core = GCO
+				}
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					2370 = {
+						OR = {
+							owned_by = GCO
+							owned_by = BRZ
+							owned_by = CHL
+						}
+					}
+					2368 = {
+						owned_by = THIS
+					}
+				}
+			}
+			owner = {
+				2370 = {
+					secede_province = THIS
 				}
 			}
 		}
@@ -629,6 +653,27 @@ country_event = {
 				}
 			}
 		}
+		random_owned = {
+			limit = {
+				owner = {
+					2370 = {
+						OR = {
+							owned_by = GCO
+							owned_by = BRZ
+							owned_by = CHL
+						}
+					}
+					2368 = {
+						owned_by = THIS
+					}
+				}
+			}
+			owner = {
+				2370 = {
+					secede_province = THIS
+				}
+			}
+		}
         random_owned = {
             limit = { owner = { GCO = { exists = yes } } }
             owner = { relation = { who = GCO value = 100 } }
@@ -645,9 +690,21 @@ country_event = {
 	
 	trigger = {
 		tag = BOL
-		ARG = { exists = yes }
+		OR = {
+			ARG = { exists = yes }
+			any_owned_province = {
+				is_capital = yes
+				controlled_by = REB
+			}
+			year = 1865
+		}
 		has_global_flag = PEU_partition
-		vassal_of = ARG
+		OR = {
+			vassal_of = ARC
+			vassal_of = ARG
+			vassal_of = LPL
+		}
+		year = 1860
 		war = no
 	}
 
@@ -656,7 +713,37 @@ country_event = {
 	option = {
 		name = "Bolivia is for Bolivians!"
 		prestige = 5
-		ARG = { release_vassal = THIS country_event = { id = 6208834 days = 30 } }
+		2315 = { add_core = THIS }
+		4066 = { add_core = THIS }
+		1714 = { add_core = THIS }
+		random_owned = {
+			limit = { owner = { vassal_of = ARC } }
+			owner = {
+				ARC = {
+					release_vassal = THIS country_event = { id = 6208834 days = 30 }
+				}
+			}
+		}
+		random_owned = {
+			limit = { owner = { vassal_of = ARG } }
+			owner = {
+				ARG = {
+					release_vassal = THIS country_event = { id = 6208834 days = 30 }
+				}
+			}
+		}
+		random_owned = {
+			limit = { owner = { vassal_of = LPL } }
+			owner = {
+				LPL = {
+					release_vassal = THIS country_event = { id = 6208834 days = 30 }
+				}
+			}
+		}
+		any_country = {
+			limit = { is_greater_power = yes }
+			diplomatic_influence = { who = BOL value = -100 }
+		}
 		government = democracy
 		political_reform = landed_voting
 		political_reform = appointed
@@ -665,6 +752,7 @@ country_event = {
 		political_reform = state_press
 		political_reform = harassment
 		political_reform = culture_voting_only
+		any_owned = { limit = { is_capital = yes } change_controller = THIS }
 	}
 }
 
@@ -684,8 +772,10 @@ country_event = {
 		relation = { who = BOL value = 200 }
 		any_pop = {
 			limit = {
-				is_primary_culture = yes
-				is_accepted_culture = yes
+				OR = {
+					is_primary_culture = yes
+					is_accepted_culture = yes
+				}
 			}
 			militancy = 2
 			consciousness = 3
@@ -705,12 +795,14 @@ country_event = {
 		war = {
 			target = BOL
             attacker_goal = { casus_belli = conquest_low }
-            defender_goal = { casus_belli = humiliate_no_infamy }
+            defender_goal = { casus_belli = acquire_core_state state_province_id = 2315 country = BOL }
 		}
 		any_pop = {
 			limit = {
-				is_primary_culture = yes
-				is_accepted_culture = yes
+				OR = {
+					is_primary_culture = yes
+					is_accepted_culture = yes
+				}
 			}
 			militancy = -2
 			consciousness = 1
@@ -731,16 +823,65 @@ country_event = {
 		tag = GCO
 		PEU = { exists = no } 
 		has_global_flag = argentinian-bolivian_war
+		NOT = { has_global_flag = BRZ_DESTROYED_GCO }
 		OR = { 
 			BOL = { war_with = LPL } 
 			BOL = { war_with = ARC } 
 			BOL = { war_with = ARG }
 		}
-		2295 = { owned_by = GCO is_core = GCO }
+		2295 = { owned_by = GCO }
 	}
 
 	mean_time_to_happen = { days = 10 }
 
+	option = {
+		name = "Save them from the Platine cluthes!"
+		prestige = 5
+		set_global_flag = Saving_Bolivia
+		BOL = { military_access = GCO create_alliance = GCO relation = { who = GCO value = 400 } }
+		diplomatic_influence = { who = BOL value = 400 }
+		random_owned = { 
+			limit = { owner = { exists = ARC } }
+			owner = {
+				war = {
+					target = ARC
+					attacker_goal = { casus_belli = scripted_war_small country = GCO }
+					defender_goal = { casus_belli = scripted_war_small country = ARC }
+					call_ally = no
+				}
+			}
+		}
+		random_owned = { 
+			limit = { owner = { exists = ARG } }
+			owner = {
+				war = {
+					target = ARG
+					attacker_goal = { casus_belli = scripted_war_small country = GCO }
+					defender_goal = { casus_belli = scripted_war_small country = ARG }
+					call_ally = no
+				}
+			}
+		}
+		random_owned = { 
+			limit = { owner = { exists = LPL } }
+			owner = {
+				war = {
+					target = LPL
+					attacker_goal = { casus_belli = scripted_war_small country = GCO } 
+					defender_goal = { casus_belli = scripted_war_small country = LPL }
+					call_ally = no
+				}
+			}
+		}
+		ai_chance = {
+			factor = 84
+			modifier = {
+				factor = 0
+				has_global_flag = GCO_DESTROYED_BRZ
+				NOT = { has_global_flag = gco_grao_para_taken }
+			}
+		}
+	}
 	option = {
 		name = "Negotiate with Argentina."
 		set_global_flag = Saving_Bolivia
@@ -765,51 +906,7 @@ country_event = {
 			}
 		}
         ai_chance = {
-			factor = 84
-			modifier = {
-				factor = 0
-				has_global_flag = gco_matto_grosso_taken
-			}
-		}
-	}
-	option = {
-		name = "Save them from the Platine cluthes!"
-		prestige = 5
-		set_global_flag = Saving_Bolivia
-		BOL = { military_access = GCO create_alliance = GCO relation = { who = GCO value = 400 } }
-		diplomatic_influence = { who = BOL value = 400 }
-		random_owned = { 
-			limit = { owner = { exists = ARG } }
-			owner = {
-				war = {
-					target = ARG 
-					attacker_goal = { casus_belli = scripted_war_small country = GCO }
-					defender_goal = { casus_belli = scripted_war_small country = ARG }
-					call_ally = no
-				}
-			}
-		}
-		random_owned = { 
-			limit = { owner = { exists = LPL } }
-			owner = {
-				war = {
-					target = LPL
-					attacker_goal = { casus_belli = scripted_war_small country = GCO } 
-					defender_goal = { casus_belli = scripted_war_small country = LPL }
-					call_ally = no
-				}
-			}
-		}
-		ai_chance = {
 			factor = 15
-			modifier = {
-				factor = 0
-				has_global_flag = gco_grao_para_taken
-			}
-			modifier = {
-				factor = 1000
-				has_global_flag = gco_matto_grosso_taken
-			}
 		}
 	}
 	option = { 
@@ -877,10 +974,21 @@ country_event = {
 		name = "Save them from the Platine cluthes!"
 		BOL = { military_access = GCO }
 		random_owned = { 
+			limit = { owner = { exists = ARC } }
+			owner = {
+				war = {
+					target = ARC
+					attacker_goal = { casus_belli = scripted_war_small country = GCO }
+					defender_goal = { casus_belli = scripted_war_small country = ARC }
+					call_ally = no
+				}
+			}
+		}
+		random_owned = { 
 			limit = { owner = { exists = ARG } }
 			owner = {
 				war = {
-					target = ARG 
+					target = ARG
 					attacker_goal = { casus_belli = scripted_war_small country = GCO }
 					defender_goal = { casus_belli = scripted_war_small country = ARG }
 					call_ally = no
@@ -916,7 +1024,7 @@ country_event = {
 	
 	option = {
 		name = "Better than being wiped out..."
-		GCO = { all_core = { remove_core = THIS } }
+		PEU = { all_core = { limit = { NOT = { province_id = 4007 } } remove_core = THIS } }
 		any_land_province = {
 			limit = {
 				is_core = BRZ
@@ -953,7 +1061,7 @@ country_event = {
 			3554 = { add_core = LPL }
 		}
 		any_owned = {
-			limit = { is_core = GCO }
+			limit = { is_core = PEU NOT = { province_id = 4007 } }
 			secede_province = GCO
 		}
 		any_owned = {
@@ -1051,7 +1159,6 @@ country_event = {
 		tag = GCO
 		BOL = { exists = yes vassal_of = THIS }
 		year = 1870
-		war = no 
 		is_disarmed = no
 	}
 	
@@ -1064,8 +1171,8 @@ country_event = {
 		badboy = -5
 		all_core = { remove_core = BOL }
 		3380 = { remove_core = BOL }
-		3990 = { remove_core = BOL }
-		3988 = { remove_core = BOL }
+		4196 = { remove_core = BOL }
+		4191 = { remove_core = BOL }
 		3381 = { remove_core = BOL }
 		3435 = { remove_core = BOL }
 		4187 = { remove_core = BOL }
@@ -1096,9 +1203,11 @@ country_event = {
 	
 	option = {
 		name = "Bolivia is a integral part of Bolivar's project.§RGain 10 infamy§"
+		set_country_flag = gco_bol_aggression
 		prestige = 10
 		badboy = 10
 		GCO = { release_vassal = BOL }
+		BOL = { government = democracy }
 		diplomatic_influence = { who = BOL value = -200 }
 		war = {
 			target = BOL
@@ -1125,12 +1234,9 @@ country_event = {
 		ai_chance = {
 			factor = 9
 			modifier = {
-				factor = 0
-				has_global_flag = gco_grao_para_taken
-			}
-			modifier = {
 				factor = 100
-				has_global_flag = gco_matto_grosso_taken
+				has_global_flag = purchase_matto-grosso
+				NOT = { has_global_flag = colombian_cores_revoked }
 			}
 		}
 	}
@@ -1145,7 +1251,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = "NOT AGAIN!"
+		name = "NOT AGAIN!!!!"
 		add_country_modifier = { name = small_country_draft duration = 730 }
 	}
 }
@@ -1169,7 +1275,7 @@ country_event = {
 	option = {
 		name = "Alto peru is finally under our control."
 		prestige = 10
-		BOL = { all_core = { limit = { NOT = { is_core = CHL is_core = GCO is_core = BRZ } } add_core = THIS } }
+		BOL = { all_core = { limit = { OR = { NOT = { is_core = CHL is_core = PEU is_core = BRZ } } province_id = 4007 } add_core = THIS } }
         any_pop = {
             limit = { has_pop_culture = south_andean }
             militancy = 3
@@ -1196,15 +1302,7 @@ country_event = {
     desc = "62033_desc"
     picture = "CLM_BRZ_border"
 	fire_only_once = yes 
-    trigger = { 
-		tag = GCO
-		year = 1936
-		2295 = { owned_by = GCO is_core = GCO } #Lima
-		PEU = { exists = no }
-		BRZ = { exists = yes }
-	}
-
-    mean_time_to_happen = { months = 1 }
+    is_triggered_only = yes
 
 	option = {
 		name = "Sooner or later, this will be decided."
@@ -1224,7 +1322,7 @@ country_event = {
 #Start of the Brazil-Colombian war! GCO initial
 country_event = { 
 	id = 62034
-	title = "Brazil has seized Santa Barbara!"
+	title = "Brazil has seized San Carlos!"
 	desc = "62034_desc"
 	picture = "CLM_BRZ_border"
 	major = yes
@@ -1232,7 +1330,7 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = { 
-		name = "Santa Barbara is ours!"
+		name = "San carlos is ours!"
 		set_global_flag = amazon_war
 		prestige = -5
 		add_country_modifier = { name = andean_military_reforms duration = 5475 }
@@ -1281,80 +1379,141 @@ country_event = {
 	is_triggered_only = yes
 	
 	option = {
-		name = "¡Gloria a Colombia! the borders shall reach the river! §RGain 5 infamy§"
-		badboy = 5
+		name = "¡Gloria a Colombia! the borders shall reach the river! §RGain 10 infamy§"
+		badboy = 10
 		prestige = 25
 		set_global_flag = GCO_DESTROYED_BRZ
 		BRZ = { country_event = 62037 }
 		add_country_modifier = { name = the_homestead_act duration = -1 }
-		2415 = { add_core = GCO }
-		2407 = { add_core = GCO }
-		4076 = { add_core = GCO }
-		2412 = { add_core = GCO }
-		2408 = { add_core = GCO }
-		4109 = { add_core = GCO }
-		2402 = { add_core = GCO }
-		3994 = { add_core = GCO }
-		2404 = { add_core = GCO }
-		3651 = { add_core = GCO }
-		4186 = { add_core = GCO }
-		3652 = { add_core = GCO }
-		3995 = { add_core = GCO }
-		3996 = { add_core = GCO }
-		3567 = { add_core = GCO }
-		3998 = { add_core = GCO }
-		2403 = { add_core = GCO }
-		2404 = { add_core = GCO }
-		3999 = { add_core = GCO }
-		3435 = { add_core = GCO }
-		4187 = { add_core = GCO }
-		3381 = { add_core = GCO }
-		3382 = { add_core = GCO }
-		1977 = { add_core = GCO }
-		3567 = { add_core = GCO }
-		3998 = { add_core = GCO }
-		3990 = { remove_core = BRZ }
-		3988 = { remove_core = BRZ }
-		3380 = { remove_core = BRZ }
+		2415 = { remove_core = BRZ }
+		2407 = { remove_core = BRZ }
+		4076 = { remove_core = BRZ }
+		2412 = { remove_core = BRZ }
+		2408 = { remove_core = BRZ }
+		4109 = { remove_core = BRZ }
+		2402 = { remove_core = BRZ }
+		4200 = { remove_core = BRZ }
+		2404 = { remove_core = BRZ }
+		3651 = { remove_core = BRZ }
+		4186 = { remove_core = BRZ }
+		3652 = { remove_core = BRZ }
+		4201 = { remove_core = BRZ }
+		4212 = { remove_core = BRZ }
+		4202 = { remove_core = BRZ }
+		3567 = { remove_core = BRZ }
+		4204 = { remove_core = BRZ }
+		2403 = { remove_core = BRZ }
+		4205 = { remove_core = BRZ }
+		1977 = { remove_core = BRZ }
+		2532 = { remove_core = BRZ }
+		3568 = { remove_core = BRZ }
+		830 = { remove_core = BRZ }
 		696 = { remove_core = BRZ }
 		2278 = { remove_core = BRZ }
 		4017 = { remove_core = BRZ }
 		4075 = { remove_core = BRZ }
-		4076 = { remove_core = BRZ }
+		BRZ_2401 = { remove_core = BRZ }
 		BRZ = {
 			any_owned = {
-				limit = { is_core = GCO }
+				limit = {
+					OR = {
+						region = BRZ_2401
+						province_id = 2417
+						province_id = 2407
+						province_id = 4076
+						province_id = 2412
+						province_id = 2408
+						province_id = 4109
+						province_id = 2402
+						province_id = 4200
+						province_id = 2404
+						province_id = 3651
+						province_id = 4186
+						province_id = 3652
+						province_id = 4201
+						province_id = 4212
+						province_id = 4202
+						province_id = 3567
+						province_id = 4204
+						province_id = 2403
+						province_id = 4205
+						province_id = 1977
+						province_id = 2532
+						province_id = 3568
+						province_id = 830
+						province_id = 696
+						province_id = 2278
+						province_id = 4017
+						province_id = 4075
+					}
+				}
 				secede_province = GCO 
 			}
 			relation = { who = GCO value = 150 }
 		}
 		any_land_province = {
-			limit = { is_core = GCO is_core = BRZ }
+			limit = { OR = { is_core = GCO is_core = VNZ is_core = CLM is_core = ECU } is_core = BRZ }
 			remove_core = BRZ
 		}
 		ACE = { primary_culture = north_andean }
 		BRZ_2401 = {
-			limit = { is_core = GCO }
+			limit = { NOT = { is_core = BRZ } }
 			add_core = ACE
 		}
 		BRZ_2401 = { 
-			limit = { is_core = GCO }
+			limit = { NOT = { is_core = BRZ } }
 			remove_core = PAA
 		} 
 		BRZ_2408 = { 
-			limit = { is_core = GCO }
+			limit = { NOT = { is_core = BRZ } }
 			add_core = ACE
 		}
 		BRZ_2408 = { 
-			limit = { is_core = GCO }
+			limit = { NOT = { is_core = BRZ } }
 			remove_core = PAA
+		}
+        random_owned = {
+            limit = {
+                owner = {
+					2239 = { owned_by = THIS }
+                }
+			}
+			owner = {
+                2239 = { add_core = ACE }
+            	3499 = { add_core = ACE }
+            	1979 = { add_core = ACE }
+            }
+		}
+        random_owned = {
+            limit = {
+                owner = {
+					2241 = { owned_by = THIS }
+				}
+			}
+			owner = {
+				2241 = { add_core = ACE }
+				2246 = { add_core = ACE }
+				3556 = { add_core = ACE }
+            }
+		}
+        random_owned = {
+            limit = {
+                owner = {
+					2240 = { owned_by = THIS }
+				}
+			}
+			owner = {
+				2240 = { add_core = ACE }
+				2245 = { add_core = ACE }
+				3653 = { add_core = ACE }
+            }
 		}
 		random_owned = {
 			limit = {
 				BOL = { exists = yes }
 			}
-			3990 = { add_core = BOL remove_core = BRZ }
-			3988 = { add_core = BOL remove_core = BRZ }
+			4196 = { add_core = BOL remove_core = BRZ }
+			4191 = { add_core = BOL remove_core = BRZ }
 			3380 = { add_core = BOL remove_core = BRZ }
 		}
 		random_owned = {
@@ -1372,22 +1531,43 @@ country_event = {
 			limit = { 
 				owner = {
 					BOL = { exists = yes }
-					3990 = { owned_by = BRZ }
+					4196 = { owned_by = BRZ }
 				}
 			}
 			owner = {
-				3990 = { secede_province = THIS secede_province = BOL }
+				4196 = { secede_province = THIS secede_province = BOL }
 			}
 		}
 		random_owned = { 
 			limit = { 
 				owner = {
 					BOL = { exists = yes }
-					3988 = { owned_by = BRZ }
+					4191 = { owned_by = BRZ }
 				}
 			}
 			owner = {
-				3988 = { secede_province = THIS secede_province = BOL }
+				4191 = { secede_province = THIS secede_province = BOL }
+			}
+		}
+		random_owned = { 
+			limit = { 
+				owner = {
+					2317 = { owned_by = GCO }
+				}
+			}
+			owner = {
+				3380 = { remove_core = BRZ }
+				4191 = { remove_core = BRZ }
+				4196 = { remove_core = BRZ }
+				random_owned = {
+					limit = { owner = { 2316 = { owned_by = THIS } } } 3380 = { secede_province = THIS }
+				}
+				random_owned = {
+					limit = { owner = { 2316 = { owned_by = THIS } } } 4191 = { secede_province = THIS }
+				}
+				random_owned = {
+					limit = { owner = { 2316 = { owned_by = THIS } } } 4196 = { secede_province = THIS }
+				}
 			}
 		}
 		random_owned = { 
@@ -1398,16 +1578,16 @@ country_event = {
 			}
 			owner = {
 				3380 = { add_core = GCO remove_core = BRZ }
-				3988 = { add_core = GCO remove_core = BRZ }
-				3990 = { add_core = GCO remove_core = BRZ }
+				4191 = { add_core = GCO remove_core = BRZ }
+				4196 = { add_core = GCO remove_core = BRZ }
 				random_owned = {
 					limit = { owner = { 2316 = { owned_by = THIS } } } 3380 = { secede_province = THIS }
 				}
 				random_owned = {
-					limit = { owner = { 2316 = { owned_by = THIS } } } 3988 = { secede_province = THIS }
+					limit = { owner = { 2316 = { owned_by = THIS } } } 4191 = { secede_province = THIS }
 				}
 				random_owned = {
-					limit = { owner = { 2316 = { owned_by = THIS } } } 3990 = { secede_province = THIS }
+					limit = { owner = { 2316 = { owned_by = THIS } } } 4196 = { secede_province = THIS }
 				}
 			}
 		}
@@ -1415,88 +1595,128 @@ country_event = {
 	}
 
 	option = {
-		name = "¡Gloria a Colombia! the entire Grao-Para is ours now! §RGain 10 infamy§"
-		badboy = 10
+		name = "¡Gloria a Colombia! the entire Grao-Para is ours now! §RGain 20 infamy§"
+		badboy = 20
 		prestige = 25
 		set_global_flag = GCO_DESTROYED_BRZ
 		set_global_flag = gco_grao_para_taken
 		BRZ = { country_event = 62037 }
 		add_country_modifier = { name = the_homestead_act duration = -1 }
-		2415 = { add_core = GCO }
-		2407 = { add_core = GCO }
-		4076 = { add_core = GCO }
-		2412 = { add_core = GCO }
-		2408 = { add_core = GCO }
-		4109 = { add_core = GCO }
-		2402 = { add_core = GCO }
-		3994 = { add_core = GCO }
-		2404 = { add_core = GCO }
-		3651 = { add_core = GCO }
-		4186 = { add_core = GCO }
-		3652 = { add_core = GCO }
-		3995 = { add_core = GCO }
-		3996 = { add_core = GCO }
-		3567 = { add_core = GCO }
-		3998 = { add_core = GCO }
-		2403 = { add_core = GCO }
-		2404 = { add_core = GCO }
-		3999 = { add_core = GCO }
-		3435 = { add_core = GCO }
-		4187 = { add_core = GCO }
-		3381 = { add_core = GCO }
-		3382 = { add_core = GCO }
-		1977 = { add_core = GCO }
-		3567 = { add_core = GCO }
-		3998 = { add_core = GCO }
-		2405 = { add_core = GCO }
-		2411 = { add_core = GCO }
-		2410 = { add_core = GCO }
-		2413 = { add_core = GCO }
-		2600 = { add_core = GCO }
-		3749 = { add_core = GCO }
-		3993 = { add_core = GCO }
-		3990 = { remove_core = BRZ }
-		3988 = { remove_core = BRZ }
-		3380 = { remove_core = BRZ }
+		2415 = { remove_core = BRZ }
+		2407 = { remove_core = BRZ }
+		4076 = { remove_core = BRZ }
+		2412 = { remove_core = BRZ }
+		2408 = { remove_core = BRZ }
+		4109 = { remove_core = BRZ }
+		2402 = { remove_core = BRZ }
+		4200 = { remove_core = BRZ }
+		2404 = { remove_core = BRZ }
+		3651 = { remove_core = BRZ }
+		4186 = { remove_core = BRZ }
+		3652 = { remove_core = BRZ }
+		4201 = { remove_core = BRZ }
+		4212 = { remove_core = BRZ }
+		4202 = { remove_core = BRZ }
+		3567 = { remove_core = BRZ }
+		4204 = { remove_core = BRZ }
+		2403 = { remove_core = BRZ }
+		2404 = { remove_core = BRZ }
+		4205 = { remove_core = BRZ }
+		1977 = { remove_core = BRZ }
+		3567 = { remove_core = BRZ }
+		2405 = { remove_core = BRZ }
+		2411 = { remove_core = BRZ }
+		2410 = { remove_core = BRZ }
+		2413 = { remove_core = BRZ }
+		2600 = { remove_core = BRZ }
+		3749 = { remove_core = BRZ }
+		4199 = { remove_core = BRZ }
+		3979 = { remove_core = BRZ }
+		110 = { remove_core = BRZ }
+		2532 = { remove_core = BRZ }
+		3568 = { remove_core = BRZ }
+		830 = { remove_core = BRZ }
 		696 = { remove_core = BRZ }
 		2278 = { remove_core = BRZ }
 		4017 = { remove_core = BRZ }
 		4075 = { remove_core = BRZ }
-		4076 = { remove_core = BRZ }
+		BRZ_2401 = { remove_core = BRZ }
 		BRZ = {
 			any_owned = {
-				limit = { is_core = GCO }
-				secede_province = GCO 
+				limit = {
+					OR = {
+						region = BRZ_2401
+						region = BRZ_2408
+						province_id = 696
+						province_id = 4017
+						province_id = 3568
+						province_id = 830
+						is_core = GCO
+					}
+				}
+				secede_province = GCO
 			}
 			relation = { who = GCO value = 150 }
 		}
 		any_land_province = {
-			limit = { is_core = GCO is_core = BRZ }
+			limit = { OR = { is_core = GCO is_core = VNZ is_core = CLM is_core = ECU } is_core = BRZ }
 			remove_core = BRZ
 		}
 		ACE = { primary_culture = north_andean }
 		BRZ_2401 = {
-			limit = { is_core = GCO }
 			add_core = ACE
 		}
-		BRZ_2401 = { 
-			limit = { is_core = GCO }
+		BRZ_2401 = {
 			remove_core = PAA
 		} 
 		BRZ_2408 = { 
-			limit = { is_core = GCO }
 			add_core = ACE
 		}
-		BRZ_2408 = { 
-			limit = { is_core = GCO }
+		BRZ_2408 = {
 			remove_core = PAA
+		}
+        random_owned = {
+            limit = {
+                owner = {
+					2239 = { owned_by = THIS }
+                }
+			}
+			owner = {
+                2239 = { add_core = ACE }
+            	3499 = { add_core = ACE }
+            	1979 = { add_core = ACE }
+            }
+		}
+        random_owned = {
+            limit = {
+                owner = {
+					2241 = { owned_by = THIS }
+				}
+			}
+			owner = {
+				2241 = { add_core = ACE }
+				2246 = { add_core = ACE }
+				3556 = { add_core = ACE }
+            }
+		}
+        random_owned = {
+            limit = {
+                owner = {
+					2240 = { owned_by = THIS }
+				}
+			}
+			owner = {
+				2240 = { add_core = ACE }
+				2245 = { add_core = ACE }
+				3653 = { add_core = ACE }
+            }
 		}
 		random_owned = {
 			limit = {
 				BOL = { exists = yes }
 			}
-			3990 = { add_core = BOL remove_core = BRZ }
-			3988 = { add_core = BOL remove_core = BRZ }
+			4196 = { add_core = BOL remove_core = BRZ }
+			4191 = { add_core = BOL remove_core = BRZ }
 			3380 = { add_core = BOL remove_core = BRZ }
 		}
 		random_owned = {
@@ -1514,22 +1734,43 @@ country_event = {
 			limit = { 
 				owner = {
 					BOL = { exists = yes }
-					3990 = { owned_by = BRZ }
+					4196 = { owned_by = BRZ }
 				}
 			}
 			owner = {
-				3990 = { secede_province = THIS secede_province = BOL }
+				4196 = { secede_province = THIS secede_province = BOL }
 			}
 		}
 		random_owned = { 
 			limit = { 
 				owner = {
 					BOL = { exists = yes }
-					3988 = { owned_by = BRZ }
+					4191 = { owned_by = BRZ }
 				}
 			}
 			owner = {
-				3988 = { secede_province = THIS secede_province = BOL }
+				4191 = { secede_province = THIS secede_province = BOL }
+			}
+		}
+		random_owned = { 
+			limit = { 
+				owner = {
+					2317 = { owned_by = GCO }
+				}
+			}
+			owner = {
+				3380 = { remove_core = BRZ }
+				4191 = { remove_core = BRZ }
+				4196 = { remove_core = BRZ }
+				random_owned = {
+					limit = { owner = { 2316 = { owned_by = THIS } } } 3380 = { secede_province = THIS }
+				}
+				random_owned = {
+					limit = { owner = { 2316 = { owned_by = THIS } } } 4191 = { secede_province = THIS }
+				}
+				random_owned = {
+					limit = { owner = { 2316 = { owned_by = THIS } } } 4196 = { secede_province = THIS }
+				}
 			}
 		}
 		random_owned = { 
@@ -1540,187 +1781,21 @@ country_event = {
 			}
 			owner = {
 				3380 = { add_core = GCO remove_core = BRZ }
-				3988 = { add_core = GCO remove_core = BRZ }
-				3990 = { add_core = GCO remove_core = BRZ }
+				4191 = { add_core = GCO remove_core = BRZ }
+				4196 = { add_core = GCO remove_core = BRZ }
 				random_owned = {
 					limit = { owner = { 2316 = { owned_by = THIS } } } 3380 = { secede_province = THIS }
 				}
 				random_owned = {
-					limit = { owner = { 2316 = { owned_by = THIS } } } 3988 = { secede_province = THIS }
+					limit = { owner = { 2316 = { owned_by = THIS } } } 4191 = { secede_province = THIS }
 				}
 				random_owned = {
-					limit = { owner = { 2316 = { owned_by = THIS } } } 3990 = { secede_province = THIS }
+					limit = { owner = { 2316 = { owned_by = THIS } } } 4196 = { secede_province = THIS }
 				}
 			}
 		}
 		ai_chance = {
-			factor = 1
-			modifier = {
-				factor = 0
-				AND = {
-					has_global_flag = Saving_Bolivia
-					NOT = { has_country_flag = peace_with_bolivia }
-				}
-			}
-		}
-	}
-
-	option = {
-		name = "¡Gloria a Colombia! we will take up to the Paraguayan borders! §RGain 20 infamy§"
-		badboy = 20
-		prestige = 30
-		set_global_flag = GCO_DESTROYED_BRZ
-		set_global_flag = gco_matto_grosso_taken
-		BRZ = { country_event = 62037 }
-		add_country_modifier = { name = the_homestead_act duration = -1 }
-		2415 = { add_core = GCO }
-		2407 = { add_core = GCO }
-		4076 = { add_core = GCO }
-		2412 = { add_core = GCO }
-		2408 = { add_core = GCO }
-		4109 = { add_core = GCO }
-		2402 = { add_core = GCO }
-		3994 = { add_core = GCO }
-		2404 = { add_core = GCO }
-		3651 = { add_core = GCO }
-		4186 = { add_core = GCO }
-		3652 = { add_core = GCO }
-		3995 = { add_core = GCO }
-		3996 = { add_core = GCO }
-		3567 = { add_core = GCO }
-		3998 = { add_core = GCO }
-		2403 = { add_core = GCO }
-		2404 = { add_core = GCO }
-		3999 = { add_core = GCO }
-		3435 = { add_core = GCO }
-		4187 = { add_core = GCO }
-		3381 = { add_core = GCO }
-		3382 = { add_core = GCO }
-		1977 = { add_core = GCO }
-		3567 = { add_core = GCO }
-		3998 = { add_core = GCO }
-		2405 = { add_core = GCO }
-		2411 = { add_core = GCO }
-		2410 = { add_core = GCO }
-		2413 = { add_core = GCO }
-		2600 = { add_core = GCO }
-		3749 = { add_core = GCO }
-		3991 = { add_core = GCO }
-		3992 = { add_core = GCO }
-		3993 = { add_core = GCO }
-		3989 = { add_core = GCO }
-		4115 = { add_core = GCO }
-		4117 = { add_core = GCO }
-		2420 = { add_core = GCO }
-		4183 = { add_core = GCO }
-		2416 = { add_core = GCO }
-		2419 = { add_core = GCO }
-		3987 = { add_core = GCO }
-		4110 = { add_core = GCO }
-		2418 = { add_core = GCO }
-		2417 = { add_core = GCO }
-		2550 = { add_core = GCO }
-		3990 = { remove_core = BRZ }
-		3988 = { remove_core = BRZ }
-		3380 = { remove_core = BRZ }
-		696 = { remove_core = BRZ }
-		2278 = { remove_core = BRZ }
-		4017 = { remove_core = BRZ }
-		4075 = { remove_core = BRZ }
-		4076 = { remove_core = BRZ }
-		BRZ = {
-			any_owned = {
-				limit = { is_core = GCO }
-				secede_province = GCO 
-			}
-			relation = { who = GCO value = 150 }
-		}
-		any_land_province = {
-			limit = { is_core = GCO is_core = BRZ }
-			remove_core = BRZ
-		}
-		ACE = { primary_culture = north_andean }
-		MGO = { primary_culture = north_andean accepted_culture = brazilian }
-		BRZ_2401 = {
-			limit = { is_core = GCO }
-			add_core = ACE
-		}
-		BRZ_2401 = { 
-			limit = { is_core = GCO }
-			remove_core = PAA
-		} 
-		BRZ_2408 = { 
-			limit = { is_core = GCO }
-			add_core = ACE
-		}
-		BRZ_2408 = { 
-			limit = { is_core = GCO }
-			remove_core = PAA
-		}
-		random_owned = {
-			limit = {
-				BOL = { exists = yes }
-			}
-			3990 = { add_core = BOL remove_core = BRZ }
-			3988 = { add_core = BOL remove_core = BRZ }
-			3380 = { add_core = BOL remove_core = BRZ }
-		}
-		random_owned = {
-			limit = { 
-				owner = {
-					BOL = { exists = yes }
-					3380 = { owned_by = BRZ }
-				}
-			}
-			owner = {
-				3380 = { secede_province = THIS secede_province = BOL }
-			}
-		}
-		random_owned = { 
-			limit = { 
-				owner = {
-					BOL = { exists = yes }
-					3990 = { owned_by = BRZ }
-				}
-			}
-			owner = {
-				3990 = { secede_province = THIS secede_province = BOL }
-			}
-		}
-		random_owned = { 
-			limit = { 
-				owner = {
-					BOL = { exists = yes }
-					3988 = { owned_by = BRZ }
-				}
-			}
-			owner = {
-				3988 = { secede_province = THIS secede_province = BOL }
-			}
-		}
-		random_owned = { 
-			limit = { 
-				owner = {
-					2316 = { is_core = GCO }
-				}
-			}
-			owner = {
-				3380 = { add_core = GCO remove_core = BRZ }
-				3988 = { add_core = GCO remove_core = BRZ }
-				3990 = { add_core = GCO remove_core = BRZ }
-				random_owned = {
-					limit = { owner = { 2316 = { owned_by = THIS } } } 3380 = { secede_province = THIS }
-				}
-				random_owned = {
-					limit = { owner = { 2316 = { owned_by = THIS } } } 3988 = { secede_province = THIS }
-				}
-				random_owned = {
-					limit = { owner = { 2316 = { owned_by = THIS } } } 3990 = { secede_province = THIS }
-				}
-			}
-		}
-		ai_chance = {
-			factor = 8
+			factor = 9
 			modifier = {
 				factor = 0
 				AND = {
@@ -1790,6 +1865,48 @@ country_event = {
 		3557 = { add_core = BRZ }
 		3823 = { add_core = BRZ }
 		2301 = { add_core = BRZ }
+		random_owned = {
+			limit = {
+				owner = {
+					BOL = { vassal_of = GCO }
+				}
+			}
+			GCO = { release_vassal = BOL }
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					2310 = { owned_by = GCO }
+				}
+			}
+			GCO = {
+				any_owned = {
+					limit = {
+						OR = {
+							AND = {
+								is_core = BOL
+								NOT = { is_core = PEU }
+							}
+							province_id = 4007
+						}
+					}
+					secede_province = THIS
+					secede_province = BRZ
+				}
+			}
+			any_land_province = {
+				limit = {
+					OR = {
+						AND = {
+							is_core = BOL
+							NOT = { is_core = PEU }
+						}
+						province_id = 4007
+					}
+				}
+				remove_core = GCO
+			}
+		}
 		ENG_1979 = {
 			limit = { is_core = GCO }
 			add_core = BRZ
@@ -1826,6 +1943,267 @@ country_event = {
 		}
 		GCO = { add_country_modifier = { name = nationalist_agitation duration = 364 } }
 		ai_chance = { factor = 1 }
+	}
+}
+#Matto-Grosso purchase
+country_event = { 
+	id = 6232030
+	title = "Colombia petition to purchase Matto-Grosso"
+	desc = "6232030_desc"
+	picture = "CLM_BRZ_border"
+	fire_only_once =  yes
+	is_triggered_only = yes
+	
+	option = { 
+		name = "They already have taken enough from us."
+		prestige = 5
+		FROM = { country_event = 6232031 }
+        relation = { who = FROM value = -50 }
+		ai_chance = { factor = 99 }
+	}
+	
+	option = {
+		name = "We need the money more than the land."
+		treasury = 100000
+		any_owned = { limit = { OR = { region = BRZ_2408 region = BRZ_2416 region = PRG_2343 } } secede_province = FROM }
+		FROM = { country_event = 6232032 }
+        relation = { who = FROM value = 200 }
+		ai_chance = { factor = 1 }
+	}
+}
+
+country_event = { 
+	id = 6232031
+	title = "$FROMCOUNTRY$ has refused the purchase"
+	desc = "6232031_desc"
+	picture = "GCO_BRZ_WAR"
+	is_triggered_only = yes
+	
+	option = { 
+		name = "They will regret this!"
+		prestige = -5
+	}
+}
+
+country_event = { 
+	id = 6232032
+	title = "$FROMCOUNTRY$ has accepted the purchase"
+	desc = "6232032_desc"
+	picture = "GCO_BRZ_WAR"
+	is_triggered_only = yes
+	
+	option = { 
+		name = "They made the right choice."
+		prestige = 5
+		treasury = -100000
+		BRZ_2408 = { 
+			add_core = ACE
+		}
+		BRZ_2408 = { 
+			remove_core = PAA
+		}
+		BRZ_2416 = { remove_core = BRZ }
+		PRG_2343 = { remove_core = BRZ }
+	}
+}
+country_event = {
+	id = 6422038
+	title = "The Provisional Government of Ladario" 
+	desc = "6422038_desc"
+	picture = "treaty_of_petropolis"
+	fire_only_once = yes
+
+	trigger = {
+		tag = BOL
+		has_global_flag = GCO_DESTROYED_BRZ
+		OR = { GCO = { has_country_flag = gco_bol_aggression } FGC = { has_country_flag = gco_bol_aggression } }
+		OR = { war_with = GCO war_with = FGC }
+		national_provinces_occupied = 0.01
+		MGO = { exists = no }
+		owns = 2317
+		owns = 4191
+	}
+
+	mean_time_to_happen = { days = 1 }
+
+	option = { 
+		name = "How dare they!"
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 4191
+					province_id = 3380
+					province_id = 4196
+				}
+			}
+			secede_province = MGO
+		}
+		MGO = {
+			country_event = 6422039
+			capital = 4191
+		}
+		random_owned = { limit = { owner = { war_with = GCO } } GCO = { country_event = 6422040 } }
+		random_owned = { limit = { owner = { war_with = FGC } } FGC = { country_event = 6422040 } }
+		random_owned = {
+			limit = { owner = { 4115 = { owned_by = BRZ } } }
+			BRZ = { create_vassal = MGO }
+		}
+		random_owned = {
+			limit = { owner = { 4115 = { owned_by = UPB } } }
+			UPB = { create_vassal = MGO }
+		}
+	}
+}
+country_event = {
+	id = 6422039
+	title = "The Provisional Government of Ladario" 
+	desc = "\n\nThis is our new independent state, under the city of Ladário, in oppose to the Colombian invasion of Bolivia."
+	picture = "treaty_of_petropolis"
+	is_triggered_only = yes
+
+	option = { 
+		name = "We are Brazilians, not Colombians!"
+		government = prov_gov_conservative
+		ruling_party_ideology = conservative
+		set_country_flag = ladario_independent_state
+		capital = 4191
+	}
+}
+country_event = {
+	id = 6422040
+	title = "The Provisional Government of Ladario" 
+	desc = "6422040_desc"
+	picture = "treaty_of_petropolis"
+	is_triggered_only = yes
+
+	option = { 
+		name = "How dare they!"
+	}
+}
+
+country_event = {
+	id = 6422041
+	title = "The end of the Provisional Government of Ladario" 
+	desc = "\n\nIt's over, the Brazilian government refuses to accept us and our state cannot survive any longer, we have to reintegrate us into the Bolivian state."
+	picture = "treaty_of_petropolis"
+	fire_only_once = yes
+
+	trigger = {
+		tag = MGO
+		year = 1874
+		government = prov_gov_conservative
+		NOT = { owns = 2317 }
+	}
+	option = { 
+		name = "What a shame..."
+		clr_country_flag = ladario_independent_state
+		2317 = {
+			owner = {
+				country_event = 6422042
+			}
+		}
+	}
+}
+
+country_event = {
+	id = 6422042
+	title = "The end of the Provisional Government of Ladario" 
+	desc = "\n\nThe independent state of Ladario has decided to join us once again, they seems to have been abandoned by the Brazilian government."
+	picture = "treaty_of_petropolis"
+	fire_only_once = yes
+	is_triggered_only = yes
+	option = { 
+		name = "Huzzah!"
+		MGO = { capital = 4192 }
+		random_owned = {
+			limit = {
+				3584 = {
+					owner = {
+						has_country_flag = monarchy_government
+					}
+				}
+			}
+			MGO = { government = hms_government }
+		}
+		random_owned = {
+			limit = {
+				3584 = {
+					owner = {
+						NOT = {
+							government = absolute_empire
+							government = semi_constitutional_empire
+							government = constitutional_empire
+							government = absolute_monarchy
+							government = prussian_constitutionalism
+							government = hms_government
+						}
+					}
+				}
+			}
+			MGO = { government = democracy }
+		}
+		inherit = MGO
+	}
+}
+
+country_event = { 
+	id = 6232033
+	title = "Clashes in the new Brazilian borders"
+	desc = "6232033_desc"
+	picture = "GCO_BRZ_WAR"
+	fire_only_once = yes
+
+	is_triggered_only = yes
+
+	option = {
+		name = "We need to push the borders eastward!"
+		BRZ_2416 = { add_core = THIS }
+		random_owned = {
+			limit = { owner = { 2425 = { is_core = BRZ } } }
+			owner = {
+				2405 = { add_core = BRZ }
+				2410 = { add_core = BRZ }
+				2411 = { add_core = BRZ }
+				2413 = { add_core = BRZ }
+				2600 = { add_core = BRZ }
+				3749 = { add_core = BRZ }
+				4199 = { add_core = BRZ }
+				110 = { add_core = BRZ }
+				3979 = { add_core = BRZ }
+			}
+		}
+		random_owned = {
+			limit = { owner = { 4115 = { owned_by = BRZ } } }
+			any_country = {
+				limit = { alliance_with = BRZ }
+				leave_alliance = BRZ
+			}
+			any_country = {
+				limit = { is_sphere_leader_of = BRZ }
+				diplomatic_influence = { who = BRZ value = -100 }
+			}
+			owner = {
+				war = {
+					target = BRZ
+					attacker_goal = { casus_belli = acquire_core_state state_province_id = 4197 country = GCO }
+					defender_goal = { casus_belli = acquire_core_state state_province_id = 2410 country = BRZ }
+					call_ally = no
+				}
+			}
+			BRZ = { country_event = 6232034 }
+		}
+	}
+}
+
+country_event = { 
+	id = 6232034
+	title = "$FROMCOUNTRY$ has declared war"
+	desc = "6232034_desc"
+	picture = "GCO_BRZ_WAR"
+	is_triggered_only = yes
+	
+	option = { 
+		name = "Not again..."
 	}
 }
 
@@ -1908,6 +2286,7 @@ country_event = {
 	trigger = { 
 		tag = USA
 		year = 1832
+		has_global_flag = eighteenthirty_startdate
 		VNZ = { exists = yes }
 		ECU = { exists = yes }
 		OR = {
@@ -2103,7 +2482,7 @@ country_event = {
 		name = "Our Caribbean holdings are gone..."
 		prestige = -20
 		any_owned = {
-			limit = { is_core = GCO }
+			limit = { OR = { is_core = GCO region = SPA_2517 region = SPA_610 } }
 			secede_province = GCO
 		}
 	}
@@ -2125,7 +2504,7 @@ country_event = {
 		2209 = { is_core = THIS owned_by = THIS }
 		2214 = { is_core = THIS owned_by = THIS }
 		2222 = { is_core = THIS owned_by = THIS }
-		3994 = { is_core = THIS owned_by = THIS }
+		4200 = { is_core = THIS owned_by = THIS }
 		2295 = { is_core = THIS owned_by = THIS }
 		has_country_flag = permanent_union
 	}
@@ -2139,5 +2518,196 @@ country_event = {
 			}
 			add_province_modifier = { name = small_baby_boom duration = 1825 }
 		}
+	}
+}
+
+country_event = { 
+	id = 6245048
+	title = "Matto Grosso is ours"
+	desc = "6245048_desc"
+	picture = "administration"
+	fire_only_once = yes
+	
+	mean_time_to_happen = { days = 1 }
+	
+	trigger = { 
+		OR = { tag = GCO tag = FGC }
+		has_global_flag = invade_matto-grosso
+		4197 = { owned_by = THIS }
+		2410 = { owned_by = THIS }
+		NOT = { has_global_flag = brazilian_cores_revoked }
+		truce_with = BRZ
+		NOT = { war_with = BRZ }
+	}
+		
+	option = {
+		name = "huzzah!"	
+		prestige = 10
+		set_global_flag = brazilian_cores_revoked
+		BRZ = {
+			any_owned = {
+				limit = {
+					OR = {
+						region = BRZ_2408
+						region = BRZ_2416
+						region = PRG_2343
+					}
+				}
+				secede_province = THIS
+			}
+		}
+		PRG_2343 = { remove_core = BRZ }
+		BRZ_2408 = { remove_core = BRZ }
+		BRZ_2416 = { remove_core = BRZ }
+		MGO = {
+			all_core = {
+				limit = { NOT = { is_core = BOL } }
+				remove_core = THIS
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = 6245049
+	title = "Belem is ours"
+	desc = "6245049_desc"
+	picture = "administration"
+	fire_only_once = yes
+	
+	mean_time_to_happen = { days = 1 }
+	
+	trigger = { 
+		tag = BRZ
+		has_global_flag = invade_matto-grosso
+		4197 = { owned_by = THIS is_core = THIS }
+		2410 = { owned_by = THIS is_core = THIS }
+		NOT = { has_country_flag = amazonas_reclaimed }
+		NOT = { has_global_flag = colombian_cores_revoked }
+		OR = { truce_with = GCO truce_with = FGC }
+		OR = { GCO = { is_disarmed = yes } FGC = { is_disarmed = yes } }
+	}
+		
+	option = {
+		name = "Brazil is not to be messed with!"
+		set_global_flag = colombian_cores_revoked
+		prestige = 10
+		BRZ_2408 = { 
+			limit = { is_core = BRZ }
+			remove_core = GCO
+			remove_core = FGC
+			remove_core = ACE
+		}
+		BRZ_2416 = { 
+			limit = { is_core = BRZ }
+			remove_core = GCO
+			remove_core = FGC
+		}
+	}
+}
+
+country_event = { 
+	id = 6245050
+	title = "Peru's compliance"
+	desc = "6245050_desc"
+	picture = "bolivar_is_happy"
+	fire_only_once = yes
+	
+	mean_time_to_happen = { months = 1 }
+	
+	trigger = { 
+		OR = { tag = GCO tag = FGC }
+		year = 1868
+		2295 = { owned_by = THIS }
+		NOT = { 2295 = { is_core = THIS } }
+		PEU = { exists = no }
+		2279 = { is_core = THIS }
+		has_global_flag = PEU_partition
+	}
+	option = { 
+		name = "Peru is Colombian territory!"
+		PEU = {
+			all_core = {
+				limit = {
+					NOT = {
+						is_core = BRZ
+						is_core = CHL
+						province_id = 4007
+					}
+				}
+				add_core = THIS
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = 6245051
+	title = "The Amazonas's compliance"
+	desc = "6245051_desc"
+	picture = "bolivar_is_happy"
+	fire_only_once = yes
+	
+	mean_time_to_happen = { months = 1 }
+	
+	trigger = { 
+		OR = { tag = GCO tag = FGC }
+		4200 = { owned_by = THIS is_core = ACE }
+		NOT = { 4200 = { is_core = THIS } }
+		ACE = { exists = no }
+		2295 = { is_core = THIS }
+		has_global_flag = GCO_DESTROYED_BRZ
+	}
+	option = { 
+		name = "The Amazonas is Colombian territory!"
+		ACE = {
+			all_core = {
+				add_core = THIS
+			}
+		}
+	}
+}
+
+country_event = { 
+	id = 6245052
+	title = "Matto-Grosso's compliance"
+	desc = "6245052_desc"
+	picture = "bolivar_is_happy"
+	fire_only_once = yes
+	
+	mean_time_to_happen = { months = 1 }
+	
+	trigger = { 
+		OR = { tag = GCO tag = FGC }
+		year = 1890
+		4192 = { owned_by = THIS }
+		NOT = { 4192 = { is_core = THIS } }
+		2310 = { is_core = THIS }
+		has_global_flag = purchase_matto-grosso
+		NOT = { has_global_flag = colombian_cores_revoked }
+	}
+	option = { 
+		name = "The Matto Grosso is Colombian territory!"
+		BRZ_2416 = {
+			add_core = THIS
+		}
+		random_owned = {
+			limit = { owner = { 2343 = { owned_by = THIS } } }
+			2343 = { add_core = THIS }
+		}
+		random_owned = {
+			limit = { owner = { 4114 = { owned_by = THIS } } }
+			4114 = { add_core = THIS }
+		}
+		random_owned = {
+			limit = { 3570 = { NOT = { is_core = PRG } } 2416 = { is_core = PRG } }
+			BRZ_2416 = { remove_core = PRG }
+		}
+		random_owned = {
+			limit = { 3570 = { NOT = { is_core = LPL } } 2416 = { is_core = LPL } }
+			BRZ_2416 = { remove_core = LPL }
+		}
+		random_owned = { limit = { owner = { MGO = { exists = no } } } MGO = { primary_culture = north_andean add_accepted_culture = brazilian } }
+		random_owned = { limit = { owner = { MGO = { exists = yes } } } MGO = { add_accepted_culture = north_andean } }
 	}
 }

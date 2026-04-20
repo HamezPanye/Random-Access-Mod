@@ -28,7 +28,7 @@ country_event = {
 				owner = {
 					owns = 4059
 					2137 = { empty = yes }
-					year = 1861
+					year = 1855
 					#month = 3
 				}
 			}
@@ -43,7 +43,7 @@ country_event = {
 				owner = {
 					owns = 2143
 					2142 = { empty = yes }
-					year = 1861
+					year = 1855
 					#month = 3
 				}
 			}
@@ -86,22 +86,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3448
-					85 = { empty = yes }
-					year = 1832
-					#month = 3
-				}
-			}
-				85 = {
-					secede_province = THIS
-					life_rating = 30
-					any_pop = { literacy = -0.99 }
-				}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					owns = 3448
+					owns = 104
 					84 = { empty = yes }
 					year = 1842
 					#month = 3
@@ -176,7 +161,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3448
+					owns = 84
 					3452 = { empty = yes }
 					year = 1850
 					#month = 3
@@ -192,6 +177,21 @@ country_event = {
 			limit = {
 				owner = {
 					owns = 3450
+					3448 = { empty = yes }
+					year = 1841
+					#month = 3
+				}
+			}
+				3448 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+				}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					owns = 3448
 					3449 = { empty = yes }
 					year = 1850
 					#month = 3
@@ -238,7 +238,7 @@ country_event = {
 				owner = {
 					owns = 4052
 					102 = { empty = yes }
-					year = 1857
+					year = 1853
 					#month = 1
 				}
 			}
@@ -251,13 +251,43 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
+					owns = 4052
+					4064 = { empty = yes }
+					year = 1853
+					#month = 1
+				}
+			}
+				4064 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+				}
+		}
+		random_owned = {
+			limit = {
+				owner = {
 					owns = 2139
 					3456 = { empty = yes }
-					year = 1857
+					year = 1853
 					#month = 1
 				}
 			}
 				3456 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+				}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					owns = 4059
+					98 = { empty = yes }
+					year = 1853
+					#month = 1
+				}
+			}
+				98 = {
 					secede_province = THIS
 					life_rating = 30
 					any_pop = { literacy = -0.99 }
@@ -373,7 +403,7 @@ country_event = {
 				owner = {
 					owns = 90
 					3451 = { empty = yes }
-					year = 1858
+					year = 1853
 					#month = 4
 				}
 			}
@@ -430,22 +460,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 88
-					96 = { empty = yes }
-					year = 1859
-					#month = 4
-				}
-			}
-				96 = {
-					secede_province = THIS
-					life_rating = 30
-					any_pop = { literacy = -0.99 }
-				}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					owns = 96
+					owns = 86
 					94 = { empty = yes }
 					year = 1859
 					#month = 4
@@ -462,26 +477,11 @@ country_event = {
 				owner = {
 					owns = 94
 					3458 = { empty = yes }
-					year = 1859
+					year = 1863
 					#month = 4
 				}
 			}
 				3458 = {
-					secede_province = THIS
-					life_rating = 30
-					any_pop = { literacy = -0.99 }
-				}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					owns = 3458
-					98 = { empty = yes }
-					year = 1859
-					#month = 4
-				}
-			}
-				98 = {
 					secede_province = THIS
 					life_rating = 30
 					any_pop = { literacy = -0.99 }
@@ -563,7 +563,7 @@ country_event = {
 				owner = {
 					owns = 82
 					4144 = { empty = yes }
-					year = 1862
+					year = 1861
 					#month = 11
 				}
 			}
@@ -578,7 +578,7 @@ country_event = {
 				owner = {
 					owns = 94
 					3457 = { empty = yes }
-					year = 1862
+					year = 1861
 					#month = 11
 				}
 			}
@@ -591,7 +591,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3458
+					owns = 3457
 					95 = { empty = yes }
 					year = 1862
 					#month = 11
@@ -666,28 +666,13 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3467
-					114 = { empty = yes }
-					year = 1869
-					#month = 6
-				}
-			}
-				114 = {
-					secede_province = THIS
-					life_rating = 30
-					any_pop = { literacy = -0.99 }
-				}
-		}
-		random_owned = {
-			limit = {
-				owner = {
 					owns = 102
-					100 = { empty = yes }
-					year = 1862
+					85 = { empty = yes }
+					year = 1863
 					#month = 11
 				}
 			}
-				100 = {
+				85 = {
 					secede_province = THIS
 					life_rating = 30
 					any_pop = { literacy = -0.99 }
@@ -696,13 +681,28 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 100
+					owns = 85
 					101 = { empty = yes }
-					year = 1862
+					year = 1863
 					#month = 11
 				}
 			}
 				101 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+				}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					owns = 138
+					4031 = { empty = yes }
+					year = 1849
+					#month = 10
+				}
+			}
+				4031 = {
 					secede_province = THIS
 					life_rating = 30
 					any_pop = { literacy = -0.99 }
@@ -756,21 +756,6 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 4032
-					3589 = { empty = yes }
-					year = 1865
-					#month = 7
-				}
-			}
-				3589 = {
-					secede_province = THIS
-					life_rating = 30
-					any_pop = { literacy = -0.99 }
-				}
-		}
-		random_owned = {
-			limit = {
-				owner = {
 					owns = 91
 					93 = { empty = yes }
 					year = 1864
@@ -778,21 +763,6 @@ country_event = {
 				}
 			}
 				93 = {
-					secede_province = THIS
-					life_rating = 30
-					any_pop = { literacy = -0.99 }
-				}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					owns = 93
-					111 = { empty = yes }
-					year = 1864
-					#month = 6
-				}
-			}
-				111 = {
 					secede_province = THIS
 					life_rating = 30
 					any_pop = { literacy = -0.99 }
@@ -861,21 +831,6 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 4055
-					110 = { empty = yes }
-					year = 1859
-					#month = 11
-				}
-			}
-				110 = {
-					secede_province = THIS
-					life_rating = 30
-					any_pop = { literacy = -0.99 }
-				}
-		}
-		random_owned = {
-			limit = {
-				owner = {
 					owns = 109
 					4176 = { empty = yes }
 					year = 1859
@@ -891,52 +846,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 111
-					110 = { empty = yes }
-					year = 1864
-					#month = 6
-				}
-			}
-				110 = {
-					secede_province = THIS
-					life_rating = 30
-					any_pop = { literacy = -0.99 }
-				}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					owns = 110
-					107 = { empty = yes }
-					year = 1866
-					#month = 9
-				}
-			}
-				107 = {
-					secede_province = THIS
-					life_rating = 30
-					any_pop = { literacy = -0.99 }
-				}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					owns = 107
-					4145 = { empty = yes }
-					year = 1866
-					#month = 6
-				}
-			}
-				4145 = {
-					secede_province = THIS
-					life_rating = 30
-					any_pop = { literacy = -0.99 }
-				}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					owns = 111
+					owns = 4099
 					3468 = { empty = yes }
 					year = 1866
 					#month = 9
@@ -951,9 +861,39 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
+					owns = 3468
+					4145 = { empty = yes }
+					year = 1866
+					#month = 6
+				}
+			}
+				4145 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+				}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					owns = 3468
+					107 = { empty = yes }
+					year = 1866
+					#month = 9
+				}
+			}
+				107 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+				}
+		}
+		random_owned = {
+			limit = {
+				owner = {
 					owns = 4055
 					99 = { empty = yes }
-					year = 1876
+					year = 1868
 				}
 			}
 				99 = {
@@ -967,7 +907,7 @@ country_event = {
 				owner = {
 					owns = 101
 					3460 = { empty = yes }
-					year = 1876
+					year = 1868
 				}
 			}
 				3460 = {
@@ -979,12 +919,12 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 4033
-					2148 = { empty = yes }
-					year = 1876
+					owns = 85
+					100 = { empty = yes }
+					year = 1868
 				}
 			}
-				2148 = {
+				100 = {
 					secede_province = THIS
 					life_rating = 30
 					any_pop = { literacy = -0.99 }
@@ -993,12 +933,12 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 108
-					3560 = { empty = yes }
-					year = 1876
+					owns = 4033
+					2148 = { empty = yes }
+					year = 1868
 				}
 			}
-				3560 = {
+				2148 = {
 					secede_province = THIS
 					life_rating = 30
 					any_pop = { literacy = -0.99 }
@@ -1353,21 +1293,6 @@ country_event = {
 			limit = {
 				owner = {
 					owns = 3
-					4084 = { empty = yes }
-					year = 1891
-					#month = 2
-				}
-			}
-				4084 = {
-					secede_province = THIS
-					life_rating = 30
-					any_pop = { literacy = -0.99 }
-				}
-		}
-		random_owned = {
-			limit = {
-				owner = {
-					owns = 3
 					4 = { empty = yes }
 					year = 1889
 					#month = 2
@@ -1429,7 +1354,7 @@ country_event = {
 				owner = {
 					owns = 4095
 					20 = { empty = yes }
-					year = 1858
+					year = 1861
 					#month = 4
 				}
 			}
@@ -1957,13 +1882,28 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 2206
+					owns = 128
 					3564 = { empty = yes }
 					year = 1868
 					#month = 3
 				}
 			}
 				3564 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+				}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					owns = 2206
+					128 = { empty = yes }
+					year = 1859
+					#month = 3
+				}
+			}
+				128 = {
 					secede_province = THIS
 					life_rating = 30
 					any_pop = { literacy = -0.99 }
@@ -2018,6 +1958,21 @@ country_event = {
 			limit = {
 				owner = {
 					owns = 2317
+					2318 = { empty = yes }
+					year = 1864
+					#month = 3
+				}
+			}
+				2318 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+				}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					owns = 2317
 					4092 = { empty = yes }
 					year = 1890
 					#month = 10
@@ -2038,7 +1993,37 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3990
+					owns = 2318
+					4024 = { empty = yes }
+					year = 1905
+					#month = 11
+				}
+			}
+				4024 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+				}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					owns = 4066
+					1714 = { empty = yes }
+					year = 1905
+					#month = 11
+				}
+			}
+				1714 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+				}
+		}	
+		random_owned = {
+			limit = {
+				owner = {
+					owns = 4196
 					3380 = { empty = yes }
 					year = 1888
 					#month = 4
@@ -2227,6 +2212,17 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
+					is_canal_enabled = 371
+					2460 = { empty = no }
+				}
+			}
+			owner = {
+				enable_canal = 247
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
 					owns = 2343
 					4114 = { empty = yes }
 					AND = {
@@ -2250,12 +2246,12 @@ country_event = {
 			limit = {
 				owner = {
 					owns = 4115
-					3987 = { empty = yes }
+					4190 = { empty = yes }
 					year = 1878
 					#month = 1
 				}
 			}
-				3987 = {
+				4190 = {
 					secede_province = THIS
 					life_rating = 30
 					any_pop = { literacy = -0.99 }
@@ -2373,7 +2369,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 4000
+					owns = 4206
 					2458 = { empty = yes }
 					year = 1881
 					#month = 3
@@ -2385,6 +2381,7 @@ country_event = {
 					any_pop = { literacy = -0.99 }
 				}
 			owner = {
+				enable_canal = 83
 				enable_canal = 76
 				enable_canal = 78
 				enable_canal = 81
@@ -2398,7 +2395,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 4000
+					owns = 4206
 					2460 = { empty = yes }
 					year = 1881
 					#month = 6
@@ -2410,10 +2407,8 @@ country_event = {
 					any_pop = { literacy = -0.99 }
 				}
 			owner = {
-				enable_canal = 83
 				enable_canal = 86
 				enable_canal = 88
-				enable_canal = 247
 			}
 		}
 		random_owned = {
@@ -2431,9 +2426,7 @@ country_event = {
 					any_pop = { literacy = -0.99 }
 				}
 			owner = {
-				enable_canal = 387
 				enable_canal = 90
-				enable_canal = 91
 				enable_canal = 92
 			}
 		}
@@ -2453,7 +2446,6 @@ country_event = {
 				}
 			owner = {
 				enable_canal = 185
-				enable_canal = 183
 				enable_canal = 178
 			}
 		}
@@ -2478,6 +2470,7 @@ country_event = {
 				enable_canal = 298
 				enable_canal = 89
 				enable_canal = 177
+				enable_canal = 416
 			}
 		}
 		random_owned = {
@@ -2600,6 +2593,7 @@ country_event = {
 				}
 			owner = {
 				enable_canal = 407
+				enable_canal = 417
 				enable_canal = 104
 				enable_canal = 117
 				enable_canal = 118
@@ -2622,6 +2616,7 @@ country_event = {
 				}
 			owner = {
 				enable_canal = 407
+				enable_canal = 417
 				enable_canal = 104
 				enable_canal = 117
 				enable_canal = 118
@@ -2645,6 +2640,7 @@ country_event = {
 				}
 			owner = {
 				enable_canal = 406
+				enable_canal = 258
 				enable_canal = 168
 			}
 		}
@@ -2665,6 +2661,7 @@ country_event = {
 				}
 			owner = {
 				enable_canal = 406
+				enable_canal = 258
 				enable_canal = 168
 			}
 		}
@@ -2687,6 +2684,7 @@ country_event = {
 			owner = {
 				enable_canal = 130
 				enable_canal = 131
+				enable_canal = 421
 			}
 		}
 		random_owned = {
@@ -2707,12 +2705,13 @@ country_event = {
 			owner = {
 				enable_canal = 130
 				enable_canal = 131
+				enable_canal = 421
 			}
 		}
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3987
+					owns = 4190
 					2419 = { empty = yes }
 					year = 1877
 					#month = 1
@@ -2727,7 +2726,6 @@ country_event = {
 				}
 			owner = {
 				enable_canal = 94
-				enable_canal = 371
 				enable_canal = 97
 				enable_canal = 98
 				enable_canal = 99
@@ -2738,7 +2736,18 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3987
+					is_canal_enabled = 396
+					2453 = { empty = no }
+				}
+			}
+			owner = {
+				enable_canal = 371
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					owns = 4190
 					2419 = { empty = yes }
 					year = 1877
 					#month = 1
@@ -2752,7 +2761,6 @@ country_event = {
 				}
 			owner = {
 				enable_canal = 94
-				enable_canal = 371
 				enable_canal = 97
 				enable_canal = 98
 				enable_canal = 99
@@ -2803,7 +2811,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3989
+					owns = 4192
 					4110 = { empty = yes }
 					year = 1875
 					#month = 3
@@ -2826,7 +2834,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3989
+					owns = 4192
 					4110 = { empty = yes }
 					year = 1875
 					#month = 3
@@ -2847,18 +2855,13 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3991
-					3992 = { empty = yes }
-					OR = {
-						AND = {
-							year = 1858
-							#month = 3
-						}
-						AND = { has_global_flag = gco_matto_grosso_taken owns = 3994 }
-					}
+					owns = 4197
+					4198 = { empty = yes }
+					OR = { AND = { 4197 = { owned_by = PAA } 110 = { owned_by = PAA } } year = 1858 }
+					#month = 3
 				}
 			}
-				3992 = {
+				4198 = {
 					secede_province = THIS
 					life_rating = 30
 					any_pop = { literacy = -0.99 }
@@ -2867,23 +2870,13 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					3993 = { empty = yes }
-					OR = {
-						AND = { owns = 3994 NOT = { has_global_flag = GCO_DESTROYED_BRZ } }
-						AND = { owns = 3994 owns = 3991 }
-						AND = { owns = 3994 owns = 2411 }
-						AND = { owns = 3991 owns = 2411 NOT { owns = 3994 } }
-					}
-					OR = {
-						AND = {
-							year = 1858
-							#month = 3
-						}
-						AND = { has_global_flag = gco_matto_grosso_taken owns = 3991 }
-					}
+					4199 = { empty = yes }
+					owns = 110
+					OR = { AND = { 4197 = { owned_by = PAA } 110 = { owned_by = PAA } } year = 1858 }
+					#month = 3
 				}
 			}
-				3993 = {
+				4199 = {
 					secede_province = THIS
 					life_rating = 30
 					any_pop = { literacy = -0.99 }
@@ -2893,12 +2886,12 @@ country_event = {
 			limit = {
 				owner = {
 					owns = 2404
-					3999 = { empty = yes }
-					year = 1858
+					4205 = { empty = yes }
+					OR = { 4199 = { owned_by = PAA } year = 1858 }
 					#month = 3
 				}
 			}
-				3999 = {
+				4205 = {
 					secede_province = THIS
 					life_rating = 30
 					any_pop = { literacy = -0.99 }
@@ -2923,6 +2916,7 @@ country_event = {
 			owner = {
 				enable_canal = 334
 				enable_canal = 251
+				enable_canal = 91
 			}
 		}
 		random_owned = {
@@ -2943,6 +2937,7 @@ country_event = {
 			owner = {
 				enable_canal = 334
 				enable_canal = 251
+				enable_canal = 91
 			}
 		}
 		random_owned = {
@@ -2993,7 +2988,7 @@ country_event = {
 				owner = {
 					owns = 4009
 					2296 = { empty = yes }
-					year = 1873
+					year = 1853
 					#month = 6
 					NOT = { is_culture_group = native_american }
 				}
@@ -3016,7 +3011,7 @@ country_event = {
 				owner = {
 					owns = 4009
 					2296 = { empty = yes }
-					year = 1873
+					year = 1853
 					#month = 6
 					is_culture_group = native_american
 				}
@@ -3397,7 +3392,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3991
+					owns = 4197
 					2550 = { empty = yes }
 					year = 1903
 					#month = 6
@@ -3419,7 +3414,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3991
+					owns = 4197
 					2550 = { empty = yes }
 					year = 1903
 					#month = 6
@@ -3440,7 +3435,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 2410
+					owns = 3979
 					2413 = { empty = yes }
 					year = 1900
 					#month = 1
@@ -3461,7 +3456,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 2410
+					owns = 3979
 					2413 = { empty = yes }
 					year = 1900
 					#month = 1
@@ -3526,7 +3521,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3989
+					owns = 4192
 					2417 = { empty = yes }
 					year = 1905
 					#month = 1
@@ -3590,7 +3585,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3993
+					owns = 110
 					2405 = { empty = yes }
 					year = 1900
 					#month = 11
@@ -3613,7 +3608,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3993
+					owns = 110
 					2405 = { empty = yes }
 					year = 1900
 					#month = 11
@@ -3635,7 +3630,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3996
+					owns = 4202
 					3652 = { empty = yes }
 					year = 1895
 					#month = 11
@@ -3659,7 +3654,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3996
+					owns = 4202
 					3652 = { empty = yes }
 					year = 1895
 					#month = 11
@@ -3682,7 +3677,8 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3995
+					owns = 4201
+					owns = 4212
 					3651 = { empty = yes }
 					year = 1889
 					#month = 4
@@ -3703,7 +3699,8 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3995
+					owns = 4201
+					owns = 4212
 					3651 = { empty = yes }
 					year = 1889
 					#month = 4
@@ -3723,16 +3720,11 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					3382 = { empty = yes }
 					OR = {
-						AND = {
-							owns = 3992
-							owns = 3993
-							owns = 3995
-						}
-						owns = 4187
-						owns = 2321
+						AND = { owns = 4198 NOT = { has_global_flag = GCO_DESTROYED_BRZ } }
+						AND = { owns = 4187 has_global_flag = GCO_DESTROYED_BRZ }
 					}
+					3382 = { empty = yes }
 					year = 1878
 					#month = 11
 					NOT = { is_culture_group = native_american }
@@ -3751,7 +3743,10 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3992
+					OR = {
+						AND = { owns = 4198 NOT = { has_global_flag = GCO_DESTROYED_BRZ } }
+						AND = { owns = 4187 has_global_flag = GCO_DESTROYED_BRZ }
+					}
 					3382 = { empty = yes }
 					year = 1878
 					#month = 11
@@ -3770,7 +3765,8 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3995
+					owns = 4201
+					owns = 4212
 					4186 = { empty = yes }
 					year = 1878
 					#month = 11
@@ -3785,14 +3781,14 @@ country_event = {
 				}
 			owner = {
 				enable_canal = 306
-				enable_canal = 307
 				enable_canal = 413
 			}
 		}
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3995
+					owns = 4201
+					owns = 4212
 					4186 = { empty = yes }
 					year = 1878
 					#month = 11
@@ -3806,7 +3802,6 @@ country_event = {
 				}
 			owner = {
 				enable_canal = 306
-				enable_canal = 307
 				enable_canal = 413
 			}
 		}
@@ -3901,14 +3896,8 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
+					owns = 4007
 					2321 = { empty = yes }
-					OR = {
-						AND = {
-							owns = 4007
-							NOT = { has_global_flag = GCO_DESTROYED_BRZ }
-						}
-						owns = 3326
-					}
 					year = 1896
 					#month = 4
 					NOT = { is_culture_group = native_american }
@@ -4208,6 +4197,90 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
+					owns = 4182
+					year = 1858
+					#month = 6
+					2305 = { empty = yes }
+					NOT = { is_culture_group = native_american }
+				}
+			}
+				2305 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+					change_province_name = "Paposo"
+				}
+			owner = {
+				enable_canal = 419
+				enable_canal = 420
+				enable_canal = 183
+				enable_canal = 318
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					owns = 4182
+					year = 1858
+					#month = 6
+					2305 = { empty = yes }
+					is_culture_group = native_american
+				}
+			}
+				2305 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+				}
+			owner = {
+				enable_canal = 419
+				enable_canal = 420
+				enable_canal = 183
+				enable_canal = 318
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					owns = 2309
+					year = 1868
+					#month = 9
+					2375 = { empty = yes }
+					NOT = { is_culture_group = native_american }
+				}
+			}
+				2375 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+					change_province_name = "Antofagasta"
+				}
+			owner = {
+				enable_canal = 418
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					owns = 2309
+					year = 1868
+					#month = 9
+					2375 = { empty = yes }
+					is_culture_group = native_american
+				}
+			}
+				2375 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+				}
+			owner = {
+				enable_canal = 418
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
 					owns = 2287
 					4011 = { empty = yes }
 					year = 1884
@@ -4346,7 +4419,7 @@ country_event = {
 					secede_province = THIS
 					life_rating = 30
 					any_pop = { literacy = -0.99 }
-					change_province_name = "Flor de Agosto"
+					change_province_name = "Güepí"
 				}
 			owner = {
 				enable_canal = 348
@@ -4613,7 +4686,7 @@ country_event = {
 					change_province_name = "Florencia"
 				}
 			owner = {
-				enable_canal = 416
+				enable_canal = 324
 			}
 		}
 		random_owned = {
@@ -4632,13 +4705,13 @@ country_event = {
 					any_pop = { literacy = -0.99 }
 				}
 			owner = {
-				enable_canal = 416
+				enable_canal = 324
 			}
 		}
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3996
+					owns = 4202
 					3359 = { empty = yes }
 					year = 1896
 					#month = 4
@@ -4652,14 +4725,13 @@ country_event = {
 					change_province_name = "Japurá"
 				}
 			owner = {
-				enable_canal = 324
 				enable_canal = 325
 			}
 		}
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3996
+					owns = 4202
 					3359 = { empty = yes }
 					year = 1896
 					#month = 4
@@ -4672,7 +4744,6 @@ country_event = {
 					any_pop = { literacy = -0.99 }
 				}
 			owner = {
-				enable_canal = 324
 				enable_canal = 325
 			}
 		}
@@ -4804,10 +4875,56 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
+					owns = 4018
+					696 = { empty = yes }
+					year = 1876
+					#month = 11
+					NOT = { is_culture_group = native_american }
+				}
+			}
+				696 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+					change_province_name = "Santa Bárbara"
+				}
+			owner = {
+				enable_canal = 331
+				enable_canal = 162
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					owns = 4018
+					696 = { empty = yes }
+					year = 1876
+					#month = 11
+					is_culture_group = native_american
+				}
+			}
+				696 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+				}
+			owner = {
+				enable_canal = 331
+				enable_canal = 162
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
 					owns = 2274
 					4074 = { empty = yes }
-					year = 1859
-					#month = 11
+					OR = {
+						AND = {
+							year = 1859
+							#month = 11
+						}
+						capital = 3748
+					}
 					NOT = { is_culture_group = native_american }
 				}
 			}
@@ -4851,8 +4968,13 @@ country_event = {
 				owner = {
 					owns = 3748
 					4181 = { empty = yes }
-					year = 1859
-					#month = 11
+					OR = {
+						AND = {
+							year = 1859
+							#month = 11
+						}
+						capital = 3748
+					}
 					NOT = { is_culture_group = native_american }
 				}
 			}
@@ -4860,7 +4982,7 @@ country_event = {
 					secede_province = THIS
 					life_rating = 30
 					any_pop = { literacy = -0.99 }
-					change_province_name = "Santa Rosalía"
+					change_province_name = "La Soledad"
 				}
 			owner = {
 				enable_canal = 352
@@ -4896,14 +5018,33 @@ country_event = {
 						AND = {
 							tag = VNZ
 							2270 = { owned_by = VNZ }
-							1944 = { is_core = VNZ NOT = { is_core = CLM } }
-							3926 = { is_core = VNZ NOT = { is_core = CLM } }
+							OR = {
+								1944 = { is_core = VNZ NOT = { is_core = CLM } }
+								2255 = { NOT = { owned_by = CLM } }
+							}
+							OR = {
+								3926 = { is_core = VNZ NOT = { is_core = CLM } }
+								2255 = { NOT = { owned_by = CLM } }
+							}
 						}
 						AND = {
 							tag = CLM
 							2255 = { owned_by = CLM }
-							1944 = { is_core = CLM NOT = { is_core = VNZ } }
-							3926 = { is_core = CLM NOT = { is_core = VNZ } }
+							OR = {
+								1944 = { is_core = CLM NOT = { is_core = VNZ } }
+								2250 = { NOT = { owned_by = VNZ } }
+							}
+							OR = {
+								3926 = { is_core = CLM NOT = { is_core = VNZ } }
+								2250 = { NOT = { owned_by = VNZ } }
+							}
+						}
+						AND = {
+							NOT = { tag = CLM tag = VNZ }
+							OR = {
+								2270 = { owned_by = THIS }
+								2255 = { owned_by = THIS }
+							}
 						}
 						AND = {
 							2270 = { owned_by = THIS }
@@ -5194,7 +5335,7 @@ country_event = {
 				owner = {
 					owns = 2260
 					2261 = { empty = yes }
-					year = 1896
+					year = 1894
 					#month = 4
 					NOT = { is_culture_group = native_american }
 				}
@@ -5216,7 +5357,7 @@ country_event = {
 				owner = {
 					owns = 2260
 					2261 = { empty = yes }
-					year = 1896
+					year = 1894
 					#month = 4
 					is_culture_group = native_american
 				}
@@ -5235,7 +5376,22 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3998
+					OR = {
+						AND = {
+							owns = 2261
+							2401 = { owner = { is_core = 2401 } }
+							year = 1895
+						}
+						AND = {
+							owns = 904
+							904 = { owner = { is_core = 2401 } }
+							year = 1896
+						}
+						AND = {
+							owns = 4204
+							year = 1897
+						}
+					}
 					2401 = { empty = yes }
 					year = 1896
 					#month = 4
@@ -5257,9 +5413,23 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3998
+					OR = {
+						AND = {
+							owns = 2261
+							2401 = { owner = { is_core = 2401 } }
+							year = 1895
+						}
+						AND = {
+							owns = 904
+							904 = { owner = { is_core = 2401 } }
+							year = 1896
+						}
+						AND = {
+							owns = 4204
+							year = 1897
+						}
+					}
 					2401 = { empty = yes }
-					year = 1896
 					#month = 4
 					is_culture_group = native_american
 				}
@@ -5278,9 +5448,18 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3998
+					OR = {
+						AND = {
+							owns = 2401
+							2401 = { owner = { is_core = 3567 } }
+							year = 1896
+						}
+						AND = {
+							owns = 4204
+							year = 1897
+						}
+					}
 					3567 = { empty = yes }
-					year = 1896
 					#month = 4
 					NOT = { is_culture_group = native_american }
 				}
@@ -5301,9 +5480,18 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3998
+					OR = {
+						AND = {
+							owns = 2401
+							2401 = { owner = { is_core = 3567 } }
+							year = 1896
+						}
+						AND = {
+							owns = 4204
+							year = 1897
+						}
+					}
 					3567 = { empty = yes }
-					year = 1896
 					#month = 4
 					is_culture_group = native_american
 				}
@@ -5323,9 +5511,18 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 2404
+					OR = {
+						AND = {
+							owns = 3567
+							3567 = { owner = { is_core = 2403 } }
+							year = 1896
+						}
+						AND = {
+							owns = 2404
+							year = 1897
+						}
+					}
 					2403 = { empty = yes }
-					year = 1896
 					#month = 4
 					NOT = { is_culture_group = native_american }
 				}
@@ -5341,12 +5538,23 @@ country_event = {
 				enable_canal = 312
 				enable_canal = 321
 				enable_canal = 328
+				enable_canal = 307
 			}
 		}
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 2404
+					OR = {
+						AND = {
+							owns = 3567
+							3567 = { owner = { is_core = 2403 } }
+							year = 1896
+						}
+						AND = {
+							owns = 2404
+							year = 1897
+						}
+					}
 					2403 = { empty = yes }
 					year = 1896
 					#month = 4
@@ -5363,6 +5571,7 @@ country_event = {
 				enable_canal = 312
 				enable_canal = 321
 				enable_canal = 328
+				enable_canal = 307
 			}
 		}
 		random_owned = {
@@ -5382,7 +5591,6 @@ country_event = {
 					change_province_name = "Manapiare"
 				}
 			owner = {
-				enable_canal = 162
 				enable_canal = 222
 				enable_canal = 305
 			}
@@ -5403,7 +5611,6 @@ country_event = {
 					any_pop = { literacy = -0.99 }
 				}
 			owner = {
-				enable_canal = 162
 				enable_canal = 222
 				enable_canal = 305
 			}
@@ -5425,7 +5632,6 @@ country_event = {
 					change_province_name = "La Esmeralda"
 				}
 			owner = {
-				enable_canal = 331
 				enable_canal = 206
 				enable_canal = 135
 			}
@@ -5446,7 +5652,6 @@ country_event = {
 					any_pop = { literacy = -0.99 }
 				}
 			owner = {
-				enable_canal = 331
 				enable_canal = 206
 				enable_canal = 135
 			}
@@ -5767,7 +5972,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3998
+					owns = 4204
 					1977 = { empty = yes }
 					year = 1896
 					#month = 4
@@ -5794,6 +5999,7 @@ country_event = {
 					year = 1896
 					#month = 4
 					NOT = { is_culture_group = native_american }
+					primary_culture = brazilian
 				}
 			}
 				2532 = {
@@ -5801,6 +6007,34 @@ country_event = {
 					life_rating = 30
 					any_pop = { literacy = -0.99 }
 					change_province_name = "Boa Vista"
+				}
+			owner = {
+				enable_canal = 260
+				enable_canal = 264
+				enable_canal = 265
+				enable_canal = 255
+				enable_canal = 316
+				enable_canal = 379
+				enable_canal = 310
+				enable_canal = 333
+			}
+		}
+		random_owned = {
+			limit = {
+				owner = {
+					owns = 1977
+					2532 = { empty = yes }
+					year = 1896
+					#month = 4
+					NOT = { is_culture_group = native_american }
+					NOT = { primary_culture = brazilian }
+				}
+			}
+				2532 = {
+					secede_province = THIS
+					life_rating = 30
+					any_pop = { literacy = -0.99 }
+					change_province_name = "Buena Vista"
 				}
 			owner = {
 				enable_canal = 260
@@ -5885,7 +6119,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3994
+					owns = 4200
 					2402 = { empty = yes }
 					year = 1896
 					#month = 4
@@ -5899,7 +6133,6 @@ country_event = {
 					change_province_name = "Figueiredo"
 				}
 			owner = {
-				enable_canal = 258
 				enable_canal = 274
 				enable_canal = 297
 			}
@@ -5907,7 +6140,7 @@ country_event = {
 		random_owned = {
 			limit = {
 				owner = {
-					owns = 3994
+					owns = 4200
 					2402 = { empty = yes }
 					year = 1896
 					#month = 4
@@ -5920,7 +6153,6 @@ country_event = {
 					any_pop = { literacy = -0.99 }
 				}
 			owner = {
-				enable_canal = 258
 				enable_canal = 274
 				enable_canal = 297
 			}

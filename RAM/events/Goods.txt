@@ -43,6 +43,7 @@ province_event = {
         name = "EVTOPTA1101"
         trade_goods = precious_metal
         add_province_modifier = { name = silver_rush duration = 730 }
+		add_province_modifier = { name = switched_production duration = 365 }
         ai_chance = { factor = 1 }
     }
     option = {
@@ -171,6 +172,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -202,6 +204,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -251,6 +254,7 @@ province_event = {
         name = "EVTOPTA1100"
         trade_goods = gold
         # life_rating = 5
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         owner = { random_owned = { limit = { province_id = 695 } remove_province_modifier = gold_rush } }
         owner = {
@@ -304,6 +308,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -339,6 +344,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -397,6 +403,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -528,6 +535,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -640,6 +648,7 @@ province_event = {
         owner = { random_owned = { limit = { province_id = 2488 NOT = { trade_goods = gold } } change_province_name = "Cairns" } }
 		owner = { random_owned = { limit = { province_id = 3468 trade_goods = gold } change_province_name = "South Pass City" owner = { set_global_flag = 3468_renamed } } }
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         # life_rating = 5
         owner = {
@@ -681,6 +690,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -733,7 +743,7 @@ province_event = {
 			AND = {
 				year = 1871
 				NOT = { year = 1880 }
-				province_id = 3560 # Durango #https://en.wikipedia.org/wiki/Eureka,_Colorado
+				province_id = 99 # Durango #https://en.wikipedia.org/wiki/Eureka,_Colorado
 			}
 			AND = {
 				year = 1882
@@ -741,6 +751,13 @@ province_event = {
 				OR = {
 					province_id = 2334 #Punta Arenas #https://es.wikipedia.org/wiki/Fiebre_del_oro_en_Tierra_del_Fuego
 					province_id = 2400 #Rio Grande #https://es.wikipedia.org/wiki/Fiebre_del_oro_en_Tierra_del_Fuego
+				}
+			}
+			AND = {
+				year = 1901
+				NOT = { year = 1907 }
+				OR = {
+					province_id = 1770 #Barramiya #https://en.wikipedia.org/wiki/Barramiya
 				}
 			}
 		}
@@ -755,6 +772,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         ai_chance = { factor = 1 }
     }
     option = {
@@ -841,7 +859,7 @@ province_event = {
     trigger = {
         year = 1861
 		OR = {
-			province_id = 96 #Las Vegas, Nevada
+			province_id = 101 #Las Vegas, Nevada
 			province_id = 17 #Stikine
 		}
         NOT = { trade_goods = gold }
@@ -856,6 +874,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -873,7 +892,7 @@ province_event = { #End of the Vegas gold rush
 
     trigger = {
         year = 1862
-        province_id = 96
+        province_id = 101
         trade_goods = gold
     }
 
@@ -936,6 +955,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -989,6 +1009,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -1065,6 +1086,7 @@ province_event = {
         name = "EVTOPTA1100"
         trade_goods = gold
         add_province_modifier = { name = gold_rush duration = 730 }
+		add_province_modifier = { name = switched_production duration = 365 }
         ai_chance = { factor = 1 }
     }
     option = {
@@ -1117,6 +1139,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -1185,6 +1208,7 @@ country_event = {
         }
         122 = {
             trade_goods = gold
+			add_province_modifier = { name = switched_production duration = 365 }
             add_province_modifier = { name = gold_rush duration = 730 }
         }
     }
@@ -1211,6 +1235,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -1266,6 +1291,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -1297,6 +1323,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
     }
 }
@@ -1345,6 +1372,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
     }
 }
@@ -1372,6 +1400,7 @@ province_event = {
     option = {
         name = "EVTOPTA1139"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 1475 } #https://en.wikipedia.org/wiki/Witwatersrand#History
         owner = { set_global_flag = potchefstroom random_owned = { limit = { owner = { NOT = { is_culture_group = southern_african } } } owner = { 2105 = { change_province_name = "Johannesburg" } } } }
         owner = {
@@ -1410,6 +1439,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -1453,6 +1483,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         owner = {
             random_owned = {
@@ -1496,6 +1527,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -1528,6 +1560,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -1558,6 +1591,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -1588,6 +1622,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -1619,6 +1654,7 @@ province_event = {
     option = {
         name = "EVTOPTA1100"
         trade_goods = gold
+		add_province_modifier = { name = switched_production duration = 365 }
         add_province_modifier = { name = gold_rush duration = 730 }
         ai_chance = { factor = 1 }
     }
@@ -1690,6 +1726,7 @@ province_event = {
     option = {
         name = "EVTOPTA1105"
         trade_goods = gems
+		add_province_modifier = { name = switched_production duration = 365 }
 		add_province_modifier = {
 			name = diamonds_are_boer
 			duration = 365
@@ -1736,7 +1773,6 @@ province_event = {
             province_id = 1833
             province_id = 3694
             province_id = 1836
-            province_id = 3693
             province_id = 1837
             province_id = 1848
             province_id = 1850
@@ -1796,6 +1832,7 @@ province_event = {
     option = {
         name = "EVTOPTA1107"
 		trade_goods = rubber
+		add_province_modifier = { name = switched_production duration = 365 }
         ai_chance = { factor = 1 }
     }
     option = {
@@ -1826,32 +1863,35 @@ province_event = {
             province_id = 2321 #https://www.jstor.org/stable/156583
 			province_id = 3382 #https://www.britannica.com/place/Abuna-River
             province_id = 2402
-            province_id = 3994
+            province_id = 4200
+            province_id = 110
             province_id = 2404
             province_id = 3651
             province_id = 4186
-            province_id = 3995
+            province_id = 4201
+            province_id = 4212
             province_id = 2405
-            province_id = 3993
+            province_id = 4199
             province_id = 2415
             province_id = 2412
             province_id = 2411
             province_id = 2549
             province_id = 3326
             province_id = 2550
-            province_id = 3991
-            province_id = 3992
+            province_id = 4197
+            province_id = 4198
 			province_id = 2263
             province_id = 2532
             province_id = 2403
             province_id = 2404
             province_id = 1977
-            province_id = 3999
+            province_id = 4205
             province_id = 2423
+            province_id = 4084
             province_id = 4184
             province_id = 2426
             province_id = 2417
-            province_id = 3989
+            province_id = 4192
 			province_id = 2413
 			province_id = 3749
             province_id = 2286
@@ -1888,6 +1928,7 @@ province_event = {
     option = {
         name = "EVTOPTA1107"
         trade_goods = rubber
+		add_province_modifier = { name = switched_production duration = 365 }
         ai_chance = { factor = 1 }
     }
     option = {
@@ -1956,6 +1997,12 @@ province_event = { # Sugar Prospected
                 OR = {
                     province_id = 2484  #Gladstone
 					province_id = 2485	#Clermont
+                }
+            }
+            AND = {
+                year = 1852
+                OR = {
+                    province_id = 1418  #Java
                 }
             }
             AND = {
@@ -2036,21 +2083,189 @@ province_event = { # Sugar Prospected
         ai_chance = { factor = 0 }
     }
 }
+province_event = { # Cotton Prospected
+    id = 89755432
+    title = "EVTNAME89755432"
+    desc = "EVTDESC89755432"
+	
+    trigger = {
+        OR = {
+            AND = {
+                year = 1843
+                OR = {
+                    province_id = 2306  #https://pt.wikipedia.org/wiki/Sorocaba
+                }
+			}
+		}
+        owned_by = THIS
+        controlled_by = THIS
+        NOT = { trade_goods = cotton }
+        NOT = { has_province_modifier = switched_production }
+        NOT = { has_province_modifier = stop_asking_rgo }
+
+        owner = {
+            war = no
+            OR = {
+                any_owned_province = {
+                    trade_goods = cotton
+                    NOT = { unemployment_by_type = { value = 0.01 type = farmers } }
+                }
+                any_neighbor_country = {
+                    war = no
+                    any_owned_province = {
+                        trade_goods = cotton
+                        NOT = { unemployment_by_type = { value = 0.01 type = farmers } }
+                    }
+                }
+                any_greater_power = {
+                    war = no
+                    any_owned_province = {
+                        trade_goods = cotton
+                        NOT = { unemployment_by_type = { value = 0.01 type = farmers } }
+                    }
+                }
+            }
+        }
+	}
+    mean_time_to_happen = {
+        months = 3
+    }
+
+    option = {
+        name = "EVTOPTA2425353"
+        trade_goods = cotton
+        add_province_modifier = { name = switched_production duration = 365 }
+        ai_chance = { factor = 1 }
+    }
+    option = {
+        name = "EVT199034OPTB"
+        add_province_modifier = { name = stop_asking_rgo duration = 2000 }
+        ai_chance = { factor = 0 }
+    }
+}
+
 province_event = { # Coffee Prospected
     id = 564635545
     title = "EVTNAME2425353"
     desc = "EVTDESC2425353"
 	
     trigger = {
-        #OR = {
-            #AND = {
+        OR = {
+            AND = {
+                year = 1832
+                OR = {
+                    province_id = 2203  #https://es.wikipedia.org/wiki/Caf%C3%A9_de_Costa_Rica
+                }
+            }
+            AND = {
+                year = 1837
+                OR = {
+                    province_id = 2005  #https://pt.wikipedia.org/wiki/Produ%C3%A7%C3%A3o_de_caf%C3%A9_em_Angola
+                }
+            }
+            AND = {
+                year = 1838
+                OR = {
+                    province_id = 2439  #Porto Seguro, production ramps up
+                }
+            }
+            AND = {
+                year = 1839
+                OR = {
+                    province_id = 2264  #https://turmerohistoriahuellasytestimonio.blogspot.com/2011/02/el-cultivo-del-cafe-en-las-tierras-de.html
+                }
+            }
+            AND = {
+                year = 1845
+                OR = {
+                    province_id = 2452  #https://pt.wikipedia.org/wiki/Hist%C3%B3ria_de_Campinas
+                    province_id = 2455  #Iguape, production ramps up
+                    province_id = 2441  #Ouro Preto, production ramps up
+                }
+            }
+            AND = {
+                year = 1848
+                OR = {
+                    province_id = 2287  #Jaén, production ramps up
+                    province_id = 2002  #Malanje, production ramps up
+                    province_id = 1446  #Dili, production ramps up
+                }
+            }
+            AND = {
+                year = 1852
+                OR = {
+                    province_id = 2271  #Valera (Trujillo), production ramps up
+                    province_id = 2456  #https://pt.wikipedia.org/wiki/Araraquara
+                }
+            }
+            AND = {
+                year = 1854
+                OR = {
+                    province_id = 2294  #Moyobamba, production ramps up
+                    province_id = 2197  #https://en.wikipedia.org/wiki/Coffee_production_in_Nicaragua
+                    province_id = 2446  #Sao Joao del Rey, production ramps up
+                }
+            }
+            AND = {
+                year = 1855
+                OR = {
+                    province_id = 2222  #Puerto Rico, production ramps up
+                    province_id = 2273  #Barquisimeto, production ramps up
+                    province_id = 2202  #https://es.wikipedia.org/wiki/Caf%C3%A9_de_Costa_Rica
+                }
+            }
+            AND = {
                 year = 1858
-                #OR = {
+                OR = {
                     province_id = 2001  #Mbanza
-                #}
-				NOT = { year = 1860 }
-            #}
-        #}
+                    province_id = 2198  #https://en.wikipedia.org/wiki/Coffee_production_in_Nicaragua
+                }
+            }
+            AND = {
+                year = 1862
+                OR = {
+                    province_id = 2216  #https://en.wikipedia.org/wiki/Coffee_production_in_the_Dominican_Republic
+                    province_id = 3680  #https://es.wikipedia.org/wiki/Caf%C3%A9_de_Ecuador
+                }
+            }
+            AND = {
+                year = 1870
+                OR = {
+                    province_id = 3735  #https://en.wikipedia.org/wiki/Coffee_production_in_Nicaragua
+                    province_id = 2178  #https://www.vivapuerto.com/spanish/vp27/coffeemap27_es.php
+                    province_id = 2306  #Sorocaba, production ramps up
+                    province_id = 1438  #Bali, production ramps up
+                }
+            }
+            AND = {
+                year = 1879
+                OR = {
+                    province_id = 2302  #Cuzco, production ramps up
+                    province_id = 2269  #Guiria, production ramps up
+                    province_id = 2181  #Chiapas, production ramps up
+                    province_id = 3975  #Juchitan, production ramps up
+                }
+            }
+            AND = {
+                year = 1885
+                OR = {
+                    province_id = 2205  #https://www.greenplantation.es/a/la-historia-del-cafe-en-panama
+                    province_id = 3492  #https://en.wikipedia.org/wiki/Coffee_production_in_Nicaragua
+                }
+            }
+            AND = {
+                year = 1896
+                OR = {
+                    province_id = 2164  #Minatitlan, production ramps up
+                }
+            }
+            AND = {
+                year = 1921
+                OR = {
+                    province_id = 2530  #Lae, production ramps up
+                }
+            }
+        }
         owned_by = THIS
         controlled_by = THIS
         NOT = { trade_goods = coffee }
@@ -2302,7 +2517,7 @@ province_event = {
 			}
 			AND = {
 				year = 1908
-				province_id = 3349		# Izeh #https://www.opec.org/opec_web/en/about_us/163.htm#:~:text=The%20Masjid%2Di%2DSolaiman%2C,well%20in%20the%20Middle%20East.
+				province_id = 1133		# Sarmasjid #https://www.opec.org/opec_web/en/about_us/163.htm#:~:text=The%20Masjid%2Di%2DSolaiman%2C,well%20in%20the%20Middle%20East.
 			}
 			AND = {
 				year = 1909
@@ -2370,9 +2585,13 @@ province_event = {
 				province_id = 135		# Lubbock #https://www.tshaonline.org/handbook/entries/panhandle-field #technically it was discovered in 1921 but they abandoned it again, drilling began in earnest in 1925
 			}
 			AND = {
+				year = 1926
+				province_id = 3349		# Izeh #https://www.linkedin.com/pulse/chronology-oil-iran-saeid-niavarani
+			}
+			AND = {
 				year = 1927
 				OR = {
-					province_id = 925		# Kirkuk #https://en.wikipedia.org/wiki/Kirkuk_Field
+					province_id = 1111		# Kirkuk #https://en.wikipedia.org/wiki/Kirkuk_Field
 					province_id = 1134		# Dehkord #https://en.wikipedia.org/wiki/Gachsaran_oil_field
 				}
 			}
@@ -2412,6 +2631,7 @@ province_event = {
     option = {
         name = "EVTOPTA1109"
         trade_goods = oil
+		add_province_modifier = { name = switched_production duration = 365 }
         ai_chance = { factor = 100 }
     }
     option = {

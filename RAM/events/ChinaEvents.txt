@@ -27,6 +27,7 @@ country_event = {
                 OR = {
                     any_owned_province = { is_core = RUS }
                     any_owned_province = { is_core = KAZ }
+					any_owned_province = { is_core = KSJ }
                     any_owned_province = { is_core = KOK }
                 }
             }
@@ -39,6 +40,66 @@ country_event = {
         1080 = { remove_core = MCK }
         1080 = { remove_core = CHI }
 
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { TNT = { owns = 1469 } }
+						TNT = { owns = 2608 }
+						MGL = { owns = 2678 }
+					}
+				}
+				owner = {
+					2608 = {
+						secede_province = THIS
+						secede_province = MGL
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { TNT = { owns = 1469 } }
+						TNT = { owns = 2608 }
+						QNG = { owns = 2678 }
+					}
+				}
+				owner = {
+					2608 = {
+						secede_province = THIS
+						secede_province = QNG
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { ALT = { owns = 1068 } }
+						NOT = { QNG = { owns = 1068 } }
+						TNT = { owns = 4150 }
+					}
+				}
+				owner = {
+					4150 = {
+						secede_province = THIS
+						secede_province = RUS
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { ALT = { owns = 1068 } }
+						NOT = { QNG = { owns = 1068 } }
+						OR = { ALT = { owns = 4149 } QNG = { owns = 4149 } }
+					}
+				}
+				owner = {
+					4149 = {
+						secede_province = THIS
+						secede_province = RUS
+					}
+				}
+			}
         ai_chance = {
             factor = 85
             modifier = {
@@ -134,6 +195,66 @@ country_event = {
         4173 = { add_core = MCK }
         FROM = { any_owned = { limit = { is_core = MCK } add_province_modifier = { name = nationalist_agitation duration = 365 } } }
         FROM = { any_owned = { limit = { is_core = MCK NOT = { is_core = RUS } } add_core = QNG } }
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { TNT = { owns = 1469 } }
+						TNT = { owns = 2608 }
+						MGL = { owns = 2678 }
+					}
+				}
+				owner = {
+					2608 = {
+						secede_province = THIS
+						secede_province = MGL
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { TNT = { owns = 1469 } }
+						TNT = { owns = 2608 }
+						QNG = { owns = 2678 }
+					}
+				}
+				owner = {
+					2608 = {
+						secede_province = THIS
+						secede_province = QNG
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { ALT = { owns = 1068 } }
+						NOT = { QNG = { owns = 1068 } }
+						TNT = { owns = 4150 }
+					}
+				}
+				owner = {
+					4150 = {
+						secede_province = THIS
+						secede_province = RUS
+					}
+				}
+			}
+			random_owned = {
+				limit = {
+					owner = {
+						NOT = { ALT = { owns = 1068 } }
+						NOT = { QNG = { owns = 1068 } }
+						OR = { ALT = { owns = 4149 } QNG = { owns = 4149 } }
+					}
+				}
+				owner = {
+					4149 = {
+						secede_province = THIS
+						secede_province = RUS
+					}
+				}
+			}
         ai_chance = {
             factor = 95
             modifier = {
@@ -218,7 +339,7 @@ country_event = {
     option = {
         name = "EVT80101OPTA"
         prestige = 10
-        relation = { who = FROM value = 50 }
+        relation = { who = FROM value = 300 }
     }
 }
 
@@ -254,11 +375,11 @@ country_event = {
         tag = RUS
 		owns = 1187
 		year = 1863
-		OR = { 1595 = { owned_by = XIN } 1595 = { owned_by = QNG } }
-		OR = { 1188 = { owned_by = XIN } 1188 = { owned_by = QNG } }
-		OR = { 4148 = { owned_by = XIN } 4148 = { owned_by = QNG } }
-		OR = { 1186 = { owned_by = XIN } 1186 = { owned_by = QNG } }
-		OR = { 1190 = { owned_by = XIN } 1190 = { owned_by = QNG } }
+		1595 = { OR = { owned_by = QNG owned_by = RUS owned_by = XIN } }
+		1188 = { OR = { owned_by = QNG owned_by = RUS owned_by = XIN } }
+		4148 = { OR = { owned_by = QNG owned_by = RUS owned_by = XIN } }
+		1186 = { OR = { owned_by = QNG owned_by = RUS owned_by = XIN } }
+		1190 = { OR = { owned_by = QNG owned_by = RUS owned_by = XIN } }
         NOT = { has_global_flag = sw_set }
     }
 
@@ -267,6 +388,7 @@ country_event = {
     }
     option = {
         name = "Occupy Kulja and western Xinjiang immediately! §RGain 2 infamy§W"
+		set_country_flag = blocking_ca
         1595 = {
             secede_province = RUS
         }
@@ -300,6 +422,7 @@ country_event = {
 	
     option = {
         name = "Give them back all the land. We can't afford going to war right now."
+		set_country_flag = blocking_ca
         1595 = {
             secede_province = FROM
         }
@@ -322,6 +445,7 @@ country_event = {
     }
     option = {
         name = "Give them back Kulja but keep the rest of the land."
+		set_country_flag = blocking_ca
         1595 = { secede_province = FROM }
         badboy = -1
         prestige = -5
@@ -330,6 +454,7 @@ country_event = {
     }
     option = {
         name = "We aren't giving up any land to the Chinese and we're ready for war if necessary!"
+		set_country_flag = blocking_ca
         prestige = 10
         FROM = { country_event = 123461 }
         ai_chance = { factor = 5 }
@@ -363,14 +488,18 @@ country_event = {
     option = {
         name = "That is acceptable."
         FROM = { country_event = 123462 }
-		1188 = { remove_core = CHI }
-		4148 = { remove_core = CHI }
-		1186 = { remove_core = CHI }
-		1190 = { remove_core = CHI }
-		1188 = { remove_core = XIN }
-		4148 = { remove_core = XIN }
-		1186 = { remove_core = XIN }
-		1190 = { remove_core = XIN }
+		RUS_1185 = { remove_core = CHI }
+		RUS_1187 = { remove_core = CHI }
+		KOK_1190 = { remove_core = CHI }
+		KHI_1195 = { remove_core = CHI }
+		KHI_3298 = { remove_core = CHI }
+		3518 = { remove_core = CHI }
+		RUS_1185 = { remove_core = XIN }
+		RUS_1187 = { remove_core = XIN }
+		KOK_1190 = { remove_core = XIN }
+		KHI_1195 = { remove_core = XIN }
+		KHI_3298 = { remove_core = XIN }
+		3518 = { remove_core = XIN }
         ai_chance = { factor = 95 }
     }
     option = {
@@ -1558,16 +1687,12 @@ country_event = {
             owner = {
                 change_tag = CHI
                 primary_culture = han_chinese
-                add_accepted_culture = han_chinese
+                remove_accepted_culture = mongol
             }
         }
         any_pop = {
             limit = { has_pop_culture = han_chinese }
-            militancy = -2
-        }
-        any_pop = {
-            limit = { has_pop_culture = han_chinese }
-            militancy = -1
+            militancy = -3
         }
         random_owned = {
             limit = {
@@ -1683,10 +1808,6 @@ country_event = {
         any_pop = {
             limit = { has_pop_culture = han_chinese }
             militancy = -8
-        }
-        any_pop = {
-            limit = { has_pop_culture = han_chinese }
-            militancy = -4
         }
         random_owned = {
             limit = {
@@ -2671,6 +2792,19 @@ country_event = {
                 secede_province = THIS
             }
         }
+		random_owned = {
+			limit = { 
+				owner = { MCK = { owns = 1481 vassal_of = QNG } }
+			}
+			owner = {
+				MCK = { 
+					any_owned = { 
+						limit = { province_id = 1481 }
+						secede_province = THIS
+					}
+				}
+			}
+		}	
         any_owned = {
             limit = {
                 region = CHI_1485
@@ -2688,6 +2822,248 @@ country_event = {
             end_war = THIS
         }
     }
+}
+
+#Tripartite Intervention for Liaodong recession
+country_event = {
+	id = 1316087
+	title = "Liaodong ceded to Japan in perpetuity!"
+	desc = "EVTDESC1316087"
+	picture = "japanese_power"
+	
+	fire_only_once = yes
+	
+	trigger = {
+		tag = RUS
+		JAP = { owns = 1481 }
+		NOT = { has_global_flag = rjw_over }
+		war = no
+		NOT = { truce_with = JAP has_country_flag = liaodong_crisis }
+	}
+	
+	option = {
+		name = "They are threatening our interests in Manchuria! Maybe we can leverage Berlin and Paris to help us revert the lease of Liaodong!"
+		set_country_flag = liaodong_crisis
+		JAP = { country_event = 1316088 }
+		random_country = {
+			limit = { 
+				primary_culture = north_german
+				is_greater_power = yes
+			}
+			country_event = 1316187
+		}
+		random_country = {
+			limit = {
+				capital = 425
+				is_greater_power = yes
+			}
+			country_event = 1316187
+		}
+		set_global_flag = tripartite_intervention
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 0
+				NOT = { rank = 16 }
+				JAP = { rank = 8 }
+			}
+		}
+	}
+	
+	option = {
+		name = "There are better ways to secure our interests than alienating Japan. §GLose 2 infamy§!"
+		set_country_flag = liaodong_crisis
+		badboy = -2
+		prestige = -5
+		1481 = { trade_goods = precious_goods }
+		ai_chance = {
+			factor = 1
+			modifier = {
+				factor = 0
+				is_greater_power = yes
+			}
+		}
+	}
+}
+
+country_event = {
+	id = 1316088
+	title = "Tripartite Intervention members demand withdrawal from Liaodong!"
+	desc = "EVTDESC1316088"
+	picture = "japanese_invasion_of_manchuria"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "We better not anger the other Great Powers. Withdraw from Liaodong!"
+		prestige = -5
+		money = 15000
+		1481 = { secede_province = UTI }
+		any_owned = {
+			limit = { is_core = MCK }
+			secede_province = UTI
+		}
+		random_country = {
+			limit = { owns = 1616 }
+			inherit = UTI
+			country_event = 1316288
+		}
+		FROM = { country_event = 1316188 }
+		relation = { who = RUS value = 25 }
+		ai_chance = { factor = 1 }
+	}
+	
+	option = {
+		name = "Liaodong is ours. Russia has no say in this! §RGain 5 infamy§!"
+		badboy = 5
+		prestige = 10
+		1481 = { trade_goods = precious_goods }
+		RUS = { country_event = 1316287 }
+		relation = { who = RUS value = -100 }
+		ai_chance = {
+			factor = 1 
+			modifier = {
+				factor = 0 
+				RUS = { is_greater_power = yes }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = 1316187
+	title = "Russia calls for intervention in the Far East!"
+	desc = "EVTDESC1316187"
+	picture = "japanese_power"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "The Russians have our full support! Japan shall withdraw!"
+		set_country_flag = tripartite_participation
+		prestige = 5
+		relation = { who = RUS value = 100 }
+		relation = { who = JAP value = -50 }
+		ai_chance = {
+			factor = 6
+			modifier = {
+				factor = 10
+				JAP = { NOT = { alliance_with = ENG } }
+			}
+			modifier = {
+			factor = 0
+			alliance_with = JAP
+			}
+		}
+	}
+	
+	option = {
+		name = "We rather have good relations with Japan! We want no part in this!"
+		relation = { who = RUS value = -50 }
+		relation = { who = JAP value = -25 }
+		ai_chance = {
+			factor = 1
+			modifier = {
+			factor = 4
+				JAP = { alliance_with = ENG }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = 1316188
+	title = "Japan withdraws from Liaodong!"
+	desc = "EVTDESC1316188"
+	picture = "japanese_invasion_of_manchuria"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Our interests in Manchuria have been secured, for now..."
+		prestige = 5
+	}
+}
+
+country_event = {
+	id = 1316287
+	title = "Japan holds on to Liaodong!"
+	desc = "EVTDESC1316287"
+	picture = "japanese_invasion_of_manchuria"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "All armies to the East! We will teach them a lesson!"
+		prestige = 5
+		set_global_flag = rjw_over_liaodong
+		war = {
+            target = FROM
+            attacker_goal = { casus_belli = cut_down_to_size_no_add_wargoal_2 }
+            defender_goal = { casus_belli = cut_down_to_size_no_add_wargoal_2 }
+            call_ally = yes
+        }
+		FROM = { set_country_flag = only_one_war_with_russia }
+		ai_chance = {
+			factor = 9
+			modifier = {
+				factor = 1
+				JAP = { alliance_with = ENG }
+			}
+		}
+	}
+	
+	option = {
+		name = "Maybe we shouldn't spill blood over land that isn't even ours."
+		prestige = -10
+		ai_chance = { 
+			factor = 1
+			modifier = {
+				factor = 9
+				JAP = { alliance_with = ENG }
+			}
+		}
+	}
+}
+
+country_event = {
+	id = 1316288
+	title = "Japan returns Liaodong!"
+	desc = "EVTDESC1316288"
+	picture = "japanese_invasion_of_manchuria"
+	
+	is_triggered_only = yes
+	
+	option = {
+		name = "Finally! Some good news!"
+		money = -15000
+	}
+}
+
+country_event = {
+	id = 1316289
+	title = "Japan resist triple intervention!"
+	desc = "Japan has refused Russian demands and now we shall teach them they aren't the true masters of Asia!"
+	picture = "japanese_invasion_of_manchuria"
+	
+	trigger = {
+		RUS = { war_with = JAP }
+		has_global_flag = rjw_over_liaodong
+		has_country_flag = tripartite_participation
+		NOT = { has_country_flag = tripartite_war has_global_flag = rjw_over }
+	}
+	
+	option = { 
+		name = "Japan shall learn its place!"
+		prestige = 5
+		set_country_flag = tripartite_war
+		war = {
+            target = JAP
+            attacker_goal = { casus_belli = cut_down_to_size_no_infamy }
+            defender_goal = { casus_belli = status_quo }
+            call_ally = no
+        }
+	}
 }
 
 #Unequal Treaty if war is won
@@ -3239,14 +3615,85 @@ country_event = {
 
     option = {
         name = "EVT131711OPTA"
+		set_global_flag = simlaprov
         random_owned = {
-            limit = { province_id = 1593 }
-            add_core = ASM
-            add_core = HND
-            remove_core = CHI
-            remove_core = TIB
-            secede_province = FROM
+            limit = { owner = {
+				owns = 1593
+				FROM = { owns = 1258 }
+			} }
+            1593 = {
+				add_core = ASM
+				add_core = HND
+				remove_core = CHI
+				remove_core = TIB
+				secede_province = FROM
+			}
         }
+        random_owned = {
+            limit = { owner = {
+				owns = 3299
+				FROM = { owns = 1226 }
+				1226 = { is_core = KAS }
+			} }
+            3299 = {
+				add_core = HND
+				add_core = KAS
+				remove_core = CHI
+				remove_core = TIB
+				secede_province = FROM
+			}
+        }
+        random_owned = {
+            limit = { owner = {
+				owns = 3299
+				FROM = { owns = 1226 }
+				NOT = { 1226 = { is_core = KAS } }
+			} }
+            3299 = {
+				add_core = HND
+				remove_core = CHI
+				remove_core = TIB
+				secede_province = FROM
+			}
+        }
+        random_owned = {
+            limit = { owner = {
+				3299 = { empty = yes }
+				1226 = { is_core = KAS }
+			} }
+            3299 = {
+				add_core = HND
+				add_core = KAS
+				remove_core = CHI
+				remove_core = TIB
+			}
+        }
+        random_owned = {
+            limit = { owner = {
+				3299 = { empty = yes }
+				NOT = { 1226 = { is_core = KAS } }
+			} }
+            3299 = {
+				add_core = HND
+				remove_core = CHI
+				remove_core = TIB
+			}
+        }
+        random_owned = {
+            limit = { owner = {
+				3299 = { empty = yes }
+				FROM = { owns = 1226 }
+			} }
+            3299 = {
+				add_core = HND
+				remove_core = CHI
+				remove_core = TIB
+				secede_province = FROM
+				any_pop = { literacy = -0.99 }
+				life_rating = 25
+			}
+        }
+		enable_canal = 438
         relation = { who = FROM value = 200 }
         FROM = {
             diplomatic_influence = {
@@ -3328,6 +3775,8 @@ country_event = {
 
     option = {
         name = "EVT131711OPTB"
+		1593 = { add_core = CHI }
+		3299 = { add_core = CHI }
         random_country = {
             limit = { has_country_flag = simla_convention }
             casus_belli = {
@@ -7547,7 +7996,6 @@ country_event = {
                 }
                 OR = {
                     tag = MCK
-                    tag = XBI
                     tag = KLS
                     tag = XIN
                     tag = SZC
@@ -8585,9 +9033,32 @@ country_event = {
         }
 		set_country_flag = dungan_xinjiang
 		set_country_flag = dungan_gansu
+		random_owned = {
+			limit = {
+				owner = {
+					1558 = { empty = yes }
+					1556 = { owned_by = THIS }
+				}
+			}
+			owner = {
+				1556 = { secede_province = --- life_rating = -27 }
+			}
+		}
 		any_owned = {
 			limit = {
-				is_core = KLS
+				OR = {
+					province_id = 1556
+					province_id = 1488
+					province_id = 1557
+					province_id = 1490
+					province_id = 1489
+					province_id = 1562
+					province_id = 1559
+					province_id = 2062
+					province_id = 1561
+					province_id = 1491
+					province_id = 1492
+				}
 			}
 			secede_province = KLS
 		}
@@ -8675,9 +9146,32 @@ country_event = {
         }
 		set_country_flag = dungan_xinjiang
 		set_country_flag = dungan_gansu
+		random_owned = {
+			limit = {
+				owner = {
+					1558 = { empty = yes }
+					1556 = { owned_by = THIS }
+				}
+			}
+			owner = {
+				1556 = { secede_province = --- life_rating = -27 }
+			}
+		}
 		any_owned = {
 			limit = {
-				is_core = KLS
+				OR = {
+					province_id = 1556
+					province_id = 1488
+					province_id = 1557
+					province_id = 1490
+					province_id = 1489
+					province_id = 1562
+					province_id = 1559
+					province_id = 2062
+					province_id = 1561
+					province_id = 1491
+					province_id = 1492
+				}
 			}
 			secede_province = KLS
 		}
@@ -8764,9 +9258,32 @@ country_event = {
         }
 		set_country_flag = dungan_xinjiang
 		set_country_flag = dungan_gansu
+		random_owned = {
+			limit = {
+				owner = {
+					1558 = { empty = yes }
+					1556 = { owned_by = THIS }
+				}
+			}
+			owner = {
+				1556 = { secede_province = --- life_rating = -27 }
+			}
+		}
 		any_owned = {
 			limit = {
-				is_core = KLS
+				OR = {
+					province_id = 1556
+					province_id = 1488
+					province_id = 1557
+					province_id = 1490
+					province_id = 1489
+					province_id = 1562
+					province_id = 1559
+					province_id = 2062
+					province_id = 1561
+					province_id = 1491
+					province_id = 1492
+				}
 			}
 			secede_province = KLS
 		}
@@ -8834,6 +9351,8 @@ country_event = {
 		}
 		XIN = {
 			government = colonial_company
+			primary_culture = han_chinese
+			add_accepted_culture = uighur
         }
 		KLS = {
 			government = colonial_company_2
@@ -9420,7 +9939,10 @@ country_event = {
     fire_only_once = yes
 
     trigger = {
-        tag = QNG
+        OR = {
+            tag = QNG
+            tag = MCK
+        }   
     }
 
     mean_time_to_happen = { days = 1 }
@@ -9867,5 +10389,21 @@ country_event = {
         name = "Huzzah!"
         2562 = { secede_province = THIS }  
     }
+}
+# Audax Validator "." Ignore_NEXT
+country_event = {
+	id = 1487
+	title = "We're no strangers to love"
+	desc = "RICKROLL"
+	picture = "rick_astley"
+	is_triggered_only = yes
+	option = {
+		name = "Never gonna make you cry, never gonna say goodbye, never gonna tell a lie and hurt you."
+		# Audax Validator "." Ignore_NEXT
+		add_country_modifier = {
+			# Audax Validator "." Ignore_NEXT
+			name = rick_rolled duration = -1
+		}
+	}
 }
 

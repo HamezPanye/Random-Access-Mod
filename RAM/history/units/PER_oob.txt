@@ -1,8 +1,34 @@
 BUK = {
     value = 50
 }
+PLS = {
+    value = 200
+    truce_until = 1845.6.1
+}
+KHZ = {
+    value = 200
+    truce_until = 1845.6.1
+}
 OMA = {
     truce_until = 1845.1.1
+}
+BNB = {
+    truce_until = 1833.6.1
+}
+SRN = {
+    truce_until = 1835.6.1
+}
+DUB = {
+    value = 200
+    truce_until = 1833.6.1
+}
+
+leader = {
+    name = "Muhammad Shah"
+    date = 1834.1.1
+    type = land
+    personality = no_personality
+    background = no_background
 }
 
 leader = {
@@ -70,7 +96,7 @@ army = {
     regiment = {
         name = "1. Zamburak"
         type = artillery
-        home = 1147
+        home = 1124
     }
 
     regiment = {
@@ -86,19 +112,19 @@ army = {
     regiment = {
         name = "2. Nezam-Atlin"
         type = cavalry
-        home = 1124
+        home = 1137
     }
 
     regiment = {
         name = "7. Nezam"
         type = infantry
-        home = 1130
+        home = 1135
     }
 
     regiment = {
         name = "8. Nezam"
         type = infantry
-        home = 1122
+        home = 1135
     }
 
     regiment = {
@@ -109,7 +135,7 @@ army = {
 }
 
 army = {
-    location = 1147 #Mashhad
+    location = 1126 #Mashhad ("Gathering" troops in Semnan)
     name = "Army of the Governor of Khorasan"
     regiment = {
         name = "3. Nezam-Atlin"
@@ -121,18 +147,6 @@ army = {
         name = "9. Nezam"
         type = infantry
         home = 1115
-    }
-
-    regiment = {
-        name = "10. Nezam"
-        type = infantry
-        home = 1130
-    }
-
-    regiment = {
-        name = "4. Zamburak"
-        type = artillery
-        home = 1127
     }
 }
 
@@ -148,13 +162,7 @@ army = {
     regiment = {
         name = "2. Bakhtiari Cavalry"
         type = cavalry
-        home = 1120
-    }
-
-    regiment = {
-        name = "3. Bakhtiari Cavalry"
-        type = cavalry
-        home = 1128
+        home = 1134
     }
 }
 
@@ -198,13 +206,13 @@ army = {
     regiment = {
         name = "11. Nezam"
         type = infantry
-        home = 1137
+        home = 1130
     }
 
     regiment = {
         name = "12. Nezam"
         type = infantry
-        home = 1137
+        home = 1127
     }
 }
 

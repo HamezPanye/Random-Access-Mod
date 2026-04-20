@@ -1,0 +1,13 @@
+Key;English;French;German;Polish;Spanish;Italian;Swedish;Czech;Hungarian;Dutch;Portuguese;Russian;Finnish;
+claim_bocas_del_toro_title;Claim Bocas Del Toro;;;;;;;;;;;;;
+claim_bocas_del_toro_desc;Bocas Del Toro is a small strip of land between Costa Rica and Colombia, which we've both laid claim to, however, if we dispatch explorer Juan Galindo to the area we can justify our expansion into the region, Columbia may however, still demand this area if we attempt to incorporate it into our nation.;;;;;;;;;;;;;
+claim_bocas_del_toro_outside_title;Claim Bocas Del Toro;;;;;;;;;;;;;
+claim_bocas_del_toro_outside_desc;Bocas Del Toro is a small strip of land between Costa Rica and Panama. Now that we hold all the land surrounding it, we can fairly colonize it and claim it for ourselves.;;;;;;;;;;;;;
+EVTNAME173164;Colombian Demands;;;;;;;;;;;;;
+EVTDESC173164;\n\nAs_we_suspected_the_justified_annexation_of_Bocas_Del_Toro_has_been_contested_by_the_vile_Colombians_who_claim_the_region,_they_threaten_us_with_war_if_we_do_not_immediately_cede_the_area,_giving_up_the_land_would_be_a_national_embarrassment,_however,_we_can_ill_afford_a_war_against_a_nation_much_larger_than_us_in_both_size_and_population.;;;;;;;;;;;;;
+173164OPTA;No Surrender, let the Colombians come!;;;;;;;;;;;;;
+173164OPTB;We stand no chance, cede the area, immediately.;;;;;;;;;;;;;
+EVTNAME123676;Costa Rica seizes Bocas Del Toro;;;;;;;;;;;;;
+EVTDESC123676;\n\nCosta_Rica_fearing_both_our_own_and_English_expansion_into_Bocas_Del_Toro_have_sent_a_flimsy_expedition_to_claim_the_area_as_their_own,_this_is_simply_unacceptable_and_unjustified_we_must_immediately_send_our_own_expedition_into_the_area_to_kick_them_out,_and_if_they_refuse_threaten_them_with_war.;;;;;;;;;;;;;
+173163OPTA;Outfit the expedition immediately, and send the ultimatum!;;;;;;;;;;;;;
+173163OPTB;It is their land, fair and square.;;;;;;;;;;;;;

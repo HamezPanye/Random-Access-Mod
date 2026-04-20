@@ -44,6 +44,12 @@
         size = 48775
     }
 
+    farmers = {
+        culture = manchu
+        religion = mahayana
+        size = 4500
+    }
+
     clergymen = {
         culture = tajik
         religion = sunni
@@ -108,7 +114,7 @@
     farmers = {
         culture = kirgiz
         religion = sunni
-        size = 12975
+        size = 17975
     }
 	
     aristocrats = {
@@ -138,7 +144,7 @@
     farmers = {
         culture = uighur
         religion = sunni
-        size = 13100
+        size = 17100
     }
 
     slaves = {
@@ -150,7 +156,7 @@
     slaves = {
         culture = tajik
         religion = sunni
-        size = 1500
+        size = 2500
     }
 
     artisans = {
@@ -224,13 +230,13 @@
     soldiers = {
         culture = manchu
         religion = mahayana
-        size = 200
+        size = 1100
     }
 
     farmers = {
         culture = manchu
         religion = mahayana
-        size = 2300
+        size = 4300
     }
 
     aristocrats = {
@@ -261,6 +267,30 @@
         culture = kazak
         religion = sunni
         size = 900
+    }
+	
+	clergymen = {
+        culture = kirgiz
+        religion = sunni
+        size = 50
+    }
+
+    artisans = {
+        culture = kirgiz
+        religion = sunni
+        size = 100
+    }
+
+    soldiers = {
+        culture = kirgiz
+        religion = sunni
+        size = 50
+    }
+
+    farmers = {
+        culture = kirgiz
+        religion = sunni
+        size = 1000
     }
 }
 4146 = {
@@ -393,13 +423,13 @@
     soldiers = {
         culture = manchu
         religion = mahayana
-        size = 200
+        size = 400
     }
 
     farmers = {
         culture = manchu
         religion = mahayana
-        size = 1200
+        size = 2200
     }
 }
 #Altay (88000/22000 POPS)
@@ -627,6 +657,12 @@
         culture = uighur
         religion = sunni
         size = 33050
+    }
+
+    farmers = {
+        culture = manchu
+        religion = mahayana
+        size = 1700
     }
 }
 #Hotien (88000/22000 POPS)
@@ -868,6 +904,18 @@
         religion = gelugpa
         size = 400
     }
+
+    soldiers = {
+        culture = manchu
+        religion = mahayana
+        size = 300
+    }
+
+    farmers = {
+        culture = manchu
+        religion = mahayana
+        size = 1400
+    }
 }
 #Lopnur (32000/8000 POPS)
 2607 = {
@@ -1003,6 +1051,12 @@
         culture = hanhui
         religion = sunni
         size = 3000
+    }
+
+    farmers = {
+        culture = manchu
+        religion = mahayana
+        size = 800
     }
 
 }

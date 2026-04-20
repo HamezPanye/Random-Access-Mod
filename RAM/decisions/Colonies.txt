@@ -3,6 +3,7 @@ political_decisions = {
         picture = commodities_in_central_asia
         potential = {
             owns = 1200
+            owns = 3931
             owns = 1198
             owns = 1195
             NOT = { has_global_flag = uzbekistan_commodities }
@@ -30,6 +31,7 @@ political_decisions = {
             set_global_flag = uzbekistan_commodities
             treasury = -50000
             1200 = { trade_goods = cotton }
+            3931 = { trade_goods = cotton }
             1198 = { trade_goods = cotton }
             1191 = { trade_goods = cotton }
             3441 = { trade_goods = cotton }
@@ -1752,6 +1754,7 @@ political_decisions = {
                                 region = YEM_1173
 								province_id = 1180
 								province_id = 3273
+								province_id = 3993
 								province_id = 3859
                             }
                         }
@@ -3505,6 +3508,7 @@ political_decisions = {
 									region = YEM_1173
 									province_id = 1180
 									province_id = 3273
+									province_id = 3993
 									province_id = 3859
                                 }
                             }
@@ -3531,6 +3535,7 @@ political_decisions = {
 									region = YEM_1173
 									province_id = 1180
 									province_id = 3273
+									province_id = 3993
 									province_id = 3859
                                 }
                             }
@@ -3543,6 +3548,7 @@ political_decisions = {
 									region = YEM_1173
 									province_id = 1180
 									province_id = 3273
+									province_id = 3993
 									province_id = 3859
                                 }
                             }

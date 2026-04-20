@@ -1487,6 +1487,7 @@ country_event = {
 				OR = { 
 					province_id = 3529
 					province_id = 1213	
+					province_id = 4056
 				}
 			}
 			secede_province = AFG	
@@ -1497,6 +1498,7 @@ country_event = {
 				OR = { 
 					province_id = 3516
 					province_id = 1211
+					province_id = 4193
 					province_id = 3519 
 				}
 			}
@@ -1517,6 +1519,8 @@ country_event = {
 				OR = { 
 					province_id = 3520
 					province_id = 3521
+					province_id = 4134
+					province_id = 3518
 				}	
 			}
 			secede_province = DRV  
@@ -2013,6 +2017,7 @@ country_event = {
 				OR = { 
 					province_id = 3529
 					province_id = 1213	
+					province_id = 4056	
 				}
 			}
 			secede_province = AFG	
@@ -2023,6 +2028,7 @@ country_event = {
 				OR = { 
 					province_id = 3516
 					province_id = 1211
+					province_id = 4193
 					province_id = 3519 
 				}
 			}
@@ -2043,6 +2049,8 @@ country_event = {
 				OR = { 
 					province_id = 3520
 					province_id = 3521
+					province_id = 4134
+					province_id = 3518
 				}	
 			}
 			secede_province = DRV  

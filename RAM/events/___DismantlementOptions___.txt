@@ -52,7 +52,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20440
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    #picture = "dismantlement_3"
+    picture = "RAM\dismantlement_options_default"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -129,7 +129,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20441
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    #picture = "dismantlement_3"
+    picture = "RAM\dismantlement_options_default"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -308,7 +308,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20443
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    picture = "RAM\dismantlement_options_default"
+    picture = "RAM\dismantlement_options_default_5"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -413,7 +413,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20450
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    #picture = "dismantlement_3"
+    picture = "RAM\dismantlement_options_default"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -512,7 +512,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20451
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    #picture = "dismantlement_3"
+    picture = "RAM\dismantlement_options_default_5"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -626,7 +626,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20452
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    picture = "RAM\dismantlement_options_default"
+    picture = "RAM\dismantlement_options_default_5"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -740,7 +740,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20453
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    picture = "RAM\dismantlement_options_default"
+    picture = "RAM\dismantlement_options_default_6"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -872,7 +872,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20460
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    #picture = "dismantlement_3"
+    picture = "RAM\dismantlement_options_default_5"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -989,7 +989,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20461
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    #picture = "dismantlement_3"
+    picture = "RAM\dismantlement_options_default_6"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -1121,7 +1121,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20462
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    picture = "RAM\dismantlement_options_default"
+    picture = "RAM\dismantlement_options_default_6"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -1253,7 +1253,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20463
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    picture = "RAM\dismantlement_options_default"
+    picture = "RAM\dismantlement_options_default_7"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -1404,7 +1404,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20470
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    #picture = "dismantlement_3"
+    picture = "RAM\dismantlement_options_default_6"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -1539,7 +1539,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20471
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    #picture = "dismantlement_3"
+    picture = "RAM\dismantlement_options_default_7"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -1689,7 +1689,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20472
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    picture = "RAM\dismantlement_options_default"
+    picture = "RAM\dismantlement_options_default_7"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -1839,7 +1839,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20473
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    picture = "RAM\dismantlement_options_default"
+    picture = "RAM\dismantlement_options_default_8"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -2007,7 +2007,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20480
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    #picture = "dismantlement_3"
+    picture = "RAM\dismantlement_options_default_7"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -2160,7 +2160,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20481
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    #picture = "dismantlement_3"
+    picture = "RAM\dismantlement_options_default_8"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -2328,7 +2328,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20482
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    picture = "RAM\dismantlement_options_default"
+    picture = "RAM\dismantlement_options_default_8"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	
@@ -2496,7 +2496,7 @@ country_event = { # Thing the player sees # this is about to get confusing af
     id = 20483
     title = "Mandate for Dissolution" # "Mandate for Dissolution"
     #desc = "EVTDESC1000"
-    picture = "RAM\dismantlement_options_default"
+    picture = "RAM\dismantlement_options_default_9"
     is_triggered_only = yes
 	allow_multiple_instances = no
 	

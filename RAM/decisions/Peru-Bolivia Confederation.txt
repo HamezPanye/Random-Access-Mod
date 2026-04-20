@@ -17,15 +17,20 @@ political_decisions = {
             OR = {
                 PBC = { has_country_modifier = recently_lost_war }
 				PBC = { has_country_flag = lost_the_war }
-                national_provinces_occupied = 0.01
+                AND = { national_provinces_occupied = 0.01 NOT = { any_owned_province = { controlled_by = CLN } } }
                 is_disarmed = yes
+                NOT = { 2312 = { controlled_by = PBC } }
+				NOT = { PBC = { brigades_compare = 0.5 } }
             }
+			NOT = { war_with = GCO }
         }
 
         effect = {
             set_global_flag = first_pbc_fell
             leave_alliance = PBC
             relation = { who = PBC value = -200 }
+            relation = { who = SPU value = -200 }
+            relation = { who = IQC value = -200 }
             political_reform = two_year_draft
             remove_country_modifier = relutanct_figher
             add_country_modifier = {
@@ -45,7 +50,7 @@ political_decisions = {
                 }
             }
 			define_general = { name = "Ramón Castilla y Marquesado" personality = defence_2.1 background = attack_1.1 }
-			PBC = { create_alliance = SPU }
+			PBC = { create_alliance = SPU relation = { who = SPU value = 400 } }
             war = {
                 target = PBC
                 attacker_goal = {
@@ -63,117 +68,6 @@ political_decisions = {
         }
     }
 
-	end_of_confederation = {
-		picture = peru_bolivia
-		potential = {
-            tag = PBC
-			OR = {
-				AND = {
-					owns = 2295
-					NOT = { exists = PEU }
-					exists = BOL
-					2310 = { owned_by = BOL }
-					2313 = { owned_by = BOL }
-					NOT = { BOL = { vassal_of = THIS } }
-				}
-				AND = {
-					owns = 2310
-					NOT = { exists = BOL }
-					exists = PEU
-					2295 = { owned_by = PEU }
-					NOT = { PEU = { vassal_of = THIS } }
-					OR = {
-						SPU = {
-							exists = yes
-							NOT = { vassal_of = THIS }
-						}
-						AND = {
-							SPU = { exists = no }
-							2578 = { NOT = { owned_by = THIS } }
-						}
-					}
-				}
-            }
-        }
-
-        allow = {
-            war = no
-        }
-
-        effect = {
-			random_owned = {
-				limit = {
-					owner = {
-						owns = 2295
-						NOT = { exists = PEU }
-						exists = BOL
-						NOT = { BOL = { vassal_of = THIS } }
-					}
-				}
-				owner = {
-					capital = 2295
-					PBC = {
-						all_core = { remove_core = PBC }
-					}
-					change_tag = PEU
-					any_country = {
-						limit = {
-							OR = {
-								tag = CHL
-								tag = ARG
-								tag = ARC
-							}
-						}
-						relation = { who = PEU value = 300 }
-					}
-				}
-			}
-			random_owned = {
-				limit = {
-					owner = {
-						owns = 2310
-						NOT = { exists = BOL }
-						exists = PEU
-						NOT = { PEU = { vassal_of = THIS } }
-					}
-				}
-				owner = {
-					capital = 2310
-					PBC = {
-						all_core = { remove_core = PBC }
-					}
-					change_tag = BOL
-					any_country = {
-						limit = {
-							OR = {
-								tag = CHL
-								tag = ARG
-								tag = ARC
-							}
-						}
-						relation = { who = BOL value = 300 }
-					}
-					random_country = {
-						limit = {
-							tag = SPU
-							vassal_of = PBC
-						}
-						THIS = { release_vassal = SPU }
-					}
-					random_country = {
-						limit = {
-							tag = IQC
-							vassal_of = PBC
-						}
-						THIS = { release_vassal = IQC }
-					}
-				}
-			}
-        }
-        ai_will_do = {
-            factor = 1
-        }
-    }
     centralizer_act_huayna_capac = {
         picture = treaty_signing
         potential = {

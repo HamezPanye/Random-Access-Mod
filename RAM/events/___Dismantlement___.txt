@@ -16,8 +16,9 @@ country_event = {
     is_triggered_only = yes
 	
     immediate = {
-		set_global_flag = dismantlement_debug_active
-		set_variable = { which = n_dismantlement_debug_targets value = 0 }
+		#set_global_flag = dismantlement_debug_active
+		#set_variable = { which = n_dismantlement_debug_targets value = 0 }
+		any_country = { clr_country_flag = dismantlement_target set_variable = { which = dismantlement_currency value = 0 } }
 		UTI = { set_variable = { which = iterator value = 1 } }
 
 		FROM = { set_country_flag = viewer }
@@ -26,7 +27,7 @@ country_event = {
 				is_greater_power = yes
 				NOT = { tag = FROM }
 			} 
-			UTI = { change_variable = { which = n_dismantlement_debug_targets value = 1 } }
+			#UTI = { change_variable = { which = n_dismantlement_debug_targets value = 1 } }
 			THIS = { 
 				any_country = { 
 					limit = {
@@ -123,7 +124,7 @@ country_event = {
 	
 	option = {
         name = ""
-		set_global_flag = dismantlement_target_selected
+		#set_global_flag = dismantlement_target_selected
 		any_country = {
 			limit = {
 				check_variable = { which = dismantlement_debug_target value = 6.99 } NOT = { check_variable = { which = dismantlement_debug_target value = 7.99 } }
@@ -135,7 +136,7 @@ country_event = {
 
 	option = {
         name = ""
-		set_global_flag = dismantlement_target_selected
+		#set_global_flag = dismantlement_target_selected
 		any_country = {
 			limit = {
 				check_variable = { which = dismantlement_debug_target value = 5.99 } NOT = { check_variable = { which = dismantlement_debug_target value = 6.99 } }
@@ -147,7 +148,7 @@ country_event = {
 
 	option = {
         name = ""
-		set_global_flag = dismantlement_target_selected
+		#set_global_flag = dismantlement_target_selected
 		any_country = {
 			limit = {
 				check_variable = { which = dismantlement_debug_target value = 4.99 } NOT = { check_variable = { which = dismantlement_debug_target value = 5.99 } }
@@ -159,7 +160,7 @@ country_event = {
 
 	option = {
         name = ""
-		set_global_flag = dismantlement_target_selected
+		#set_global_flag = dismantlement_target_selected
 		any_country = {
 			limit = {
 				check_variable = { which = dismantlement_debug_target value = 3.99 } NOT = { check_variable = { which = dismantlement_debug_target value = 4.99 } }
@@ -171,7 +172,7 @@ country_event = {
 
 	option = {
         name = ""
-		set_global_flag = dismantlement_target_selected
+		#set_global_flag = dismantlement_target_selected
 		any_country = {
 			limit = {
 				check_variable = { which = dismantlement_debug_target value = 2.99 } NOT = { check_variable = { which = dismantlement_debug_target value = 3.99 } }
@@ -183,7 +184,7 @@ country_event = {
 
 	option = {
         name = ""
-		set_global_flag = dismantlement_target_selected
+		#set_global_flag = dismantlement_target_selected
 		any_country = {
 			limit = {
 				check_variable = { which = dismantlement_debug_target value = 1.99 } NOT = { check_variable = { which = dismantlement_debug_target value = 2.99 } }
@@ -195,7 +196,7 @@ country_event = {
 
 	option = {
         name = ""
-		set_global_flag = dismantlement_target_selected
+		#set_global_flag = dismantlement_target_selected
 		any_country = {
 			limit = {
 				check_variable = { which = dismantlement_debug_target value = 0.99 } NOT = { check_variable = { which = dismantlement_debug_target value = 1.99 } }
@@ -219,6 +220,9 @@ country_event = { # Initial Dismantlement Event Setup
     is_triggered_only = yes
 	
 	immediate = {
+	
+		any_country = { set_variable = { which = dismantlement_debug_target value = 0 } }
+	
 		any_country = { limit = { has_country_flag = dismantlement_target } set_country_flag = dismantlement_targets }
 		any_country = { limit = { overlord = { has_country_flag = dismantlement_target } } set_country_flag = dismantlement_targets }		# Vassal of vassals, don't have any puppets deeper, should really be recusive 
 		any_country = { limit = { overlord = { has_country_flag = dismantlement_targets } } set_country_flag = dismantlement_targets }
@@ -262,7 +266,7 @@ country_event = { # Initial Dismantlement Event
     id = 20411
     title = "Mandate for Dissolution" # "Mandate for Dissolution" # Victor Initial Notification Event
     #desc = "EVTDESC1000"
-    #picture = "dismantlement"
+    picture = "RAM/dismantlement_start"
     is_triggered_only = yes
 	
     immediate = {
@@ -435,13 +439,13 @@ country_event = { # Scope the cores to release
 				OR = { has_country_flag = dismantlement_rewriteable_vassal has_country_flag = dismantlement_rewriteable_core }
 			}
 			THIS = {																																																						
-				set_global_flag = dismantlement_option_puppet
+				#set_global_flag = dismantlement_option_puppet
 				#CLN = { change_variable = { which = dismantlement_options value = 1 } }				# This will add 1 length to the event
 			}																																																								
 		}
 
 		# If there are no valid targets left, end dismantlement
-		random_country = { limit = { NOT = { has_global_flag = dismantlement_targeting_buffer } } clr_global_flag = dismantlement_active set_global_flag = dismantlement_active_2 }
+		random_country = { limit = { NOT = { has_global_flag = dismantlement_targeting_buffer } } clr_global_flag = dismantlement_active set_global_flag = dismantlement_active_2 } 
 		
 		any_country = { limit = { has_country_flag = dismantlement_leader } set_country_flag = viewer }	
 		any_country = { limit = { has_country_flag = dismantlement_targeting_long_buffer } set_country_flag = dynamic_loc } slot_1 = { add_province_modifier = { name = dynamic_loc duration = -1 } } CLN = { country_event = 2 }																											# Who is being freed
@@ -469,6 +473,8 @@ country_event = { # Scope the cores to release
 
 		any_country = { limit = { check_variable = { which = dismantlement_formable value = 3.99 } NOT = { check_variable = { which = dismantlement_formable value = 4.99 } } } set_country_flag = dynamic_loc } slot_12 = { add_province_modifier = { name = dynamic_loc duration = -1 } } CLN = { country_event = 2 }
 		any_country = { limit = { check_variable = { which = dismantlement_formable value = 3.99 } NOT = { check_variable = { which = dismantlement_formable value = 4.99 } } } set_country_flag = dynamic_loc } slot_13 = { add_province_modifier = { name = dynamic_loc duration = -1 } } CLN = { country_event = 4 }
+
+		#any_country = { set_variable = { which = dismantlement_formable value = 0 } }
 
 		any_country = { limit = { has_country_flag = dismantlement_leader } clr_country_flag = viewer }	
 
@@ -1148,6 +1154,7 @@ country_event = { # Scope the cores to release
 			}
 		}
 		clr_global_flag = dismantlement_targeting_final_buffer
+		#any_country = { set_variable = { which = dismantlement_formable value = 0 } }
 	}
 	
 	option = {
@@ -1558,7 +1565,8 @@ country_event = { # Independent gets land effect override
 				}
 				secede_province = THIS add_core = UTI 
 			}
-			THIS = { release = UTI UTI = { annex_to = UTI all_core = { remove_core = UTI } } }
+			THIS = { release = UTI release = UTI UTI = { annex_to = UTI all_core = { remove_core = UTI } } }
+			inherit = UTI
 			inherit = UTI
 			#neutrality = yes
 			#create_vassal = THIS
@@ -1592,7 +1600,8 @@ country_event = { # Independent gets land effect
 				}
 				secede_province = THIS add_core = UTI 
 			}
-			THIS = { release = UTI UTI = { annex_to = UTI all_core = { remove_core = UTI } } }
+			THIS = { release = UTI release = UTI UTI = { annex_to = UTI all_core = { remove_core = UTI } } }
+			inherit = UTI
 			inherit = UTI
 			#neutrality = yes
 			#create_vassal = THIS
@@ -1725,7 +1734,7 @@ country_event = { # Independent gets land effect override
 				}
 				secede_province = THIS add_core = UTI 
 			}
-			THIS = { release = UTI UTI = { annex_to = UTI all_core = { remove_core = UTI } } any_country = { limit = { has_country_flag = current_dismantlement_formable } inherit = UTI clr_country_flag = current_dismantlement_formable } }
+			THIS = { release = UTI UTI = { annex_to = UTI all_core = { remove_core = UTI } } any_country = { limit = { has_country_flag = current_dismantlement_formable } inherit = UTI clr_country_flag = current_dismantlement_formable } } 
 			#neutrality = yes
 			#create_vassal = THIS
 			#THIS = { any_country = { limit = { has_country_flag = dismantlement_unifier FROM = { exists = no } } create_alliance = FROM diplomatic_influence = { who = FROM value = 400 } } }
@@ -1887,7 +1896,7 @@ country_event = { #
     is_triggered_only = yes
 	
     immediate = {
-		any_country = { set_variable = { which = dismantlement_currency value = 10 } }
+		any_country = { limit = { has_country_flag = dismantlement_leader } set_variable = { which = dismantlement_currency value = 10 } }
 		UTI = { set_variable = { which = dynamic_loc value = 10 } }
 		any_country = {
 			limit = { 
@@ -1935,7 +1944,7 @@ country_event = { #
 			set_global_flag = green
 			slot_4 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_5 = { secede_province = THIS state_scope = { change_region_name = "Not Mobilized|" } secede_province = QQQ } }
+			CLN = { slot_5 = { secede_province = THIS state_scope = { change_region_name = "Not_Mobilized|_" } secede_province = QQQ } }
 			CLN = { slot_6 = { secede_province = THIS state_scope = { change_region_name = "§B2§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -1946,7 +1955,7 @@ country_event = { #
 			set_global_flag = red
 			slot_4 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_5 = { secede_province = THIS state_scope = { change_region_name = "Strained by Mobilization|" } secede_province = QQQ } }
+			CLN = { slot_5 = { secede_province = THIS state_scope = { change_region_name = "Strained_by_Mobilization|_" } secede_province = QQQ } }
 			CLN = { slot_6 = { secede_province = THIS state_scope = { change_region_name = "§B0§!" } secede_province = QQQ } }
 		}
 		CLN = { slot_7 = { secede_province = THIS state_scope = { change_region_name = "§B2§!" } secede_province = QQQ } }
@@ -1964,7 +1973,7 @@ country_event = { #
 			set_global_flag = red
 			slot_9 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_10 = { secede_province = THIS state_scope = { change_region_name = "(Less than 100)" } secede_province = QQQ } }
+			CLN = { slot_10 = { secede_province = THIS state_scope = { change_region_name = "(Less_than_100)" } secede_province = QQQ } }
 			CLN = { slot_11 = { secede_province = THIS state_scope = { change_region_name = "§B0§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -1978,7 +1987,7 @@ country_event = { #
 			set_global_flag = yellow
 			slot_9 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_10 = { secede_province = THIS state_scope = { change_region_name = "(Less than 200)" } secede_province = QQQ } }
+			CLN = { slot_10 = { secede_province = THIS state_scope = { change_region_name = "(Less_than_200)" } secede_province = QQQ } }
 			CLN = { slot_11 = { secede_province = THIS state_scope = { change_region_name = "§B1§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -1992,7 +2001,7 @@ country_event = { #
 			set_global_flag = yellow
 			slot_9 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_10 = { secede_province = THIS state_scope = { change_region_name = "(Less than 300)" } secede_province = QQQ } }
+			CLN = { slot_10 = { secede_province = THIS state_scope = { change_region_name = "(Less_than_300)" } secede_province = QQQ } }
 			CLN = { slot_11 = { secede_province = THIS state_scope = { change_region_name = "§B2§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -2006,7 +2015,7 @@ country_event = { #
 			set_global_flag = yellow
 			slot_9 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_10 = { secede_province = THIS state_scope = { change_region_name = "(Less than 400)" } secede_province = QQQ } }
+			CLN = { slot_10 = { secede_province = THIS state_scope = { change_region_name = "(Less_than_400)" } secede_province = QQQ } }
 			CLN = { slot_11 = { secede_province = THIS state_scope = { change_region_name = "§B3§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -2020,7 +2029,7 @@ country_event = { #
 			set_global_flag = yellow
 			slot_9 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_10 = { secede_province = THIS state_scope = { change_region_name = "(Less than 500)" } secede_province = QQQ } }
+			CLN = { slot_10 = { secede_province = THIS state_scope = { change_region_name = "(Less_than_500)" } secede_province = QQQ } }
 			CLN = { slot_11 = { secede_province = THIS state_scope = { change_region_name = "§B4§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -2033,7 +2042,7 @@ country_event = { #
 			set_global_flag = green
 			slot_9 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_10 = { secede_province = THIS state_scope = { change_region_name = "(500 or more)" } secede_province = QQQ } }
+			CLN = { slot_10 = { secede_province = THIS state_scope = { change_region_name = "(500_or_more)_" } secede_province = QQQ } }
 			CLN = { slot_11 = { secede_province = THIS state_scope = { change_region_name = "§B5§!" } secede_province = QQQ } }
 		}
 
@@ -2049,7 +2058,7 @@ country_event = { #
 			set_global_flag = red
 			slot_12 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less than 100)" } secede_province = QQQ } }
+			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less_than_100)" } secede_province = QQQ } }
 			CLN = { slot_14 = { secede_province = THIS state_scope = { change_region_name = "§B0§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -2063,7 +2072,7 @@ country_event = { #
 			set_global_flag = yellow
 			slot_12 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less than 200)" } secede_province = QQQ } }
+			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less_than_200)" } secede_province = QQQ } }
 			CLN = { slot_14 = { secede_province = THIS state_scope = { change_region_name = "§B1§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -2077,7 +2086,7 @@ country_event = { #
 			set_global_flag = yellow
 			slot_12 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less than 300)" } secede_province = QQQ } }
+			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less_than_300)" } secede_province = QQQ } }
 			CLN = { slot_14 = { secede_province = THIS state_scope = { change_region_name = "§B2§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -2091,7 +2100,7 @@ country_event = { #
 			set_global_flag = yellow
 			slot_12 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less than 400)" } secede_province = QQQ } }
+			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less_than_400)" } secede_province = QQQ } }
 			CLN = { slot_14 = { secede_province = THIS state_scope = { change_region_name = "§B3§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -2105,7 +2114,7 @@ country_event = { #
 			set_global_flag = yellow
 			slot_12 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less than 500)" } secede_province = QQQ } }
+			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less_than_500)" } secede_province = QQQ } }
 			CLN = { slot_14 = { secede_province = THIS state_scope = { change_region_name = "§B4§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -2118,7 +2127,7 @@ country_event = { #
 			set_global_flag = green
 			slot_12 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(500 or more)" } secede_province = QQQ } }
+			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(500_or_more)" } secede_province = QQQ } }
 			CLN = { slot_14 = { secede_province = THIS state_scope = { change_region_name = "§B5§!" } secede_province = QQQ } }
 		}
 
@@ -2134,7 +2143,7 @@ country_event = { #
 			set_global_flag = red
 			slot_12 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less than Five Hundred Thousand)" } secede_province = QQQ } }
+			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less_than_Five_Hundred_Thousand)" } secede_province = QQQ } }
 			CLN = { slot_14 = { secede_province = THIS state_scope = { change_region_name = "§B0§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -2148,7 +2157,7 @@ country_event = { #
 			set_global_flag = yellow
 			slot_12 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less than One Million)" } secede_province = QQQ } }
+			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less_than_One_Million)" } secede_province = QQQ } }
 			CLN = { slot_14 = { secede_province = THIS state_scope = { change_region_name = "§B1§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -2162,7 +2171,7 @@ country_event = { #
 			set_global_flag = yellow
 			slot_12 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less than Two Million)" } secede_province = QQQ } }
+			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less_than_Two_Million)" } secede_province = QQQ } }
 			CLN = { slot_14 = { secede_province = THIS state_scope = { change_region_name = "§B2§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -2176,7 +2185,7 @@ country_event = { #
 			set_global_flag = yellow
 			slot_12 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less than Three Million)" } secede_province = QQQ } }
+			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less_than_Three_Million)" } secede_province = QQQ } }
 			CLN = { slot_14 = { secede_province = THIS state_scope = { change_region_name = "§B3§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -2190,7 +2199,7 @@ country_event = { #
 			set_global_flag = yellow
 			slot_12 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less than Four Million)" } secede_province = QQQ } }
+			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Less_than_Four_Million)" } secede_province = QQQ } }
 			CLN = { slot_14 = { secede_province = THIS state_scope = { change_region_name = "§B4§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -2203,7 +2212,7 @@ country_event = { #
 			set_global_flag = green
 			slot_12 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Four Million or more)" } secede_province = QQQ } }
+			CLN = { slot_13 = { secede_province = THIS state_scope = { change_region_name = "(Four_Million_or_more)" } secede_province = QQQ } }
 			CLN = { slot_14 = { secede_province = THIS state_scope = { change_region_name = "§B5§!" } secede_province = QQQ } }
 		}
 
@@ -2220,7 +2229,7 @@ country_event = { #
 			set_global_flag = green
 			slot_15 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_16 = { secede_province = THIS state_scope = { change_region_name = "League of Nations Approves" } secede_province = QQQ } }
+			CLN = { slot_16 = { secede_province = THIS state_scope = { change_region_name = "League_of_Nations_Approves" } secede_province = QQQ } }
 			CLN = { slot_17 = { secede_province = THIS state_scope = { change_region_name = "§B2§!" } secede_province = QQQ } }
 		}
 		any_country = {
@@ -2231,7 +2240,7 @@ country_event = { #
 			set_global_flag = red
 			slot_15 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 			CLN = { country_event = 9 }
-			CLN = { slot_16 = { secede_province = THIS state_scope = { change_region_name = "League of Nations Ignored" } secede_province = QQQ } }
+			CLN = { slot_16 = { secede_province = THIS state_scope = { change_region_name = "League_of_Nations_Ignored" } secede_province = QQQ } }
 			CLN = { slot_17 = { secede_province = THIS state_scope = { change_region_name = "§B0§!" } secede_province = QQQ } }
 		}
 		CLN = { slot_18 = { secede_province = THIS state_scope = { change_region_name = "§B2§!" } secede_province = QQQ } }
@@ -2246,7 +2255,7 @@ country_event = { #
 			}
 			UTI = { change_variable = { which = dynamic_loc value = 200 } }
 			change_variable = { which = dismantlement_currency value = 200 }
-			CLN = { slot_40 = { secede_province = THIS state_scope = { change_region_name = "§GDebug Mode On|    §B200 §b/ §B0§!" } secede_province = QQQ } }
+			CLN = { slot_40 = { secede_province = THIS state_scope = { change_region_name = "§GDebug_Mode_On|_§B200_§b/_§B0§!" } secede_province = QQQ } }
 		}
 		slot_39 = { add_province_modifier = { name = dynamic_loc duration = -1 } }
 		UTI = { set_country_flag = dynamic_loc}
@@ -2275,7 +2284,7 @@ country_event = { # Initial Dismantlement Event
     id = 20531
     title = "Dismantlement Currency" # "Mandate for Dissolution" # Victor Initial Notification Event
     #desc = "EVTDESC1000"
-    #picture = "dismantlement"
+    picture = "RAM/dismantlement_currency"
     is_triggered_only = yes
 	
     immediate = {
@@ -2316,6 +2325,7 @@ country_event = { # Initial Dismantlement Event
 		dismantlement_loc_29 = {}
 		slot_13 = {}
 		colon = {}
+		spacebreak_state = {}
 		tabbreak_state = {}
 		slot_14 = {}
 		clear = {}
@@ -2351,7 +2361,7 @@ country_event = { # Initial Dismantlement Event
     id = 20532
     title = "Dismantlement Currency" # This version is for the literally cheating tag
     #desc = "EVTDESC1000"
-    #picture = "dismantlement"
+    picture = "RAM/dismantlement_currency"
     is_triggered_only = yes
 	
     immediate = {
@@ -2382,6 +2392,7 @@ country_event = { # Initial Dismantlement Event
 		slot_10 = {}
 		colon = {}
 		tabbreak_state = {}
+		spacebreak_state = {}
 		slot_11 = {}
 		clear = {}
 		backslash = {}
@@ -2393,6 +2404,7 @@ country_event = { # Initial Dismantlement Event
 		slot_13 = {}
 		colon = {}
 		tabbreak_state = {}
+		spacebreak_state = {}
 		slot_14 = {}
 		clear = {}
 		backslash = {}
@@ -2424,6 +2436,7 @@ country_event = { #
     is_triggered_only = yes
 	
     immediate = {
+		any_country = { clr_country_flag = dismantlement_targets }
 		any_country = { set_variable = { which = colony_targets value = 0 } }
 		clr_global_flag = dismantlement_colony_buffer 
 		CLN = { country_event = 20541 }

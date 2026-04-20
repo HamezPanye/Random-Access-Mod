@@ -746,6 +746,14 @@ political_decisions = {
                     }
                 }
             }
+            119 = {
+                OR = {
+                    owned_by = THIS
+                    owner = {
+                        in_sphere = THIS
+                    }
+                }
+            }
             civilized = yes
             NOT = { has_country_flag = sunni_country }
             NOT = { has_country_flag = shiite_country }
@@ -826,19 +834,9 @@ political_decisions = {
                 limit = {
                     owner = {
                         NOT = { money = 50000 }
-                        NOT = { check_variable = { which = owed_cash_money value = 1 } }
                     }
                 }
-                owner = { set_variable = { which = owed_cash_money value = 50 } }
-            }
-            random_owned = {
-                limit = {
-                    owner = {
-                        NOT = { money = 50000 }
-                        check_variable = { which = owed_cash_money value = 9 }
-                    }
-                }
-                owner = { change_variable = { which = owed_cash_money value = 50 } }
+                owner = { set_variable = { which = owed_cash_money value = 500 } }
             }
             random_owned = {
                 limit = { owner = { money = 50000 } }
@@ -889,19 +887,9 @@ political_decisions = {
                 limit = {
                     owner = {
                         NOT = { money = 50000 }
-                        NOT = { check_variable = { which = owed_cash_money value = 1 } }
                     }
                 }
-                owner = { set_variable = { which = owed_cash_money value = 50 } }
-            }
-            random_owned = {
-                limit = {
-                    owner = {
-                        NOT = { money = 50000 }
-                        check_variable = { which = owed_cash_money value = 9 }
-                    }
-                }
-                owner = { change_variable = { which = owed_cash_money value = 50 } }
+                owner = { set_variable = { which = owed_cash_money value = 500 } }
             }
             random_owned = {
                 limit = { owner = { money = 50000 } }
@@ -956,19 +944,9 @@ political_decisions = {
                 limit = {
                     owner = {
                         NOT = { money = 50000 }
-                        NOT = { check_variable = { which = owed_cash_money value = 1 } }
                     }
                 }
-                owner = { set_variable = { which = owed_cash_money value = 50 } }
-            }
-            random_owned = {
-                limit = {
-                    owner = {
-                        NOT = { money = 50000 }
-                        check_variable = { which = owed_cash_money value = 9 }
-                    }
-                }
-                owner = { change_variable = { which = owed_cash_money value = 50 } }
+                owner = { set_variable = { which = owed_cash_money value = 500 } }
             }
             random_owned = {
                 limit = { owner = { money = 50000 } }
@@ -1023,19 +1001,9 @@ political_decisions = {
                 limit = {
                     owner = {
                         NOT = { money = 50000 }
-                        NOT = { check_variable = { which = owed_cash_money value = 1 } }
                     }
                 }
-                owner = { set_variable = { which = owed_cash_money value = 50 } }
-            }
-            random_owned = {
-                limit = {
-                    owner = {
-                        NOT = { money = 50000 }
-                        check_variable = { which = owed_cash_money value = 9 }
-                    }
-                }
-                owner = { change_variable = { which = owed_cash_money value = 50 } }
+                owner = { set_variable = { which = owed_cash_money value = 500 } }
             }
             random_owned = {
                 limit = { owner = { money = 50000 } }
@@ -1088,19 +1056,9 @@ political_decisions = {
                 limit = {
                     owner = {
                         NOT = { money = 50000 }
-                        NOT = { check_variable = { which = owed_cash_money value = 1 } }
                     }
                 }
-                owner = { set_variable = { which = owed_cash_money value = 50 } }
-            }
-            random_owned = {
-                limit = {
-                    owner = {
-                        NOT = { money = 50000 }
-                        check_variable = { which = owed_cash_money value = 9 }
-                    }
-                }
-                owner = { change_variable = { which = owed_cash_money value = 50 } }
+                owner = { set_variable = { which = owed_cash_money value = 500 } }
             }
             random_owned = {
                 limit = { owner = { money = 50000 } }
@@ -1154,19 +1112,9 @@ political_decisions = {
                 limit = {
                     owner = {
                         NOT = { money = 50000 }
-                        NOT = { check_variable = { which = owed_cash_money value = 1 } }
                     }
                 }
-                owner = { set_variable = { which = owed_cash_money value = 50 } }
-            }
-            random_owned = {
-                limit = {
-                    owner = {
-                        NOT = { money = 50000 }
-                        check_variable = { which = owed_cash_money value = 9 }
-                    }
-                }
-                owner = { change_variable = { which = owed_cash_money value = 50 } }
+                owner = { set_variable = { which = owed_cash_money value = 500 } }
             }
             random_owned = {
                 limit = { owner = { money = 50000 } }
@@ -1200,6 +1148,7 @@ political_decisions = {
             owns = 2006
             owns = 2007
             owns = 2008
+            owns = 119
              NOT = { has_country_flag = law_of_return_issued }
          }
 
@@ -1220,19 +1169,9 @@ political_decisions = {
                 limit = {
                     owner = {
                         NOT = { money = 50000 }
-                        NOT = { check_variable = { which = owed_cash_money value = 1 } }
                     }
                 }
-                owner = { set_variable = { which = owed_cash_money value = 50 } }
-            }
-            random_owned = {
-                limit = {
-                    owner = {
-                        NOT = { money = 50000 }
-                        check_variable = { which = owed_cash_money value = 9 }
-                    }
-                }
-                owner = { change_variable = { which = owed_cash_money value = 50 } }
+                owner = { set_variable = { which = owed_cash_money value = 500 } }
             }
             random_owned = {
                 limit = { owner = { money = 50000 } }

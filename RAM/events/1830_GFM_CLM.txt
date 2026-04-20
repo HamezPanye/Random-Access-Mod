@@ -34,9 +34,10 @@ country_event = {
 		3359 = { remove_core = PEU }
 		any_owned = {
 			limit = {
-				AND = {
-					is_core = GCO
-					NOT = { is_core = THIS }
+				OR = {
+					region = PEU_2289
+					province_id = 2287
+					province_id = 4013
 				}
 			}
 			secede_province = GCO
@@ -196,7 +197,7 @@ country_event = {
 
 	option = {
 		name = "El Libertador may be dead, but will his legacy live on?"
-		country_event = { id = 137840 days = 147 }
+		country_event = { id = 137840 days = 132 }
 	}
 }
 
@@ -243,7 +244,7 @@ country_event = {
 		any_owned = {
 			limit = {
 				is_core = VNZ
-				NOT = { province_id = 3998 province_id = 2401 province_id = 3567 province_id = 3926 province_id = 3748 province_id = 2262 province_id = 4181 province_id = 3376 province_id = 2261 } # Marabitanas - Stays with Colombia
+				NOT = { province_id = 2404 province_id = 4204 province_id = 2401 province_id = 3567 province_id = 3926 province_id = 3748 province_id = 2262 province_id = 4181 province_id = 3376 province_id = 2261 } # Marabitanas - Stays with Colombia
 			}
 			secede_province = VNZ
 		}
@@ -257,7 +258,7 @@ country_event = {
 		any_owned = {
 			limit = {
 				is_core = VNZ
-				NOT = { province_id = 3998 province_id = 2401 province_id = 3567 province_id = 3926 province_id = 3748 province_id = 2262 province_id = 4181 province_id = 3376 province_id = 2261 } # Marabitanas - Stays with Colombia
+				NOT = { province_id = 2404 province_id = 4204 province_id = 2401 province_id = 3567 province_id = 3926 province_id = 3748 province_id = 2262 province_id = 4181 province_id = 3376 province_id = 2261 } # Marabitanas - Stays with Colombia
 			}
 			secede_province = VNZ
 		}
@@ -420,7 +421,7 @@ country_event = {
 		prestige = 5
 		ai_chance = {
 			factor = 5
-			modifier = { factor = 0 exists = GCO }
+			modifier = { factor = 0 GCO = { exists = yes } }
 		}
 	}
 
@@ -513,8 +514,14 @@ country_event = {
 		VNZ = { all_core = { add_core = GCO } }
 		3567 = { remove_core = GCO }
 		1977 = { remove_core = GCO }
-		3998 = { remove_core = GCO }
-		prestige = 10
+		4204 = { remove_core = GCO }
+		4205 = { remove_core = GCO }
+		2404 = { remove_core = GCO }
+		3748 = { remove_core = VNZ }
+		4181 = { remove_core = VNZ }
+		2262 = { remove_core = VNZ }
+		3376 = { remove_core = VNZ }
+		2261 = { remove_core = VNZ }
 		war_exhaustion = -100
 		set_country_flag = gco_survived
 #    	remove_country_modifier = small_country_draft_big
@@ -523,19 +530,21 @@ country_event = {
 	option = {
 		name = "Implement the constitution of the admirable congress!"
 		set_country_flag = GCO_freedom
+		prestige = 10
 		government = democracy
 		nationalvalue = nv_liberty
 		political_reform = federalism
-		political_reform = universal_voting
-		political_reform = state_equal_weight
+		political_reform = wealth_voting
+		political_reform = population_equal_weight
 		political_reform = yes_meeting
-		political_reform = culture_voting_only
+		political_reform = all_voting_pops
 		political_reform = free_press
 		political_reform = two_year_draft
 		political_reform = open_borders
-		political_reform = non_secret_ballots
+		political_reform = secret_ballots
 		political_reform = non_socialist
 		social_reform = incarceration
+		social_reform = low_schools
 		political_reform = debtors_prisons
 		any_pop = {
 			militancy = -10
@@ -551,22 +560,41 @@ country_event = {
 	option = {
 		name = "Gran Colombia can only survive as a confederation."
 		set_country_flag = GCO_freedom
+		prestige = 10
 		government = democracy
 		nationalvalue = nv_equality
 		political_reform = confederalism
-		political_reform = universal_voting
-		political_reform = state_equal_weight
+		political_reform = wealth_voting
+		political_reform = population_equal_weight
 		political_reform = yes_meeting
-		political_reform = culture_voting_only
+		political_reform = all_voting_pops
 		political_reform = free_press
 		political_reform = two_year_draft
 		political_reform = open_borders
-		political_reform = non_secret_ballots
+		political_reform = secret_ballots
 		social_reform = incarceration
+		social_reform = low_schools
 		political_reform = debtors_prisons
 		VNZ = { all_core = { limit = { is_core = CLM } remove_core = VNZ } }
 		ECU = { all_core = { limit = { is_core = CLM } remove_core = ECU } }
+		VNZ = { all_core = { add_core = THIS } }
+		ECU = { all_core = { add_core = THIS } }
 		release_vassal = VNZ
+		random_owned = {
+			limit = {
+				owner = {
+					owns = 696
+					VNZ = {
+						owns = 4018
+						owns = 4017
+					}
+					904 = { empty = yes }
+				}
+			}
+			owner = {
+				696 = { secede_province = VNZ }
+			}
+		}
 		release_vassal = ECU
 		release_vassal = PNM
 		create_alliance = ECU
@@ -575,15 +603,16 @@ country_event = {
 		VNZ = {
 			nationalvalue = nv_equality
 			political_reform = confederalism
-			political_reform = universal_voting
-			political_reform = state_equal_weight
+			political_reform = wealth_voting
+			political_reform = population_equal_weight
 			political_reform = yes_meeting
-			political_reform = culture_voting_only
+			political_reform = all_voting_pops
 			political_reform = free_press
 			political_reform = two_year_draft
 			political_reform = open_borders
-			political_reform = non_secret_ballots
+			political_reform = secret_ballots
 			social_reform = incarceration
+			social_reform = low_schools
 			political_reform = debtors_prisons
 			add_country_modifier = { name = america_new_world duration = 10950 }
 			add_country_modifier = { name = global_baby_boom_huge duration = 3660 }
@@ -591,15 +620,16 @@ country_event = {
 		PNM = {
 			nationalvalue = nv_equality
 			political_reform = confederalism
-			political_reform = universal_voting
-			political_reform = state_equal_weight
+			political_reform = wealth_voting
+			political_reform = population_equal_weight
 			political_reform = yes_meeting
-			political_reform = culture_voting_only
+			political_reform = all_voting_pops
 			political_reform = free_press
 			political_reform = two_year_draft
 			political_reform = open_borders
-			political_reform = non_secret_ballots
+			political_reform = secret_ballots
 			social_reform = incarceration
+			social_reform = low_schools
 			political_reform = debtors_prisons
 			add_country_modifier = { name = america_new_world duration = 10950 }
 			add_country_modifier = { name = global_baby_boom_huge duration = 3660 }
@@ -607,15 +637,16 @@ country_event = {
 		ECU = {
 			nationalvalue = nv_equality
 			political_reform = confederalism
-			political_reform = universal_voting
-			political_reform = state_equal_weight
+			political_reform = wealth_voting
+			political_reform = population_equal_weight
 			political_reform = yes_meeting
-			political_reform = culture_voting_only
+			political_reform = all_voting_pops
 			political_reform = free_press
 			political_reform = two_year_draft
 			political_reform = open_borders
-			political_reform = non_secret_ballots
+			political_reform = secret_ballots
 			social_reform = incarceration
+			social_reform = low_schools
 			political_reform = debtors_prisons
 			add_country_modifier = { name = america_new_world duration = 10950 }
 			add_country_modifier = { name = global_baby_boom_huge duration = 2190 }
@@ -634,9 +665,9 @@ country_event = {
 	option = {
 		name = "Only absolute leadership can ensure stability."
 		set_country_flag = GCO_freedom
+		prestige = 10
 		government = presidential_dictatorship
 		nationalvalue = nv_order
-		add_country_modifier = { name = totalitarian_system duration = -1 }
 		political_reform = unitary
 		political_reform = none_voting
 		political_reform = party_appointed
@@ -704,6 +735,8 @@ country_event = {
 		}
 		define_general = { name = "Tomás Cipriano de Mosquera" personality = defence_3.1 background = attack_4.1 }
 		any_country = { limit = { OR = { alliance_with = VNZ alliance_with = ECU alliance_with = PNM } } leave_alliance = VNZ leave_alliance = ECU leave_alliance = PNM }
+		end_war = VNZ
+		end_war = ECU
 		war = {
 			target = VNZ
 			attacker_goal = { casus_belli = civil_war }
@@ -777,6 +810,7 @@ country_event = {
 			relation = { who = VNZ value = 100 }
 		}
 		3564 = { remove_core = CLM }
+		128 = { remove_core = CLM }
 		2259 = { remove_core = CLM }
 		2258 = { remove_core = CLM }
 		2257 = { remove_core = CLM }
@@ -796,8 +830,22 @@ country_event = {
 		696 = { remove_core = CLM }
 		2401 = { remove_core = CLM }
 		3567 = { remove_core = CLM }
-		3998 = { remove_core = CLM }
+		4204 = { remove_core = CLM }
+		2404 = { remove_core = CLM }
 		3359 = { remove_core = CLM }
+		904 = { add_core = ECU }
+		3376 = { add_core = ECU }
+		696 = { add_core = ECU }
+		2256 = { add_core = ECU }
+		2257 = { add_core = ECU }
+		2258 = { add_core = ECU }
+		2260 = { add_core = ECU }
+		2261 = { add_core = ECU }
+		2401 = { add_core = ECU }
+		3567 = { add_core = ECU }
+		4204 = { add_core = ECU }
+		4073 = { add_core = ECU }
+		4189 = { add_core = ECU }
 		PEU = { relation = { who = THIS value = 190 } }
 		define_general = { name = "Tomás Cipriano de Mosquera" personality = defence_3.1 background = attack_4.1 }
 		define_general = { name = "Francisco José de Paula Santander Omaña" personality = defence_4.1 background = attack_2.1 }
@@ -879,7 +927,6 @@ country_event = {
 					province_id = 1944
 					province_id = 2271
 					province_id = 2265
-					province_id = 2273
 					province_id = 2268
 					province_id = 2272
 				}
@@ -926,7 +973,6 @@ country_event = {
 					province_id = 1944
 					province_id = 2271
 					province_id = 2265
-					province_id = 2273
 					province_id = 2268
 					province_id = 2272
 				}
@@ -1007,7 +1053,7 @@ country_event = {
 
 	option = {
 		name = "We finally are recovering the control over the region."
-		prestige = 3
+		prestige = 5
 		inherit = ECU
 		any_owned = {
 			limit = { is_core = ECU }

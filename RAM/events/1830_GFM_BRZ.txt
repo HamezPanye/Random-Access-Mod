@@ -26,6 +26,7 @@ country_event = {
 
 	option = { # Malê revolt starts
 		name = "Down with these rebels!"
+		prestige = -1
 		set_country_flag = male
         2436 = { secede_province = BAH } #Salvador da Bahia
 		BAH = {
@@ -383,6 +384,7 @@ country_event = {
 
 	trigger = {
 		year = 1835
+		owns = 2463
 		tag = BRZ
 	    has_global_flag = eighteenthirty_startdate
 		month = 9
@@ -398,11 +400,11 @@ country_event = {
 
 	option = {
 		name = "These Liberals shall pay!" # RGS gets part of the south and goes to war with BRZ
+		prestige = -2
 		set_country_flag = rgs_revolt_flag
 		any_owned = {
 			limit = {
                OR = {
-				   province_id = 2463
 				   province_id = 2466
 				   province_id = 2464
 				   province_id = 2467
@@ -414,7 +416,8 @@ country_event = {
 			secede_province = RGS
 		}
 		RGS = {
-			capital = 2463
+			add_accepted_culture = afro_brazilian
+			capital = 2467
 			iron = 10
 			wool = 10
 			timber = 25
@@ -422,6 +425,10 @@ country_event = {
 			leadership = 20
 			add_country_modifier = {
 				name = small_country_draft_big
+				duration = 365
+			}
+			add_country_modifier = {
+				name = small_country_draft
 				duration = 365
 			}
 			add_country_modifier = {
@@ -442,8 +449,8 @@ country_event = {
 			}
 			define_general = {
 				name = "Giuseppe Garibaldi"
-				personality = defence_3.1
-				background = attack_5.1
+				personality = defence_4.1
+				background = attack_4.1
 			}
 			capital_scope = {
 				sub_unit = { type = infantry value = current }
@@ -458,6 +465,12 @@ country_event = {
 			attacker_goal = { casus_belli = conquest_any }
 			defender_goal = { casus_belli = status_quo }
 		}
+		2463 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = farmers } reduce_pop = 0.895 } }
+		3643 = { any_pop = { move_pop = 2463 } }
+		2464 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = farmers } reduce_pop = 0.76 } }
+		3642 = { any_pop = { move_pop = 2464 } }
+		2463 = { any_pop = { limit = { has_pop_culture = afro_brazilian pop_type = farmers } reduce_pop = 0.8 } }
+		2989 = { any_pop = { move_pop = 2463 } }
 		ai_chance = { factor = 1 }
 	}
 
@@ -467,7 +480,6 @@ country_event = {
 		any_owned = {
 			limit = {
                OR = {
-				   province_id = 2463
 				   province_id = 2466
 				   province_id = 2464
 				   province_id = 2467
@@ -479,7 +491,8 @@ country_event = {
 			secede_province = RGS
 		}
 		RGS = {
-			capital = 2463
+			add_accepted_culture = afro_brazilian
+			capital = 2467
 			iron = 10
 			wool = 10
 			timber = 25
@@ -487,6 +500,10 @@ country_event = {
 			leadership = 20
 			add_country_modifier = {
 				name = small_country_draft_big
+				duration = 365
+			}
+			add_country_modifier = {
+				name = small_country_draft
 				duration = 365
 			}
 			add_country_modifier = {
@@ -505,6 +522,11 @@ country_event = {
                 personality = no_personality
 				background = attack_1.1
 			}
+			define_general = {
+				name = "Giuseppe Garibaldi"
+				personality = defence_4.1
+				background = attack_4.1
+			}
 			capital_scope = {
 				sub_unit = { type = infantry value = current }
 				sub_unit = { type = infantry value = current }
@@ -518,6 +540,12 @@ country_event = {
 			attacker_goal = { casus_belli = conquest_any }
 			defender_goal = { casus_belli = status_quo }
 		}
+		2463 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = farmers } reduce_pop = 0.895 } }
+		3643 = { any_pop = { move_pop = 2463 } }
+		2464 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = farmers } reduce_pop = 0.76 } }
+		3642 = { any_pop = { move_pop = 2464 } }
+		2463 = { any_pop = { limit = { has_pop_culture = afro_brazilian pop_type = farmers } reduce_pop = 0.8 } }
+		2989 = { any_pop = { move_pop = 2463 } }
 		change_tag_no_core_switch = RGS
 		ai_chance = { factor = 0 }
 	}
@@ -535,7 +563,7 @@ country_event = {
 		tag = RGS
 		has_country_flag = RGS_revolt_flag_2
 	    has_global_flag = eighteenthirty_startdate
-		2466 = { controlled_by = RGS }
+		2463 = { controlled_by = RGS }
 		NOT = { year = 1840 }
 	}
 
@@ -543,6 +571,12 @@ country_event = {
 
 	option = {
 		name = "Viva a Republica de Piratini!"
+		2463 = { secede_province = THIS }
+		capital = 2463
+		2464 = {
+			sub_unit = { type = infantry value = current }
+			sub_unit = { type = infantry value = current }
+		}
 		set_country_flag = rgs_republic_declared
 		government = democracy
 		political_reform = state_equal_weight
@@ -555,14 +589,20 @@ country_event = {
 		political_reform = universal_voting
 		political_reform = no_slavery
 		any_pop = { limit = { has_pop_culture = brazilian } militancy = 4 }
-		ai_chance = { factor = 90 }
+		ai_chance = { factor = 1 }
 	}
 
 	option = {
 		name = "We're still Brazilians for God's sake!"
+		2463 = { secede_province = THIS }
+		capital = 2463
+		2464 = {
+			sub_unit = { type = infantry value = current }
+			sub_unit = { type = infantry value = current }
+		}
 		prestige = 5
 		any_pop = { limit = { has_pop_culture = brazilian } militancy = -2 }
-		ai_chance = { factor = 10 }
+		ai_chance = { factor = 0 }
 	}
 }
 
@@ -621,11 +661,55 @@ country_event = {
 
     option = { # PAA revolts in Belém goes to war with BRZ/UPB
         name = "Damn these Rebels!"
-        2410 = { secede_province = PAA }
-		2412 = { secede_province = PAA }
-		2411 = { secede_province = PAA }
-		2407 = { secede_province = PAA }
-		4076 = { secede_province = PAA }
+		prestige = -1
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 2410
+					province_id = 2412
+					province_id = 2411
+					province_id = 2407
+					province_id = 4076
+					province_id = 3979
+					province_id = 110
+				}
+			}
+			secede_province = PAA
+		}
+		PAA = {
+			any_state = {
+				limit = {
+					is_colonial = yes
+				}
+				any_owned = {
+					add_core = UTI
+				}
+			}
+			any_owned = {
+				limit = {
+					is_core = UTI
+				}
+				secede_province = THIS
+				secede_province = CLN
+			}
+			CLN = {
+				any_owned = {
+					limit = {
+						is_core = UTI
+					}
+					secede_province = THIS
+					secede_province = UTI
+				}
+				create_vassal = UTI
+			}
+			inherit = UTI
+			any_owned = {
+				limit = {
+					is_core = UTI
+				}
+				remove_core = UTI
+			}
+		}
         PAA = {
             government = prov_gov_liberal
             political_reform = all_voting_pops
@@ -634,23 +718,93 @@ country_event = {
             political_reform = free_press
             political_reform = federalism
 			add_accepted_culture = afro_brazilian
+			add_country_modifier = {
+				name = instability_immig
+				duration = 3650
+			}
         }
+		PAA = {
+			define_general = {
+				name = "Eduardo Angelim"
+				personality = no_personality
+				background = attack_2.1
+			}
+			define_general = {
+				name = "Gonçalo Jorge de Magalhães"
+				personality = defence_3.1
+				background = attack_1.1
+			}
+		}
 		casus_belli = { target = PAA type = conquest_any months = 20 }
 		war = {
 			target = PAA
 			attacker_goal = { casus_belli = conquest_any }
-			defender_goal = { casus_belli = status_quo }
+			defender_goal = { casus_belli = acquire_any_state state_province_id = 4201 }
 		}
         set_country_flag = cabanagem_revolt
+		110 = { any_pop = { limit = { is_culture_group = native_american pop_type = soldiers } reduce_pop = 2.2 } }
+		2411 = { any_pop = { limit = { is_culture_group = native_american pop_type = soldiers } reduce_pop = 2.2 } }
+		4076 = { any_pop = { limit = { is_culture_group = native_american pop_type = soldiers } reduce_pop = 2.2 } }
+		2410 = { any_pop = { limit = { is_culture_group = native_american pop_type = soldiers } reduce_pop = 2.2 } }
+		2410 = { any_pop = { limit = { has_pop_culture = afro_brazilian pop_type = soldiers } reduce_pop = 2.2 } }
+		110 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = soldiers } reduce_pop = 0.00 } }
+		4076 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = soldiers } reduce_pop = 0.00 } }
+		2411 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = soldiers } reduce_pop = 0.00 } }
+		3979 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = soldiers } reduce_pop = 0.00 } }
+		2410 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = soldiers } reduce_pop = 0.00 } }
+		ai_chance = { factor = 1 }
     }
 
     option = { # PAA revolts in Belém goes to war with BRZ/UPB, Switch to PAA
         name = "Viva a Republica do Pará! §BPlay as the Cabanos§W"
-        2410 = { secede_province = PAA }
-		2412 = { secede_province = PAA }
-		2411 = { secede_province = PAA }
-		2407 = { secede_province = PAA }
-		4076 = { secede_province = PAA }
+		any_owned = {
+			limit = {
+				OR = {
+					province_id = 2410
+					province_id = 2412
+					province_id = 2411
+					province_id = 2407
+					province_id = 4076
+					province_id = 3979
+					province_id = 110
+				}
+			}
+			secede_province = PAA
+		}
+		PAA = {
+			any_state = {
+				limit = {
+					is_colonial = yes
+				}
+				any_owned = {
+					add_core = UTI
+				}
+			}
+			any_owned = {
+				limit = {
+					is_core = UTI
+				}
+				secede_province = THIS
+				secede_province = CLN
+			}
+			CLN = {
+				any_owned = {
+					limit = {
+						is_core = UTI
+					}
+					secede_province = THIS
+					secede_province = UTI
+				}
+				create_vassal = UTI
+			}
+			inherit = UTI
+			any_owned = {
+				limit = {
+					is_core = UTI
+				}
+				remove_core = UTI
+			}
+		}
         PAA = {
             government = prov_gov_liberal
             political_reform = all_voting_pops
@@ -659,15 +813,45 @@ country_event = {
             political_reform = free_press
             political_reform = federalism
 			add_accepted_culture = afro_brazilian
+			define_general = {
+				name = "Eduardo Angelim"
+				personality = no_personality
+				background = attack_2.1
+			}
+			define_general = {
+				name = "Gonçalo Jorge de Magalhães"
+				personality = defence_3.1
+				background = attack_1.1
+			}
+			add_country_modifier = {
+				name = instability_immig
+				duration = 3650
+			}
         }
 		casus_belli = { target = PAA type = conquest_any months = 20 }
 		war = {
 			target = PAA
 			attacker_goal = { casus_belli = conquest_any }
-			defender_goal = { casus_belli = status_quo }
+			defender_goal = { casus_belli = acquire_any_state state_province_id = 4201 }
 		}
         set_country_flag = cabanagem_revolt
+		110 = { any_pop = { limit = { is_culture_group = native_american pop_type = soldiers } reduce_pop = 2.2 } }
+		2411 = { any_pop = { limit = { is_culture_group = native_american pop_type = soldiers } reduce_pop = 2.2 } }
+		4076 = { any_pop = { limit = { is_culture_group = native_american pop_type = soldiers } reduce_pop = 2.2 } }
+		2410 = { any_pop = { limit = { is_culture_group = native_american pop_type = soldiers } reduce_pop = 2.2 } }
+		2410 = { any_pop = { limit = { has_pop_culture = afro_brazilian pop_type = soldiers } reduce_pop = 2.2 } }
+		110 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = soldiers } move_pop = 3750 } }
+		3750 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = soldiers } pop_type = artisans } }
+		4076 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = soldiers } move_pop = 3750 } }
+		3750 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = soldiers } pop_type = clergymen } }
+		2411 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = soldiers } move_pop = 3750 } }
+		3750 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = soldiers } pop_type = craftsmen } }
+		3979 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = soldiers } move_pop = 3750 } }
+		3750 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = soldiers } pop_type = farmers } }
+		2410 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = soldiers } move_pop = 3750 } }
+		3750 = { any_pop = { limit = { has_pop_culture = brazilian pop_type = soldiers } pop_type = serfs } }
         change_tag_no_core_switch = PAA
+		ai_chance = { factor = 0 }
     }
 }
 
@@ -722,10 +906,6 @@ country_event = {
 		name = "Maybe its better this way."
 		remove_country_modifier = pedro_i
 		set_country_flag = pedro_i_abdication
-		add_country_modifier = {
-			name = relutanct_figher
-			duration = 3650
-		}
 		any_pop = {
 			limit = { has_pop_culture = brazilian }
 			scaled_militancy = { factor = -1 ideology = liberal }
@@ -769,6 +949,7 @@ country_event = {
 			defender_goal = { casus_belli = status_quo }
 		}
         set_country_flag = cabanada_revolt
+		ai_chance = { factor = 1 }
     }
 
     option = { # PNB revolts and goes to war with BRZ/UPB - Change tag to PNB
@@ -784,6 +965,7 @@ country_event = {
 		}
         set_country_flag = cabanada_revolt
         change_tag_no_core_switch = PNB
+		ai_chance = { factor = 0 }
     }
 }
 
@@ -807,7 +989,8 @@ country_event = {
 
 	option = {
 		name = "So uncivilized..."
-		3989 = { any_pop = { limit = { has_pop_culture = portuguese } reduce_pop = 0.90 } }
+		prestige = -1
+		4192 = { any_pop = { limit = { has_pop_culture = portuguese } reduce_pop = 0.90 } }
 	}
 }
 

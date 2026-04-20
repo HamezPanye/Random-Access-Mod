@@ -138,8 +138,17 @@ political_decisions = {
         potential = {
 			tag = CLM
 			OR = {
-				AND = { exists = ECU is_vassal = no NOT = { exists = ECM } }
-				AND = { exists = ECM is_vassal = no NOT = { exists = ECU } }
+				ECU = {
+					exists = yes
+					is_vassal = no
+					NOT = { exists = ECM }
+				}
+				ECM = {
+					exists = yes
+					is_vassal = no
+					NOT = { exists = ECU }
+				}
+
 			}
 			2259 = {
 				is_core = THIS
@@ -531,6 +540,24 @@ political_decisions = {
 					2403 = { owned_by = BRZ }
 				}
 				secede_province = BRZ
+			}
+			any_owned = {
+				limit = {
+					province_id = 3359
+					is_core = UPB
+					NOT = { is_core = THIS }
+					2403 = { owned_by = UPB }
+				}
+				secede_province = UPB
+			}
+			any_owned = {
+				limit = {
+					province_id = 3359
+					is_core = PAA
+					NOT = { is_core = THIS }
+					2403 = { owned_by = PAA }
+				}
+				secede_province = PAA
 			}
         }
 
