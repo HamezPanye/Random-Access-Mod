@@ -140,8 +140,9 @@ country_event = { # Dismantlement Formables	# Dynamic - You can add your own dis
 
 		any_country = {				# Far Eastern Republic
 			limit = {
+				NOT = { KAM = { has_country_flag = dismantlement_target } }
 				OR = {
-					tag = KAM	# Kamchatka
+					#tag = KAM	# Kamchatka
 					tag = YAK	# Yakutia
 					tag = BRY	# Buryatia
 					tag = ALT	# Altai
@@ -150,6 +151,7 @@ country_event = { # Dismantlement Formables	# Dynamic - You can add your own dis
 					tag = SIB	# Siberia
 					tag = LSK	# Alaska
 					tag = MGL	# Mongolia
+					tag = EZO	# Ezo
 					#AND = { tag = LSK LSK = { capital_scope = { owned_by = RUS } } }
 					#AND = { tag = LSK LSK = { capital_scope = { owned_by = RUS } } } Mongolia?
 				}
@@ -161,9 +163,60 @@ country_event = { # Dismantlement Formables	# Dynamic - You can add your own dis
 			KAM = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
 		}
 		
+		any_country = {				# Japan
+			limit = {
+				NOT = { JAP = { has_country_flag = dismantlement_target } }
+				OR = {
+					tag = RYU	# Ryukyu
+					tag = EZO	# Ezo
+					tag = CHO   # Choshu
+					tag = KAG	# Kaga
+					tag = SAT	# Satsuma
+					tag = SEN 	# Sendai 
+					tag = OBM	# Obama
+					tag = TOS	# Tosa
+					tag = YZW	# Yonezawa
+					tag = SOC 	# So
+				}
+				has_country_flag = dismantlement_targeting_long_buffer	
+			}
+			set_global_flag = dismantlement_formables_avalible
+			any_country = { limit = { check_variable = { which = dismantlement_formable value = 0.99 } } change_variable = { which = dismantlement_formable value = 1 } }
+			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
+			JAP = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
+		}
+		
+		any_country = {				# Korea
+			limit = {
+				NOT = { KOR = { has_country_flag = dismantlement_target } }
+				OR = {
+					tag = SOC 	# So
+				}
+				has_country_flag = dismantlement_targeting_long_buffer	
+			}
+			set_global_flag = dismantlement_formables_avalible
+			any_country = { limit = { check_variable = { which = dismantlement_formable value = 0.99 } } change_variable = { which = dismantlement_formable value = 1 } }
+			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
+			TAI = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
+		}
+		
+		any_country = {				# Taiwan
+			limit = {
+				NOT = { TAI = { has_country_flag = dismantlement_target } }
+				OR = {
+					tag = RYU	# Ryukyu
+				}
+				has_country_flag = dismantlement_targeting_long_buffer	
+			}
+			set_global_flag = dismantlement_formables_avalible
+			any_country = { limit = { check_variable = { which = dismantlement_formable value = 0.99 } } change_variable = { which = dismantlement_formable value = 1 } }
+			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
+			TAI = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
+		}
 
 		any_country = {				# Buryatia
 			limit = {
+				NOT = { BRY = { has_country_flag = dismantlement_target } }
 				OR = {
 					tag = TNT	# Tannu Tuva
 					tag = ALT	# Altai
@@ -176,10 +229,180 @@ country_event = { # Dismantlement Formables	# Dynamic - You can add your own dis
 			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
 			BRY = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
 		}
+		
+		any_country = {				# Mongolia
+			limit = {
+				NOT = { MGL = { has_country_flag = dismantlement_target } }
+				OR = {
+					tag = BRY	# Buryatia
+					tag = ALT	# Altai
+					tag = TNT	# Tannu Tuva
+					tag = IMG	# Inner Mongolia
+				}
+				has_country_flag = dismantlement_targeting_long_buffer	
+			}
+			set_global_flag = dismantlement_formables_avalible
+			any_country = { limit = { check_variable = { which = dismantlement_formable value = 0.99 } } change_variable = { which = dismantlement_formable value = 1 } }
+			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
+			MGL = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
+		}
+		
+		any_country = {				# China
+			limit = {
+				NOT = { CHI = { has_country_flag = dismantlement_target } }
+				OR = {
+					tag = ALT	# Altai
+					tag = TNT	# Tannu Tuva
+					tag = IMG	# Inner Mongolia
+					tag = TPG	# Heavenly Kingdom
+					tag = GIZ	# Guizhou
+					tag = NIA	# Nian
+					tag = FJN	# Fujian
+					tag = GNG	# Guangdong
+					tag = HNN	# Hunan
+					tag = HUI	# Anhui
+					tag = SZC	# Sichuan
+					tag = MCK	# Manchuria
+					tag = GXI	# Guangxi Clique
+					tag = SXI	# Shanxi
+					tag = YNN	# Yunnan
+					tag = XIN	# East Turkestan
+					tag = TIB	# Tibet 
+					tag = MGL	# Mongolia
+					tag = TAI	# Taiwan
+					tag = KOR	# Korea
+					tag = XBI 	# Xibei San Ma
+					tag = DRG	# Derge
+					tag = GUK	# Green Ukraine
+					tag = CKL	# Chakla
+					tag = LGT	# Lithang
+				}
+				has_country_flag = dismantlement_targeting_long_buffer	
+			}
+			set_global_flag = dismantlement_formables_avalible
+			any_country = { limit = { check_variable = { which = dismantlement_formable value = 0.99 } } change_variable = { which = dismantlement_formable value = 1 } }
+			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
+			CHI = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
+		}
+		
+		any_country = {				# Nationalist China
+			limit = {
+				NOT = { KMT = { has_country_flag = dismantlement_target } }
+				OR = {
+					tag = ALT	# Altai
+					tag = TNT	# Tannu Tuva
+					tag = IMG	# Inner Mongolia
+					tag = TPG	# Heavenly Kingdom
+					tag = GIZ	# Guizhou
+					tag = NIA	# Nian
+					tag = FJN	# Fujian
+					tag = GNG	# Guangdong
+					tag = HNN	# Hunan
+					tag = HUI	# Anhui
+					tag = SZC	# Sichuan
+					tag = MCK	# Manchuria
+					tag = GXI	# Guangxi Clique
+					tag = SXI	# Shanxi
+					tag = YNN	# Yunnan
+					tag = XIN	# East Turkestan
+					tag = TIB	# Tibet 
+					tag = MGL	# Mongolia
+					tag = TAI	# Taiwan
+					tag = KOR	# Korea
+					tag = XBI 	# Xibei San Ma
+					tag = DRG	# Derge
+					tag = GUK	# Green Ukraine
+					tag = CKL	# Chakla
+					tag = LGT	# Lithang
+				}
+				has_country_flag = dismantlement_targeting_long_buffer	
+			}
+			set_global_flag = dismantlement_formables_avalible
+			any_country = { limit = { check_variable = { which = dismantlement_formable value = 0.99 } } change_variable = { which = dismantlement_formable value = 1 } }
+			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
+			KMT = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
+		}
+		
+		any_country = {				# Heavely Kingdom
+			limit = {
+				NOT = { TPG = { has_country_flag = dismantlement_target } }
+				TPG = { exists = yes }
+				OR = {
+					tag = ALT	# Altai
+					tag = TNT	# Tannu Tuva
+					tag = IMG	# Inner Mongolia
+					#tag = TPG	# Heavenly Kingdom
+					tag = GIZ	# Guizhou
+					tag = NIA	# Nian
+					tag = FJN	# Fujian
+					tag = GNG	# Guangdong
+					tag = HNN	# Hunan
+					tag = HUI	# Anhui
+					tag = SZC	# Sichuan
+					tag = MCK	# Manchuria
+					tag = GXI	# Guangxi Clique
+					tag = SXI	# Shanxi
+					tag = YNN	# Yunnan
+					tag = XIN	# East Turkestan
+					tag = TIB	# Tibet 
+					tag = MGL	# Mongolia
+					tag = TAI	# Taiwan
+					tag = KOR	# Korea
+					tag = XBI 	# Xibei San Ma
+					tag = DRG	# Derge
+					tag = GUK	# Green Ukraine
+					tag = CKL	# Chakla
+					tag = LGT	# Lithang
+				}
+				has_country_flag = dismantlement_targeting_long_buffer	
+			}
+			set_global_flag = dismantlement_formables_avalible
+			any_country = { limit = { check_variable = { which = dismantlement_formable value = 0.99 } } change_variable = { which = dismantlement_formable value = 1 } }
+			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
+			TPG = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
+		}
+		
+		any_country = {				# Heavely Kingdom
+			limit = {
+				NOT = { QNG = { has_country_flag = dismantlement_target } }
+				OR = {
+					tag = ALT	# Altai
+					tag = TNT	# Tannu Tuva
+					tag = IMG	# Inner Mongolia
+					tag = TPG	# Heavenly Kingdom
+					tag = GIZ	# Guizhou
+					tag = NIA	# Nian
+					tag = FJN	# Fujian
+					tag = GNG	# Guangdong
+					tag = HNN	# Hunan
+					tag = HUI	# Anhui
+					tag = SZC	# Sichuan
+					tag = MCK	# Manchuria
+					tag = GXI	# Guangxi Clique
+					tag = SXI	# Shanxi
+					tag = YNN	# Yunnan
+					tag = XIN	# East Turkestan
+					tag = TIB	# Tibet 
+					tag = MGL	# Mongolia
+					tag = TAI	# Taiwan
+					tag = KOR	# Korea
+					tag = XBI 	# Xibei San Ma
+					tag = DRG	# Derge
+					tag = GUK	# Green Ukraine
+					tag = CKL	# Chakla
+					tag = LGT	# Lithang
+				}
+				has_country_flag = dismantlement_targeting_long_buffer	
+			}
+			set_global_flag = dismantlement_formables_avalible
+			any_country = { limit = { check_variable = { which = dismantlement_formable value = 0.99 } } change_variable = { which = dismantlement_formable value = 1 } }
+			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
+			QNG = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
+		}
 
 		any_country = {				# Denmark
 			limit = {
-				NOT = { DEN = { has_country_flag = dismantlement_targets } }
+				NOT = { DEN = { has_country_flag = dismantlement_target } }
 				OR = {
 					tag = GRN	# Greenland
 					tag = ICL	# Iceland
@@ -196,7 +419,7 @@ country_event = { # Dismantlement Formables	# Dynamic - You can add your own dis
 
 		any_country = {				# Norway
 			limit = {
-				NOT = { NOR = { has_country_flag = dismantlement_targets } }
+				NOT = { NOR = { has_country_flag = dismantlement_target } }
 				OR = {
 					tag = GRN	# Greenland
 					tag = ICL	# Iceland
@@ -212,7 +435,7 @@ country_event = { # Dismantlement Formables	# Dynamic - You can add your own dis
 
 		any_country = {				# Sweden
 			limit = {
-				NOT = { SWE = { has_country_flag = dismantlement_targets } }
+				NOT = { SWE = { has_country_flag = dismantlement_target } }
 				OR = {
 					tag = ALN	# Åland
 					tag = FIN	# Finland
@@ -261,7 +484,7 @@ country_event = { # Dismantlement Formables	# Dynamic - You can add your own dis
 		any_country = {				# United States
 			limit = {
 				USA = { exists = yes }
-				NOT = { USA = { has_country_flag = dismantlement_targets } }
+				NOT = { USA = { has_country_flag = dismantlement_target } }
 				OR = {
 					tag = HAW	# Hawaii
 					tag = LSK	# Alaska
@@ -288,7 +511,7 @@ country_event = { # Dismantlement Formables	# Dynamic - You can add your own dis
 		any_country = {				# Canada
 			limit = {
 				CAN = { exists = yes }
-				NOT = { CAN = { has_country_flag = dismantlement_targets } }
+				#NOT = { CAN = { has_country_flag = dismantlement_target } }
 				OR = {
 					tag = COL	# Columbia
 					tag = LSK	# Alaska
@@ -308,10 +531,31 @@ country_event = { # Dismantlement Formables	# Dynamic - You can add your own dis
 			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
 			CAN = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
 		}
+		
+		any_country = {				# The Pacific States
+			limit = {
+				PAC = { exists = yes }
+				NOT = { PAC = { has_country_flag = dismantlement_target } }
+				OR = {
+					tag = HAW	# Hawaii
+					tag = LSK	# Alaska
+					tag = ACA	# Acadia
+					tag = CAL	# California
+					tag = ORE	# Oregon
+					tag = DES	# Deseret
+					tag = SON	# Sonora
+				}
+				has_country_flag = dismantlement_targeting_long_buffer	
+			}
+			set_global_flag = dismantlement_formables_avalible
+			any_country = { limit = { check_variable = { which = dismantlement_formable value = 0.99 } } change_variable = { which = dismantlement_formable value = 1 } }
+			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
+			PAC = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
+		}
 
 		any_country = {				# Central America
 			limit = {
-				NOT = { UCA = { has_country_flag = dismantlement_targets } }
+				NOT = { UCA = { has_country_flag = dismantlement_target } }
 				OR = {
 					tag = YUC	# Yucatan
 					tag = LOS	# Los Altos
@@ -337,14 +581,62 @@ country_event = { # Dismantlement Formables	# Dynamic - You can add your own dis
 			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
 			UCA = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
 		}
+		
+		any_country = {				# Guatemala
+			limit = {
+				NOT = { GUA = { has_country_flag = dismantlement_target } }
+				OR = {
+					tag = YUC	# Yucatan
+					tag = LOS	# Los Altos
+					tag = BLZ	# Belize
+				}
+				has_country_flag = dismantlement_targeting_long_buffer	
+			}
+			set_global_flag = dismantlement_formables_avalible
+			any_country = { limit = { check_variable = { which = dismantlement_formable value = 0.99 } } change_variable = { which = dismantlement_formable value = 1 } }
+			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
+			GUA = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
+		}
+		
+		any_country = {				# Nicaragua
+			limit = {
+				NOT = { NIC = { has_country_flag = dismantlement_target } }
+				OR = {
+					tag = MSK	# Mosquito Coast
+				}
+				has_country_flag = dismantlement_targeting_long_buffer	
+			}
+			set_global_flag = dismantlement_formables_avalible
+			any_country = { limit = { check_variable = { which = dismantlement_formable value = 0.99 } } change_variable = { which = dismantlement_formable value = 1 } }
+			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
+			NIC = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
+		}
+		
+		any_country = {				# Yucatan
+			limit = {
+				NOT = { YUC = { has_country_flag = dismantlement_target } }
+				YUC = { exists = yes }
+				OR = {
+					tag = CHP	# Chiapas
+					tag = TRS	# Tabasco
+					tag = BLZ	# Belize
+				}
+				has_country_flag = dismantlement_targeting_long_buffer	
+			}
+			set_global_flag = dismantlement_formables_avalible
+			any_country = { limit = { check_variable = { which = dismantlement_formable value = 0.99 } } change_variable = { which = dismantlement_formable value = 1 } }
+			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
+			YUC = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
+		}
+		
 		any_country = {				# French West Indies
 			limit = {
-				NOT = { FWI = { has_country_flag = dismantlement_targets } }
-				#OR = {
-				#	FWI = { exists = yes }	# Caribbean
-				#	FRA = { has_country_flag = dismantlement_targets }	# UK
-				#	BOR = { has_country_flag = dismantlement_targets }	# England
-				#}	
+				NOT = { FWI = { has_country_flag = dismantlement_target } }
+				OR = {
+					FWI = { exists = yes }	# Caribbean
+					FRA = { has_country_flag = dismantlement_targets }	# UK
+					BOR = { has_country_flag = dismantlement_targets }	# England
+				}	
 				OR = {
 					tag = CRB	# Caribbean
 					tag = NAN	# Netherlands Antilles
@@ -367,7 +659,12 @@ country_event = { # Dismantlement Formables	# Dynamic - You can add your own dis
 
 		any_country = {				# British West Indies
 			limit = {
-				NOT = { CRB = { has_country_flag = dismantlement_targets } }
+				NOT = { CRB = { has_country_flag = dismantlement_target } }
+				OR = {
+					ENG = { has_country_flag = dismantlement_target }
+					ENL = { has_country_flag = dismantlement_target }
+					CRB = { exists = yes }	# Caribbean
+				}
 				#OR = {
 				#	CRB = { exists = yes }	# Caribbean
 				#	ENG = { has_country_flag = dismantlement_targets }	# UK
@@ -395,11 +692,12 @@ country_event = { # Dismantlement Formables	# Dynamic - You can add your own dis
 
 		any_country = {				# Dutch West Indies
 			limit = {
-				NOT = { NAN = { has_country_flag = dismantlement_targets } }
-				#OR = {
-				#	NAN = { exists = yes }	# Netherlands Antilles
-				#	NET = { has_country_flag = dismantlement_targets }	# Netherlands
-				#}
+				NOT = { NAN = { has_country_flag = dismantlement_target } }
+				#NET = { has_country_flag = dismantlement_target }
+				OR = {
+					NAN = { exists = yes }	# Netherlands Antilles
+					NET = { has_country_flag = dismantlement_targets }	# Netherlands
+				}
 				OR = {
 					tag = CRB	# Caribbean
 					tag = FWI	# French West Indies
@@ -419,6 +717,23 @@ country_event = { # Dismantlement Formables	# Dynamic - You can add your own dis
 			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
 			NAN = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
 		}
+		
+		any_country = {				# Haiti
+			limit = {
+				NOT = { HAI = { has_country_flag = dismantlement_target } }
+				OR = {
+					HAI = { exists = yes }	# Haiti
+				}
+				OR = {
+					tag = DOM
+				}
+				has_country_flag = dismantlement_targeting_long_buffer	
+			}
+			set_global_flag = dismantlement_formables_avalible
+			any_country = { limit = { check_variable = { which = dismantlement_formable value = 0.99 } } change_variable = { which = dismantlement_formable value = 1 } }
+			CLN = { change_variable = { which = total_dismantlement_formables value = 1 } }
+			HAI = { set_country_flag = dismantlement_formable change_variable = { which = dismantlement_formable value = 1 } }
+		}
 	
 		any_country = {				# Intermarium
 			limit = {
@@ -436,10 +751,10 @@ country_event = { # Dismantlement Formables	# Dynamic - You can add your own dis
 					tag = MOL	# Moldova
 					tag = CRI	# Crimea
 					tag = BKV	# Bukovina
-					#AND = {
-					#	tag = DON # DON joining PLR through Ukraine
-					#	UKR = { capital_scope = { owner = { tag = PLR } } }
-					#}
+					AND = {
+						tag = DON # DON joining PLR through Ukraine
+						UKR = { capital_scope = { owner = { tag = PLR } } }
+					}
 				}
 				has_country_flag = dismantlement_targeting_long_buffer	
 			}
@@ -452,10 +767,10 @@ country_event = { # Dismantlement Formables	# Dynamic - You can add your own dis
 		any_country = {				# Ukraine
 			limit = {
 				OR = {
-					#AND = {
-					#	tag = DON # Check that Ukraine is also being dismantled to avoid finland-in-exile
-					#	UKR = { capital_scope = { owner = { has_country_flag = dismantlement_target } } }
-					#}
+					AND = {
+						tag = DON # Check that Ukraine is also being dismantled to avoid finland-in-exile
+						UKR = { exists = yes }
+					}
 					tag = CRI
 					tag = RUT
 				}

@@ -12,6 +12,14 @@ JAN     = "countries/JanMayen.txt"
 UT2        = "countries/Utility Tag 2.txt"
 
 #
+#	RAM
+#
+
+IZH        = "countries/Ingria.txt"
+ARK        = "countries/Arkhangelsk.txt"
+AKH        = "countries/Astrakhan.txt"
+
+#
 #	Europe
 #
 
@@ -712,6 +720,7 @@ PPG        = "countries/Papua New Guinea.txt"
 # The Pacific
 PCF        = "countries/Pacifika.txt"								# GFM
 HAW        = "countries/Hawaii.txt"
+EAS        = "countries/Rapa Nui.txt"
 VTU        = "countries/Vanuatu.txt"
 SMO        = "countries/Samoa.txt"
 FIJ        = "countries/Fiji.txt"

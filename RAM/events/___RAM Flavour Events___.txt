@@ -1,0 +1,116 @@
+######## RAPA NUI ########
+
+# Dutrou-Bornier Declares Himself King - fires for EAS
+country_event = {
+
+    id = 18691201
+    title = "The Sheep King of Rapa Nui"
+    desc = "EAS_DUTROU_BORNIER_RISE"
+    picture = "RAM\dutrou_bornier"
+
+    fire_only_once = yes
+
+    trigger = {
+        tag = EAS
+        year = 1869
+        NOT = { year = 1873 }
+    }
+
+    mean_time_to_happen = { days = 30 }
+
+    option = {
+        name = "The island bows to its new king."
+        government = absolute_empire
+        religion = animist
+        set_country_flag = dutrou_bornier_king
+        any_pop = { consciousness = 1 }
+    }
+}
+
+# Request French Protectorate - fires for EAS after Dutrou-Bornier seizes power
+country_event = {
+
+    id = 18691501
+    title = "A Petition to Paris"
+    desc = "EAS_FRANCE_PROTECTORATE_REQUEST"
+    picture = "RAM\dutrou_bornier"
+
+    fire_only_once = yes
+
+    trigger = {
+        tag = EAS
+        has_country_flag = dutrou_bornier_king
+        year = 1869
+        NOT = { year = 1876 }
+    }
+
+    mean_time_to_happen = { months = 6 }
+
+    option = {
+        name = "France must recognize our governance."
+        FRA = { country_event = 18691502 }
+        ai_chance = { factor = 100 }
+    }
+
+    option = {
+        name = "We need no foreign masters."
+        ai_chance = { factor = 0 }
+    }
+}
+
+# France Receives Protectorate Request - triggered by EAS
+country_event = {
+
+    id = 18691502
+    title = "A Request from Rapa Nui"
+    desc = "EAS_FRANCE_PROTECTORATE_RESPONSE"
+    picture = "RAM\dutrou_bornier"
+
+    is_triggered_only = yes
+
+    option = {
+        name = "Rapa Nui shall fly the French tricolor."
+        diplomatic_influence = { who = EAS value = 400 }
+        relation = { who = EAS value = 100 }
+        create_vassal = EAS
+        badboy = 2
+        ai_chance = { factor = 20 }
+    }
+
+    option = {
+        name = "This distant island is of no concern to Paris."
+        relation = { who = EAS value = -25 }
+        ai_chance = { factor = 80 }
+    }
+}
+
+# Death of Dutrou-Bornier - fires for EAS
+country_event = {
+
+    id = 18761201
+    title = "The Death of Dutrou-Bornier"
+    desc = "EAS_DUTROU_BORNIER_DEATH"
+    picture = "RAM\dutrou_bornier_death"
+
+    fire_only_once = yes
+
+    trigger = {
+        tag = EAS
+        has_country_flag = dutrou_bornier_king
+        year = 1876
+        NOT = { year = 1879 }
+    }
+
+    mean_time_to_happen = { days = 30 }
+
+    option = {
+        name = "The king is dead. Order must be restored."
+        government = absolute_monarchy
+        religion = catholic
+        clr_country_flag = dutrou_bornier_king
+        clr_country_flag = animist_country
+        any_pop = { consciousness = 1 }
+    }
+}
+
+######## END OF RAM FLAVOUR EVENTS ########

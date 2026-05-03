@@ -383,6 +383,7 @@ country_event = { # Scope the cores to release
 				exists = no
 				any_core = { owner = { OR = { overlord = { has_country_flag = dismantlement_targets } has_country_flag = dismantlement_targets } } }
 				NOT = { has_country_flag = dismantlement_target AND = { has_country_flag = colonial_exception civilised = no } }
+				NOT = { has_country_flag = dismantlement_exception }
 			}
 			set_country_flag = dismantlement_rewriteable_core
 			set_country_flag = dismantlement_targets

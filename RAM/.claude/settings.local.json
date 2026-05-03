@@ -1,0 +1,9 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//c/c/SteamLibrary/steamapps/common/Victoria 2/mod/RAM/history/countries/**)",
+      "Read(//c/c/SteamLibrary/steamapps/common/Victoria 2/mod/RAM/gfx/**)",
+      "Read(//c/c/SteamLibrary/steamapps/common/Victoria 2/mod/RAM/history/units/**)"
+    ]
+  }
+}
