@@ -5713,7 +5713,10 @@ political_decisions = {
 		picture = militias_to_raise
 		potential = {
 			ai = no
-			total_pops = 30000
+			OR = {
+				total_pops = 30000
+				tag = EAS
+			}
 			NOT = { total_pops = 400000 }
 			# Audax Validator "." Ignore_NEXT
 			NOT = { total_amount_of_divisions = 1 }
