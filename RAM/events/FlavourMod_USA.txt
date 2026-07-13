@@ -126,29 +126,67 @@ country_event = {
         }
         add_accepted_culture = anglo_canadian
         CAN_50 = { is_slave = no }
-		102 = { add_core = CAL }
+		MEX_85 = { add_core = CAL }
+		MEX_85_2 = { add_core = CAL }
+		101 = { add_core = CAL }
+		85 = { add_core = CAL }
 		4064 = { add_core = CAL }
 		4052 = { add_core = CAL }
-		85 = { add_core = CAL }
-		101 = { add_core = CAL }
+		102 = { add_core = CAL }
+		2662 = { add_core = CAL }
+		4032 = { add_core = CAL }
+		4033 = { add_core = CAL }
 		3460 = { add_core = CAL }
-        2148 = { add_core = CAL }
-        4033 = { add_core = CAL }
-        4032 = { add_core = CAL }
-        2662 = { add_core = CAL }
-        107 = { add_core = TEX }
-        129 = { add_core = TEX }
-        109 = { add_core = TEX }
-        103 = { add_core = TEX }
-        105 = { add_core = TEX }
-        4034 = { add_core = TEX }
-        4035 = { add_core = TEX }
-        3588 = { add_core = TEX }
-        4177 = { add_core = TEX }
-        #3597 = { add_core = TEX }
-        4145 = { add_core = DES }
-        108 = { add_core = DES }
-        4176 = { add_core = DES }
+		2148 = { add_core = CAL }
+		100 = { add_core = CAL }
+		3457 = { add_core = DES }
+		94 = { add_core = DES }
+		3458 = { add_core = DES }
+		95 = { add_core = DES }
+		3459 = { add_core = DES }
+		108 = { add_core = DES }
+		99 = { add_core = DES }
+		4055 = { add_core = DES }
+		97 = { add_core = DES }
+		4145 = { add_core = DES }
+		TEX_132 = { add_core = TEX }
+		129 = { add_core = TEX }
+		4035 = { add_core = TEX }
+		4177 = { add_core = TEX }
+		3588 = { add_core = TEX }
+		105 = { add_core = TEX }
+		4034 = { add_core = TEX }
+		109 = { add_core = TEX }
+		107 = { add_core = TEX }
+		4120 = { add_core = TEX }
+		103 = { add_core = TEX }
+		random_owned = { 
+			limit = { owner = { 4059 = { is_core = MEX } } }
+			owner = { 
+				2138 = { add_core = CAL }
+				2139 = { add_core = CAL }
+				3456 = { add_core = CAL }
+				98 = { add_core = CAL }
+				2140 = { add_core = CAL }
+				2141 = { add_core = CAL }
+				2157 = { add_core = CAL }
+				2154 = { add_core = CAL }
+				3973 = { add_core = CAL }
+				2144 = { add_core = CAL }
+				2145 = { add_core = CAL }
+				2142 = { add_core = CAL }
+				2143 = { add_core = CAL }
+				4060 = { add_core = TEX }
+				2147 = { add_core = TEX }
+				2152 = { add_core = TEX }
+				4061 = { add_core = TEX }
+				2155 = { add_core = TEX }
+				3974 = { add_core = TEX }
+				2150 = { add_core = TEX }
+				2151 = { add_core = TEX }
+				2149 = { add_core = TEX }
+			}
+		}
         release_vassal = CAL
         release_vassal = TEX
         release_vassal = DES
@@ -180,6 +218,19 @@ country_event = {
 				}
 			}
 		}
+		random_owned = {
+			limit = {
+				owner = { owns = 1 }
+			}
+			owner = { 
+				release_vassal = LSK
+				create_alliance = LSK
+				diplomatic_influence = {
+					who = LSK
+					value = 400
+				}
+			}
+		}
         set_country_flag = pacific_states
     }
 }
@@ -204,56 +255,70 @@ country_event = {
         }
         add_accepted_culture = anglo_canadian
         CAN_50 = { is_slave = no }
-		any_owned = {
-			limit = {
-				OR = {
-					region = MEX_85
-					region = MEX_85_2
-					region = MEX_2138
-					region = MEX_2142
-					province_id = 2148
-					province_id = 2662
-					province_id = 102
-					province_id = 4064
-					province_id = 4052
-					province_id = 85
-					province_id = 101
-					province_id = 3460
-				}
+		MEX_85 = { add_core = CAL add_core = MEX add_core = MEE }
+		MEX_85_2 = { add_core = CAL add_core = MEX add_core = MEE }
+		101 = { add_core = CAL add_core = MEX add_core = MEE }
+		85 = { add_core = CAL add_core = MEX add_core = MEE }
+		4064 = { add_core = CAL add_core = MEX add_core = MEE }
+		4052 = { add_core = CAL add_core = MEX add_core = MEE }
+		102 = { add_core = CAL add_core = MEX add_core = MEE }
+		2662 = { add_core = CAL add_core = MEX add_core = MEE }
+		4032 = { add_core = CAL add_core = MEX add_core = MEE }
+		4033 = { add_core = CAL add_core = MEX add_core = MEE }
+		3460 = { add_core = CAL add_core = MEX add_core = MEE }
+		2148 = { add_core = CAL add_core = MEX add_core = MEE }
+		100 = { add_core = CAL add_core = MEX add_core = MEE }
+		3457 = { add_core = DES add_core = MEX add_core = MEE }
+		94 = { add_core = DES add_core = MEX add_core = MEE }
+		3458 = { add_core = DES add_core = MEX add_core = MEE }
+		95 = { add_core = DES add_core = MEX add_core = MEE }
+		3459 = { add_core = DES add_core = MEX add_core = MEE }
+		108 = { add_core = DES add_core = MEX add_core = MEE }
+		99 = { add_core = DES add_core = MEX add_core = MEE }
+		4055 = { add_core = DES add_core = MEX add_core = MEE }
+		97 = { add_core = DES add_core = MEX add_core = MEE }
+		4145 = { add_core = DES add_core = MEX add_core = MEE }
+		4176 = { add_core = DES add_core = MEX add_core = MEE }
+		TEX_132 = { add_core = TEX add_core = MEX add_core = MEE }
+		129 = { add_core = TEX add_core = MEX add_core = MEE }
+		4035 = { add_core = TEX add_core = MEX add_core = MEE }
+		4177 = { add_core = TEX add_core = MEX add_core = MEE }
+		3588 = { add_core = TEX add_core = MEX add_core = MEE }
+		105 = { add_core = TEX add_core = MEX add_core = MEE }
+		4034 = { add_core = TEX add_core = MEX add_core = MEE }
+		109 = { add_core = TEX add_core = MEX add_core = MEE }
+		107 = { add_core = TEX add_core = MEX add_core = MEE }
+		4120 = { add_core = TEX add_core = MEX add_core = MEE }
+		103 = { add_core = TEX add_core = MEX add_core = MEE }
+		random_owned = { 
+			limit = { owner = { NOT = { 4059 = { is_core = MEX } } } }
+			owner = { 
+				2138 = { add_core = MEX add_core = MEE add_core = CAL }
+				2139 = { add_core = MEX add_core = MEE add_core = CAL }
+				3456 = { add_core = MEX add_core = MEE add_core = CAL }
+				98 = { add_core = MEX add_core = MEE add_core = CAL }
+				2140 = { add_core = MEX add_core = MEE add_core = CAL }
+				2141 = { add_core = MEX add_core = MEE add_core = CAL }
+				2157 = { add_core = MEX add_core = MEE add_core = CAL }
+				2154 = { add_core = MEX add_core = MEE add_core = CAL }
+				3973 = { add_core = MEX add_core = MEE add_core = CAL }
+				2144 = { add_core = MEX add_core = MEE add_core = CAL }
+				2145 = { add_core = MEX add_core = MEE add_core = CAL }
+				2142 = { add_core = MEX add_core = MEE add_core = CAL }
+				2143 = { add_core = MEX add_core = MEE add_core = CAL }
+				4060 = { add_core = MEX add_core = MEE add_core = TEX }
+				2147 = { add_core = MEX add_core = MEE add_core = TEX }
+				2152 = { add_core = MEX add_core = MEE add_core = TEX }
+				4061 = { add_core = MEX add_core = MEE add_core = TEX }
+				2155 = { add_core = MEX add_core = MEE add_core = TEX }
+				3974 = { add_core = MEX add_core = MEE add_core = TEX }
+				2150 = { add_core = MEX add_core = MEE add_core = TEX }
+				2151 = { add_core = MEX add_core = MEE add_core = TEX }
+				2149 = { add_core = MEX add_core = MEE add_core = TEX }
 			}
-			add_core = CAL
-			add_core = MEX
-			add_core = MEE
-			secede_province = MEE
 		}
 		any_owned = {
-			limit = {
-				OR = {
-					province_id = 107
-					province_id = 129
-					province_id = 109
-					province_id = 103
-					province_id = 105
-					province_id = 3588
-					region = MEX_2149
-					region = TEX_132
-				}
-			}
-			add_core = TEX
-			add_core = MEX
-			add_core = MEE
-			secede_province = MEE
-		}
-		any_owned = {
-			limit = {
-				OR = {
-					region = MEX_97
-					province_id = 108
-				}
-			}
-			add_core = DES
-			add_core = MEX
-			add_core = MEE
+			limit = { is_core = MEE }
 			secede_province = MEE
 		}
         any_country = {
@@ -262,6 +327,15 @@ country_event = {
 				OR = { tag = CAL tag = DES tag = TEX }
 			}
 			annex_to = MEE
+		}
+		random_owned = {
+			limit = {
+				owner = { owns = 1 }
+			}
+			owner = { 
+				release = LSK
+			}
+			FROM = { inherit = LSK }
 		}
         set_country_flag = loss_of_pacific_states
     }
@@ -1591,30 +1665,29 @@ country_event = {
         81 = {
             change_province_name = "Portland"
             secede_province = THIS
+			add_core = UOR
 			any_pop = { limit = { has_pop_culture = yankee } reduce_pop = 2.5 }
         }
         3461 = {
             secede_province = THIS
+			add_core = UOR
 			any_pop = { limit = { has_pop_culture = yankee } reduce_pop = 2.5 }
         }
         3462 = {
             change_province_name = "Eugene"
             life_rating = 15
             secede_province = THIS
+			add_core = UOR
 			any_pop = { limit = { has_pop_culture = yankee } reduce_pop = 2.5 }
         }
-		random_owned = {
-			limit = { owner = { NOT = { has_country_flag = oregon_treaty } } }
-			owner = {
-				3462 = { secede_province = UOR }
-				3461 = { secede_province = UOR }
-				81 = { secede_province = UOR }
-				THIS = { create_vassal = UOR }
-				UOR = { government = prov_gov_conservative }
-				diplomatic_influence = { who = UOR value = 400 }
-				relation = { who = UOR value = 400 }
-			}
-		}
+		3462 = { secede_province = UOR }
+		3461 = { secede_province = UOR }
+		81 = { secede_province = UOR }
+		create_vassal = UOR
+		create_alliance = UOR
+		relation = { who = UOR value = 400 }
+		diplomatic_influence = { who = UOR value = 400 }
+		UOR = { government = prov_gov_conservative }
 		91 = { add_core = THIS }
 		83 = { add_core = THIS }
 		82 = { add_core = THIS }
@@ -1891,7 +1964,7 @@ country_event = {
     }
 
     option = {
-        name = "EVTOPTB441266"
+        name = "Pay their debts and keep the colonies §R(Pay 200,000¤)"
         treasury = -200000
         1887 = { add_core = LIB }
         1888 = { add_core = LIB secede_province = THIS life_rating = 20 trade_goods = sugar }
@@ -3223,5 +3296,112 @@ country_event = {
 				}
 			}
 		}
+	}
+}
+
+#Setup to Banana Republics
+country_event = {
+	id = 600283
+	title = "Bananas join the American diet!"
+	desc = "EVTDESC600283"
+	picture = "emigration"
+	fire_only_once = yes
+
+	trigger = {
+		year = 1870
+		tag = USA
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "Those prices are bananas!"
+		set_country_flag = bananas
+		fruit = 50
+        any_pop = {
+            militancy = -0.75
+        }
+	}
+}
+
+#First Banana Republic
+country_event = {
+	id = 600284
+	title = "Tropical Trading and Transport Company"
+	desc = "EVTDESC600284"
+	picture = "Coffee"
+	fire_only_once = yes
+
+	trigger = {
+		tag = USA
+		revolution_n_counterrevolution = 1
+		has_country_flag = bananas
+		COS = { OR = { all_core = { OR = { owned_by = THIS empty = yes owner = { in_sphere = THIS } } } in_sphere = THIS } }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "Surely, this can only be good... For us."
+		set_global_flag = banana_politics
+		clr_country_flag = bananas
+        add_country_modifier = { name = banana_profit duration = -1 }
+		random_country = { limit = { owns = 2201 } country_event = 600285 }
+	}
+}
+
+#Banana Republics
+country_event = {
+	id = 600285
+	title = "Fruit Corporations"
+	desc = "EVTDESC600285"
+	picture = "Coffee"
+
+	trigger = {
+		primary_culture = central_american
+		in_sphere = USA
+		has_global_flag = banana_politics
+		NOT = { government = proletarian_dictatorship has_country_modifier = banana_republic }
+	}
+
+	mean_time_to_happen = {
+		months = 3
+	}
+
+	option = {
+		name = "Surely, this can only be good... For the US."
+		prestige = -5
+        add_country_modifier = { name = banana_republic duration = -1 }
+	}
+}
+
+#Banana Republic get free
+country_event = {
+	id = 600286
+	title = "Nationalizing the Fruit Plantations"
+	desc = "EVTDESC600286"
+	picture = "Coffee"
+
+	trigger = {
+		primary_culture = central_american
+		has_country_modifier = banana_republic
+		government = proletarian_dictatorship
+		can_nationalize = yes
+		NOT = { in_sphere = USA war_with = USA }
+	}
+
+	mean_time_to_happen = {
+		days = 1
+	}
+
+	option = {
+		name = "Surely, this can only be good... For the US."
+		prestige = 2.5
+		nationalize = yes
+        remove_country_modifier = banana_republic
 	}
 }

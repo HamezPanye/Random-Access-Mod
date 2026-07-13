@@ -1,7 +1,7 @@
 defines = {
 
 start_date = '1830.1.1',
-end_date = '1939.9.1',
+end_date = '1939.1.1',
 
 country = {
 	YEARS_OF_NATIONALISM 	= 20,   -- Years of Nationalism
@@ -52,7 +52,7 @@ country = {
 	MILITARY_REFORM_UH_FACTOR = -0.40,
 	WRONG_REFORM_RADICAL_IMPACT = 15,
 	TECH_YEAR_SPAN = 150,
-	TECH_FACTOR_VASSAL = 0.5, -- cost reduction factor if overlord has research the tech
+	TECH_FACTOR_VASSAL = 0.7, -- cost reduction factor if overlord has research the tech
 	MAX_SUPPRESSION = 100,
 	PRESTIGE_HIT_ON_BREAK_COUNTRY = -0.20, -- percentage reduction when country gets taken by rebels
 	MIN_MOBILIZE_LIMIT = 3,
@@ -658,7 +658,7 @@ pops = {
 
 	PDEF_BASE_CON = 20.0,			-- so half'ed effect.
 
-	NATIONAL_FOCUS_DIVIDER = 400.0,
+	NATIONAL_FOCUS_DIVIDER = 4000.0,
 
 	POP_SAVINGS = 0.03,
 

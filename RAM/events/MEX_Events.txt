@@ -2440,6 +2440,7 @@ country_event = {
 		101 = { add_core = CAL }
 		3460 = { add_core = CAL }
 		108 = { add_core = CAL }
+		2148 = { add_core = CAL }
 		4176 = { add_core = CAL }
 		99 = { add_core = CAL }
 		102 = { remove_core = CAL }
@@ -2450,7 +2451,7 @@ country_event = {
 			attacker_goal = { casus_belli = annex_core_country }
 			defender_goal = { casus_belli = acquire_all_cores }
 		}
-		CAL = { add_country_modifier = { name = unrecognized_country duration = 1095 } }
+		CAL = { add_country_modifier = { name = unrecognized_country duration = 1095 } set_country_flag = cali_revolt_1 }
 		ai_chance = { factor = 1 }
 	}
 
@@ -2464,7 +2465,7 @@ country_event = {
 		85 = { add_core = CAL }
 		101 = { add_core = CAL }
 		3460 = { add_core = CAL }
-		110 = { add_core = CAL }
+		2148 = { add_core = CAL }
 		4176 = { add_core = CAL }
 		99 = { add_core = CAL }
 		102 = { remove_core = CAL }
@@ -2505,6 +2506,7 @@ country_event = {
 		101 = { add_core = CAL }
 		3460 = { add_core = CAL }
 		108 = { add_core = CAL }
+		2148 = { add_core = CAL }
 		4176 = { add_core = CAL }
 		99 = { add_core = CAL }
 		102 = { remove_core = CAL }
@@ -2515,7 +2517,7 @@ country_event = {
 			attacker_goal = { casus_belli = annex_core_country }
 			defender_goal = { casus_belli = acquire_all_cores }
 		}
-		CAL = { add_country_modifier = { name = unrecognized_country duration = 1095 } }
+		CAL = { add_country_modifier = { name = unrecognized_country duration = 1095 } set_country_flag = cali_revolt_1 }
 		change_tag_no_core_switch = CAL
 		ai_chance = { factor = 0 }
 	}
@@ -2712,7 +2714,7 @@ country_event = {
 #Spain is asked to recognize Mexico, triggered by treaty_of_peace_and_friendship_spain_mex in MEX_Decisions.txt
 country_event = {
 	id = 4206996
-	title = "$FROMCOUNTRY$ proposes treaty of Friendship and Peace"
+	title = "$FROMCOUNTRY$ proposes a Treaty of Friendship and Peace"
 	desc = "EVTDESC4206996"
 	picture = "tenochtitlan"
 	is_triggered_only = yes
@@ -2879,7 +2881,10 @@ country_event = {
 
 	option = {
 		name = "What is this nonsense?!"
-		country_event = { id = 111011 days = 746 }
+		random_owned = {
+			limit = { owner = { NOT = { is_vassal = yes USA = { war_with = MEX has_country_flag = mexico_vassalusa } } } }
+			owner = { country_event = { id = 111011 days = 746 } }
+		}
 		any_pop = {
 			scaled_militancy = {
 				ideology = conservative
@@ -3061,7 +3066,7 @@ country_event = {
 			government = prov_gov_conservative
 		}
 		change_tag_no_core_switch = MEE
-		ai_chance = { factor = 1 }
+		ai_chance = { factor = 0 }
     }
 }
 

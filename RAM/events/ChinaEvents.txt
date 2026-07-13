@@ -2903,10 +2903,18 @@ country_event = {
 			limit = { is_core = MCK }
 			secede_province = UTI
 		}
-		random_country = {
-			limit = { owns = 1616 }
-			inherit = UTI
-			country_event = 1316288
+		random_owned = {
+			limit = { owner = { NOT = { owns = 1616 } } }
+			1616 = {
+				owner = {
+					inherit = UTI
+					country_event = 1316288
+				}
+			}
+		}
+		random_owned = {
+			limit = { owner = { owns = 1616 } }
+			FROM = { inherit = UTI }
 		}
 		FROM = { country_event = 1316188 }
 		relation = { who = RUS value = 25 }
@@ -3043,7 +3051,7 @@ country_event = {
 country_event = {
 	id = 1316289
 	title = "Japan resist triple intervention!"
-	desc = "Japan has refused Russian demands and now we shall teach them they aren't the true masters of Asia!"
+	desc = "EVTDESC1316289"
 	picture = "japanese_invasion_of_manchuria"
 	
 	trigger = {
@@ -7358,7 +7366,7 @@ country_event = {
             add_core = TAI
         }
         any_pop = {
-            limit = { has_pop_culture = min_culture }
+            limit = { location = { region = CHI_1485 } }
             militancy = 4
         }
     }

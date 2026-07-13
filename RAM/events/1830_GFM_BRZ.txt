@@ -170,7 +170,7 @@ country_event = {
 	mean_time_to_happen = { days = 1 }
 
 	trigger = {
-	   tag = BRZ
+	   OR = { tag = BRZ tag = USS }
 	   owns = 2000 # Cabinda
 	   year = 1830
 	   month = 2
@@ -867,7 +867,7 @@ country_event = {
 
 	trigger = {
 		year = 1831
-		tag = BRZ
+		OR = { tag = BRZ tag = USS }
 		has_country_modifier = pedro_i
 		government = constitutional_empire
 		month = 3
@@ -894,7 +894,7 @@ country_event = {
 
 	trigger = {
 		year = 1831
-		tag = BRZ
+		OR = { tag = BRZ tag = USS }
 		has_country_flag = garrafada
 		has_country_modifier = pedro_i
 		government = constitutional_empire
@@ -981,7 +981,7 @@ country_event = {
 
 	trigger = {
 		year = 1834
-		tag = BRZ
+		OR = { tag = BRZ tag = USS }
 		month = 5
 		NOT = { has_country_modifier = pedro_i }
 		NOT = { year = 1835 }
@@ -1006,7 +1006,7 @@ country_event = {
 
 	trigger = {
 		year = 1834
-		tag = BRZ
+		OR = { tag = BRZ tag = USS }
 		month = 3
 		NOT = { has_country_flag = pedro_i }
 		NOT = { year = 1835 }
@@ -1022,69 +1022,69 @@ country_event = {
 ######## END OF THE BRAZIL FILE ########
 
 # Cleanup event to reduce research points why is this here ?
-country_event = {
-	id = 20041209
-	title = "Research"
-	desc = "To balance the technologies of the countries, we halve the research points at the start."
-	picture = "14-bis"
-	fire_only_once = yes
-
-	trigger = {
-		tag = CLN
-	    has_global_flag = eighteenthirty_startdate
-	}
-
-	mean_time_to_happen = { days = 1 }
-
-	option = {
-	    name = "Okay."
-	    add_country_modifier = {
-			name = half_research_startup
-			duration = 4380
-		}
-		any_country = {
-			limit = {
-				NOT = {
-					tag = QNG
-					AND = {
-						primary_culture = japanese
-						NOT = { tag = RYU }
-					}
-					has_country_modifier = lacks_writing_system
-				}
-			}
-			add_country_modifier = {
-				name = half_research_startup
-				duration = 4380
-			}
-		}
-		any_country	= {
-			limit = {
-				primary_culture = japanese
-				NOT = { tag = RYU }
-			}
-			add_country_modifier = {
-				name = quarter_research_startup
-				duration = 4380
-			}
-		}
-		any_country	= {
-			limit = {
-				tag = QNG
-			}
-			add_country_modifier = {
-				name = fifth_research_startup
-				duration = 4380
-			}
-		}
-		any_country	= {
-			limit = {
-				has_country_modifier = lacks_writing_system
-			}
-			add_country_modifier = {
-				name = no_writing_research_startup
-				duration = 4380
-			}
-		}
-	}
-}
+#ountry_event = {
+#	id = 20041209
+#	title = "Research"
+#	desc = "To balance the technologies of the countries, we halve the research points at the start."
+#	picture = "14-bis"
+#	fire_only_once = yes
+#
+#	trigger = {
+#		tag = CLN
+#	    has_global_flag = eighteenthirty_startdate
+#	}
+#
+#	mean_time_to_happen = { days = 1 }
+#
+#	option = {
+#	    name = "Okay."
+#	    add_country_modifier = {
+#			name = half_research_startup
+#			duration = 4380
+#		}
+#		any_country = {
+#			limit = {
+#				NOT = {
+#					tag = QNG
+#					AND = {
+#						primary_culture = japanese
+#						NOT = { tag = RYU }
+#					}
+#					has_country_modifier = lacks_writing_system
+#				}
+#			}
+#			add_country_modifier = {
+#				name = half_research_startup
+#				duration = 4380
+#			}
+#		}
+#		any_country	= {
+#			limit = {
+#				primary_culture = japanese
+#				NOT = { tag = RYU }
+#			}
+#			add_country_modifier = {
+#				name = quarter_research_startup
+#				duration = 4380
+#			}
+#		}
+#		any_country	= {
+#			limit = {
+#				tag = QNG
+#			}
+#			add_country_modifier = {
+#				name = fifth_research_startup
+#				duration = 4380
+#			}
+#		}
+#		any_country	= {
+#			limit = {
+#				has_country_modifier = lacks_writing_system
+#			}
+#			add_country_modifier = {
+#				name = no_writing_research_startup
+#				duration = 4380
+#			}
+#		}
+#	}
+#

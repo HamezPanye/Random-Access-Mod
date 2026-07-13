@@ -128,4 +128,4 @@ form_arabia_desc;Brothers, freedom is here, we have won the battle for our desti
 IS_EMPTY; has no owner; n'a pas de propriétaire;ist unbeansprucht;;;;;;;;;;;x
 IS_NOT_EMPTY; has an owner; a un propriétaire;ist beansprucht;;;;;;;;;;;x
 EVTNAME111011928;Form Arabia;Formez l'Arabie;Gründe Arabien;;;;;;;;;;;x
-EVTDESC111011928;Through_warfare_and_diplomacy_an_Arabian_union_has_been_created._Shall_we_join_it?;Grâce_aux_armes_et_à_la_diplomatie,_une_union_arabe_a_été_constituée._Devons-nous_la_rejoindre_?;Durch_Krieg_und_Diplomatie_wurde_eine_arabische_Union_gegründet._Sollen_wir_ihr_beitreten?;;;;;;;;;;;x
+EVTDESC111011928;Through warfare and diplomacy an Arabian union has been created. Shall we join it?;Grâce aux armes et à la diplomatie, une union arabe a été constituée. Devons-nous la rejoindre ?;Durch Krieg und Diplomatie wurde eine arabische Union gegründet. Sollen wir ihr beitreten?;;;;;;;;;;;x

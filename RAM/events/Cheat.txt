@@ -131,7 +131,7 @@ id = 80008
 is_triggered_only = yes
 
 title = "What is this... I don't even..."
-desc = "Press the button below."
+desc = "EVTDESC80008"
 picture = "Smithsonian"
 
 option = {

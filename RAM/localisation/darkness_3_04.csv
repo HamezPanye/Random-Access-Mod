@@ -1,7 +1,7 @@
 EVTNAME19356;A war to end all wars;;;;;;;;;;;;;x
-EVTDESC19356_NEWS_LONG;It_has_become_increasingly_clear_that_we_have_entered_a_new_era_of_unprecedented_warfare._The_conflicts_of_our_time_are_no_longer_mere_local_issues,_but_instead_reach_every_corner_of_the_world._Considering_the_ever_increasing_stakes_and_the_terrifying_impact_of_these_hostilities_on_the_nations_involved,_there_is_no_longer_any_need_for_restrain.;;;;;;;;;;;;;x
-EVTDESC19356_NEWS_MEDIUM;It_has_become_increasingly_clear_that_we_have_entered_a_new_era_of_unprecedented_warfare._The_conflicts_of_our_time_are_no_longer_mere_local_issues,_but_instead_reach_every_corner_of_the_world._Considering_the_ever_increasing_stakes_and_the_terrifying_impact_of_these_hostilities_on_the_nations_involved,_there_is_no_longer_any_need_for_restrain.;;;;;;;;;;;;;x
-EVTDESC19356_NEWS_SHORT;It_has_become_increasingly_clear_that_we_have_entered_a_new_era_of_unprecedented_warfare.;;;;;;;;;;;;;x
+EVTDESC19356_NEWS_LONG;It has become increasingly clear that we have entered a new era of unprecedented warfare. The conflicts of our time are no longer mere local issues, but instead reach every corner of the world. Considering the ever increasing stakes and the terrifying impact of these hostilities on the nations involved, there is no longer any need for restrain.;;;;;;;;;;;;;x
+EVTDESC19356_NEWS_MEDIUM;It has become increasingly clear that we have entered a new era of unprecedented warfare. The conflicts of our time are no longer mere local issues, but instead reach every corner of the world. Considering the ever increasing stakes and the terrifying impact of these hostilities on the nations involved, there is no longer any need for restrain.;;;;;;;;;;;;;x
+EVTDESC19356_NEWS_SHORT;It has become increasingly clear that we have entered a new era of unprecedented warfare.;;;;;;;;;;;;;x
 ASSIMILATE_EFFECT;Assimilate all Pops in state\n;;;;;;;;;;;;;x
 WORLD_WARS_ENABLE_DESC;Great wars can now become World wars;;;;;;;;;;;;;x
 WORLD_WARS_ENABLED_DESC;World wars are enabled;;;;;;;;;;;;;x

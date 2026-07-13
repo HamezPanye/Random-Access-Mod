@@ -3,7 +3,7 @@ primary_culture = polynesian
 religion = animist
 government = absolute_monarchy
 plurality = 0.0
-nationalvalue = nv_tradition
+#nationalvalue = nv_tradition
 literacy = 0.1
 
 #Political Reforms
@@ -29,7 +29,8 @@ school_reforms = no_schools
 conscription = no_draft
 debt_law = peonage
 penal_system = capital_punishment
-child_labor = child_labor_legalcitizens_rights = primary_culture_only
+child_labor = child_labor_legal
+citizens_rights = primary_culture_only
 border_policy = open_borders
 centralization = unitary
 colonial_policy = no_colonies

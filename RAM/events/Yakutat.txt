@@ -9074,6 +9074,7 @@ country_event = {
 				value = jingoism
 			}
 		}
+		random_country = { limit = { tag = CIR exists = yes } country_event = 800923 }
 		ai_chance = { factor = 1 }
 	}
 
@@ -9081,6 +9082,7 @@ country_event = {
 		name = "No Briton faces detention in Russia!"
 		RUS = { country_event = 27519181 }
 		relation = { who = RUS value = -50 }
+		random_country = { limit = { tag = CIR exists = yes } country_event = 800923 }
 		ai_chance = { factor = 0 }
 	}
 }
@@ -9834,6 +9836,13 @@ country_event = {
 			militancy = 3
 			consciousness = 5
 		}
+		random_country = {
+			limit = {
+				primary_culture = polish
+				has_country_flag = prometheism
+			}
+			country_event = 800976
+		}
 		BOH = { government = radical_republic ruling_party_ideology = radical political_reform = free_press political_reform = universal_voting political_reform = population_equal_weight define_general = { name = "Josef Václav Fric" personality = defence_2.2 background = no_background } set_country_flag = prague_uprising_in_progress }
         ai_chance = { factor = 100 }
     }
@@ -9872,6 +9881,13 @@ country_event = {
 			}
 			militancy = 3
 			consciousness = 5
+		}
+		random_country = {
+			limit = {
+				primary_culture = polish
+				has_country_flag = prometheism
+			}
+			country_event = 800976
 		}
 		BOH = { government = radical_republic ruling_party_ideology = radical political_reform = free_press political_reform = universal_voting political_reform = population_equal_weight define_general = { name = "Josef Václav Fric" personality = defence_2.2 background = no_background } set_country_flag = prague_uprising_in_progress }
 		change_tag_no_core_switch = BOH
@@ -10121,40 +10137,33 @@ country_event = {
     trigger = {
         has_global_flag = krakow_uprising
         tag = AUS
-		owns = 714
+		owns = 704
 		debt_law = serfdom
+		NOT = { has_country_flag = galician_slaughter has_country_flag = poles_plotting }
     }
 
-    mean_time_to_happen = {
-        days = 5
-    }
+    mean_time_to_happen = { days = 5 }
 
     option = {
-        name = "Incite the peasants to continue. §RGain 1 infamy§W"
-        714 = { poor_strata = { consciousness = -8 } }
-		704 = { poor_strata = { consciousness = -6 } }
-		3324 = { poor_strata = { consciousness = -1 } }
-		705 = { poor_strata = { consciousness = -3 } }
-		714 = { rich_strata = { reduce_pop = 0.20 } }
-		704 = { rich_strata = { reduce_pop = 0.40 } }
-		3324 = { rich_strata = { reduce_pop = 0.90 } }
-		705 = { rich_strata = { reduce_pop = 0.70 } }
-		badboy = 1
-		ai_chance = {
-            factor = 100
-        }
+        name = "We will put an end to it... Eventually."
+		set_country_flag = galician_slaughter
+        any_owned = { limit = { region = AUS_702 } any_pop = { limit = { has_pop_culture = polish type = aristocrats } reduce_pop = 0.8 } }
+		any_owned = { limit = { region = AUS_702 } any_pop = { limit = { has_pop_culture = polish strata = poor } militancy = -2 consciousness = -4 } }
+		ai_chance = { factor = 100 }
     }
 	option = {
         name = "Do not do anything, they are harmless."
         prestige = 5
-		714 = { rich_strata = { reduce_pop = 0.10 } }
-		704 = { rich_strata = { reduce_pop = 0.30 } }
-		3324 = { rich_strata = { reduce_pop = 0.50 } }
-		705 = { rich_strata = { reduce_pop = 0.40 } }
-		AUS = { country_event = { id = 18481995 days = 30 } }
-		ai_chance = {
-            factor = 0
-        }
+        any_owned = { limit = { is_core = GLM NOT = { is_core = BKV } } any_pop = { limit = { has_pop_culture = polish type = aristocrats } reduce_pop = 0.9 } }
+		any_owned = { limit = { is_core = GLM NOT = { is_core = BKV } } any_pop = { limit = { has_pop_culture = polish strata = poor } militancy = 1 consciousness = 1 } }
+		set_country_flag = galician_slaughter
+		set_country_flag = hide_tooltip
+		random_owned = {
+			limit = { owner = { has_country_flag = hide_tooltip } }
+			owner = { country_event = { id = 18481995 days = 30 } }
+		}
+		clr_country_flag = hide_tooltip
+		ai_chance = { factor = 0 }
     }
 }
 country_event = {
@@ -10190,7 +10199,7 @@ country_event = {
     }
 
 	option = {
-        name = "Niezch zyje Polska! §BPlay the revolt§W" #Galician Accent
+        name = "Niech zyje Polska! §BPlay the revolt§W" #Galician Accent
         any_owned = { limit = { OR = { province_id = 704 province_id = 714 } } secede_province = GLM }
 		war = {
 			target = GLM
@@ -17617,9 +17626,9 @@ country_event = {
 
 	option = {
 		name = "Shut down the Institute."
-		plurality = -1
+		plurality = -5
         ai_chance = {
-            factor = 0
+            factor = 20
         }
 	}
 
@@ -17642,7 +17651,7 @@ country_event = {
 		plurality = 1
 		set_country_flag = sex_institute
         ai_chance = {
-            factor = 100
+            factor = 80
         }
 	}
 }
@@ -19651,6 +19660,7 @@ country_event = {
 		900 = { remove_core = TUR }
 		894 = { remove_core = TUR }
 		898 = { remove_core = TUR }
+		3358 = { remove_core = TUR remove_core = ALA }
 		set_global_flag = lebanon_TUR_no_more_cores
 		915 = { remove_core = TUR remove_core = ALA }
 		913 = { remove_core = TUR remove_core = ALA }
@@ -19808,6 +19818,7 @@ country_event = {
 		900 = { remove_core = TUR }
 		894 = { remove_core = TUR }
 		898 = { remove_core = TUR }
+		3358 = { remove_core = TUR remove_core = ALA }
 		set_global_flag = lebanon_TUR_no_more_cores
 		915 = { remove_core = TUR remove_core = ALA }
 		913 = { remove_core = TUR remove_core = ALA }
@@ -19925,6 +19936,7 @@ country_event = {
 						province_id = 932
 						province_id = 1132
 						province_id = 933
+						province_id = 934
 						province_id = 3407
 						province_id = 3989
 						province_id = 930
@@ -19966,6 +19978,7 @@ country_event = {
 					province_id = 932
 					province_id = 1132
 					province_id = 933
+					province_id = 934
 					province_id = 3407
 					province_id = 3989
 					province_id = 930
@@ -20200,6 +20213,7 @@ country_event = {
 		900 = { remove_core = TUR }
 		894 = { remove_core = TUR }
 		898 = { remove_core = TUR }
+		3358 = { remove_core = TUR remove_core = ALA }
 		set_global_flag = lebanon_TUR_no_more_cores
 		915 = { remove_core = TUR remove_core = ALA }
 		913 = { remove_core = TUR remove_core = ALA }
@@ -20317,6 +20331,7 @@ country_event = {
 						province_id = 932
 						province_id = 1132
 						province_id = 933
+						province_id = 934
 						province_id = 3407
 						province_id = 3989
 						province_id = 930
@@ -20358,6 +20373,7 @@ country_event = {
 					province_id = 932
 					province_id = 1132
 					province_id = 933
+					province_id = 934
 					province_id = 3407
 					province_id = 3989
 					province_id = 930
@@ -20608,6 +20624,7 @@ country_event = {
 		900 = { remove_core = TUR }
 		894 = { remove_core = TUR }
 		898 = { remove_core = TUR }
+		3358 = { remove_core = TUR remove_core = ALA }
 		set_global_flag = lebanon_TUR_no_more_cores
 		915 = { remove_core = TUR remove_core = ALA }
 		913 = { remove_core = TUR remove_core = ALA }
@@ -20725,6 +20742,7 @@ country_event = {
 						province_id = 932
 						province_id = 1132
 						province_id = 933
+						province_id = 934
 						province_id = 3407
 						province_id = 3989
 						province_id = 930
@@ -20766,6 +20784,7 @@ country_event = {
 					province_id = 932
 					province_id = 1132
 					province_id = 933
+					province_id = 934
 					province_id = 3407
 					province_id = 3989
 					province_id = 930
@@ -21108,6 +21127,7 @@ country_event = {
 		900 = { remove_core = TUR }
 		894 = { remove_core = TUR }
 		898 = { remove_core = TUR }
+		3358 = { remove_core = TUR remove_core = ALA }
 		set_global_flag = lebanon_TUR_no_more_cores
 		915 = { remove_core = TUR remove_core = ALA }
 		913 = { remove_core = TUR remove_core = ALA }
@@ -21225,6 +21245,7 @@ country_event = {
 						province_id = 932
 						province_id = 1132
 						province_id = 933
+						province_id = 934
 						province_id = 3407
 						province_id = 3989
 						province_id = 930
@@ -21266,6 +21287,7 @@ country_event = {
 					province_id = 932
 					province_id = 1132
 					province_id = 933
+					province_id = 934
 					province_id = 3407
 					province_id = 3989
 					province_id = 930
@@ -21626,6 +21648,7 @@ country_event = {
 		900 = { remove_core = TUR }
 		894 = { remove_core = TUR }
 		898 = { remove_core = TUR }
+		3358 = { remove_core = TUR remove_core = ALA }
 		set_global_flag = lebanon_TUR_no_more_cores
 		915 = { remove_core = TUR remove_core = ALA }
 		913 = { remove_core = TUR remove_core = ALA }
@@ -21743,6 +21766,7 @@ country_event = {
 						province_id = 932
 						province_id = 1132
 						province_id = 933
+						province_id = 934
 						province_id = 3407
 						province_id = 3989
 						province_id = 930
@@ -21784,6 +21808,7 @@ country_event = {
 					province_id = 932
 					province_id = 1132
 					province_id = 933
+					province_id = 934
 					province_id = 3407
 					province_id = 3989
 					province_id = 930
@@ -27947,7 +27972,7 @@ country_event = {
 country_event = {
     id = 18482422
     title = "US Statehood appliance"
-    desc = "You have applied."
+    desc = "EVTDESC18482422"
     picture = "walter"
     fire_only_once = yes
 	is_triggered_only = yes
@@ -27995,7 +28020,7 @@ country_event = {
 country_event = {
     id = 18482428
     title = "The Annexation of our Angolan Allies"
-    desc = "After some years of domination, we can now formally annex our vassals in Angola."
+    desc = "EVTDESC18482428"
     picture = "angola_fix"
 	fire_only_once = yes
 
@@ -31784,7 +31809,7 @@ country_event = {
 country_event = {
     id = 35325999
     title = "The Nxamasere Massacre"
-    desc = "A party of Tswana have burned down multiple of our towns, and the local Herero have taken the oportunity to raid our towns and commit massacres."
+    desc = "EVTDESC35325999"
     picture = "makololo"
 
     fire_only_once = yes
@@ -32261,7 +32286,7 @@ country_event = {
 country_event = {
     id = 52233452
     title = "The Conquest of the baMangwato"
-    desc = "We have been successful in our conquest of the baMangwato."
+    desc = "EVTDESC52233452"
     picture = "loxi_king"
 
     fire_only_once = yes
@@ -32886,6 +32911,7 @@ country_event = {
 			add_accepted_culture = bedouin
 			add_accepted_culture = teda
 			add_accepted_culture = berber
+			country_event = 485832599
 			add_accepted_culture = tuareg
 			military_reform = yes_foreign_weapons
 			activate_technology = flintlock_rifles
@@ -37090,6 +37116,7 @@ country_event = {
 			  AND = { tag = POR any_greater_power = { truce_with = THIS truce_with = POR } }
 			  AND = { tag = UPB any_greater_power = { truce_with = THIS truce_with = UPB } }
 			  AND = { tag = BRZ any_greater_power = { truce_with = THIS truce_with = BRZ } }
+			  AND = { tag = USS any_greater_power = { truce_with = THIS truce_with = USS } }
 			  AND = { tag = LPL any_greater_power = { truce_with = THIS truce_with = LPL } }
 			  AND = { tag = MEX any_greater_power = { truce_with = THIS truce_with = MEX } }
 			  AND = { tag = GCO any_greater_power = { truce_with = THIS truce_with = GCO } }
@@ -37384,6 +37411,7 @@ country_event = {
 				AND = { any_greater_power = { truce_with = THIS truce_with = POR } owner = { tag = POR } }
 				AND = { any_greater_power = { truce_with = THIS truce_with = UPB } owner = { tag = UPB } }
 				AND = { any_greater_power = { truce_with = THIS truce_with = BRZ } owner = { tag = BRZ } }
+				AND = { any_greater_power = { truce_with = THIS truce_with = USS } owner = { tag = USS } }
 				AND = { any_greater_power = { truce_with = THIS truce_with = LPL } owner = { tag = LPL } }
 				AND = { any_greater_power = { truce_with = THIS truce_with = MEX } owner = { tag = MEX } }
 				AND = { any_greater_power = { truce_with = THIS truce_with = GCO } owner = { tag = GCO } }
@@ -43472,6 +43500,7 @@ country_event = {
 					capital = 3686
 					add_accepted_culture = teda
 					add_accepted_culture = berber
+					country_event = 485832599
 					add_accepted_culture = tuareg
 					1732 = {
 						sub_unit = { type = irregular value = current }
@@ -43538,6 +43567,7 @@ country_event = {
 					capital = 3686
 					add_accepted_culture = teda
 					add_accepted_culture = berber
+					country_event = 485832599
 					add_accepted_culture = tuareg
 					1732 = {
 						sub_unit = { type = irregular value = current }
@@ -44641,9 +44671,9 @@ country_event = {
     trigger = {
 		has_global_flag = yesturyestur
 		tag = TUR
-		1700 = { OR = { owner = { tag = THIS vassal_of = THIS } } }
-		3826 = { OR = { owner = { tag = THIS vassal_of = THIS } } }
-		1710 = { OR = { owner = { tag = THIS vassal_of = THIS } } }
+		1700 = { owner = { OR = { tag = THIS vassal_of = THIS } } }
+		3826 = { owner = { OR = { tag = THIS vassal_of = THIS } } }
+		1710 = { owner = { OR = { tag = THIS vassal_of = THIS } } }
 		NOT = { year = 1855 }
     }
 
@@ -53310,6 +53340,7 @@ country_event = {
         OR = {
 			tag = BRZ
 			tag = UPB
+			tag = USS
 		}
         owns = 4115
         OR = {
@@ -53619,7 +53650,7 @@ country_event = {
         name = "Compensate the Kuwaitis for their fight with al-Faw."
 		prestige = 3
 		treasury = 10000
-		KWT = { country_event = 184826131 }
+		random_owned = { limit = { KWT = { exists = yes } } KWT = { country_event = 184826131 } }
 		TUR = { country_event = 184826132 }
         ai_chance = { factor = 1 }
     }
@@ -53627,7 +53658,7 @@ country_event = {
         name = "Kuwaiti troops were there? I don't remember that."
 		prestige = 1
 		TUR = { country_event = 184826132 }
-        ai_chance = { factor = 0 }
+        ai_chance = { factor = 1 modifier = { factor = 0 exists = KWT } }
     }
 }
 country_event = {
@@ -53642,7 +53673,7 @@ country_event = {
         name = "Another victory for our emirate."
 		prestige = 2
 		treasury = 2000
-		3999 = { secede_province = THIS remove_core = FROM }
+		3999 = { secede_province = THIS add_core = KWT remove_core = DUB remove_core = MKN }
         ai_chance = { factor = 1 }
     }
 }
@@ -54926,12 +54957,17 @@ country_event = {
         ai_chance = { factor = 1 }
     }
     option = {
-        name = "Refuse and prepare for war."
+        name = "Refuse and declare war."
 		casus_belli = {
 			target = FROM
             type = make_puppet_no_add_wargoal
             months = 60
         }
+		war = {
+			target = BHR
+			attacker_goal = { casus_belli = make_puppet_no_add_wargoal }
+			defender_goal = { casus_belli = status_quo }
+		}
 		FROM = { country_event = 184826263 }
         ai_chance = { factor = 0 }
     }
@@ -54981,12 +55017,17 @@ country_event = {
         ai_chance = { factor = 0 }
     }
     option = {
-        name = "Refuse and prepare for war."
+        name = "Refuse and declare war."
 		casus_belli = {
 			target = FROM
             type = make_puppet_no_add_wargoal
             months = 60
         }
+		war = {
+			target = BHR
+			attacker_goal = { casus_belli = make_puppet_no_add_wargoal }
+			defender_goal = { casus_belli = status_quo }
+		}
 		FROM = { country_event = 184826263 }
         ai_chance = { factor = 1 }
     }
@@ -55572,7 +55613,7 @@ country_event = {
 country_event = {
     id = 18482630
     title = "Debt Tracker"
-    desc = "oh god oh fuck you're 93428470273472 in debt"
+    desc = "EVTDESC18482630"
     picture = "Administration"
 
     fire_only_once = yes

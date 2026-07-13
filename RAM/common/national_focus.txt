@@ -118,6 +118,10 @@ immigration_focus = {
     }
 }
 
+diplomatic_focus = {
+    
+}
+
 promotion_focus = {
     promote_aristocrats = {
         aristocrats = 0.25 #25% more likely to become artisans

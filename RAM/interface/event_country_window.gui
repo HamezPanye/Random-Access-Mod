@@ -20,7 +20,7 @@ guiTypes = {
 		{
 			name = "event_images"
 			spriteType = "GFX_event_no_image"
-			position = { x = 0 y = 70 }
+			position = { x = 34 y = 100 }
 			Orientation = "UPPER_LEFT"
 		}
 
@@ -64,7 +64,6 @@ guiTypes = {
 		
 		
 	}
-	
 	guiButtonType = {
 		name = "Event_Country_OptionButton"
 		position = { x = 264 y = 536 }

@@ -1020,6 +1020,8 @@ political_decisions = {
         effect = {
             set_country_flag = abolish_the_eight_banners
             remove_country_modifier = the_eight_banners
+			remove_accepted_culture = mongol
+			remove_accepted_culture = xibe
 			add_country_modifier = { name = social_spen_cleanup duration = 30 }
             any_pop = {
                 limit = {
@@ -1092,6 +1094,11 @@ political_decisions = {
                 limit = { location = { is_core = CHI } }
                 militancy = -2
                 consciousness = -2
+            }
+			any_pop = {
+                limit = { OR = { has_pop_culture = mongol has_pop_culture = xibe } }
+                militancy = 8
+                consciousness = 8
             }
             CHI = {
                 set_country_flag = the_new_army_established
@@ -2083,7 +2090,7 @@ political_decisions = {
 					GNG = { is_vassal = no }
 					has_global_flag = taiping_has_been_defeated
 					NOT = { war_with = GNG }
-					has_country_flag = red_turban_rebellion
+					has_global_flag = red_turban_rebellion
 					has_global_flag = taiping_has_happened
 					OR = {
 						NOT = { has_country_flag = end_red_turban_rebellion }
@@ -2237,7 +2244,7 @@ political_decisions = {
 						GNG = { is_vassal = no }
 						has_global_flag = taiping_has_been_defeated
 						NOT = { war_with = GNG }
-						has_country_flag = red_turban_rebellion
+						has_global_flag = red_turban_rebellion
 						has_global_flag = taiping_has_happened
 						OR = {
 							NOT = { has_country_flag = end_red_turban_rebellion }

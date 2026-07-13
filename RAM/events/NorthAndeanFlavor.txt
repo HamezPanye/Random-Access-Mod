@@ -147,7 +147,7 @@ country_event = {
 country_event = {
     id = 198081
     title = "The Marcista were Crushed" #Marcistas loses.
-    desc = "Now that the rebel scum have been defeated, rebel sentiment is squelched."
+    desc = "EVTDESC198081"
     picture = "administration"
 	
 	fire_only_once = yes
@@ -526,7 +526,7 @@ country_event = {
 country_event = {
     id = 198079
     title = "Peru declares War"
-    desc = "$FROMCOUNTRY$ has declared war against us."
+    desc = "EVTDESC198079"
     picture = "peru_ecuador_war"
 
     fire_only_once = yes
@@ -640,7 +640,7 @@ country_event = {
 country_event = {
     id = 199081
     title = "The Treaty of Mapasingue" #event for the loser of the war
-    desc = "After our lost in the Peruvian-Ecuadorian war, we are forced to cede land and to give up our claims." 
+    desc = "EVTDESC199081" 
     picture = "peru_ecuador_war"
 
     fire_only_once = yes
@@ -1980,7 +1980,7 @@ country_event = {
 country_event = {
     id = 932027
     title = "Conservative coup in Venezuela"
-    desc = "\n\nIn the mist of our civil war, conservatives in $FROMCOUNTRY$ has couped our friendly government and the new government has broken from us."
+    desc = "EVTDESC932027"
     picture = "CLM_into_GCO_event"
 
     fire_only_once = yes
@@ -2000,7 +2000,7 @@ country_event = {
 country_event = {
     id = 932028
     title = "Conservative coup in Ecuador"
-    desc = "\n\nIn the mist of our civil war, conservatives in $FROMCOUNTRY$ has couped our friendly government and the new government has broken from us."
+    desc = "EVTDESC932028"
     picture = "CLM_into_GCO_event"
 
     fire_only_once = yes

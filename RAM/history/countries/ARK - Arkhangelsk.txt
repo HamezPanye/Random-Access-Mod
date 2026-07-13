@@ -4,7 +4,7 @@ culture = ugrian
 religion = orthodox
 government = absolute_monarchy
 plurality = 5.0
-nationalvalue = nv_autocracy
+#nationalvalue = nv_autocracy
 literacy = 0.07
 non_state_culture_literacy = 0.01
 civilized = yes
@@ -83,7 +83,6 @@ piston_steam_engine = 1
 consciousness = 1
 nonstate_consciousness = 1
 
-schools = culture_tech_school
 
 govt_flag = {
     government = hms_government

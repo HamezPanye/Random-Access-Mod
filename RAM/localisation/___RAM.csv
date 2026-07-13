@@ -2,7 +2,7 @@ Key;English;French;German;Polish;Spanish;Italian;Swedish;Czech;Hungarian;Dutch;P
 linebreak_state;\n;;;;;;;;;;;;;
 commabreak_state;,;;;;;;;;;;;;;
 tabbreak_state;    ;;;;;;;;;;;;;
-spacebreak_state;_;;;;;;;;;;;;;
+spacebreak_state; ;;;;;;;;;;;;;
 flexicommabreak_state;,;;;;;;;;;;;;;
 backslash;/;;;;;;;;;;;;;
 colon;|;;;;;;;;;;;;;

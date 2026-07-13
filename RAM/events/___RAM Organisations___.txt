@@ -1,0 +1,194 @@
+##### RAM Organisations Events #####
+
+country_event = { # League of Nations Members - Setup
+    id = 985000
+    title = "League of Nations Members"
+    is_triggered_only = yes
+    allow_multiple_instances = yes
+    picture = "RAM/lon"
+
+    immediate = {
+        FROM = { set_country_flag = viewer }
+        UTI = { set_variable = { which = iterator value = 1 } }
+        slots = { secede_province = THIS state_scope = { change_region_name = " " } secede_province = QQQ }
+
+        any_country = {
+            limit = {
+                has_country_flag = league_of_nations
+                NOT = { has_country_flag = league_of_nations_shown }
+                UTI = { NOT = { check_variable = { which = iterator value = 20.99 } } }
+            }
+            set_country_flag = dynamic_loc
+            CLN = {
+                country_event = 1
+                country_event = 4
+            }
+            UTI = { change_variable = { which = iterator value = 1 } }
+            set_country_flag = dynamic_loc
+            CLN = {
+                country_event = 1
+                country_event = 2
+            }
+            UTI = { change_variable = { which = iterator value = 1 } }
+            set_country_flag = league_of_nations_shown
+        }
+
+        UTI = { set_variable = { which = more_pages value = 0 } }
+        any_country = {
+            limit = {
+                has_country_flag = league_of_nations
+                NOT = { has_country_flag = league_of_nations_shown }
+            }
+            UTI = { change_variable = { which = more_pages value = 1 } }
+        }
+
+        any_country = {
+            limit = {
+                has_country_flag = viewer
+                UTI = { check_variable = { which = more_pages value = 1 } }
+            }
+            country_event = 985001
+        }
+        any_country = {
+            limit = {
+                has_country_flag = viewer
+                UTI = { NOT = { check_variable = { which = more_pages value = 1 } } }
+            }
+            country_event = 985002
+        }
+    }
+
+    option = {
+        name = "Ok"
+    }
+}
+
+country_event = { # League of Nations Members - Display (with Next Page)
+    id = 985001
+    title = "    League of Nations  Membership"
+    is_triggered_only = yes
+    allow_multiple_instances = yes
+    picture = "RAM/lon"
+
+    immediate = {
+        black = {}
+        linebreak_state = {}
+        linebreak_state = {}
+        slot_1 = {}
+        tabbreak_state = {}
+        slot_2 = {}
+        linebreak_state = {}
+        slot_3 = {}
+        tabbreak_state = {}
+        slot_4 = {}
+        linebreak_state = {}
+        slot_5 = {}
+        tabbreak_state = {}
+        slot_6 = {}
+        linebreak_state = {}
+        slot_7 = {}
+        tabbreak_state = {}
+        slot_8 = {}
+        linebreak_state = {}
+        slot_9 = {}
+        tabbreak_state = {}
+        slot_10 = {}
+        linebreak_state = {}
+        slot_11 = {}
+        tabbreak_state = {}
+        slot_12 = {}
+        linebreak_state = {}
+        slot_13 = {}
+        tabbreak_state = {}
+        slot_14 = {}
+        linebreak_state = {}
+        slot_15 = {}
+        tabbreak_state = {}
+        slot_16 = {}
+        linebreak_state = {}
+        slot_17 = {}
+        tabbreak_state = {}
+        slot_18 = {}
+        linebreak_state = {}
+        slot_19 = {}
+        tabbreak_state = {}
+        slot_20 = {}
+        clear = {}
+    }
+
+    option = {
+        name = "Next Page"
+        CLN = { country_event = 985000 }
+    }
+    option = {
+        name = "Close"
+        any_country = {
+            clr_country_flag = league_of_nations_shown
+            clr_country_flag = viewer
+        }
+    }
+}
+
+country_event = { # League of Nations Members - Display (final page)
+    id = 985002
+    title = "    League of Nations  Membership"
+    is_triggered_only = yes
+    allow_multiple_instances = yes
+    picture = "RAM/lon"
+
+    immediate = {
+        black = {}
+        linebreak_state = {}
+        linebreak_state = {}
+        slot_1 = {}
+        tabbreak_state = {}
+        slot_2 = {}
+        linebreak_state = {}
+        slot_3 = {}
+        tabbreak_state = {}
+        slot_4 = {}
+        linebreak_state = {}
+        slot_5 = {}
+        tabbreak_state = {}
+        slot_6 = {}
+        linebreak_state = {}
+        slot_7 = {}
+        tabbreak_state = {}
+        slot_8 = {}
+        linebreak_state = {}
+        slot_9 = {}
+        tabbreak_state = {}
+        slot_10 = {}
+        linebreak_state = {}
+        slot_11 = {}
+        tabbreak_state = {}
+        slot_12 = {}
+        linebreak_state = {}
+        slot_13 = {}
+        tabbreak_state = {}
+        slot_14 = {}
+        linebreak_state = {}
+        slot_15 = {}
+        tabbreak_state = {}
+        slot_16 = {}
+        linebreak_state = {}
+        slot_17 = {}
+        tabbreak_state = {}
+        slot_18 = {}
+        linebreak_state = {}
+        slot_19 = {}
+        tabbreak_state = {}
+        slot_20 = {}
+        clear = {}
+    }
+
+    option = {
+        name = "Close"
+        any_country = {
+            clr_country_flag = league_of_nations_shown
+        }
+        any_country = {
+            clr_country_flag = viewer
+        }
+    }
+}

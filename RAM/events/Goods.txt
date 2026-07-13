@@ -1046,7 +1046,7 @@ province_event = { #End of phosphate mining in Charleston
 
     id = 434557731
     title = "The End of Phosphate Mining in South Carolina"
-    desc = "Phosphate mining, on the decline for many years, has ground to a halt due to exhaustion of the deposits making it unprofitable."
+    desc = "EVTDESC434557731"
 
     trigger = {
         year = 1925
@@ -2555,7 +2555,7 @@ province_event = {
 			AND = {
 				year = 1921
 				OR = {
-					province_id = 134		# San ¡ùngelo #https://en.wikipedia.org/wiki/Westbrook,_Texas
+					province_id = 134		# San ¡ngelo #https://en.wikipedia.org/wiki/Westbrook,_Texas
 					province_id = 138		# Laredo #https://www.yumpu.com/en/document/read/62168908/texas-petroleum-the-unconventional-history #page 51
 					province_id = 350		# Narva #https://en.wikipedia.org/wiki/Oil_shale_in_Estonia
 				}

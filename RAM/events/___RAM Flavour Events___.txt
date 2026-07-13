@@ -6,7 +6,7 @@ country_event = {
     id = 18691201
     title = "The Sheep King of Rapa Nui"
     desc = "EAS_DUTROU_BORNIER_RISE"
-    picture = "RAM\dutrou_bornier"
+    picture = "RAM\dutrou_bornier_queen"
 
     fire_only_once = yes
 
@@ -73,7 +73,7 @@ country_event = {
         diplomatic_influence = { who = EAS value = 400 }
         relation = { who = EAS value = 100 }
         create_vassal = EAS
-        badboy = 2
+        badboy = 1
         ai_chance = { factor = 20 }
     }
 

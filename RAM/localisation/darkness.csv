@@ -198,7 +198,7 @@ apache_name;Apache;Apache;Apache;;Apache;;;;;;;;;
 apache_desc;The Apache rise to defend their ancestral lands from the encroachment of American settlers and soldiers. They are angered by broken promises from Washington, and will fight fiercely to halt the colonization of the West.;;Die Apachen erheben sich und verteidigen das Land ihrer Vorfahren gegen das Vordringen der amerikanischen Siedler und Soldaten. Die gebrochenen Versprechen Washingtons befeuern ihren Zorn und sie werden entschlossen kämpfen, um die Kolonisation des Westens aufzuhalten.;;;;;;;;;;;
 apache_army;Apache War Party;Expédition guerrière Apache;Apache-Kriegspartei;;Parte de guerra Apache;;;;;;;;;
 EVTNAME90902;The Breakup of China;;Der Zerfall Chinas;;;;;;;;;;;
-EVTDESC90902;China_has_fractured.;;China_bricht_auseinander.;;;;;;;;;;;
+EVTDESC90902;China has fractured.;;China bricht auseinander.;;;;;;;;;;;
 CRISIS_DESCRIPTION_LIBERATION;Crisis over the liberation of $COUNTRY$.;;Konflikt um die Befreiung von $COUNTRY$.;;;;;;;;;;;
 CRISIS_DESCRIPTION_RECLAIM;Crisis over the return of $COUNTRY$'s rightful territories.;;Konflikt um die Rückgewinnung rechtmäßiger Gebiete von $COUNTRY$.;;;;;;;;;;;
 CRISIS_ALREADY_TAKEN_SIDE;Already chosen a side;;Bereits eine Seite gewählt;;;;;;;;;;;

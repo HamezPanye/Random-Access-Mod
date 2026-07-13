@@ -1,3 +1,8 @@
+UT2        = "countries/Utility Tag 2.txt"
+IZH        = "countries/Ingria.txt"
+ARK        = "countries/Arkhangelsk.txt"
+AKH        = "countries/Astrakhan.txt"
+EAS        = "countries/Rapa Nui.txt"
 # Please Add your tags to the correct region
 
 #
@@ -9,15 +14,6 @@ UTI        = "countries/Utility Tag.txt"							# HPM
 CLN        = "countries/Cleanup.txt"								# HFM
 INL        = "countries/Indian Lands.txt"							# GFM
 JAN     = "countries/JanMayen.txt"
-UT2        = "countries/Utility Tag 2.txt"
-
-#
-#	RAM
-#
-
-IZH        = "countries/Ingria.txt"
-ARK        = "countries/Arkhangelsk.txt"
-AKH        = "countries/Astrakhan.txt"
 
 #
 #	Europe
@@ -313,6 +309,7 @@ NAN        = "countries/Curacao.txt"
 #
 
 # Brazil
+USS        = "countries/United States of South America.txt"
 BRZ        = "countries/Brazil.txt"
 RGS        = "countries/Rio Grande do Sul.txt"
 AMA        = "countries/Amazonie.txt"								# GFM
@@ -446,6 +443,7 @@ KAZ     = "countries/Kazakhstan.txt"
 TKM        = "countries/Turkmenistan.txt"
 KYR        = "countries/Kyrgyzstan.txt"
 KKP        = "countries/Karakalpakstan.txt"							# GFM
+URT        = "countries/Uratepe.txt"								# GFM
 BKY        = "countries/Bukey Horde.txt"							# GFM
 KSJ        = "countries/Senior Juz.txt"								# GFM
 BUK        = "countries/Bukkhara.txt"
@@ -720,7 +718,6 @@ PPG        = "countries/Papua New Guinea.txt"
 # The Pacific
 PCF        = "countries/Pacifika.txt"								# GFM
 HAW        = "countries/Hawaii.txt"
-EAS        = "countries/Rapa Nui.txt"
 VTU        = "countries/Vanuatu.txt"
 SMO        = "countries/Samoa.txt"
 FIJ        = "countries/Fiji.txt"
